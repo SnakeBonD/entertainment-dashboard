@@ -1,0 +1,258 @@
+{
+  "Films": [
+    {
+      "name": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/cinema/",
+      "best": "Cinéma d’auteur, européen et international.",
+      "premium": "Créer un compte gratuit, ajouter les films à Ma liste et vérifier la date de fin de disponibilité."
+    },
+    {
+      "name": "TV5MONDE+",
+      "url": "https://www.tv5mondeplus.com/fr/films",
+      "best": "Films francophones de France, Belgique, Suisse, Canada et Afrique.",
+      "premium": "Utiliser les sous-titres, les favoris et les collections par pays ou genre."
+    },
+    {
+      "name": "Pluto TV",
+      "url": "https://pluto.tv/fr/on-demand",
+      "best": "Films gratuits avec publicité et chaînes cinéma en continu.",
+      "premium": "Ajouter les chaînes aux favoris et utiliser le direct quand on ne veut pas choisir."
+    },
+    {
+      "name": "Plex",
+      "url": "https://watch.plex.tv/",
+      "best": "Films gratuits, classiques et catalogue international.",
+      "premium": "Créer une watchlist unique et activer la reprise de lecture entre appareils."
+    },
+    {
+      "name": "Rakuten TV Free",
+      "url": "https://www.rakuten.tv/fr",
+      "best": "Films gratuits avec publicité et chaînes FAST.",
+      "premium": "Ouvrir uniquement les sections “Free” et “Live TV”, puis mettre les titres en favoris."
+    }
+  ],
+  "Séries TV": [
+    {
+      "name": "France.tv",
+      "url": "https://www.france.tv/series-et-fictions/",
+      "best": "Fictions françaises, séries européennes et avant-premières.",
+      "premium": "Créer un compte gratuit pour reprendre la lecture et suivre les séries."
+    },
+    {
+      "name": "TF1+",
+      "url": "https://www.tf1.fr/",
+      "best": "Séries populaires, françaises, américaines, K-dramas et divertissements.",
+      "premium": "Créer des listes par genre et utiliser le Ciné Club et les collections gratuites."
+    },
+    {
+      "name": "M6+",
+      "url": "https://www.m6.fr/",
+      "best": "Séries cultes, comédies, policiers et programmes du groupe M6.",
+      "premium": "Utiliser les pages de séries complètes et les chaînes thématiques en direct."
+    },
+    {
+      "name": "ARTE Séries",
+      "url": "https://www.arte.tv/fr/videos/series-et-fictions/",
+      "best": "Mini-séries ambitieuses, thrillers européens et créations originales.",
+      "premium": "Privilégier les saisons complètes et noter les dates d’expiration."
+    },
+    {
+      "name": "Pluto TV Séries",
+      "url": "https://pluto.tv/fr/live-tv",
+      "best": "Chaînes thématiques et séries en lecture continue.",
+      "premium": "Construire une grille personnelle avec 5 chaînes favorites."
+    }
+  ],
+  "Musique": [
+    {
+      "name": "YouTube Music",
+      "url": "https://music.youtube.com/",
+      "best": "Catalogue très large, clips, lives, remixes et raretés.",
+      "premium": "Créer quatre playlists fixes : Focus, Sport, Détente et Nuit."
+    },
+    {
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/",
+      "best": "Remixes, DJ sets, artistes émergents et musique électronique.",
+      "premium": "Suivre 20 artistes et utiliser les stations liées aux morceaux appréciés."
+    },
+    {
+      "name": "Bandcamp",
+      "url": "https://bandcamp.com/",
+      "best": "Découverte indépendante par genre, ville, label et micro-scène.",
+      "premium": "Tenir une wishlist et écouter un album complet plutôt que des morceaux isolés."
+    },
+    {
+      "name": "Jamendo",
+      "url": "https://www.jamendo.com/",
+      "best": "Musique indépendante gratuite et découverte hors algorithmes dominants.",
+      "premium": "Créer des playlists d’ambiance et filtrer par genre, humeur et instrument."
+    },
+    {
+      "name": "FIP / Radio France",
+      "url": "https://www.radiofrance.fr/fip",
+      "best": "Radio musicale humaine : rock, jazz, électro, groove et nouveautés.",
+      "premium": "Utiliser les webradios thématiques comme des stations sans effort."
+    }
+  ],
+  "Podcasts": [
+    {
+      "name": "Radio France",
+      "url": "https://www.radiofrance.fr/podcasts",
+      "best": "Actualité, histoire, sciences, culture, musique et enquêtes en français.",
+      "premium": "Suivre les émissions et télécharger les épisodes dans l’application."
+    },
+    {
+      "name": "Apple Podcasts",
+      "url": "https://podcasts.apple.com/fr/home",
+      "best": "Annuaire immense et écoute web gratuite.",
+      "premium": "Suivre les émissions, utiliser la file d’attente et filtrer les épisodes téléchargés."
+    },
+    {
+      "name": "Pocket Casts",
+      "url": "https://pocketcasts.com/",
+      "best": "Gestion avancée, synchronisation et files de lecture.",
+      "premium": "Créer des filtres par durée : 15, 30 et 60 minutes."
+    },
+    {
+      "name": "AntennaPod",
+      "url": "https://antennapod.org/",
+      "best": "Lecteur Android libre, gratuit et respectueux de la vie privée.",
+      "premium": "Importer les abonnements RSS, régler la vitesse et utiliser la minuterie."
+    },
+    {
+      "name": "YouTube Podcasts",
+      "url": "https://www.youtube.com/podcasts",
+      "best": "Podcasts vidéo, interviews longues et formats technologiques.",
+      "premium": "Créer une playlist “À écouter” et passer en audio lorsque l’image n’est pas utile."
+    }
+  ],
+  "Livres": [
+    {
+      "name": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/",
+      "best": "Grands classiques du domaine public, surtout en anglais.",
+      "premium": "Télécharger en EPUB et classer les livres dans Calibre."
+    },
+    {
+      "name": "Gallica",
+      "url": "https://gallica.bnf.fr/",
+      "best": "Patrimoine français : livres, presse, cartes, manuscrits et images.",
+      "premium": "Sauvegarder des recherches et télécharger les EPUB disponibles."
+    },
+    {
+      "name": "Wikisource FR",
+      "url": "https://fr.wikisource.org/",
+      "best": "Textes libres en français, lisibles directement dans le navigateur.",
+      "premium": "Utiliser les catégories par auteur, époque et genre."
+    },
+    {
+      "name": "Standard Ebooks",
+      "url": "https://standardebooks.org/",
+      "best": "Classiques du domaine public avec mise en page moderne et soignée.",
+      "premium": "Télécharger la version EPUB compatible avec sa liseuse."
+    },
+    {
+      "name": "Google Livres – vue intégrale",
+      "url": "https://books.google.fr/",
+      "best": "Recherche dans les livres anciens et ouvrages en accès intégral.",
+      "premium": "Filtrer sur “Vue intégrale” et constituer une bibliothèque personnelle."
+    }
+  ],
+  "Jeux": [
+    {
+      "name": "Steam Free to Play",
+      "url": "https://store.steampowered.com/genre/Free%20to%20Play/",
+      "best": "Grand catalogue multijoueur, stratégie, action et simulation.",
+      "premium": "Filtrer par français, avis récents et compatibilité manette."
+    },
+    {
+      "name": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/free-games",
+      "best": "Jeux offerts régulièrement et free-to-play connus.",
+      "premium": "Réclamer les offres même sans installation immédiate."
+    },
+    {
+      "name": "itch.io",
+      "url": "https://itch.io/games/free",
+      "best": "Jeux indépendants originaux, courts et expérimentaux.",
+      "premium": "Créer des collections : 30 minutes, histoire, horreur, rétro."
+    },
+    {
+      "name": "GOG Free Games",
+      "url": "https://www.gog.com/en/partner/free_games",
+      "best": "Jeux gratuits et classiques sans DRM.",
+      "premium": "Télécharger les installateurs hors ligne et les sauvegarder."
+    },
+    {
+      "name": "Riot Games",
+      "url": "https://www.riotgames.com/fr",
+      "best": "League of Legends, VALORANT et autres jeux compétitifs gratuits.",
+      "premium": "Choisir un seul jeu principal et limiter les achats cosmétiques."
+    }
+  ],
+  "Documentaires": [
+    {
+      "name": "ARTE Documentaires",
+      "url": "https://www.arte.tv/fr/videos/documentaires-et-reportages/",
+      "best": "Histoire, sciences, culture, société et géopolitique.",
+      "premium": "Créer des listes par thème et regarder une série documentaire par semaine."
+    },
+    {
+      "name": "France.tv Docs",
+      "url": "https://www.france.tv/documentaires/",
+      "best": "Société française, nature, patrimoine, investigation et voyages.",
+      "premium": "Suivre les collections de France 5 et activer la reprise de lecture."
+    },
+    {
+      "name": "TV5MONDE+ Docs",
+      "url": "https://www.tv5mondeplus.com/fr/documentaires",
+      "best": "Regards francophones internationaux et voyages.",
+      "premium": "Utiliser les sous-titres et alterner les pays chaque semaine."
+    },
+    {
+      "name": "YouTube – chaînes officielles",
+      "url": "https://www.youtube.com/results?search_query=documentaire+complet+ARTE+DW+PBS",
+      "best": "Documentaires complets d’ARTE, DW, PBS et médias publics.",
+      "premium": "S’abonner uniquement aux chaînes officielles et créer une file “Docs du dimanche”."
+    },
+    {
+      "name": "Plex Documentaires",
+      "url": "https://watch.plex.tv/on-demand/category/documentary",
+      "best": "Documentaires gratuits internationaux et chaînes thématiques.",
+      "premium": "Ajouter à la watchlist et trier par durée ou année."
+    }
+  ],
+  "Apprentissage": [
+    {
+      "name": "Khan Academy",
+      "url": "https://www.khanacademy.org/",
+      "best": "Mathématiques, sciences, économie et bases structurées.",
+      "premium": "Faire une session de 25 minutes puis un exercice de rappel."
+    },
+    {
+      "name": "FUN MOOC",
+      "url": "https://www.fun-mooc.fr/fr/cours/",
+      "best": "Cours universitaires francophones en informatique, sciences et culture.",
+      "premium": "Ne suivre qu’un MOOC actif à la fois et réserver deux créneaux fixes."
+    },
+    {
+      "name": "OpenClassrooms",
+      "url": "https://openclassrooms.com/fr/courses",
+      "best": "Compétences numériques, IA, réseaux, cybersécurité et travail.",
+      "premium": "Transformer chaque cours en mini-projet concret."
+    },
+    {
+      "name": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/",
+      "best": "Cours universitaires complets et ressources techniques avancées.",
+      "premium": "Sélectionner seulement les chapitres utiles et conserver des notes synthétiques."
+    },
+    {
+      "name": "YouTube éducatif",
+      "url": "https://www.youtube.com/results?search_query=cours+informatique+IA+cybers%C3%A9curit%C3%A9+fran%C3%A7ais",
+      "best": "Tutoriels ciblés et démonstrations rapides.",
+      "premium": "Créer une playlist par compétence et supprimer les vidéos déjà vues."
+    }
+  ]
+}

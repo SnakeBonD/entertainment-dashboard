@@ -1,0 +1,37 @@
+{
+  "drôle": {
+    "movie": "Une comédie actuellement disponible sur TF1+ ou France.tv",
+    "youtube": "Nota Bene — une histoire insolite",
+    "podcast": "Radio France — humour ou culture pop, moins de 30 min",
+    "game": "Un jeu convivial dans le catalogue Steam Free to Play",
+    "doc": "ARTE — culture pop ou coulisses du cinéma"
+  },
+  "nostalgique": {
+    "movie": "Un classique ou un film rétro actuellement disponible sur ARTE ou TF1+",
+    "youtube": "Documentaire officiel sur la technologie des années 80",
+    "podcast": "Une histoire musicale sur Radio France",
+    "game": "Un classique gratuit sur GOG",
+    "doc": "ARTE — histoire de la pop culture"
+  },
+  "curieux": {
+    "movie": "Un film de science-fiction actuellement disponible sur ARTE ou France.tv",
+    "youtube": "Underscore_ — IA, hacking ou robotique",
+    "podcast": "France Culture — sciences et numérique",
+    "game": "Un jeu expérimental court sur itch.io",
+    "doc": "ARTE — sciences ou technologie"
+  },
+  "calme": {
+    "movie": "Un film d’auteur sur ARTE",
+    "youtube": "ARTE — documentaire nature",
+    "podcast": "France Culture — récit ou histoire",
+    "game": "Un jeu narratif gratuit sur itch.io",
+    "doc": "TV5MONDE+ — voyage et découverte"
+  },
+  "énergique": {
+    "movie": "Un film d’action ou une comédie rythmée actuellement disponible sur TF1+",
+    "youtube": "Micode — enquête cybersécurité",
+    "podcast": "Podcast tech court à vitesse 1,2×",
+    "game": "VALORANT ou League of Legends — Riot Games",
+    "doc": "Plex — technologie, sport ou aventure"
+  }
+}

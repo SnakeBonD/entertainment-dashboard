@@ -1,0 +1,49 @@
+{
+  "music": [
+    {"day":"Lundi","focus":"Synthwave instrumental coding","gym":"80s rock workout","chill":"French retro pop soft","night":"Cinematic ambient neon"},
+    {"day":"Mardi","focus":"Lo-fi cyberpunk concentration","gym":"Electronic running mix","chill":"Portuguese acoustic chill","night":"Dark synth slow mix"},
+    {"day":"Mercredi","focus":"Video game soundtrack study","gym":"Outrun synthwave workout","chill":"Dream pop Bandcamp","night":"Space ambient sleep"},
+    {"day":"Jeudi","focus":"Jazzhop instrumental work","gym":"80s disco funk cardio","chill":"Cinematic pop discovery","night":"Rain city ambient"},
+    {"day":"Vendredi","focus":"Deep work electronic no vocals","gym":"Retro action movie workout","chill":"Indie electronic sunset","night":"Late night synthwave"},
+    {"day":"Samedi","focus":"Creative flow soundtrack","gym":"Energetic remix SoundCloud","chill":"World music discovery","night":"Chillwave night drive"},
+    {"day":"Dimanche","focus":"Calm piano concentration","gym":"Light mobility music","chill":"FIP groove selection","night":"Soft ambient reset"}
+  ],
+  "musicSources": [
+    {"name":"YouTube","tip":"Ajoute « playlist », « mix » ou « full album » au terme proposé, puis garde les meilleurs résultats dans quatre playlists permanentes."},
+    {"name":"SoundCloud","tip":"Ajoute « set », « remix », « radio » ou « continuous mix » et suis les artistes qui publient des sessions longues."},
+    {"name":"Bandcamp","tip":"Explore les tags associés au genre du jour et ajoute les albums intéressants à ta wishlist."}
+  ],
+  "youtube": [
+    {"day":"Lundi","category":"Tech & cyber","source":"Micode","search":"arnaques informatique cybersécurité enquête Micode","duration":"30–45 min"},
+    {"day":"Mardi","category":"Histoire","source":"Nota Bene","search":"Nota Bene histoire technologie années 1980","duration":"25–40 min"},
+    {"day":"Mercredi","category":"Laboratoire IA","source":"Underscore_","search":"Underscore intelligence artificielle robotique","duration":"30–50 min"},
+    {"day":"Jeudi","category":"Grand documentaire","source":"ARTE","search":"ARTE documentaire complet sciences technologie","duration":"45–90 min"},
+    {"day":"Vendredi","category":"Soirée rétro","source":"Chaînes officielles","search":"documentaire technologie années 80 complet officiel","duration":"40–70 min"},
+    {"day":"Samedi","category":"Atelier créatif","source":"Recherche YouTube","search":"workflow image IA animation vidéo français","duration":"30–45 min"},
+    {"day":"Dimanche","category":"Long format","source":"ARTE / DW","search":"documentaire complet société science histoire","duration":"60–90 min"}
+  ],
+  "weekend": [
+    {"title":"Samedi matin · 1 h 15","activities":["35 min : cours sur l’IA ou la cybersécurité.","40 min : vidéo Micode ou Underscore_."]},
+    {"title":"Samedi après-midi · 2 h 30","activities":["1 h 45 à 2 h : film gratuit vérifié.","30 min : podcast tech pendant une marche ou une tâche."]},
+    {"title":"Samedi soir · 1 h 15","activities":["60 min : jeu gratuit Steam, Epic, Riot ou itch.io.","15 min : musique synthwave de nuit."]},
+    {"title":"Dimanche matin · 1 h","activities":["Documentaire ARTE ou France.tv sur l’histoire, les sciences ou la technologie."]},
+    {"title":"Dimanche après-midi · 1 h","activities":["Atelier créatif : reproduire un effet d’image ou d’animation IA."]},
+    {"title":"Dimanche soir · 1 h","activities":["Deux épisodes courts, ou un épisode de série et 20 min de lecture."]}
+  ],
+  "podcasts": [
+    {"day":"Lundi","type":"Brief d’actualité IA","search":"actualité intelligence artificielle cette semaine podcast français","goal":"Identifier les nouveautés réellement utiles."},
+    {"day":"Mardi","type":"Explication technique","search":"comment fonctionne un modèle IA générative podcast","goal":"Comprendre les mécanismes au-delà du marketing."},
+    {"day":"Mercredi","type":"Cybersécurité réelle","search":"enquête arnaque cyberattaque podcast français","goal":"Reconnaître les risques et les méthodes d’attaque."},
+    {"day":"Jeudi","type":"Créateurs et outils","search":"création contenu IA image vidéo musique podcast","goal":"Trouver un workflow applicable à SnakeBonD AI Studio."},
+    {"day":"Vendredi","type":"Impact et éthique","search":"impact social IA droits auteur données podcast","goal":"Prendre du recul sur les usages, les droits et la fiabilité."}
+  ],
+  "learning": [
+    {"day":"Lundi","duration":"35 min","source":"OpenClassrooms","topic":"Fondamentaux de l’intelligence artificielle","result":"Vocabulaire, modèles, limites et cas d’usage."},
+    {"day":"Mardi","duration":"30 min","source":"OpenClassrooms / YouTube","topic":"Cybersécurité pratique","result":"Phishing, mots de passe, sauvegardes et authentification."},
+    {"day":"Mercredi","duration":"30 min","source":"YouTube éducatif","topic":"Création d’images et vidéo IA","result":"Prompt, cohérence visuelle, montage et export."},
+    {"day":"Jeudi","duration":"40 min","source":"FUN MOOC","topic":"Culture numérique ou programmation","result":"Approfondir un sujet avec une progression structurée."},
+    {"day":"Vendredi","duration":"25 min","source":"Khan Academy","topic":"Logique, statistiques ou économie","result":"Renforcer les bases utiles pour analyser les technologies."},
+    {"day":"Samedi","duration":"45 min","source":"MIT OpenCourseWare","topic":"Cours technique avancé choisi","result":"Explorer un chapitre précis sans suivre tout le cursus."},
+    {"day":"Dimanche","duration":"20 min","source":"Notes personnelles","topic":"Révision hebdomadaire","result":"Résumer trois idées et décider d’une application concrète."}
+  ]
+}
