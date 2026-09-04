@@ -1,0 +1,58 @@
+(() => {
+  "use strict";
+
+  const storageKey = "snakebondEntertainmentFavorites";
+
+  function read() {
+    try {
+      const value = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
+      return Array.isArray(value) ? new Set(value.filter((item) => typeof item === "string")) : new Set();
+    } catch {
+      return new Set();
+    }
+  }
+
+  function write(favorites) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify([...favorites]));
+    } catch {
+      return false;
+    }
+
+    window.dispatchEvent(
+      new CustomEvent("snakebond:favorites-changed", {
+        detail: { favorites: [...favorites] },
+      }),
+    );
+    return true;
+  }
+
+  function makeId(category, name) {
+    return `${category}::${name}`;
+  }
+
+  function has(category, name) {
+    return read().has(makeId(category, name));
+  }
+
+  function toggle(category, name) {
+    const favorites = read();
+    const id = makeId(category, name);
+
+    if (favorites.has(id)) {
+      favorites.delete(id);
+    } else {
+      favorites.add(id);
+    }
+
+    write(favorites);
+    return favorites.has(id);
+  }
+
+  window.SnakeBonDFavorites = {
+    count: () => read().size,
+    has,
+    makeId,
+    toggle,
+  };
+})();

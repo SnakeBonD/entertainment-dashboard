@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Tableau de bord personnel de contenus gratuits et légaux accessibles en France."
+    >
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#080a10">
+    <title>SnakeBonD Entertainment</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/favorites.js" defer></script>
+    <script src="js/recommendations.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+    <header class="app-header">
+      <a class="brand" href="#accueil" aria-label="SnakeBonD Entertainment — Accueil">
+        <span class="brand-mark" aria-hidden="true">SB</span>
+        <span>
+          <strong>SnakeBonD</strong>
+          <small>Entertainment</small>
+        </span>
+      </a>
+
+      <div class="header-status" aria-label="Périmètre du catalogue">
+        <span class="status-dot" aria-hidden="true"></span>
+        France · gratuit et légal
+      </div>
+    </header>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <button class="nav-button is-active" type="button" data-tab="accueil">Accueil</button>
+      <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
+      <button class="nav-button" type="button" data-tab="musique">Musique</button>
+      <button class="nav-button" type="button" data-tab="youtube">YouTube</button>
+      <button class="nav-button" type="button" data-tab="weekend">Week-end</button>
+      <button class="nav-button" type="button" data-tab="podcasts">Podcasts</button>
+      <button class="nav-button" type="button" data-tab="learning">Apprentissage</button>
+      <button class="nav-button nav-button-accent" type="button" data-tab="chooser">
+        Que regarder ?
+      </button>
+    </nav>
+
+    <main id="main-content" class="app-main">
+      <section id="accueil" class="page is-active" aria-labelledby="home-title">
+        <div class="home-heading">
+          <div>
+            <p class="eyebrow">ENTERTAINMENT OS</p>
+            <h1 id="home-title">Tout ton divertissement, au même endroit.</h1>
+            <p>
+              Des sources officielles pour regarder, écouter, jouer et apprendre sans abonnement
+              supplémentaire.
+            </p>
+          </div>
+          <button class="primary-button" type="button" data-open-tab="chooser">
+            Choisir pour ce soir
+          </button>
+        </div>
+
+        <div class="stats-grid" aria-label="Résumé du dashboard">
+          <article class="stat-card">
+            <span class="stat-value" id="platform-count">—</span>
+            <span class="stat-label">plateformes officielles</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-value">8</span>
+            <span class="stat-label">univers de découverte</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-value" id="favorite-count">0</span>
+            <span class="stat-label">favoris enregistrés</span>
+          </article>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RACCOURCIS</p>
+            <h2>Commencer sans perdre de temps</h2>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <button class="feature-card feature-card-wide" type="button" data-open-tab="plateformes">
+            <span class="feature-icon" aria-hidden="true">▶</span>
+            <span>
+              <strong>Explorer les plateformes</strong>
+              <small>Films, séries, livres, jeux et documentaires</small>
+            </span>
+          </button>
+          <button class="feature-card" type="button" data-open-tab="musique">
+            <span class="feature-icon" aria-hidden="true">♫</span>
+            <span><strong>Station musique</strong><small>Focus, gym, chill et nuit</small></span>
+          </button>
+          <button class="feature-card" type="button" data-open-tab="learning">
+            <span class="feature-icon" aria-hidden="true">✦</span>
+            <span><strong>Apprendre</strong><small>Une idée et une action en 45 min</small></span>
+          </button>
+          <button class="feature-card" type="button" data-open-tab="weekend">
+            <span class="feature-icon" aria-hidden="true">⌁</span>
+            <span><strong>Week-end équilibré</strong><small>Un programme actif sur deux jours</small></span>
+          </button>
+        </div>
+
+        <aside class="info-banner">
+          <strong>Catalogue dynamique en préparation.</strong>
+          <span>
+            Les contenus datés seront affichés seulement après vérification de leur disponibilité
+            en France.
+          </span>
+        </aside>
+      </section>
+
+      <section id="plateformes" class="page" aria-labelledby="platforms-title">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">40 SOURCES SÉLECTIONNÉES</p>
+            <h1 id="platforms-title">Plateformes gratuites et légales</h1>
+          </div>
+          <button class="secondary-button" id="favorites-only" type="button" aria-pressed="false">
+            Mes favoris
+          </button>
+        </div>
+
+        <div class="search-panel">
+          <label class="search-field" for="platform-search">
+            <span class="visually-hidden">Rechercher une plateforme</span>
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="platform-search"
+              type="search"
+              placeholder="Rechercher une plateforme, un genre ou un usage…"
+              autocomplete="off"
+            >
+          </label>
+          <div id="category-filters" class="filter-row" aria-label="Filtrer par catégorie"></div>
+        </div>
+
+        <p id="platform-result-count" class="result-count" aria-live="polite"></p>
+        <div id="platform-container"></div>
+      </section>
+
+      <section id="musique" class="page" aria-labelledby="music-title">
+        <div class="section-heading">
+          <p class="eyebrow">STATION PERSONNELLE</p>
+          <h1 id="music-title">Une ambiance pour chaque moment</h1>
+          <p>Années 80, synthwave, électro, cinematic pop et découvertes indépendantes.</p>
+        </div>
+        <div id="music-schedule" class="schedule-grid"></div>
+        <div id="music-sources" class="content-grid content-grid-three"></div>
+      </section>
+
+      <section id="youtube" class="page" aria-labelledby="youtube-title">
+        <div class="section-heading">
+          <p class="eyebrow">PROGRAMMATION HEBDOMADAIRE</p>
+          <h1 id="youtube-title">YouTube organisé comme une plateforme</h1>
+          <p>Une sélection courte par jour, classée par usage plutôt que par algorithme.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Jour</th><th>Catégorie</th><th>Source</th><th>Recherche</th><th>Durée</th></tr>
+            </thead>
+            <tbody id="youtube-schedule"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="weekend" class="page" aria-labelledby="weekend-title">
+        <div class="section-heading">
+          <p class="eyebrow">8 HEURES · DEUX JOURS</p>
+          <h1 id="weekend-title">Week-end binge équilibré</h1>
+          <p>Un mélange de détente, de jeu, de découverte et de création.</p>
+        </div>
+        <div id="weekend-schedule" class="content-grid content-grid-three"></div>
+      </section>
+
+      <section id="podcasts" class="page" aria-labelledby="podcasts-title">
+        <div class="section-heading">
+          <p class="eyebrow">RADIO PERSONNELLE</p>
+          <h1 id="podcasts-title">IA, technologies et culture numérique</h1>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Jour</th><th>Type</th><th>Recherche</th><th>Objectif</th></tr></thead>
+            <tbody id="podcast-schedule"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="learning" class="page" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <p class="eyebrow">MOINS DE 45 MINUTES</p>
+          <h1 id="learning-title">Transformer le temps d’écran en compétence</h1>
+          <p>Chaque session se termine par une idée à retenir et une action à tester.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Jour</th><th>Durée</th><th>Source</th><th>Sujet</th><th>Résultat</th></tr></thead>
+            <tbody id="learning-schedule"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="chooser" class="page" aria-labelledby="chooser-title">
+        <div class="section-heading chooser-heading">
+          <p class="eyebrow">MODE DÉCOUVERTE</p>
+          <h1 id="chooser-title">Que regarder ce soir ?</h1>
+          <p>Quelques critères, puis cinq pistes parmi les sources du dashboard.</p>
+        </div>
+
+        <form id="chooser-form" class="chooser-layout">
+          <div class="chooser-form-card">
+            <label for="mood">Humeur</label>
+            <select id="mood" name="mood">
+              <option value="drôle">Drôle</option>
+              <option value="nostalgique">Nostalgique</option>
+              <option value="curieux">Curieux</option>
+              <option value="calme">Calme</option>
+              <option value="énergique">Énergique</option>
+            </select>
+
+            <label for="time">Temps disponible</label>
+            <select id="time" name="time">
+              <option value="moins de 30 min">Moins de 30 min</option>
+              <option value="30 à 60 min">30 à 60 min</option>
+              <option value="1 à 2 h">1 à 2 h</option>
+              <option value="plus de 2 h">Plus de 2 h</option>
+            </select>
+
+            <label for="energy">Énergie</label>
+            <select id="energy" name="energy">
+              <option value="faible">Faible</option>
+              <option value="moyenne">Moyenne</option>
+              <option value="élevée">Élevée</option>
+            </select>
+
+            <label for="company">Avec qui ?</label>
+            <select id="company" name="company">
+              <option value="seul">Seul</option>
+              <option value="en couple">En couple</option>
+              <option value="en famille">En famille</option>
+              <option value="avec des amis">Avec des amis</option>
+            </select>
+
+            <button class="primary-button" type="submit">Choisir pour moi</button>
+          </div>
+          <div class="chooser-copy">
+            <span class="large-glyph" aria-hidden="true">?</span>
+            <h2>Un choix simple, pas un nouvel algorithme.</h2>
+            <p>
+              L’humeur détermine les propositions. Le temps, l’énergie et la compagnie indiquent
+              laquelle lancer en premier. Tout reste dans ton navigateur.
+            </p>
+          </div>
+        </form>
+
+        <div id="recommendation-results" class="recommendation-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="error-page" class="page" aria-labelledby="error-title">
+        <div class="empty-state">
+          <span aria-hidden="true">!</span>
+          <h1 id="error-title">Impossible de charger les données</h1>
+          <p>Actualise la page. Si le problème persiste, vérifie que le site est servi par HTTP.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>SnakeBonD Entertainment</span>
+      <span>Sans tracker · aucune donnée personnelle envoyée</span>
+    </footer>
+  </body>
+</html>
