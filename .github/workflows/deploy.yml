@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html CNAME _site/
-          cp -R css js data assets _site/
+          cp -R css js data _site/
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
