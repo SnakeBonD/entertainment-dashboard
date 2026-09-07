@@ -1,0 +1,39 @@
+name: Check platform links
+
+on:
+  schedule:
+    - cron: "15 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Check official platform links
+        id: links
+        continue-on-error: true
+        run: node scripts/check-links.mjs link-check-report.md
+
+      - name: Add report to the workflow summary
+        if: always()
+        run: cat link-check-report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: platform-link-report
+          path: link-check-report.md
+          retention-days: 30
+
+      - name: Report broken links
+        if: steps.links.outcome == 'failure'
+        run: |
+          echo "Un ou plusieurs liens sont inaccessibles. Consultez le rapport ci-dessus."
+          exit 1

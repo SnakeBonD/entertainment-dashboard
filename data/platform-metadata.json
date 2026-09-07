@@ -1,0 +1,326 @@
+{
+  "version": 2,
+  "lastVerified": "2026-09-07",
+  "platforms": {
+    "Films::ARTE": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "de", "en", "es", "pl", "it", "ro"],
+      "tags": ["cinéma", "auteur", "européen", "international"],
+      "france": true
+    },
+    "Films::TV5MONDE+": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "es", "de", "ro"],
+      "tags": ["francophone", "international", "sous-titres"],
+      "france": true
+    },
+    "Films::Pluto TV": {
+      "access": "ad_supported",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr"],
+      "tags": ["films", "direct", "FAST", "à la demande"],
+      "france": true
+    },
+    "Films::Plex": {
+      "access": "ad_supported",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en"],
+      "tags": ["films", "classiques", "watchlist", "streaming"],
+      "france": true
+    },
+    "Films::Rakuten TV Free": {
+      "access": "ad_supported",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr"],
+      "tags": ["films", "FAST", "télévision en direct"],
+      "france": true
+    },
+    "Séries TV::France.tv": {
+      "access": "public_service",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["replay", "fiction française", "séries européennes"],
+      "france": true
+    },
+    "Séries TV::TF1+": {
+      "access": "ad_supported",
+      "account": "required",
+      "ads": true,
+      "languages": ["fr"],
+      "tags": ["replay", "K-drama", "divertissement", "séries"],
+      "france": true
+    },
+    "Séries TV::M6+": {
+      "access": "ad_supported",
+      "account": "required",
+      "ads": true,
+      "languages": ["fr"],
+      "tags": ["replay", "comédie", "policier", "séries"],
+      "france": true
+    },
+    "Séries TV::ARTE Séries": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "de", "en", "es", "pl", "it", "ro"],
+      "tags": ["mini-séries", "thriller", "européen", "fiction"],
+      "france": true
+    },
+    "Séries TV::Pluto TV Séries": {
+      "access": "ad_supported",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr"],
+      "tags": ["direct", "FAST", "chaînes thématiques", "séries"],
+      "france": true
+    },
+    "Musique::YouTube Music": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["clips", "lives", "remixes", "playlists"],
+      "france": true
+    },
+    "Musique::SoundCloud": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en"],
+      "tags": ["DJ sets", "électro", "remixes", "artistes émergents"],
+      "france": true
+    },
+    "Musique::Bandcamp": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["en"],
+      "tags": ["indépendant", "albums", "labels", "wishlist"],
+      "france": true
+    },
+    "Musique::Jamendo": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "es", "de", "it", "pl", "pt"],
+      "tags": ["indépendant", "playlists", "découverte", "téléchargement"],
+      "france": true
+    },
+    "Musique::FIP / Radio France": {
+      "access": "public_service",
+      "account": "none",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["radio", "jazz", "rock", "électro", "webradio"],
+      "france": true
+    },
+    "Podcasts::Radio France": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["actualité", "histoire", "sciences", "culture"],
+      "france": true
+    },
+    "Podcasts::Apple Podcasts": {
+      "access": "free",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["annuaire", "écoute web", "émissions", "file d’attente"],
+      "france": true
+    },
+    "Podcasts::Pocket Casts": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en"],
+      "tags": ["synchronisation", "filtres", "files de lecture"],
+      "france": true
+    },
+    "Podcasts::AntennaPod": {
+      "access": "open_source",
+      "account": "none",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["Android", "RSS", "libre", "vie privée"],
+      "france": true
+    },
+    "Podcasts::YouTube Podcasts": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["vidéo", "interviews", "technologie", "playlists"],
+      "france": true
+    },
+    "Livres::Project Gutenberg": {
+      "access": "public_domain",
+      "account": "none",
+      "ads": false,
+      "languages": ["en", "fr", "multi"],
+      "tags": ["ebooks", "classiques", "EPUB", "domaine public"],
+      "france": true
+    },
+    "Livres::Gallica": {
+      "access": "public_service",
+      "account": "none",
+      "ads": false,
+      "languages": ["fr", "multi"],
+      "tags": ["BNF", "patrimoine", "presse", "manuscrits"],
+      "france": true
+    },
+    "Livres::Wikisource FR": {
+      "access": "public_domain",
+      "account": "none",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["textes libres", "auteurs", "littérature", "lecture web"],
+      "france": true
+    },
+    "Livres::Standard Ebooks": {
+      "access": "public_domain",
+      "account": "none",
+      "ads": false,
+      "languages": ["en"],
+      "tags": ["EPUB", "classiques", "typographie", "liseuse"],
+      "france": true
+    },
+    "Livres::Google Livres – vue intégrale": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["livres anciens", "recherche", "vue intégrale", "bibliothèque"],
+      "france": true
+    },
+    "Jeux::Steam Free to Play": {
+      "access": "freemium",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["PC", "multijoueur", "simulation", "manette"],
+      "france": true
+    },
+    "Jeux::Epic Games Store": {
+      "access": "freemium",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["PC", "jeux offerts", "hebdomadaire", "free-to-play"],
+      "france": true
+    },
+    "Jeux::itch.io": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["en", "multi"],
+      "tags": ["indépendant", "courts", "expérimental", "rétro"],
+      "france": true
+    },
+    "Jeux::GOG Free Games": {
+      "access": "free",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["PC", "classiques", "sans DRM", "hors ligne"],
+      "france": true
+    },
+    "Jeux::Riot Games": {
+      "access": "freemium",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["VALORANT", "League of Legends", "compétitif", "multijoueur"],
+      "france": true
+    },
+    "Documentaires::ARTE Documentaires": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "de", "en", "es", "pl", "it", "ro"],
+      "tags": ["histoire", "sciences", "société", "géopolitique"],
+      "france": true
+    },
+    "Documentaires::France.tv Docs": {
+      "access": "public_service",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["France 5", "nature", "investigation", "patrimoine"],
+      "france": true
+    },
+    "Documentaires::TV5MONDE+ Docs": {
+      "access": "public_service",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "es", "de", "ro"],
+      "tags": ["francophone", "voyages", "international", "sous-titres"],
+      "france": true
+    },
+    "Documentaires::YouTube – chaînes officielles": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["ARTE", "DW", "PBS", "chaînes officielles"],
+      "france": true
+    },
+    "Documentaires::Plex Documentaires": {
+      "access": "ad_supported",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en"],
+      "tags": ["international", "watchlist", "documentaires gratuits"],
+      "france": true
+    },
+    "Apprentissage::Khan Academy": {
+      "access": "free",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["mathématiques", "sciences", "économie", "exercices"],
+      "france": true
+    },
+    "Apprentissage::FUN MOOC": {
+      "access": "freemium",
+      "account": "required",
+      "ads": false,
+      "languages": ["fr"],
+      "tags": ["université", "MOOC", "informatique", "sciences"],
+      "france": true
+    },
+    "Apprentissage::OpenClassrooms": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": false,
+      "languages": ["fr", "en"],
+      "tags": ["informatique", "IA", "réseaux", "cybersécurité"],
+      "france": true
+    },
+    "Apprentissage::MIT OpenCourseWare": {
+      "access": "free",
+      "account": "none",
+      "ads": false,
+      "languages": ["en"],
+      "tags": ["université", "technique", "cours complets", "MIT"],
+      "france": true
+    },
+    "Apprentissage::YouTube éducatif": {
+      "access": "freemium",
+      "account": "optional",
+      "ads": true,
+      "languages": ["fr", "en", "multi"],
+      "tags": ["tutoriels", "informatique", "IA", "cybersécurité"],
+      "france": true
+    }
+  }
+}
