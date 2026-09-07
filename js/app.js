@@ -566,6 +566,20 @@
     statusBadge.textContent = archived ? "Archivé" : availability.statusLabels[status];
     meta.append(type, statusBadge);
 
+    card.append(meta);
+
+    if (item.imageUrl) {
+      const cover = document.createElement("img");
+      cover.className = "availability-cover";
+      cover.src = item.imageUrl;
+      cover.alt = "";
+      cover.loading = "lazy";
+      cover.decoding = "async";
+      cover.referrerPolicy = "no-referrer";
+      cover.addEventListener("error", () => cover.remove(), { once: true });
+      card.append(cover);
+    }
+
     const title = document.createElement("h3");
     title.textContent = item.title;
 
@@ -573,13 +587,20 @@
     platform.className = "availability-platform";
     platform.textContent = item.platform;
 
+    card.append(title, platform);
+
     if (item.description) {
       const description = document.createElement("p");
       description.className = "availability-description";
       description.textContent = item.description;
-      card.append(meta, title, platform, description);
-    } else {
-      card.append(meta, title, platform);
+      card.append(description);
+    }
+
+    if (item.originalPrice) {
+      const price = document.createElement("p");
+      price.className = "availability-price";
+      price.textContent = `Prix habituel : ${item.originalPrice} · Gratuit pendant l’offre`;
+      card.append(price);
     }
 
     const timing = document.createElement("p");
@@ -601,7 +622,9 @@
       link.href = item.url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.textContent = "Ouvrir ↗";
+      link.textContent = item.provider === "epic-games-store"
+        ? "Récupérer sur Epic ↗"
+        : "Ouvrir ↗";
       actions.append(link);
     }
 

@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.4** gère les disponibilités datées et leur cycle de vie :
+La version **v0.5** automatise les jeux temporairement gratuits de l’Epic Games Store :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -25,6 +25,11 @@ La version **v0.4** gère les disponibilités datées et leur cycle de vie :
 - filtres par échéance, type, titre et plateforme ;
 - accès à la source officielle utilisée pour chaque date ;
 - archivage quotidien des contenus expirés à 05 h 40 UTC ;
+- import automatique des promotions Epic Games actives pour la France ;
+- exclusion des jeux gratuits en permanence, remises payantes et extensions ;
+- actualisation toutes les six heures et au premier déploiement de la v0.5 ;
+- images officielles, prix habituel et lien direct vers chaque jeu offert ;
+- masquage de sécurité lorsqu’une offre disparaît du flux officiel avant sa date de fin ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -59,13 +64,17 @@ entertainment-dashboard/
 ├── scripts/
 │   ├── check-links.mjs
 │   ├── archive-expired.mjs
+│   ├── epic-games.mjs
+│   ├── fetch-epic-games.mjs
 │   ├── test-availability.mjs
 │   ├── test-catalog.mjs
+│   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
 │   └── validate.mjs
 ├── .github/workflows/
 │   ├── archive-expired.yml
 │   ├── check-links.yml
+│   ├── fetch-epic-games.yml
 │   └── deploy.yml
 ├── CNAME
 ├── LICENSE
@@ -89,6 +98,7 @@ node scripts/validate.mjs
 node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
+node scripts/test-epic-games.mjs
 node --check js/app.js
 node --check js/availability.js
 node --check js/catalog.js
@@ -96,6 +106,8 @@ node --check js/favorites.js
 node --check js/preferences.js
 node --check js/personalization.js
 node --check js/recommendations.js
+node --check scripts/epic-games.mjs
+node --check scripts/fetch-epic-games.mjs
 ```
 
 ## Données
@@ -132,6 +144,22 @@ entrées expirées sans perdre leur source ni leur historique de vérification :
 
 Une entrée non vérifiée ne doit jamais être mise en avant comme nouveauté.
 
+### Epic Games Store
+
+`scripts/fetch-epic-games.mjs` interroge le catalogue officiel Epic Games avec la locale
+`fr-FR` et le pays `FR`. L’import conserve uniquement les jeux dont le prix habituel est
+supérieur à zéro, dont le prix promotionnel est nul et dont la promotion est active.
+
+Chaque entrée Epic Games ajoute au schéma commun :
+
+- `provider: "epic-games-store"` et l’identifiant de l’offre source ;
+- le début et la fin exacts de la promotion ;
+- le prix habituel affiché par Epic Games ;
+- une image officielle et le lien vers la fiche française du jeu.
+
+L’import refuse de remplacer le catalogue si le flux est invalide ou si aucun jeu temporairement
+gratuit n’est confirmé. Les entrées non Epic Games sont toujours préservées.
+
 ## Déploiement
 
 Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt utilise **GitHub Actions** comme source de publication Pages.
@@ -146,13 +174,18 @@ Le workflow `archive-expired.yml` s’exécute chaque jour à 05 h 40 UTC. Il d�
 la date de fin est dépassée vers `data/archive.json`, valide les données, puis publie la mise à jour
 uniquement si un changement est nécessaire.
 
+Le workflow `fetch-epic-games.yml` s’exécute toutes les six heures. Il récupère les promotions
+Epic Games pour la France, actualise le catalogue, archive les offres terminées et ne crée un commit
+que lorsque les données ont réellement changé. Les deux tâches de maintenance partagent la même
+file d’exécution afin d’éviter les mises à jour concurrentes.
+
 ## Feuille de route
 
 - **v0.1** — structure initiale et mise en production ;
 - **v0.2** — catalogue enrichi, recherche, filtres, mobile et surveillance des liens ;
 - **v0.3** — favoris, profil local et recommandations personnalisées ;
 - **v0.4** — dates d’expiration, alertes et archivage automatique ;
-- **v0.5** — automatisation des jeux Epic Games ;
+- **v0.5** — automatisation des jeux Epic Games, contrôle des offres et images officielles ;
 - **v0.6** — automatisation des sélections ARTE ;
 - **v0.7** — autres sources officielles automatisées ;
 - **v0.8** — PWA installable ;
@@ -167,6 +200,8 @@ uniquement si un changement est nécessaire.
 - Calcul des recommandations effectué dans le navigateur, avec raisons affichées.
 - Aucun contenu daté n’est affiché sans vérification et source officielle.
 - Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.
+- L’import Epic Games utilise uniquement des données officielles destinées à la France.
+- Une réponse vide ou invalide ne peut pas effacer les données déjà publiées.
 - Liens limités aux plateformes officielles sélectionnées.
 
 ## Méthode de contribution

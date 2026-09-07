@@ -1047,6 +1047,16 @@ tbody tr:last-child td {
   opacity: 0.78;
 }
 
+.availability-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel-soft);
+  object-fit: cover;
+}
+
 .availability-card-meta,
 .availability-actions {
   display: flex;
@@ -1100,6 +1110,13 @@ tbody tr:last-child td {
 
 .availability-description {
   font-size: 0.9rem;
+}
+
+.availability-price {
+  margin: 0.2rem 0 0;
+  color: var(--good);
+  font-size: 0.8rem;
+  font-weight: 750;
 }
 
 .availability-timing {

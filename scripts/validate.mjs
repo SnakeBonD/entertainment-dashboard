@@ -40,7 +40,11 @@ const requiredFiles = [
   "data/archive.json",
   "scripts/archive-expired.mjs",
   "scripts/test-availability.mjs",
+  "scripts/epic-games.mjs",
+  "scripts/fetch-epic-games.mjs",
+  "scripts/test-epic-games.mjs",
   ".github/workflows/archive-expired.yml",
+  ".github/workflows/fetch-epic-games.yml",
   "CNAME",
 ];
 
@@ -76,7 +80,7 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.4"), "index.html : version v0.4 absente");
+assert(indexHtml.includes("v0.5"), "index.html : version v0.5 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 
@@ -187,11 +191,52 @@ function validateContentItem(item, source, archived = false) {
     }
   });
 
+  if (item?.provider === "epic-games-store") {
+    assert(/^epic-.+-\d{4}-\d{2}-\d{2}$/.test(item.id), `${label} possède un identifiant Epic invalide`);
+    assert(item.type === "game", `${label} doit être un jeu`);
+    assert(item.platform === "Epic Games Store", `${label} possède une plateforme Epic invalide`);
+    assert(typeof item.externalId === "string" && item.externalId.length > 0, `${label} n’a pas d’identifiant source`);
+    assert(validDate(item.promotionStartDate), `${label} possède une date de début invalide`);
+    assert(validDate(item.expiryDate), `${label} doit posséder une date de fin`);
+    assert(
+      Date.parse(item.expiryDate) > Date.parse(item.promotionStartDate),
+      `${label} possède une période promotionnelle invalide`,
+    );
+    assert(typeof item.originalPrice === "string" && item.originalPrice.length > 0, `${label} n’a pas de prix habituel`);
+    try {
+      const image = new URL(item.imageUrl);
+      assert(image.protocol === "https:", `${label} : imageUrl doit utiliser HTTPS`);
+    } catch {
+      failures.push(`${label} : imageUrl est invalide`);
+    }
+    try {
+      const product = new URL(item.url);
+      const officialSource = new URL(item.sourceUrl);
+      assert(product.hostname === "store.epicgames.com", `${label} : URL produit non officielle`);
+      assert(officialSource.hostname === "store.epicgames.com", `${label} : source non officielle`);
+    } catch {
+      failures.push(`${label} : domaine Epic Games invalide`);
+    }
+    if (item.verified === false) {
+      assert(
+        item.verificationNote === "not_in_current_feed",
+        `${label} : une offre masquée doit préciser sa raison`,
+      );
+    }
+  }
+
   if (archived) {
     assert(validDate(item?.archivedAt), `${label} possède une date d’archivage invalide`);
     assert(item?.archiveReason === "expired", `${label} possède une raison d’archivage invalide`);
   }
 }
+
+const epicWorkflow = fs.readFileSync(
+  path.join(projectRoot, ".github/workflows/fetch-epic-games.yml"),
+  "utf8",
+);
+assert(epicWorkflow.includes('cron: "23 */6 * * *"'), "Le rythme de synchronisation Epic Games est absent");
+assert(epicWorkflow.includes("scripts/fetch-epic-games.mjs"), "Le workflow Epic Games n’exécute pas l’import");
 
 if (catalogue && archive) {
   assert(catalogue.version === 4, "catalogue.json : version 4 attendue");
@@ -217,4 +262,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, disponibilités, archives et structure conformes.");
+console.log("Validation réussie : 40 plateformes, catalogue v0.5, automatisations et structure conformes.");
