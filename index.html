@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/favorites.js" defer></script>
     <script src="js/catalog.js" defer></script>
+    <script src="js/preferences.js" defer></script>
+    <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
@@ -33,7 +35,7 @@
           <span class="status-dot" aria-hidden="true"></span>
           France · gratuit et légal
         </div>
-        <span class="version-badge" aria-label="Version 0.2">v0.2</span>
+        <span class="version-badge" aria-label="Version 0.3">v0.3</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -50,6 +52,7 @@
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil">Accueil</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
+      <button class="nav-button nav-button-personal" type="button" data-tab="pour-moi">Pour moi</button>
       <button class="nav-button" type="button" data-tab="musique">Musique</button>
       <button class="nav-button" type="button" data-tab="youtube">YouTube</button>
       <button class="nav-button" type="button" data-tab="weekend">Week-end</button>
@@ -104,6 +107,13 @@
             <span>
               <strong>Explorer les plateformes</strong>
               <small>Films, séries, livres, jeux et documentaires</small>
+            </span>
+          </button>
+          <button class="feature-card feature-card-personal" type="button" data-open-tab="pour-moi">
+            <span class="feature-icon" aria-hidden="true">✦</span>
+            <span>
+              <strong>Ma sélection</strong>
+              <small>Des recommandations adaptées à tes préférences</small>
             </span>
           </button>
           <button class="feature-card" type="button" data-open-tab="musique">
@@ -221,6 +231,88 @@
         <div id="platform-container"></div>
       </section>
 
+      <section id="pour-moi" class="page" aria-labelledby="personal-title">
+        <div class="section-heading section-heading-row personal-heading">
+          <div>
+            <p class="eyebrow">PERSONNALISATION LOCALE</p>
+            <h1 id="personal-title">Une sélection qui te ressemble</h1>
+            <p>
+              Choisis tes univers et tes priorités. Les recommandations restent entièrement
+              calculées sur cet appareil.
+            </p>
+          </div>
+          <span class="profile-summary" id="profile-summary">Profil à configurer</span>
+        </div>
+
+        <div class="personal-layout">
+          <form id="preferences-form" class="preferences-card">
+            <div class="preferences-card-heading">
+              <div>
+                <span class="card-label">TON PROFIL</span>
+                <h2>Mes préférences</h2>
+              </div>
+              <span aria-hidden="true">◎</span>
+            </div>
+
+            <fieldset>
+              <legend>Univers préférés</legend>
+              <div id="preference-categories" class="preference-options"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Priorités</legend>
+              <div class="priority-options">
+                <label class="preference-toggle">
+                  <input type="checkbox" name="french">
+                  <span><strong>Disponible en français</strong><small>Prioriser les sources en français</small></span>
+                </label>
+                <label class="preference-toggle">
+                  <input type="checkbox" name="noAds">
+                  <span><strong>Sans publicité</strong><small>Éviter les plateformes avec publicité</small></span>
+                </label>
+                <label class="preference-toggle">
+                  <input type="checkbox" name="noAccount">
+                  <span><strong>Sans compte obligatoire</strong><small>Favoriser l’accès immédiat</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="preference-actions">
+              <button class="primary-button" type="submit">Enregistrer mon profil</button>
+              <button class="reset-button" id="reset-preferences" type="button">Effacer</button>
+            </div>
+            <p id="preference-status" class="preference-status" aria-live="polite"></p>
+          </form>
+
+          <div class="personal-results">
+            <div class="personal-results-heading">
+              <div>
+                <span class="card-label">SÉLECTION POUR TOI</span>
+                <h2>Les meilleures correspondances</h2>
+              </div>
+              <button class="secondary-button compact-button" type="button" data-open-tab="chooser">
+                Affiner pour ce soir
+              </button>
+            </div>
+            <p id="personal-recommendation-intro" class="personal-intro"></p>
+            <div id="personal-recommendations" class="personalized-grid"></div>
+          </div>
+        </div>
+
+        <div class="favorite-section">
+          <div class="section-heading section-heading-row">
+            <div>
+              <p class="eyebrow">MA COLLECTION</p>
+              <h2>Mes favoris</h2>
+            </div>
+            <button class="secondary-button compact-button" type="button" data-open-tab="plateformes">
+              Ajouter des favoris
+            </button>
+          </div>
+          <div id="personal-favorites" class="platform-grid"></div>
+        </div>
+      </section>
+
       <section id="musique" class="page" aria-labelledby="music-title">
         <div class="section-heading">
           <p class="eyebrow">STATION PERSONNELLE</p>
@@ -287,7 +379,7 @@
         <div class="section-heading chooser-heading">
           <p class="eyebrow">MODE DÉCOUVERTE</p>
           <h1 id="chooser-title">Que regarder ce soir ?</h1>
-          <p>Quelques critères, puis cinq pistes parmi les sources du dashboard.</p>
+          <p>Quelques critères, puis cinq pistes reliées aux plateformes les plus adaptées.</p>
         </div>
 
         <form id="chooser-form" class="chooser-layout">
@@ -328,10 +420,10 @@
           </div>
           <div class="chooser-copy">
             <span class="large-glyph" aria-hidden="true">?</span>
-            <h2>Un choix simple, pas un nouvel algorithme.</h2>
+            <h2>Un choix simple et transparent.</h2>
             <p>
-              L’humeur détermine les propositions. Le temps, l’énergie et la compagnie indiquent
-              laquelle lancer en premier. Tout reste dans ton navigateur.
+              L’humeur détermine les propositions. Le temps, l’énergie, la compagnie, tes favoris
+              et tes préférences indiquent laquelle lancer en premier. Tout reste dans ton navigateur.
             </p>
           </div>
         </form>
@@ -350,7 +442,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v0.2 · Sans tracker · aucune donnée personnelle envoyée</span>
+      <span>v0.3 · Sans tracker · préférences conservées sur cet appareil</span>
     </footer>
   </body>
 </html>

@@ -28,6 +28,8 @@ const requiredFiles = [
   "js/app.js",
   "js/catalog.js",
   "js/favorites.js",
+  "js/preferences.js",
+  "js/personalization.js",
   "js/recommendations.js",
   "data/platform-metadata.json",
   "data/platforms.json",
@@ -55,9 +57,17 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "sort-filter",
   "reset-filters",
   "platform-container",
+  "preferences-form",
+  "preference-categories",
+  "personal-recommendations",
+  "personal-favorites",
+  "reset-preferences",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
+
+assert(indexHtml.includes("v0.3"), "index.html : version v0.3 absente");
+assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 
 const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data)\/[^"?#]+)"/g)]
   .map((match) => match[1]);
