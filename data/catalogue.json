@@ -1,26 +1,7 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-07T19:27:42.858Z",
+  "lastUpdated": "2026-09-07T19:33:24.854Z",
   "items": [
-    {
-      "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
-      "title": "Alone With You",
-      "type": "game",
-      "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/alone-with-you-028a15",
-      "country": "FR",
-      "addedDate": "2026-09-03",
-      "promotionStartDate": "2026-09-03T15:00:00.000Z",
-      "expiryDate": "2026-09-10T15:00:00.000Z",
-      "verified": true,
-      "verifiedAt": "2026-09-07T13:31:49.430Z",
-      "sourceUrl": "https://store.epicgames.com/fr/free-games",
-      "provider": "epic-games-store",
-      "externalId": "b8cc76ce7d6645f0a282b843a072cc78",
-      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/04b7a1d78c904065b5c24f9e7816c99a/alone-with-you-cllc3.png",
-      "originalPrice": "8,99 €"
-    },
     {
       "id": "arte-117646-000-A-2026-09-02",
       "title": "Bon voyage",
@@ -160,6 +141,25 @@
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/rQbu8sLGRAdgNCUbxXjtJR/768x432?type=TEXT",
       "durationLabel": "83 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
+      "title": "Alone With You",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/alone-with-you-028a15",
+      "country": "FR",
+      "addedDate": "2026-09-03",
+      "promotionStartDate": "2026-09-03T15:00:00.000Z",
+      "expiryDate": "2026-09-10T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-09-07T13:31:49.430Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "b8cc76ce7d6645f0a282b843a072cc78",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/04b7a1d78c904065b5c24f9e7816c99a/alone-with-you-cllc3.png",
+      "originalPrice": "8,99 €"
     }
   ]
 }
