@@ -6,16 +6,21 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La branche `codex/initial-dashboard` contient la première structure maintenable issue du dashboard HTML local :
+La version **v0.2** consolide le catalogue et l’expérience mobile :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
-- recherche et filtres par catégorie ;
+- recherche tolérante aux accents ;
+- filtres par catégorie, accès, compte, publicité et langue ;
+- tris par sélection, nom ou date de vérification ;
+- fiches enrichies avec badges et date de contrôle ;
 - favoris conservés dans le navigateur ;
+- menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
 - module « Que regarder ce soir ? » ;
-- données séparées du code et prêtes pour les futures mises à jour automatiques.
+- métadonnées séparées du contenu principal ;
+- surveillance hebdomadaire automatique des liens officiels.
 
 Les anciens titres de films datés du 17 juillet 2026 ne sont pas présentés comme encore disponibles. Les futurs contenus du catalogue seront affichés seulement après vérification.
 
@@ -28,20 +33,22 @@ entertainment-dashboard/
 │   └── style.css
 ├── js/
 │   ├── app.js
+│   ├── catalog.js
 │   ├── favorites.js
 │   └── recommendations.js
 ├── data/
 │   ├── archive.json
 │   ├── catalogue.json
+│   ├── platform-metadata.json
 │   ├── platforms.json
 │   ├── recommendations.json
 │   └── schedule.json
-├── assets/
-│   ├── icons/
-│   └── images/
 ├── scripts/
+│   ├── check-links.mjs
+│   ├── test-catalog.mjs
 │   └── validate.mjs
 ├── .github/workflows/
+│   ├── check-links.yml
 │   └── deploy.yml
 ├── CNAME
 ├── LICENSE
@@ -62,7 +69,9 @@ Puis ouvrir <http://localhost:8080>.
 
 ```bash
 node scripts/validate.mjs
+node scripts/test-catalog.mjs
 node --check js/app.js
+node --check js/catalog.js
 node --check js/favorites.js
 node --check js/recommendations.js
 ```
@@ -70,6 +79,9 @@ node --check js/recommendations.js
 ## Données
 
 `data/platforms.json` contient le répertoire permanent des plateformes.
+
+`data/platform-metadata.json` contient les informations utilisées par les filtres : type d’accès,
+compte, publicité, langues, tags, disponibilité en France et date du dernier audit.
 
 `data/catalogue.json` accueillera les contenus vérifiés et leurs dates de disponibilité :
 
@@ -94,9 +106,25 @@ Une entrée non vérifiée ne doit jamais être mise en avant comme nouveauté.
 
 ## Déploiement
 
-Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt doit utiliser **GitHub Actions** comme source de publication Pages.
+Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt utilise **GitHub Actions** comme source de publication Pages.
 
-Le fichier `CNAME` réserve le domaine `entertainment.snakebond.net`. La valeur DNS définitive sera configurée uniquement après confirmation de l’adresse GitHub Pages du dépôt.
+Le fichier `CNAME` réserve le domaine `entertainment.snakebond.net`. Le domaine et son certificat HTTPS sont actifs.
+
+Le workflow `check-links.yml` contrôle les 40 liens chaque lundi à 06 h 15 UTC. Il publie un
+rapport dans le résumé GitHub Actions et conserve l’artefact pendant 30 jours. Une protection
+anti-robot (`401`, `403` ou `429`) est signalée sans être assimilée à un lien supprimé.
+
+## Feuille de route
+
+- **v0.1** — structure initiale et mise en production ;
+- **v0.2** — catalogue enrichi, recherche, filtres, mobile et surveillance des liens ;
+- **v0.3** — favoris et recommandations personnalisées ;
+- **v0.4** — dates d’expiration et archivage ;
+- **v0.5** — automatisation des jeux Epic Games ;
+- **v0.6** — automatisation des sélections ARTE ;
+- **v0.7** — autres sources officielles automatisées ;
+- **v0.8** — PWA installable ;
+- **v1.0** — version stable complète.
 
 ## Sécurité et confidentialité
 

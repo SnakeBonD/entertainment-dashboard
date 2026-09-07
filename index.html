@@ -12,6 +12,7 @@
     <title>SnakeBonD Entertainment</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/favorites.js" defer></script>
+    <script src="js/catalog.js" defer></script>
     <script src="js/recommendations.js" defer></script>
     <script src="js/app.js" defer></script>
   </head>
@@ -27,13 +28,26 @@
         </span>
       </a>
 
-      <div class="header-status" aria-label="Périmètre du catalogue">
-        <span class="status-dot" aria-hidden="true"></span>
-        France · gratuit et légal
+      <div class="header-actions">
+        <div class="header-status" aria-label="Périmètre du catalogue">
+          <span class="status-dot" aria-hidden="true"></span>
+          France · gratuit et légal
+        </div>
+        <span class="version-badge" aria-label="Version 0.2">v0.2</span>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-controls="main-nav"
+          aria-expanded="false"
+        >
+          <span class="menu-icon" aria-hidden="true">☰</span>
+          <span>Menu</span>
+        </button>
       </div>
     </header>
 
-    <nav class="main-nav" aria-label="Navigation principale">
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil">Accueil</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
       <button class="nav-button" type="button" data-tab="musique">Musique</button>
@@ -107,10 +121,10 @@
         </div>
 
         <aside class="info-banner">
-          <strong>Catalogue dynamique en préparation.</strong>
+          <strong>Catalogue contrôlé.</strong>
           <span>
-            Les contenus datés seront affichés seulement après vérification de leur disponibilité
-            en France.
+            Les liens officiels sont surveillés chaque semaine. Les contenus datés resteront
+            invisibles tant que leur disponibilité en France n’aura pas été confirmée.
           </span>
         </aside>
       </section>
@@ -138,6 +152,69 @@
             >
           </label>
           <div id="category-filters" class="filter-row" aria-label="Filtrer par catégorie"></div>
+
+          <details class="filter-details" id="advanced-filters" open>
+            <summary>
+              <span>Filtres avancés</span>
+              <span class="filter-summary-count" id="active-filter-count">Aucun actif</span>
+            </summary>
+            <div class="filter-controls">
+              <label class="control-field" for="access-filter">
+                <span>Type d’accès</span>
+                <select id="access-filter">
+                  <option value="all">Tous les accès</option>
+                  <option value="free">100 % gratuit</option>
+                  <option value="ad_supported">Gratuit avec publicité</option>
+                  <option value="freemium">Freemium</option>
+                  <option value="public_service">Service public</option>
+                  <option value="public_domain">Domaine public</option>
+                  <option value="open_source">Libre</option>
+                </select>
+              </label>
+
+              <label class="control-field" for="account-filter">
+                <span>Compte</span>
+                <select id="account-filter">
+                  <option value="all">Peu importe</option>
+                  <option value="none">Sans compte</option>
+                  <option value="optional">Compte facultatif</option>
+                  <option value="required">Compte obligatoire</option>
+                </select>
+              </label>
+
+              <label class="control-field" for="ads-filter">
+                <span>Publicité</span>
+                <select id="ads-filter">
+                  <option value="all">Peu importe</option>
+                  <option value="no">Sans publicité</option>
+                  <option value="yes">Avec publicité</option>
+                </select>
+              </label>
+
+              <label class="control-field" for="language-filter">
+                <span>Langue</span>
+                <select id="language-filter">
+                  <option value="all">Toutes les langues</option>
+                  <option value="fr">Français disponible</option>
+                  <option value="en">Anglais disponible</option>
+                  <option value="multi">Multilingue</option>
+                </select>
+              </label>
+
+              <label class="control-field" for="sort-filter">
+                <span>Trier par</span>
+                <select id="sort-filter">
+                  <option value="recommended">Sélection SnakeBonD</option>
+                  <option value="name">Nom A–Z</option>
+                  <option value="verified">Vérification récente</option>
+                </select>
+              </label>
+
+              <button class="reset-button" id="reset-filters" type="button">
+                Tout réinitialiser
+              </button>
+            </div>
+          </details>
         </div>
 
         <p id="platform-result-count" class="result-count" aria-live="polite"></p>
@@ -273,7 +350,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>Sans tracker · aucune donnée personnelle envoyée</span>
+      <span>v0.2 · Sans tracker · aucune donnée personnelle envoyée</span>
     </footer>
   </body>
 </html>

@@ -3,17 +3,17 @@
 
   const state = {
     platforms: {},
+    metadata: {},
     schedule: {},
     activeCategory: "Tous",
     favoritesOnly: false,
     search: "",
+    access: "all",
+    account: "all",
+    ads: "all",
+    language: "all",
+    sort: "recommended",
   };
-
-  const normalize = (value) =>
-    String(value)
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLocaleLowerCase("fr");
 
   async function fetchJson(path) {
     const response = await fetch(new URL(path, document.baseURI));
@@ -37,6 +37,10 @@
       else button.removeAttribute("aria-current");
     });
 
+    document.body.classList.remove("nav-open");
+    const menuToggle = document.getElementById("menu-toggle");
+    if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+
     if (updateHash && window.location.hash !== `#${tabId}`) {
       history.replaceState(null, "", `#${tabId}`);
     }
@@ -45,6 +49,13 @@
   }
 
   function setupNavigation() {
+    const menuToggle = document.getElementById("menu-toggle");
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = document.body.classList.toggle("nav-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
     document.querySelectorAll("[data-tab]").forEach((button) => {
       button.addEventListener("click", () => openTab(button.dataset.tab));
     });
@@ -55,6 +66,13 @@
     window.addEventListener("hashchange", () => {
       const tabId = window.location.hash.slice(1);
       if (tabId) openTab(tabId, false);
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !document.body.classList.contains("nav-open")) return;
+      document.body.classList.remove("nav-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.focus();
     });
 
     const initialTab = window.location.hash.slice(1);
@@ -96,19 +114,59 @@
     return button;
   }
 
-  function createPlatformCard(category, platform) {
+  function createBadge(text, variant = "") {
+    const badge = document.createElement("span");
+    badge.className = `meta-badge${variant ? ` meta-badge-${variant}` : ""}`;
+    badge.textContent = text;
+    return badge;
+  }
+
+  function createPlatformCard(category, platform, meta) {
     const card = document.createElement("article");
     card.className = "platform-card";
 
+    const heading = document.createElement("div");
+    heading.className = "platform-card-heading";
+
     const title = document.createElement("h3");
     title.textContent = platform.name;
+    heading.append(title, createFavoriteButton(category, platform));
+
+    const badges = document.createElement("div");
+    badges.className = "platform-meta";
+    badges.append(
+      createBadge(window.SnakeBonDCatalog.accessLabels[meta.access] ?? "Gratuit", meta.access),
+      createBadge(meta.ads ? "Avec pub" : "Sans pub", meta.ads ? "ads" : "no-ads"),
+      createBadge(window.SnakeBonDCatalog.accountLabels[meta.account] ?? "Compte inconnu"),
+    );
+
+    const languages = meta.languages ?? [];
+    const languageText = languages.length > 3
+      ? `${languages.slice(0, 2).map((code) => window.SnakeBonDCatalog.languageLabels[code] ?? code.toUpperCase()).join(" · ")} +${languages.length - 2}`
+      : languages.map((code) => window.SnakeBonDCatalog.languageLabels[code] ?? code.toUpperCase()).join(" · ");
+    badges.append(createBadge(languageText || "Langue non précisée", "language"));
 
     const description = document.createElement("p");
+    description.className = "platform-description";
     description.textContent = platform.best;
+
+    const descriptionLabel = document.createElement("span");
+    descriptionLabel.className = "card-label";
+    descriptionLabel.textContent = "Idéal pour";
+    description.prepend(descriptionLabel);
 
     const premium = document.createElement("p");
     premium.className = "premium-tip";
     premium.textContent = platform.premium;
+
+    const premiumLabel = document.createElement("span");
+    premiumLabel.className = "card-label";
+    premiumLabel.textContent = "Astuce premium";
+    premium.prepend(premiumLabel);
+
+    const verified = document.createElement("p");
+    verified.className = "verified-date";
+    verified.textContent = `Vérifié le ${window.SnakeBonDCatalog.formatVerifiedDate(meta.lastVerified)}`;
 
     const actions = document.createElement("div");
     actions.className = "card-actions";
@@ -120,23 +178,50 @@
     link.rel = "noopener noreferrer";
     link.textContent = "Ouvrir ↗";
 
-    actions.append(link, createFavoriteButton(category, platform));
-    card.append(title, description, premium, actions);
+    actions.append(link, verified);
+    card.append(heading, badges, description, premium, actions);
     return card;
   }
 
   function platformMatches(category, platform) {
-    if (state.activeCategory !== "Tous" && category !== state.activeCategory) return false;
-    if (
-      state.favoritesOnly &&
-      !window.SnakeBonDFavorites?.has(category, platform.name)
-    ) return false;
+    const meta = window.SnakeBonDCatalog.getMetadata(state.metadata, category, platform);
+    return window.SnakeBonDCatalog.matches({
+      category,
+      platform,
+      meta,
+      filters: {
+        category: state.activeCategory,
+        favoritesOnly: state.favoritesOnly,
+        search: state.search,
+        access: state.access,
+        account: state.account,
+        ads: state.ads,
+        language: state.language,
+      },
+      isFavorite: window.SnakeBonDFavorites?.has(category, platform.name) ?? false,
+    });
+  }
 
-    if (!state.search) return true;
-    const haystack = normalize(
-      `${category} ${platform.name} ${platform.best} ${platform.premium}`,
-    );
-    return haystack.includes(normalize(state.search));
+  function updateFilterState() {
+    const filters = {
+      category: state.activeCategory,
+      favoritesOnly: state.favoritesOnly,
+      search: state.search,
+      access: state.access,
+      account: state.account,
+      ads: state.ads,
+      language: state.language,
+      sort: state.sort,
+    };
+    const count = window.SnakeBonDCatalog.activeFilterCount(filters);
+    const countTarget = document.getElementById("active-filter-count");
+    const resetButton = document.getElementById("reset-filters");
+    if (countTarget) {
+      countTarget.textContent = count
+        ? `${count} filtre${count > 1 ? "s" : ""} actif${count > 1 ? "s" : ""}`
+        : "Aucun actif";
+    }
+    if (resetButton) resetButton.disabled = count === 0;
   }
 
   function renderPlatforms() {
@@ -146,8 +231,15 @@
     let visibleCount = 0;
 
     Object.entries(state.platforms).forEach(([category, platforms]) => {
-      const shown = platforms.filter((platform) => platformMatches(category, platform));
+      const shown = platforms
+        .filter((platform) => platformMatches(category, platform))
+        .map((platform) => ({
+          platform,
+          meta: window.SnakeBonDCatalog.getMetadata(state.metadata, category, platform),
+        }));
       if (!shown.length) return;
+
+      const sorted = window.SnakeBonDCatalog.sortPlatforms(shown, state.sort);
 
       visibleCount += shown.length;
       const block = document.createElement("section");
@@ -164,7 +256,7 @@
 
       const grid = document.createElement("div");
       grid.className = "platform-grid";
-      grid.append(...shown.map((platform) => createPlatformCard(category, platform)));
+      grid.append(...sorted.map(({ platform, meta }) => createPlatformCard(category, platform, meta)));
       block.append(heading, grid);
       blocks.push(block);
     });
@@ -182,6 +274,7 @@
 
     container.replaceChildren(...blocks);
     countTarget.textContent = `${visibleCount} plateforme${visibleCount > 1 ? "s" : ""} affichée${visibleCount > 1 ? "s" : ""}`;
+    updateFilterState();
   }
 
   function renderCategoryFilters() {
@@ -208,6 +301,19 @@
   function setupPlatformControls() {
     const search = document.getElementById("platform-search");
     const favoritesOnly = document.getElementById("favorites-only");
+    const resetButton = document.getElementById("reset-filters");
+    const advancedFilters = document.getElementById("advanced-filters");
+    const selectBindings = {
+      "access-filter": "access",
+      "account-filter": "account",
+      "ads-filter": "ads",
+      "language-filter": "language",
+      "sort-filter": "sort",
+    };
+
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      advancedFilters?.removeAttribute("open");
+    }
 
     search.addEventListener("input", (event) => {
       state.search = event.target.value.trim();
@@ -218,6 +324,34 @@
       state.favoritesOnly = !state.favoritesOnly;
       favoritesOnly.setAttribute("aria-pressed", String(state.favoritesOnly));
       favoritesOnly.textContent = state.favoritesOnly ? "Tous les contenus" : "Mes favoris";
+      renderPlatforms();
+    });
+
+    Object.entries(selectBindings).forEach(([id, stateKey]) => {
+      document.getElementById(id)?.addEventListener("change", (event) => {
+        state[stateKey] = event.target.value;
+        renderPlatforms();
+      });
+    });
+
+    resetButton?.addEventListener("click", () => {
+      state.activeCategory = "Tous";
+      state.favoritesOnly = false;
+      state.search = "";
+      state.access = "all";
+      state.account = "all";
+      state.ads = "all";
+      state.language = "all";
+      state.sort = "recommended";
+
+      search.value = "";
+      favoritesOnly.setAttribute("aria-pressed", "false");
+      favoritesOnly.textContent = "Mes favoris";
+      Object.entries(selectBindings).forEach(([id, stateKey]) => {
+        const select = document.getElementById(id);
+        if (select) select.value = state[stateKey];
+      });
+      renderCategoryFilters();
       renderPlatforms();
     });
 
@@ -322,13 +456,15 @@
     setupNavigation();
 
     try {
-      const [platforms, schedule, recommendations] = await Promise.all([
+      const [platforms, metadata, schedule, recommendations] = await Promise.all([
         fetchJson("data/platforms.json"),
+        fetchJson("data/platform-metadata.json"),
         fetchJson("data/schedule.json"),
         fetchJson("data/recommendations.json"),
       ]);
 
       state.platforms = platforms;
+      state.metadata = metadata;
       state.schedule = schedule;
 
       document.getElementById("platform-count").textContent = String(

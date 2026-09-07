@@ -14,7 +14,7 @@
     },
     {
       "name": "Pluto TV",
-      "url": "https://pluto.tv/fr/on-demand",
+      "url": "https://pluto.tv/fr/movies/",
       "best": "Films gratuits avec publicité et chaînes cinéma en continu.",
       "premium": "Ajouter les chaînes aux favoris et utiliser le direct quand on ne veut pas choisir."
     },
@@ -168,7 +168,7 @@
     },
     {
       "name": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/free-games",
+      "url": "https://store.epicgames.com/free-games?lang=fr",
       "best": "Jeux offerts régulièrement et free-to-play connus.",
       "premium": "Réclamer les offres même sans installation immédiate."
     },

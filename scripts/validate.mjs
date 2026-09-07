@@ -26,8 +26,10 @@ const requiredFiles = [
   "index.html",
   "css/style.css",
   "js/app.js",
+  "js/catalog.js",
   "js/favorites.js",
   "js/recommendations.js",
+  "data/platform-metadata.json",
   "data/platforms.json",
   "data/recommendations.json",
   "data/schedule.json",
@@ -39,7 +41,32 @@ requiredFiles.forEach((relativePath) => {
   assert(fs.existsSync(path.join(projectRoot, relativePath)), `${relativePath} est absent`);
 });
 
+const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
+[
+  "menu-toggle",
+  "main-nav",
+  "platform-search",
+  "category-filters",
+  "advanced-filters",
+  "access-filter",
+  "account-filter",
+  "ads-filter",
+  "language-filter",
+  "sort-filter",
+  "reset-filters",
+  "platform-container",
+].forEach((id) => {
+  assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
+});
+
+const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data)\/[^"?#]+)"/g)]
+  .map((match) => match[1]);
+localAssets.forEach((relativePath) => {
+  assert(fs.existsSync(path.join(projectRoot, relativePath)), `Ressource locale absente : ${relativePath}`);
+});
+
 const platforms = readJson("data/platforms.json");
+const platformMetadata = readJson("data/platform-metadata.json");
 const recommendations = readJson("data/recommendations.json");
 const schedule = readJson("data/schedule.json");
 const catalogue = readJson("data/catalogue.json");
@@ -60,6 +87,46 @@ if (platforms) {
     } catch {
       failures.push(`${platform.name ?? "Plateforme"} possède une URL invalide`);
     }
+  });
+}
+
+if (platforms && platformMetadata) {
+  const expectedKeys = Object.entries(platforms).flatMap(([category, items]) =>
+    items.map((platform) => `${category}::${platform.name}`),
+  );
+  const metadataEntries = Object.entries(platformMetadata.platforms ?? {});
+  const metadataKeys = metadataEntries.map(([key]) => key);
+  const accessValues = new Set([
+    "free",
+    "ad_supported",
+    "freemium",
+    "public_service",
+    "public_domain",
+    "open_source",
+  ]);
+  const accountValues = new Set(["none", "optional", "required"]);
+
+  assert(platformMetadata.version === 2, "platform-metadata.json : version 2 attendue");
+  assert(
+    /^\d{4}-\d{2}-\d{2}$/.test(platformMetadata.lastVerified ?? ""),
+    "platform-metadata.json : date globale de vérification invalide",
+  );
+  assert(metadataEntries.length === 40, `40 métadonnées attendues, ${metadataEntries.length} trouvées`);
+
+  expectedKeys.forEach((key) => {
+    assert(metadataKeys.includes(key), `Métadonnées absentes pour ${key}`);
+  });
+  metadataKeys.forEach((key) => {
+    assert(expectedKeys.includes(key), `Métadonnées orphelines pour ${key}`);
+  });
+
+  metadataEntries.forEach(([key, meta]) => {
+    assert(accessValues.has(meta.access), `${key} possède un type d’accès invalide`);
+    assert(accountValues.has(meta.account), `${key} possède une règle de compte invalide`);
+    assert(typeof meta.ads === "boolean", `${key} doit préciser la présence de publicité`);
+    assert(meta.france === true, `${key} doit être disponible en France`);
+    assert(Array.isArray(meta.languages) && meta.languages.length > 0, `${key} n’a pas de langue`);
+    assert(Array.isArray(meta.tags) && meta.tags.length > 0, `${key} n’a pas de tags de recherche`);
   });
 }
 
