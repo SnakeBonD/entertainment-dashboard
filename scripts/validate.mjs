@@ -26,6 +26,7 @@ const requiredFiles = [
   "index.html",
   "css/style.css",
   "js/app.js",
+  "js/availability.js",
   "js/catalog.js",
   "js/favorites.js",
   "js/preferences.js",
@@ -36,6 +37,10 @@ const requiredFiles = [
   "data/recommendations.json",
   "data/schedule.json",
   "data/catalogue.json",
+  "data/archive.json",
+  "scripts/archive-expired.mjs",
+  "scripts/test-availability.mjs",
+  ".github/workflows/archive-expired.yml",
   "CNAME",
 ];
 
@@ -62,12 +67,18 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "personal-recommendations",
   "personal-favorites",
   "reset-preferences",
+  "availability-search",
+  "availability-status-filter",
+  "availability-type-filter",
+  "availability-container",
+  "archive-container",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.3"), "index.html : version v0.3 absente");
+assert(indexHtml.includes("v0.4"), "index.html : version v0.4 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
+assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 
 const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data)\/[^"?#]+)"/g)]
   .map((match) => match[1]);
@@ -80,6 +91,7 @@ const platformMetadata = readJson("data/platform-metadata.json");
 const recommendations = readJson("data/recommendations.json");
 const schedule = readJson("data/schedule.json");
 const catalogue = readJson("data/catalogue.json");
+const archive = readJson("data/archive.json");
 
 if (platforms) {
   const entries = Object.entries(platforms);
@@ -150,10 +162,50 @@ if (schedule) {
   assert(schedule.learning?.length === 7, "Le programme d’apprentissage doit contenir 7 jours");
 }
 
-if (catalogue) {
-  ["movies", "tv", "games", "documentaries", "featured", "expiringSoon"].forEach((key) => {
-    assert(Array.isArray(catalogue[key]), `catalogue.json : ${key} doit être un tableau`);
+function validDate(value) {
+  return typeof value === "string" && !Number.isNaN(Date.parse(value));
+}
+
+function validateContentItem(item, source, archived = false) {
+  const label = `${source} : ${item?.id ?? "entrée sans identifiant"}`;
+  assert(typeof item?.id === "string" && item.id.length > 0, `${label} n’a pas d’identifiant`);
+  assert(typeof item?.title === "string" && item.title.length > 0, `${label} n’a pas de titre`);
+  assert(["movie", "tv", "game", "documentary"].includes(item?.type), `${label} possède un type invalide`);
+  assert(typeof item?.platform === "string" && item.platform.length > 0, `${label} n’a pas de plateforme`);
+  assert(item?.country === "FR", `${label} doit cibler la France`);
+  assert(typeof item?.verified === "boolean", `${label} doit préciser son état de vérification`);
+  assert(validDate(item?.verifiedAt), `${label} possède une date de vérification invalide`);
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(item?.addedDate ?? ""), `${label} possède une date d’ajout invalide`);
+  assert(item?.expiryDate === null || validDate(item?.expiryDate), `${label} possède une date d’expiration invalide`);
+
+  ["url", "sourceUrl"].forEach((field) => {
+    try {
+      const url = new URL(item?.[field]);
+      assert(url.protocol === "https:", `${label} : ${field} doit utiliser HTTPS`);
+    } catch {
+      failures.push(`${label} : ${field} est invalide`);
+    }
   });
+
+  if (archived) {
+    assert(validDate(item?.archivedAt), `${label} possède une date d’archivage invalide`);
+    assert(item?.archiveReason === "expired", `${label} possède une raison d’archivage invalide`);
+  }
+}
+
+if (catalogue && archive) {
+  assert(catalogue.version === 4, "catalogue.json : version 4 attendue");
+  assert(archive.version === 4, "archive.json : version 4 attendue");
+  assert(Array.isArray(catalogue.items), "catalogue.json : items doit être un tableau");
+  assert(Array.isArray(archive.items), "archive.json : items doit être un tableau");
+  assert(catalogue.lastUpdated === null || validDate(catalogue.lastUpdated), "catalogue.json : lastUpdated invalide");
+  assert(archive.lastUpdated === null || validDate(archive.lastUpdated), "archive.json : lastUpdated invalide");
+
+  (catalogue.items ?? []).forEach((item) => validateContentItem(item, "catalogue.json"));
+  (archive.items ?? []).forEach((item) => validateContentItem(item, "archive.json", true));
+
+  const ids = [...(catalogue.items ?? []), ...(archive.items ?? [])].map((item) => item.id);
+  assert(new Set(ids).size === ids.length, "Un identifiant de contenu est présent plusieurs fois");
 }
 
 const cname = fs.readFileSync(path.join(projectRoot, "CNAME"), "utf8").trim();
@@ -165,4 +217,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, données et structure conformes.");
+console.log("Validation réussie : 40 plateformes, disponibilités, archives et structure conformes.");

@@ -1,0 +1,40 @@
+name: Archive expired content
+
+on:
+  schedule:
+    - cron: "40 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-expired-content
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Archive expired entries
+        run: node scripts/archive-expired.mjs
+
+      - name: Validate updated data
+        run: |
+          node scripts/validate.mjs
+          node scripts/test-availability.mjs
+
+      - name: Publish archive update
+        run: |
+          if git diff --quiet -- data/catalogue.json data/archive.json; then
+            echo "No expired content to archive."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalogue.json data/archive.json
+          git commit -m "chore: archive expired entertainment content"
+          git push

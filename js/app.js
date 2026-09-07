@@ -14,6 +14,11 @@
     language: "all",
     sort: "recommended",
     preferences: null,
+    catalogue: { items: [] },
+    archive: { items: [] },
+    availabilitySearch: "",
+    availabilityStatus: "all",
+    availabilityType: "all",
   };
 
   async function fetchJson(path) {
@@ -545,6 +550,172 @@
     });
   }
 
+  function createAvailabilityCard(item, now, archived = false) {
+    const availability = window.SnakeBonDAvailability;
+    const status = archived ? "expired" : availability.getStatus(item, now);
+    const card = document.createElement("article");
+    card.className = `availability-card availability-card-${status}`;
+
+    const meta = document.createElement("div");
+    meta.className = "availability-card-meta";
+    const type = document.createElement("span");
+    type.className = "availability-type";
+    type.textContent = availability.typeLabels[item.type] ?? item.type;
+    const statusBadge = document.createElement("span");
+    statusBadge.className = `availability-status availability-status-${status}`;
+    statusBadge.textContent = archived ? "Archivé" : availability.statusLabels[status];
+    meta.append(type, statusBadge);
+
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+
+    const platform = document.createElement("p");
+    platform.className = "availability-platform";
+    platform.textContent = item.platform;
+
+    if (item.description) {
+      const description = document.createElement("p");
+      description.className = "availability-description";
+      description.textContent = item.description;
+      card.append(meta, title, platform, description);
+    } else {
+      card.append(meta, title, platform);
+    }
+
+    const timing = document.createElement("p");
+    timing.className = "availability-timing";
+    timing.textContent = archived
+      ? `Archivé le ${availability.formatDate(item.archivedAt)}`
+      : availability.formatExpiry(item, now);
+
+    const verification = document.createElement("p");
+    verification.className = "availability-verification";
+    verification.textContent = `Vérifié le ${availability.formatDate(item.verifiedAt)}`;
+
+    const actions = document.createElement("div");
+    actions.className = "availability-actions";
+
+    if (!archived) {
+      const link = document.createElement("a");
+      link.className = "external-link";
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Ouvrir ↗";
+      actions.append(link);
+    }
+
+    if (item.sourceUrl) {
+      const source = document.createElement("a");
+      source.className = "source-link";
+      source.href = item.sourceUrl;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = "Source officielle ↗";
+      actions.append(source);
+    }
+
+    card.append(timing, verification, actions);
+    return card;
+  }
+
+  function createAvailabilityEmpty(filtered) {
+    const empty = document.createElement("div");
+    empty.className = "availability-empty";
+    const title = document.createElement("h2");
+    title.textContent = filtered ? "Aucun résultat" : "Aucun contenu daté vérifié";
+    const text = document.createElement("p");
+    text.textContent = filtered
+      ? "Modifie les filtres pour afficher d’autres disponibilités."
+      : "Le catalogue permanent reste accessible. Les premiers contenus apparaîtront ici dès que leurs dates auront été confirmées.";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary-button compact-button";
+    button.textContent = filtered ? "Réinitialiser les filtres" : "Explorer les plateformes";
+    button.addEventListener("click", () => {
+      if (filtered) {
+        state.availabilitySearch = "";
+        state.availabilityStatus = "all";
+        state.availabilityType = "all";
+        document.getElementById("availability-search").value = "";
+        document.getElementById("availability-status-filter").value = "all";
+        document.getElementById("availability-type-filter").value = "all";
+        renderAvailability();
+      } else {
+        openTab("plateformes");
+      }
+    });
+    empty.append(title, text, button);
+    return empty;
+  }
+
+  function renderAvailability() {
+    const availability = window.SnakeBonDAvailability;
+    const now = new Date();
+    const verified = availability.verifiedItems(state.catalogue);
+    const summary = availability.summarize(verified, now);
+    const filtered = availability.sortByExpiry(
+      availability.filterItems(verified, {
+        search: state.availabilitySearch,
+        status: state.availabilityStatus,
+        type: state.availabilityType,
+      }, now),
+    );
+    const archiveItems = availability.sortByExpiry(state.archive.items ?? []);
+    const hasFilters = Boolean(state.availabilitySearch)
+      || state.availabilityStatus !== "all"
+      || state.availabilityType !== "all";
+
+    document.getElementById("expiring-count").textContent = String(summary.expiring);
+    document.getElementById("availability-active-count").textContent = String(
+      summary.active + summary.expiring + summary.permanent,
+    );
+    document.getElementById("availability-soon-count").textContent = String(summary.expiring);
+    document.getElementById("availability-archive-count").textContent = String(archiveItems.length);
+    document.getElementById("archive-summary-count").textContent =
+      `${archiveItems.length} contenu${archiveItems.length > 1 ? "s" : ""}`;
+    document.getElementById("availability-last-updated").textContent = state.catalogue.lastUpdated
+      ? `Mis à jour le ${availability.formatDate(state.catalogue.lastUpdated)}`
+      : "En attente du premier contenu vérifié";
+    document.getElementById("availability-result-count").textContent =
+      `${filtered.length} contenu${filtered.length > 1 ? "s" : ""} affiché${filtered.length > 1 ? "s" : ""}`;
+
+    const container = document.getElementById("availability-container");
+    container.replaceChildren(
+      ...(filtered.length
+        ? filtered.map((item) => createAvailabilityCard(item, now))
+        : [createAvailabilityEmpty(hasFilters)]),
+    );
+
+    const archiveContainer = document.getElementById("archive-container");
+    archiveContainer.replaceChildren(
+      ...(archiveItems.length
+        ? archiveItems.map((item) => createAvailabilityCard(item, now, true))
+        : [createAvailabilityEmpty(false)]),
+    );
+  }
+
+  function setupAvailabilityControls() {
+    const search = document.getElementById("availability-search");
+    const status = document.getElementById("availability-status-filter");
+    const type = document.getElementById("availability-type-filter");
+
+    search.addEventListener("input", (event) => {
+      state.availabilitySearch = event.target.value.trim();
+      renderAvailability();
+    });
+    status.addEventListener("change", (event) => {
+      state.availabilityStatus = event.target.value;
+      renderAvailability();
+    });
+    type.addEventListener("change", (event) => {
+      state.availabilityType = event.target.value;
+      renderAvailability();
+    });
+
+    renderAvailability();
+  }
+
   function renderMusic() {
     const container = document.getElementById("music-schedule");
     const sourceContainer = document.getElementById("music-sources");
@@ -643,17 +814,21 @@
     setupNavigation();
 
     try {
-      const [platforms, metadata, schedule, recommendations] = await Promise.all([
+      const [platforms, metadata, schedule, recommendations, catalogue, archive] = await Promise.all([
         fetchJson("data/platforms.json"),
         fetchJson("data/platform-metadata.json"),
         fetchJson("data/schedule.json"),
         fetchJson("data/recommendations.json"),
+        fetchJson("data/catalogue.json"),
+        fetchJson("data/archive.json"),
       ]);
 
       state.platforms = platforms;
       state.metadata = metadata;
       state.schedule = schedule;
       state.preferences = window.SnakeBonDPreferences.read(Object.keys(platforms));
+      state.catalogue = catalogue;
+      state.archive = archive;
 
       document.getElementById("platform-count").textContent = String(
         Object.values(platforms).flat().length,
@@ -663,6 +838,7 @@
       renderPlatforms();
       renderSchedules();
       setupPlatformControls();
+      setupAvailabilityControls();
       setupPreferences();
       window.SnakeBonDRecommendations?.init(recommendations, {
         platforms,
