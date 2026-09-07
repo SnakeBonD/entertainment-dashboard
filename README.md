@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.5** automatise les jeux temporairement gratuits de l’Epic Games Store :
+La version **v0.6** automatise les sélections populaires d’ARTE et les jeux temporairement gratuits de l’Epic Games Store :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -30,6 +30,11 @@ La version **v0.5** automatise les jeux temporairement gratuits de l’Epic Game
 - actualisation toutes les six heures et au premier déploiement de la v0.5 ;
 - images officielles, prix habituel et lien direct vers chaque jeu offert ;
 - masquage de sécurité lorsqu’une offre disparaît du flux officiel avant sa date de fin ;
+- import automatique des programmes de la sélection officielle « Les vidéos les plus vues sur ARTE » ;
+- conservation des films, séries et documentaires réellement lisibles en France avec leur date de fin ;
+- actualisation ARTE deux fois par jour, avec images, durées et liens officiels ;
+- exclusion des collections sans date, contenus futurs, indisponibles ou géobloqués en France ;
+- masquage de sécurité lorsqu’un programme quitte la sélection ARTE avant son expiration ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -64,9 +69,12 @@ entertainment-dashboard/
 ├── scripts/
 │   ├── check-links.mjs
 │   ├── archive-expired.mjs
+│   ├── arte.mjs
 │   ├── epic-games.mjs
+│   ├── fetch-arte.mjs
 │   ├── fetch-epic-games.mjs
 │   ├── test-availability.mjs
+│   ├── test-arte.mjs
 │   ├── test-catalog.mjs
 │   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
@@ -74,6 +82,7 @@ entertainment-dashboard/
 ├── .github/workflows/
 │   ├── archive-expired.yml
 │   ├── check-links.yml
+│   ├── fetch-arte.yml
 │   ├── fetch-epic-games.yml
 │   └── deploy.yml
 ├── CNAME
@@ -99,6 +108,7 @@ node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
 node scripts/test-epic-games.mjs
+node scripts/test-arte.mjs
 node --check js/app.js
 node --check js/availability.js
 node --check js/catalog.js
@@ -108,6 +118,8 @@ node --check js/personalization.js
 node --check js/recommendations.js
 node --check scripts/epic-games.mjs
 node --check scripts/fetch-epic-games.mjs
+node --check scripts/arte.mjs
+node --check scripts/fetch-arte.mjs
 ```
 
 ## Données
@@ -160,6 +172,20 @@ Chaque entrée Epic Games ajoute au schéma commun :
 L’import refuse de remplacer le catalogue si le flux est invalide ou si aucun jeu temporairement
 gratuit n’est confirmé. Les entrées non Epic Games sont toujours préservées.
 
+### ARTE
+
+`scripts/fetch-arte.mjs` consulte la page d’accueil officielle de l’API ARTE en français, y repère
+la zone éditoriale « Les vidéos les plus vues », puis charge son contenu sans dépendre d’un
+identifiant de zone figé.
+
+Seuls les films, séries, émissions et documentaires dont la lecture est active et confirmée pour
+la France sont conservés. Chaque entrée contient la période exacte de disponibilité, le visuel,
+la durée, le lien vers le programme et la page officielle de la sélection.
+
+Les collections sans date, les programmes à venir, les vidéos non lisibles, les liens non officiels
+et les contenus exclus de France sont ignorés. Une réponse vide ou invalide interrompt la tâche sans
+modifier les données déjà publiées.
+
 ## Déploiement
 
 Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt utilise **GitHub Actions** comme source de publication Pages.
@@ -176,8 +202,12 @@ uniquement si un changement est nécessaire.
 
 Le workflow `fetch-epic-games.yml` s’exécute toutes les six heures. Il récupère les promotions
 Epic Games pour la France, actualise le catalogue, archive les offres terminées et ne crée un commit
-que lorsque les données ont réellement changé. Les deux tâches de maintenance partagent la même
+que lorsque les données ont réellement changé. Toutes les tâches de maintenance partagent la même
 file d’exécution afin d’éviter les mises à jour concurrentes.
+
+Le workflow `fetch-arte.yml` s’exécute toutes les douze heures. Il actualise la sélection ARTE pour
+la France, archive les programmes expirés et publie seulement les changements réels. Les imports
+ARTE, Epic Games et l’archivage utilisent la même file de maintenance.
 
 ## Feuille de route
 
@@ -186,7 +216,7 @@ file d’exécution afin d’éviter les mises à jour concurrentes.
 - **v0.3** — favoris, profil local et recommandations personnalisées ;
 - **v0.4** — dates d’expiration, alertes et archivage automatique ;
 - **v0.5** — automatisation des jeux Epic Games, contrôle des offres et images officielles ;
-- **v0.6** — automatisation des sélections ARTE ;
+- **v0.6** — automatisation des sélections ARTE, contrôle géographique et dates de disponibilité ;
 - **v0.7** — autres sources officielles automatisées ;
 - **v0.8** — PWA installable ;
 - **v1.0** — version stable complète.
@@ -201,6 +231,7 @@ file d’exécution afin d’éviter les mises à jour concurrentes.
 - Aucun contenu daté n’est affiché sans vérification et source officielle.
 - Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.
 - L’import Epic Games utilise uniquement des données officielles destinées à la France.
+- L’import ARTE accepte uniquement des programmes actifs, lisibles et autorisés en France.
 - Une réponse vide ou invalide ne peut pas effacer les données déjà publiées.
 - Liens limités aux plateformes officielles sélectionnées.
 

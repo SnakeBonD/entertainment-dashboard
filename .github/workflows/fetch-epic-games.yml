@@ -36,6 +36,7 @@ jobs:
           node scripts/validate.mjs
           node scripts/test-availability.mjs
           node scripts/test-epic-games.mjs
+          node scripts/test-arte.mjs
 
       - name: Publish catalogue update
         run: |
