@@ -585,7 +585,9 @@
 
     const platform = document.createElement("p");
     platform.className = "availability-platform";
-    platform.textContent = item.platform;
+    platform.textContent = item.durationLabel
+      ? `${item.platform} · ${item.durationLabel}`
+      : item.platform;
 
     card.append(title, platform);
 
@@ -624,7 +626,9 @@
       link.rel = "noopener noreferrer";
       link.textContent = item.provider === "epic-games-store"
         ? "Récupérer sur Epic ↗"
-        : "Ouvrir ↗";
+        : item.provider === "arte"
+          ? "Regarder sur ARTE ↗"
+          : "Ouvrir ↗";
       actions.append(link);
     }
 

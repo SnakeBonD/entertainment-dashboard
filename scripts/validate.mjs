@@ -43,8 +43,12 @@ const requiredFiles = [
   "scripts/epic-games.mjs",
   "scripts/fetch-epic-games.mjs",
   "scripts/test-epic-games.mjs",
+  "scripts/arte.mjs",
+  "scripts/fetch-arte.mjs",
+  "scripts/test-arte.mjs",
   ".github/workflows/archive-expired.yml",
   ".github/workflows/fetch-epic-games.yml",
+  ".github/workflows/fetch-arte.yml",
   "CNAME",
 ];
 
@@ -80,7 +84,7 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.5"), "index.html : version v0.5 absente");
+assert(indexHtml.includes("v0.6"), "index.html : version v0.6 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 
@@ -225,6 +229,40 @@ function validateContentItem(item, source, archived = false) {
     }
   }
 
+  if (item?.provider === "arte") {
+    assert(/^arte-.+-\d{4}-\d{2}-\d{2}$/.test(item.id), `${label} possède un identifiant ARTE invalide`);
+    assert(["movie", "tv", "documentary"].includes(item.type), `${label} possède un type ARTE invalide`);
+    assert(item.platform === "ARTE", `${label} possède une plateforme ARTE invalide`);
+    assert(typeof item.externalId === "string" && item.externalId.length > 0, `${label} n’a pas d’identifiant source ARTE`);
+    assert(validDate(item.availabilityStartDate), `${label} possède une date de début ARTE invalide`);
+    assert(validDate(item.expiryDate), `${label} doit posséder une date de fin ARTE`);
+    assert(
+      Date.parse(item.expiryDate) > Date.parse(item.availabilityStartDate),
+      `${label} possède une période ARTE invalide`,
+    );
+    assert(item.selectionLabel === "Les vidéos les plus vues sur ARTE", `${label} possède une sélection ARTE invalide`);
+    try {
+      const image = new URL(item.imageUrl);
+      assert(image.hostname === "api-cdn.arte.tv", `${label} : image ARTE non officielle`);
+    } catch {
+      failures.push(`${label} : imageUrl ARTE est invalide`);
+    }
+    try {
+      const product = new URL(item.url);
+      const officialSource = new URL(item.sourceUrl);
+      assert(product.hostname === "www.arte.tv", `${label} : URL programme ARTE non officielle`);
+      assert(officialSource.hostname === "www.arte.tv", `${label} : source ARTE non officielle`);
+    } catch {
+      failures.push(`${label} : domaine ARTE invalide`);
+    }
+    if (item.verified === false) {
+      assert(
+        item.verificationNote === "not_in_current_selection",
+        `${label} : un programme ARTE masqué doit préciser sa raison`,
+      );
+    }
+  }
+
   if (archived) {
     assert(validDate(item?.archivedAt), `${label} possède une date d’archivage invalide`);
     assert(item?.archiveReason === "expired", `${label} possède une raison d’archivage invalide`);
@@ -237,6 +275,14 @@ const epicWorkflow = fs.readFileSync(
 );
 assert(epicWorkflow.includes('cron: "23 */6 * * *"'), "Le rythme de synchronisation Epic Games est absent");
 assert(epicWorkflow.includes("scripts/fetch-epic-games.mjs"), "Le workflow Epic Games n’exécute pas l’import");
+
+const arteWorkflow = fs.readFileSync(
+  path.join(projectRoot, ".github/workflows/fetch-arte.yml"),
+  "utf8",
+);
+assert(arteWorkflow.includes('cron: "41 */12 * * *"'), "Le rythme de synchronisation ARTE est absent");
+assert(arteWorkflow.includes("scripts/fetch-arte.mjs"), "Le workflow ARTE n’exécute pas l’import");
+assert(arteWorkflow.includes("group: catalogue-maintenance"), "Le workflow ARTE ne partage pas la file de maintenance");
 
 if (catalogue && archive) {
   assert(catalogue.version === 4, "catalogue.json : version 4 attendue");
@@ -262,4 +308,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, catalogue v0.5, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, catalogue v0.6, automatisations et structure conformes.");

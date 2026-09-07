@@ -30,6 +30,7 @@ jobs:
           node scripts/test-personalization.mjs
           node scripts/test-availability.mjs
           node scripts/test-epic-games.mjs
+          node scripts/test-arte.mjs
           node --check js/app.js
           node --check js/availability.js
           node --check js/catalog.js
@@ -40,6 +41,8 @@ jobs:
           node --check scripts/archive-expired.mjs
           node --check scripts/epic-games.mjs
           node --check scripts/fetch-epic-games.mjs
+          node --check scripts/arte.mjs
+          node --check scripts/fetch-arte.mjs
 
       - name: Prepare publication directory
         run: |
