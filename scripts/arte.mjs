@@ -187,6 +187,11 @@ function sameSelection(previous, current) {
   return JSON.stringify(comparableItem(previous)) === JSON.stringify(comparableItem(current));
 }
 
+function catalogueOrder(a, b) {
+  return String(a?.provider ?? "").localeCompare(String(b?.provider ?? ""), "fr")
+    || String(a?.id ?? "").localeCompare(String(b?.id ?? ""), "fr");
+}
+
 export function syncArteCatalogue(catalogue, arteItems, now = new Date()) {
   const nowIso = now.toISOString();
   const existingItems = Array.isArray(catalogue?.items) ? catalogue.items : [];
@@ -214,7 +219,7 @@ export function syncArteCatalogue(catalogue, arteItems, now = new Date()) {
       };
     });
 
-  const items = [...nonArteItems, ...currentArteItems, ...missingArteItems];
+  const items = [...nonArteItems, ...currentArteItems, ...missingArteItems].sort(catalogueOrder);
   const changed = JSON.stringify(items) !== JSON.stringify(existingItems);
 
   return {

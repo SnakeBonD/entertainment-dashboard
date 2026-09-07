@@ -127,6 +127,11 @@ function sameOffer(previous, current) {
   return JSON.stringify(comparableItem(previous)) === JSON.stringify(comparableItem(current));
 }
 
+function catalogueOrder(a, b) {
+  return String(a?.provider ?? "").localeCompare(String(b?.provider ?? ""), "fr")
+    || String(a?.id ?? "").localeCompare(String(b?.id ?? ""), "fr");
+}
+
 export function syncEpicCatalogue(catalogue, epicGames, now = new Date()) {
   const nowIso = now.toISOString();
   const existingItems = Array.isArray(catalogue?.items) ? catalogue.items : [];
@@ -154,7 +159,7 @@ export function syncEpicCatalogue(catalogue, epicGames, now = new Date()) {
       };
     });
 
-  const items = [...nonEpicItems, ...currentEpicItems, ...missingEpicItems];
+  const items = [...nonEpicItems, ...currentEpicItems, ...missingEpicItems].sort(catalogueOrder);
   const changed = JSON.stringify(items) !== JSON.stringify(existingItems);
 
   return {

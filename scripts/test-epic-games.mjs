@@ -113,6 +113,17 @@ const hidden = missingSync.catalogue.items.find((item) => item.id === games[0].i
 assert(hidden?.verified === false, "Une offre absente du flux doit être masquée");
 assert(hidden?.verificationNote === "not_in_current_feed", "La raison du masquage est absente");
 
+const mixedCatalogue = {
+  ...firstSync.catalogue,
+  items: [firstSync.catalogue.items.find((item) => item.provider === "epic-games-store"), {
+    id: "arte-test",
+    provider: "arte",
+    verified: true,
+  }],
+};
+const orderedEpicSync = syncEpicCatalogue(mixedCatalogue, secondGames, later);
+assert(orderedEpicSync.catalogue.items[0].provider === "arte", "L’ordre commun du catalogue n’est pas stable après Epic Games");
+
 let malformedRejected = false;
 try {
   extractEpicGames({}, now);
