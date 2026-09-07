@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: catalogue-maintenance
@@ -30,9 +31,11 @@ jobs:
           node scripts/test-arte.mjs
 
       - name: Publish archive update
+        id: publish
         run: |
           if git diff --quiet -- data/catalogue.json data/archive.json; then
             echo "No expired content to archive."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -40,3 +43,10 @@ jobs:
           git add data/catalogue.json data/archive.json
           git commit -m "chore: archive expired entertainment content"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy archive update
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
