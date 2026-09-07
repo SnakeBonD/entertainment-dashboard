@@ -209,7 +209,8 @@ Le workflow `fetch-arte.yml` s’exécute toutes les douze heures. Il actualise 
 la France, archive les programmes expirés et publie seulement les changements réels. Les imports
 ARTE, Epic Games et l’archivage utilisent la même file de maintenance. Après chaque modification
 automatique du catalogue, le workflow GitHub Pages est relancé explicitement afin de publier les
-nouvelles données.
+nouvelles données. Un ordre commun et déterministe évite qu’ARTE et Epic Games ne créent des
+commits uniquement pour réordonner les mêmes entrées.
 
 ## Feuille de route
 

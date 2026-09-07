@@ -116,6 +116,13 @@ const hidden = missingSync.catalogue.items.find((entry) => entry.id === selectio
 assert(hidden?.verified === false, "Un programme absent de la sélection doit être masqué");
 assert(hidden?.verificationNote === "not_in_current_selection", "La raison du masquage ARTE est absente");
 
+const mixedCatalogue = {
+  ...firstSync.catalogue,
+  items: [{ id: "epic-test", provider: "epic-games-store", verified: true }, selection[0]],
+};
+const orderedArteSync = syncArteCatalogue(mixedCatalogue, stableSelection, later);
+assert(orderedArteSync.catalogue.items[0].provider === "arte", "L’ordre commun du catalogue n’est pas stable après ARTE");
+
 let malformedRejected = false;
 try {
   extractArteSelection({}, now);
