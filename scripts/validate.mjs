@@ -284,6 +284,25 @@ assert(arteWorkflow.includes('cron: "41 */12 * * *"'), "Le rythme de synchronisa
 assert(arteWorkflow.includes("scripts/fetch-arte.mjs"), "Le workflow ARTE n’exécute pas l’import");
 assert(arteWorkflow.includes("group: catalogue-maintenance"), "Le workflow ARTE ne partage pas la file de maintenance");
 
+const archiveWorkflow = fs.readFileSync(
+  path.join(projectRoot, ".github/workflows/archive-expired.yml"),
+  "utf8",
+);
+
+[
+  ["ARTE", arteWorkflow],
+  ["Epic Games", epicWorkflow],
+  ["Archivage", archiveWorkflow],
+].forEach(([name, workflow]) => {
+  assert(workflow.includes("actions: write"), `Le workflow ${name} ne peut pas relancer le déploiement`);
+  assert(workflow.includes("id: publish"), `Le workflow ${name} ne signale pas ses changements`);
+  assert(workflow.includes('changed=true'), `Le workflow ${name} ne détecte pas une mise à jour publiée`);
+  assert(
+    workflow.includes("gh workflow run deploy.yml --ref main"),
+    `Le workflow ${name} ne redéploie pas le catalogue mis à jour`,
+  );
+});
+
 if (catalogue && archive) {
   assert(catalogue.version === 4, "catalogue.json : version 4 attendue");
   assert(archive.version === 4, "archive.json : version 4 attendue");
