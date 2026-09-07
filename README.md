@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.3** personnalise le catalogue sans compte utilisateur ni serveur :
+La version **v0.4** gère les disponibilités datées et leur cycle de vie :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -20,6 +20,11 @@ La version **v0.3** personnalise le catalogue sans compte utilisateur ni serveur
 - classement personnalisé avec score et raisons visibles ;
 - recommandations qui tiennent compte des favoris, du français, de la publicité et du compte ;
 - module « Que regarder ce soir ? » relié à de vraies plateformes ;
+- espace « Disponibilités » réservé aux contenus datés et vérifiés ;
+- alerte automatique pendant les sept derniers jours de disponibilité ;
+- filtres par échéance, type, titre et plateforme ;
+- accès à la source officielle utilisée pour chaque date ;
+- archivage quotidien des contenus expirés à 05 h 40 UTC ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -38,6 +43,7 @@ entertainment-dashboard/
 │   └── style.css
 ├── js/
 │   ├── app.js
+│   ├── availability.js
 │   ├── catalog.js
 │   ├── favorites.js
 │   ├── preferences.js
@@ -52,10 +58,13 @@ entertainment-dashboard/
 │   └── schedule.json
 ├── scripts/
 │   ├── check-links.mjs
+│   ├── archive-expired.mjs
+│   ├── test-availability.mjs
 │   ├── test-catalog.mjs
 │   ├── test-personalization.mjs
 │   └── validate.mjs
 ├── .github/workflows/
+│   ├── archive-expired.yml
 │   ├── check-links.yml
 │   └── deploy.yml
 ├── CNAME
@@ -79,7 +88,9 @@ Puis ouvrir <http://localhost:8080>.
 node scripts/validate.mjs
 node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
+node scripts/test-availability.mjs
 node --check js/app.js
+node --check js/availability.js
 node --check js/catalog.js
 node --check js/favorites.js
 node --check js/preferences.js
@@ -94,22 +105,28 @@ node --check js/recommendations.js
 `data/platform-metadata.json` contient les informations utilisées par les filtres : type d’accès,
 compte, publicité, langues, tags, disponibilité en France et date du dernier audit.
 
-`data/catalogue.json` accueillera les contenus vérifiés et leurs dates de disponibilité :
+`data/catalogue.json` accueille uniquement les contenus actifs. `data/archive.json` reçoit les
+entrées expirées sans perdre leur source ni leur historique de vérification :
 
 ```json
 {
-  "id": "source-identifiant",
-  "title": "Titre",
-  "category": "movie",
-  "platform": "ARTE",
-  "url": "https://…",
-  "free": true,
-  "country": "FR",
-  "addedDate": "2026-09-04",
-  "expiryDate": "2026-09-30T23:59:00+02:00",
-  "verified": true,
-  "verifiedAt": "2026-09-04T08:00:00+02:00",
-  "sourceUrl": "https://…"
+  "version": 4,
+  "lastUpdated": "2026-09-07T10:00:00+02:00",
+  "items": [
+    {
+      "id": "source-identifiant",
+      "title": "Titre",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://…",
+      "country": "FR",
+      "addedDate": "2026-09-07",
+      "expiryDate": "2026-09-30T23:59:00+02:00",
+      "verified": true,
+      "verifiedAt": "2026-09-07T10:00:00+02:00",
+      "sourceUrl": "https://…"
+    }
+  ]
 }
 ```
 
@@ -125,12 +142,16 @@ Le workflow `check-links.yml` contrôle les 40 liens chaque lundi à 06 h 15 UTC
 rapport dans le résumé GitHub Actions et conserve l’artefact pendant 30 jours. Une protection
 anti-robot (`401`, `403` ou `429`) est signalée sans être assimilée à un lien supprimé.
 
+Le workflow `archive-expired.yml` s’exécute chaque jour à 05 h 40 UTC. Il déplace une entrée dont
+la date de fin est dépassée vers `data/archive.json`, valide les données, puis publie la mise à jour
+uniquement si un changement est nécessaire.
+
 ## Feuille de route
 
 - **v0.1** — structure initiale et mise en production ;
 - **v0.2** — catalogue enrichi, recherche, filtres, mobile et surveillance des liens ;
 - **v0.3** — favoris, profil local et recommandations personnalisées ;
-- **v0.4** — dates d’expiration et archivage ;
+- **v0.4** — dates d’expiration, alertes et archivage automatique ;
 - **v0.5** — automatisation des jeux Epic Games ;
 - **v0.6** — automatisation des sélections ARTE ;
 - **v0.7** — autres sources officielles automatisées ;
@@ -144,6 +165,8 @@ anti-robot (`401`, `403` ou `429`) est signalée sans être assimilée à un lie
 - Favoris stockés uniquement dans `localStorage`.
 - Préférences stockées uniquement dans `localStorage`, indépendamment des favoris.
 - Calcul des recommandations effectué dans le navigateur, avec raisons affichées.
+- Aucun contenu daté n’est affiché sans vérification et source officielle.
+- Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.
 - Liens limités aux plateformes officielles sélectionnées.
 
 ## Méthode de contribution

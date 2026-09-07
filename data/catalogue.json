@@ -1,9 +1,5 @@
 {
+  "version": 4,
   "lastUpdated": null,
-  "movies": [],
-  "tv": [],
-  "games": [],
-  "documentaries": [],
-  "featured": [],
-  "expiringSoon": []
+  "items": []
 }

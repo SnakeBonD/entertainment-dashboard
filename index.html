@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/favorites.js" defer></script>
     <script src="js/catalog.js" defer></script>
+    <script src="js/availability.js" defer></script>
     <script src="js/preferences.js" defer></script>
     <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
@@ -35,7 +36,7 @@
           <span class="status-dot" aria-hidden="true"></span>
           France · gratuit et légal
         </div>
-        <span class="version-badge" aria-label="Version 0.3">v0.3</span>
+        <span class="version-badge" aria-label="Version 0.4">v0.4</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -52,6 +53,7 @@
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil">Accueil</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
+      <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">Disponibilités</button>
       <button class="nav-button nav-button-personal" type="button" data-tab="pour-moi">Pour moi</button>
       <button class="nav-button" type="button" data-tab="musique">Musique</button>
       <button class="nav-button" type="button" data-tab="youtube">YouTube</button>
@@ -91,6 +93,10 @@
           <article class="stat-card">
             <span class="stat-value" id="favorite-count">0</span>
             <span class="stat-label">favoris enregistrés</span>
+          </article>
+          <article class="stat-card stat-card-warning">
+            <span class="stat-value" id="expiring-count">0</span>
+            <span class="stat-label">contenus bientôt indisponibles</span>
           </article>
         </div>
 
@@ -133,8 +139,8 @@
         <aside class="info-banner">
           <strong>Catalogue contrôlé.</strong>
           <span>
-            Les liens officiels sont surveillés chaque semaine. Les contenus datés resteront
-            invisibles tant que leur disponibilité en France n’aura pas été confirmée.
+            Les liens officiels sont surveillés chaque semaine. Seuls les contenus datés et
+            vérifiés sont affichés ; les entrées expirées sont automatiquement archivées.
           </span>
         </aside>
       </section>
@@ -229,6 +235,78 @@
 
         <p id="platform-result-count" class="result-count" aria-live="polite"></p>
         <div id="platform-container"></div>
+      </section>
+
+      <section id="disponibilites" class="page" aria-labelledby="availability-title">
+        <div class="section-heading section-heading-row availability-heading">
+          <div>
+            <p class="eyebrow">CONTENUS DATÉS ET VÉRIFIÉS</p>
+            <h1 id="availability-title">À voir avant que ça disparaisse</h1>
+            <p>
+              Les dates sont affichées uniquement lorsqu’elles ont été confirmées par une source
+              officielle. Une alerte apparaît pendant les sept derniers jours.
+            </p>
+          </div>
+          <span class="availability-updated" id="availability-last-updated">Aucune mise à jour</span>
+        </div>
+
+        <div class="availability-stats" aria-label="Résumé des disponibilités">
+          <article>
+            <span id="availability-active-count">0</span>
+            <small>disponibles</small>
+          </article>
+          <article class="is-warning">
+            <span id="availability-soon-count">0</span>
+            <small>bientôt indisponibles</small>
+          </article>
+          <article>
+            <span id="availability-archive-count">0</span>
+            <small>archivés</small>
+          </article>
+        </div>
+
+        <div class="availability-controls">
+          <label class="search-field" for="availability-search">
+            <span class="visually-hidden">Rechercher un contenu disponible</span>
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="availability-search"
+              type="search"
+              placeholder="Rechercher un titre ou une plateforme…"
+              autocomplete="off"
+            >
+          </label>
+          <label class="control-field" for="availability-status-filter">
+            <span>Échéance</span>
+            <select id="availability-status-filter">
+              <option value="all">Tous les contenus actifs</option>
+              <option value="expiring">Bientôt indisponibles</option>
+              <option value="active">Date éloignée</option>
+              <option value="permanent">Sans date de fin</option>
+            </select>
+          </label>
+          <label class="control-field" for="availability-type-filter">
+            <span>Type</span>
+            <select id="availability-type-filter">
+              <option value="all">Tous les types</option>
+              <option value="movie">Films</option>
+              <option value="tv">Séries TV</option>
+              <option value="game">Jeux</option>
+              <option value="documentary">Documentaires</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="availability-result-count" class="result-count" aria-live="polite"></p>
+        <div id="availability-container" class="availability-grid"></div>
+
+        <details class="archive-panel">
+          <summary>
+            <span>Consulter les archives</span>
+            <span id="archive-summary-count">0 contenu</span>
+          </summary>
+          <div id="archive-container" class="archive-grid"></div>
+        </details>
       </section>
 
       <section id="pour-moi" class="page" aria-labelledby="personal-title">
@@ -442,7 +520,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v0.3 · Sans tracker · préférences conservées sur cet appareil</span>
+      <span>v0.4 · Sans tracker · disponibilités contrôlées et archivées</span>
     </footer>
   </body>
 </html>
