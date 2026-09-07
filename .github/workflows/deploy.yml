@@ -27,9 +27,12 @@ jobs:
         run: |
           node scripts/validate.mjs
           node scripts/test-catalog.mjs
+          node scripts/test-personalization.mjs
           node --check js/app.js
           node --check js/catalog.js
           node --check js/favorites.js
+          node --check js/preferences.js
+          node --check js/personalization.js
           node --check js/recommendations.js
 
       - name: Prepare publication directory

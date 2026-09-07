@@ -13,6 +13,7 @@
     ads: "all",
     language: "all",
     sort: "recommended",
+    preferences: null,
   };
 
   async function fetchJson(path) {
@@ -106,7 +107,6 @@
     button.addEventListener("click", () => {
       window.SnakeBonDFavorites?.toggle(category, platform.name);
       updateState();
-      updateFavoriteCount();
       if (state.favoritesOnly) renderPlatforms();
     });
 
@@ -355,7 +355,194 @@
       renderPlatforms();
     });
 
-    window.addEventListener("snakebond:favorites-changed", updateFavoriteCount);
+    window.addEventListener("snakebond:favorites-changed", handleFavoritesChanged);
+  }
+
+  function renderPreferenceForm() {
+    const form = document.getElementById("preferences-form");
+    const categoryContainer = document.getElementById("preference-categories");
+    const preferences = state.preferences ?? window.SnakeBonDPreferences.defaults();
+
+    const categoryOptions = Object.keys(state.platforms).map((category) => {
+      const label = document.createElement("label");
+      label.className = "preference-chip";
+
+      const input = document.createElement("input");
+      input.type = "checkbox";
+      input.name = "categories";
+      input.value = category;
+      input.checked = preferences.categories.includes(category);
+
+      const text = document.createElement("span");
+      text.textContent = category;
+      label.append(input, text);
+      return label;
+    });
+
+    categoryContainer.replaceChildren(...categoryOptions);
+    ["french", "noAds", "noAccount"].forEach((priority) => {
+      const input = form.elements.namedItem(priority);
+      if (input) input.checked = preferences.priorities[priority];
+    });
+  }
+
+  function createPersonalRecommendationCard(entry) {
+    const card = document.createElement("article");
+    card.className = "personal-recommendation-card";
+
+    const top = document.createElement("div");
+    top.className = "personal-card-top";
+
+    const category = document.createElement("span");
+    category.className = "personal-category";
+    category.textContent = entry.category;
+
+    const score = document.createElement("span");
+    score.className = "match-score";
+    score.textContent = `${entry.score} %`;
+    score.setAttribute("aria-label", `${entry.score} pour cent de correspondance`);
+    top.append(category, score);
+
+    const heading = document.createElement("div");
+    heading.className = "platform-card-heading";
+    const title = document.createElement("h3");
+    title.textContent = entry.platform.name;
+    heading.append(title, createFavoriteButton(entry.category, entry.platform));
+
+    const description = document.createElement("p");
+    description.textContent = entry.platform.best;
+
+    const reasons = document.createElement("ul");
+    reasons.className = "reason-list";
+    entry.reasons.forEach((reason) => {
+      const item = document.createElement("li");
+      item.textContent = reason;
+      reasons.append(item);
+    });
+
+    const link = document.createElement("a");
+    link.className = "external-link recommendation-link";
+    link.href = entry.platform.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = `Ouvrir ${entry.platform.name} ↗`;
+
+    card.append(top, heading, description, reasons, link);
+    return card;
+  }
+
+  function renderPersonalRecommendations() {
+    const container = document.getElementById("personal-recommendations");
+    const intro = document.getElementById("personal-recommendation-intro");
+    const summary = document.getElementById("profile-summary");
+    const preferenceCount = window.SnakeBonDPreferences.count(state.preferences);
+    const favoriteCount = window.SnakeBonDFavorites?.count() ?? 0;
+    const matches = window.SnakeBonDPersonalization.rankPlatforms({
+      platforms: state.platforms,
+      metadata: state.metadata,
+      preferences: state.preferences,
+      isFavorite: (category, name) => window.SnakeBonDFavorites?.has(category, name) ?? false,
+      limit: 6,
+    });
+
+    summary.textContent = preferenceCount
+      ? `${preferenceCount} préférence${preferenceCount > 1 ? "s" : ""} active${preferenceCount > 1 ? "s" : ""}`
+      : "Profil à configurer";
+    intro.textContent = preferenceCount || favoriteCount
+      ? "Classement calculé à partir de ton profil et de tes favoris, avec les raisons affichées sur chaque proposition."
+      : "Sélection de départ. Configure ton profil ou ajoute des favoris pour obtenir un classement personnel.";
+    container.replaceChildren(...matches.map(createPersonalRecommendationCard));
+  }
+
+  function renderPersonalFavorites() {
+    const container = document.getElementById("personal-favorites");
+    const favorites = window.SnakeBonDPersonalization
+      .flattenPlatforms(state.platforms, state.metadata)
+      .filter(({ category, platform }) =>
+        window.SnakeBonDFavorites?.has(category, platform.name),
+      );
+
+    if (favorites.length) {
+      container.replaceChildren(
+        ...favorites.map(({ category, platform, meta }) =>
+          createPlatformCard(category, platform, meta),
+        ),
+      );
+      return;
+    }
+
+    const empty = document.createElement("div");
+    empty.className = "personal-empty";
+    const title = document.createElement("h3");
+    title.textContent = "Aucun favori pour le moment";
+    const text = document.createElement("p");
+    text.textContent = "Ajoute une étoile depuis le catalogue pour retrouver la plateforme ici.";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary-button compact-button";
+    button.textContent = "Explorer les plateformes";
+    button.addEventListener("click", () => openTab("plateformes"));
+    empty.append(title, text, button);
+    container.replaceChildren(empty);
+  }
+
+  function renderPersonalArea() {
+    renderPersonalRecommendations();
+    renderPersonalFavorites();
+  }
+
+  function handleFavoritesChanged() {
+    updateFavoriteCount();
+    renderPersonalArea();
+  }
+
+  function setupPreferences() {
+    const form = document.getElementById("preferences-form");
+    const resetButton = document.getElementById("reset-preferences");
+    const status = document.getElementById("preference-status");
+    const categories = Object.keys(state.platforms);
+
+    renderPreferenceForm();
+    renderPersonalArea();
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const values = new FormData(form);
+      const preferences = {
+        version: 1,
+        categories: values.getAll("categories"),
+        priorities: {
+          french: values.has("french"),
+          noAds: values.has("noAds"),
+          noAccount: values.has("noAccount"),
+        },
+      };
+
+      if (!window.SnakeBonDPreferences.write(preferences, categories)) {
+        status.textContent = "L’enregistrement local n’est pas disponible dans ce navigateur.";
+        status.classList.add("is-error");
+        return;
+      }
+
+      state.preferences = window.SnakeBonDPreferences.sanitize(preferences, categories);
+      status.textContent = "Profil enregistré sur cet appareil.";
+      status.classList.remove("is-error");
+      renderPersonalArea();
+    });
+
+    resetButton.addEventListener("click", () => {
+      if (!window.SnakeBonDPreferences.reset(categories)) {
+        status.textContent = "Les préférences locales n’ont pas pu être effacées.";
+        status.classList.add("is-error");
+        return;
+      }
+
+      state.preferences = window.SnakeBonDPreferences.defaults();
+      renderPreferenceForm();
+      renderPersonalArea();
+      status.textContent = "Profil effacé. Tes favoris sont conservés.";
+      status.classList.remove("is-error");
+    });
   }
 
   function renderMusic() {
@@ -466,6 +653,7 @@
       state.platforms = platforms;
       state.metadata = metadata;
       state.schedule = schedule;
+      state.preferences = window.SnakeBonDPreferences.read(Object.keys(platforms));
 
       document.getElementById("platform-count").textContent = String(
         Object.values(platforms).flat().length,
@@ -475,7 +663,13 @@
       renderPlatforms();
       renderSchedules();
       setupPlatformControls();
-      window.SnakeBonDRecommendations?.init(recommendations);
+      setupPreferences();
+      window.SnakeBonDRecommendations?.init(recommendations, {
+        platforms,
+        metadata,
+        getPreferences: () => state.preferences,
+        isFavorite: (category, name) => window.SnakeBonDFavorites?.has(category, name) ?? false,
+      });
     } catch (error) {
       showLoadError(error);
     }

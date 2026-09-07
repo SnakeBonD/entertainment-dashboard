@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.2** consolide le catalogue et l’expérience mobile :
+La version **v0.3** personnalise le catalogue sans compte utilisateur ni serveur :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -15,6 +15,11 @@ La version **v0.2** consolide le catalogue et l’expérience mobile :
 - tris par sélection, nom ou date de vérification ;
 - fiches enrichies avec badges et date de contrôle ;
 - favoris conservés dans le navigateur ;
+- espace « Pour moi » avec accès direct aux favoris ;
+- profil local par univers préférés et priorités d’accès ;
+- classement personnalisé avec score et raisons visibles ;
+- recommandations qui tiennent compte des favoris, du français, de la publicité et du compte ;
+- module « Que regarder ce soir ? » relié à de vraies plateformes ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -35,6 +40,8 @@ entertainment-dashboard/
 │   ├── app.js
 │   ├── catalog.js
 │   ├── favorites.js
+│   ├── preferences.js
+│   ├── personalization.js
 │   └── recommendations.js
 ├── data/
 │   ├── archive.json
@@ -46,6 +53,7 @@ entertainment-dashboard/
 ├── scripts/
 │   ├── check-links.mjs
 │   ├── test-catalog.mjs
+│   ├── test-personalization.mjs
 │   └── validate.mjs
 ├── .github/workflows/
 │   ├── check-links.yml
@@ -70,9 +78,12 @@ Puis ouvrir <http://localhost:8080>.
 ```bash
 node scripts/validate.mjs
 node scripts/test-catalog.mjs
+node scripts/test-personalization.mjs
 node --check js/app.js
 node --check js/catalog.js
 node --check js/favorites.js
+node --check js/preferences.js
+node --check js/personalization.js
 node --check js/recommendations.js
 ```
 
@@ -118,7 +129,7 @@ anti-robot (`401`, `403` ou `429`) est signalée sans être assimilée à un lie
 
 - **v0.1** — structure initiale et mise en production ;
 - **v0.2** — catalogue enrichi, recherche, filtres, mobile et surveillance des liens ;
-- **v0.3** — favoris et recommandations personnalisées ;
+- **v0.3** — favoris, profil local et recommandations personnalisées ;
 - **v0.4** — dates d’expiration et archivage ;
 - **v0.5** — automatisation des jeux Epic Games ;
 - **v0.6** — automatisation des sélections ARTE ;
@@ -131,6 +142,8 @@ anti-robot (`401`, `403` ou `429`) est signalée sans être assimilée à un lie
 - Aucun secret ou identifiant dans le dépôt.
 - Aucun tracker ni cookie publicitaire propre au dashboard.
 - Favoris stockés uniquement dans `localStorage`.
+- Préférences stockées uniquement dans `localStorage`, indépendamment des favoris.
+- Calcul des recommandations effectué dans le navigateur, avec raisons affichées.
 - Liens limités aux plateformes officielles sélectionnées.
 
 ## Méthode de contribution
