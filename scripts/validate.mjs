@@ -35,6 +35,8 @@ const requiredFiles = [
   "js/pwa.js",
   "manifest.webmanifest",
   "service-worker.js",
+  "robots.txt",
+  "sitemap.xml",
   "assets/pwa-icon.svg",
   "assets/pwa-icon-192.png",
   "assets/pwa-icon-512.png",
@@ -57,6 +59,7 @@ const requiredFiles = [
   "scripts/fetch-radio-france.mjs",
   "scripts/test-radio-france.mjs",
   "scripts/test-pwa.mjs",
+  "scripts/test-release.mjs",
   ".github/workflows/archive-expired.yml",
   ".github/workflows/fetch-epic-games.yml",
   ".github/workflows/fetch-arte.yml",
@@ -96,12 +99,18 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "radio-france-selection",
   "radio-france-last-updated",
   "install-app",
+  "install-app-page",
   "connection-status",
+  "app-install-state",
+  "app-offline-state",
+  "app-update-state",
+  "check-app-update",
+  "app-action-status",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.8"), "index.html : version v0.8 absente");
+assert(indexHtml.includes("v1.0"), "index.html : version v1.0 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
@@ -407,4 +416,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, catalogue v0.8, PWA, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, version stable v1.0, PWA, automatisations et structure conformes.");

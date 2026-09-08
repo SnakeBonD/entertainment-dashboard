@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.8** transforme le dashboard en PWA installable et conserve les automatisations ARTE, Epic Games et Radio France :
+La version **v1.0** stabilise le dashboard, son installation et sa publication tout en conservant les automatisations ARTE, Epic Games et Radio France :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -44,6 +44,10 @@ La version **v0.8** transforme le dashboard en PWA installable et conserve les a
 - stratégie réseau prioritaire pour récupérer les contenus automatisés les plus récents dès que la connexion revient ;
 - activation immédiate et contrôlée des nouvelles versions du cache applicatif ;
 - état de connexion visible et périmètre hors ligne expliqué dans l’interface ;
+- espace « Application » avec diagnostic de l’installation, du cache hors ligne et des mises à jour ;
+- vérification manuelle d’une nouvelle version depuis le dashboard ;
+- guides d’installation pour ordinateur, Android, iPhone et iPad ;
+- URL canonique, métadonnées sociales, `robots.txt` et sitemap public ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -60,6 +64,8 @@ entertainment-dashboard/
 ├── index.html
 ├── manifest.webmanifest
 ├── service-worker.js
+├── robots.txt
+├── sitemap.xml
 ├── assets/
 │   ├── pwa-icon.svg
 │   ├── pwa-icon-192.png
@@ -98,6 +104,7 @@ entertainment-dashboard/
 │   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
 │   ├── test-pwa.mjs
+│   ├── test-release.mjs
 │   ├── test-radio-france.mjs
 │   └── validate.mjs
 ├── .github/workflows/
@@ -133,6 +140,7 @@ node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
+node scripts/test-release.mjs
 node --check js/app.js
 node --check js/availability.js
 node --check js/catalog.js
@@ -234,7 +242,12 @@ n’est créée. Une sélection incomplète ou un flux invalide interrompt la t�
 
 `manifest.webmanifest` décrit l’application, ses icônes adaptatives et ses raccourcis vers les
 disponibilités, les podcasts et l’espace « Pour moi ». Le bouton « Installer l’app » apparaît quand
-le navigateur propose l’installation.
+le navigateur propose l’installation. L’espace « Application » détaille l’état du cache, de
+l’installation et des mises à jour, avec un contrôle manuel de la version publiée.
+
+Sur iPhone et iPad, l’installation se fait manuellement dans Safari via **Partager**, puis
+**Sur l’écran d’accueil**. Sur Android, Chrome propose l’installation dans son menu. Sur ordinateur,
+Chrome et Edge peuvent afficher le bouton d’installation dans le dashboard ou la barre d’adresse.
 
 `service-worker.js` précharge l’interface, les scripts et les fichiers JSON nécessaires. Chaque
 requête locale donne d’abord la priorité au réseau afin de récupérer les données ARTE, Epic Games et
@@ -244,6 +257,9 @@ mise à jour prend le contrôle.
 
 Le mode hors ligne couvre le dashboard et ses données locales. Les lecteurs audio, les visuels et les
 pages des plateformes officielles restent externes et nécessitent une connexion.
+
+`robots.txt`, `sitemap.xml` et les métadonnées du document déclarent l’unique URL publique canonique :
+`https://entertainment.snakebond.net/`.
 
 ## Déploiement
 
@@ -286,7 +302,7 @@ jour publiée.
 - **v0.6** — automatisation des sélections ARTE, contrôle géographique et dates de disponibilité ;
 - **v0.7** — podcasts Radio France automatisés depuis deux flux officiels ;
 - **v0.8** — PWA installable, mode hors ligne maîtrisé et mise à jour réseau prioritaire ;
-- **v1.0** — version stable complète.
+- **v1.0** — version stable, installation guidée, diagnostic PWA et métadonnées publiques.
 
 ## Sécurité et confidentialité
 

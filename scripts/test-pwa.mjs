@@ -52,9 +52,14 @@ const indexHtml = read("index.html");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "Le manifeste n’est pas relié au HTML");
 assert(indexHtml.includes('rel="apple-touch-icon" href="assets/pwa-icon-192.png"'), "L’icône Apple est absente");
 assert(indexHtml.includes('id="install-app"'), "Le bouton d’installation est absent");
+assert(indexHtml.includes('id="install-app-page"'), "Le bouton d’installation de la page Application est absent");
 assert(indexHtml.includes('id="connection-status"'), "L’état de connexion est absent");
+assert(indexHtml.includes('id="app-install-state"'), "Le diagnostic d’installation est absent");
+assert(indexHtml.includes('id="app-offline-state"'), "Le diagnostic hors ligne est absent");
+assert(indexHtml.includes('id="app-update-state"'), "Le diagnostic de mise à jour est absent");
+assert(indexHtml.includes('id="check-app-update"'), "La recherche manuelle de mise à jour est absente");
 assert(indexHtml.includes('src="js/pwa.js"'), "Le contrôleur PWA n’est pas chargé");
-assert(indexHtml.includes("v0.8"), "La version v0.8 est absente du HTML");
+assert(indexHtml.includes("v1.0"), "La version v1.0 est absente du HTML");
 
 const pwaScript = read("js/pwa.js");
 assert(pwaScript.includes("beforeinstallprompt"), "L’invite d’installation n’est pas gérée");
@@ -62,13 +67,17 @@ assert(pwaScript.includes("appinstalled"), "La fin d’installation n’est pas 
 assert(pwaScript.includes('register("service-worker.js"'), "Le service worker n’est pas enregistré");
 assert(pwaScript.includes('updateViaCache: "none"'), "La vérification du service worker pourrait être mise en cache");
 assert(pwaScript.includes("registration.update()"), "La recherche explicite de mise à jour est absente");
+assert(pwaScript.includes("checkForUpdate"), "Le contrôle manuel des mises à jour est absent");
+assert(pwaScript.includes('querySelectorAll("[data-install-app]")'), "Les deux contrôles d’installation ne sont pas gérés");
+assert(pwaScript.includes("navigator.serviceWorker.ready"), "L’état prêt du service worker n’est pas attendu");
 assert(pwaScript.includes("controllerchange"), "L’application d’une nouvelle version n’est pas gérée");
 
 const serviceWorker = read("service-worker.js");
-assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v0.8.0`'), "La version du cache v0.8 est absente");
+assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v1.0.0`'), "La version du cache v1.0 est absente");
 assert(serviceWorker.includes("cache.addAll(APP_SHELL)"), "Le préchargement hors ligne est absent");
 assert(serviceWorker.includes("self.skipWaiting()"), "L’activation immédiate d’une mise à jour est absente");
 assert(serviceWorker.includes("self.clients.claim()"), "La prise de contrôle immédiate est absente");
+assert(serviceWorker.includes('event.data?.type === "SKIP_WAITING"'), "L’activation manuelle d’une mise à jour est absente");
 assert(serviceWorker.includes("url.origin !== self.location.origin"), "Les ressources externes ne sont pas exclues du cache");
 assert(serviceWorker.includes("await fetch(request)"), "La stratégie ne donne pas la priorité au réseau");
 assert(serviceWorker.includes('caches.match("./index.html")'), "Le repli de navigation hors ligne est absent");
@@ -95,7 +104,7 @@ shellAssets.filter(Boolean).forEach((relativePath) => {
 const deployWorkflow = read(".github/workflows/deploy.yml");
 assert(deployWorkflow.includes("node scripts/test-pwa.mjs"), "Le déploiement n’exécute pas les tests PWA");
 assert(
-  deployWorkflow.includes("cp index.html CNAME manifest.webmanifest service-worker.js _site/"),
+  deployWorkflow.includes("cp index.html CNAME manifest.webmanifest service-worker.js robots.txt sitemap.xml _site/"),
   "Le manifeste ou le service worker n’est pas ajouté au paquet GitHub Pages",
 );
 assert(deployWorkflow.includes("cp -R assets css js data _site/"), "Les icônes PWA ne sont pas ajoutées au paquet GitHub Pages");

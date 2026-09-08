@@ -33,6 +33,7 @@ jobs:
           node scripts/test-arte.mjs
           node scripts/test-radio-france.mjs
           node scripts/test-pwa.mjs
+          node scripts/test-release.mjs
           node --check js/app.js
           node --check js/availability.js
           node --check js/catalog.js
@@ -53,7 +54,7 @@ jobs:
       - name: Prepare publication directory
         run: |
           mkdir _site
-          cp index.html CNAME manifest.webmanifest service-worker.js _site/
+          cp index.html CNAME manifest.webmanifest service-worker.js robots.txt sitemap.xml _site/
           cp -R assets css js data _site/
 
       - name: Configure GitHub Pages
