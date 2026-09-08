@@ -60,9 +60,18 @@ a {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-select:focus-visible {
+select:focus-visible,
+summary:focus-visible,
+.table-wrap:focus-visible {
   outline: 3px solid rgb(139 213 255 / 45%);
   outline-offset: 3px;
+}
+
+button:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
 }
 
 .skip-link {
