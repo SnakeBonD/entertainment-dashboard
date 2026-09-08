@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">SnakeBonD Entertainment</title>
+  <defs>
+    <linearGradient id="background" x1="52" y1="36" x2="466" y2="474" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#182436"/>
+      <stop offset="0.52" stop-color="#101620"/>
+      <stop offset="1" stop-color="#211b3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="124" y1="116" x2="392" y2="398" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BD5FF"/>
+      <stop offset="1" stop-color="#B7A0FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#080A10"/>
+  <rect x="48" y="48" width="416" height="416" rx="96" fill="url(#background)" stroke="#8BD5FF" stroke-opacity=".46" stroke-width="8"/>
+  <path d="M137 153c0-28 23-51 51-51h138c28 0 51 23 51 51v206c0 28-23 51-51 51H188c-28 0-51-23-51-51V153Z" fill="#080A10" fill-opacity=".42"/>
+  <path d="M195 184h75c35 0 58 18 58 47 0 18-9 32-25 40 22 7 34 24 34 47 0 34-27 55-67 55h-75V184Zm69 76c18 0 28-8 28-23s-10-22-28-22h-32v45h32Zm5 82c20 0 31-9 31-26 0-16-11-25-31-25h-37v51h37Z" fill="url(#accent)"/>
+  <circle cx="379" cy="132" r="20" fill="#72DDB0"/>
+</svg>

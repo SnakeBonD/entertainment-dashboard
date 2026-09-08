@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.7** ajoute une sélection de podcasts Radio France aux automatisations ARTE et Epic Games :
+La version **v0.8** transforme le dashboard en PWA installable et conserve les automatisations ARTE, Epic Games et Radio France :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -39,6 +39,11 @@ La version **v0.7** ajoute une sélection de podcasts Radio France aux automatis
 - lecteur audio intégré, visuels, durées, dates de publication et liens vers Radio France ;
 - contrôle de l’identité des flux, des domaines audio et des images avant toute publication ;
 - actualisation des podcasts toutes les six heures sans inventer de date d’expiration ;
+- installation depuis les navigateurs compatibles et lancement dans une fenêtre autonome ;
+- interface, catalogue, favoris et préférences accessibles hors ligne après une première visite ;
+- stratégie réseau prioritaire pour récupérer les contenus automatisés les plus récents dès que la connexion revient ;
+- activation immédiate et contrôlée des nouvelles versions du cache applicatif ;
+- état de connexion visible et périmètre hors ligne expliqué dans l’interface ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -53,6 +58,12 @@ Les anciens titres de films datés du 17 juillet 2026 ne sont pas présentés co
 ```text
 entertainment-dashboard/
 ├── index.html
+├── manifest.webmanifest
+├── service-worker.js
+├── assets/
+│   ├── pwa-icon.svg
+│   ├── pwa-icon-192.png
+│   └── pwa-icon-512.png
 ├── css/
 │   └── style.css
 ├── js/
@@ -62,6 +73,7 @@ entertainment-dashboard/
 │   ├── favorites.js
 │   ├── preferences.js
 │   ├── personalization.js
+│   ├── pwa.js
 │   └── recommendations.js
 ├── data/
 │   ├── archive.json
@@ -85,6 +97,7 @@ entertainment-dashboard/
 │   ├── test-catalog.mjs
 │   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
+│   ├── test-pwa.mjs
 │   ├── test-radio-france.mjs
 │   └── validate.mjs
 ├── .github/workflows/
@@ -119,6 +132,7 @@ node scripts/test-availability.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
+node scripts/test-pwa.mjs
 node --check js/app.js
 node --check js/availability.js
 node --check js/catalog.js
@@ -126,6 +140,8 @@ node --check js/favorites.js
 node --check js/preferences.js
 node --check js/personalization.js
 node --check js/recommendations.js
+node --check js/pwa.js
+node --check service-worker.js
 node --check scripts/epic-games.mjs
 node --check scripts/fetch-epic-games.mjs
 node --check scripts/arte.mjs
@@ -214,6 +230,21 @@ Les podcasts restant accessibles après leur sortie de la sélection, aucune fau
 n’est créée. Une sélection incomplète ou un flux invalide interrompt la tâche sans remplacer les six
 épisodes déjà publiés.
 
+## Application installable et mode hors ligne
+
+`manifest.webmanifest` décrit l’application, ses icônes adaptatives et ses raccourcis vers les
+disponibilités, les podcasts et l’espace « Pour moi ». Le bouton « Installer l’app » apparaît quand
+le navigateur propose l’installation.
+
+`service-worker.js` précharge l’interface, les scripts et les fichiers JSON nécessaires. Chaque
+requête locale donne d’abord la priorité au réseau afin de récupérer les données ARTE, Epic Games et
+Radio France les plus récentes, puis utilise la copie enregistrée si le réseau est indisponible. Les
+anciennes versions du cache sont supprimées à l’activation et la page se recharge une fois lorsqu’une
+mise à jour prend le contrôle.
+
+Le mode hors ligne couvre le dashboard et ses données locales. Les lecteurs audio, les visuels et les
+pages des plateformes officielles restent externes et nécessitent une connexion.
+
 ## Déploiement
 
 Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt utilise **GitHub Actions** comme source de publication Pages.
@@ -254,7 +285,7 @@ jour publiée.
 - **v0.5** — automatisation des jeux Epic Games, contrôle des offres et images officielles ;
 - **v0.6** — automatisation des sélections ARTE, contrôle géographique et dates de disponibilité ;
 - **v0.7** — podcasts Radio France automatisés depuis deux flux officiels ;
-- **v0.8** — PWA installable ;
+- **v0.8** — PWA installable, mode hors ligne maîtrisé et mise à jour réseau prioritaire ;
 - **v1.0** — version stable complète.
 
 ## Sécurité et confidentialité

@@ -32,6 +32,12 @@ const requiredFiles = [
   "js/preferences.js",
   "js/personalization.js",
   "js/recommendations.js",
+  "js/pwa.js",
+  "manifest.webmanifest",
+  "service-worker.js",
+  "assets/pwa-icon.svg",
+  "assets/pwa-icon-192.png",
+  "assets/pwa-icon-512.png",
   "data/platform-metadata.json",
   "data/platforms.json",
   "data/recommendations.json",
@@ -50,10 +56,12 @@ const requiredFiles = [
   "scripts/radio-france.mjs",
   "scripts/fetch-radio-france.mjs",
   "scripts/test-radio-france.mjs",
+  "scripts/test-pwa.mjs",
   ".github/workflows/archive-expired.yml",
   ".github/workflows/fetch-epic-games.yml",
   ".github/workflows/fetch-arte.yml",
   ".github/workflows/fetch-radio-france.yml",
+  ".github/workflows/deploy.yml",
   "CNAME",
 ];
 
@@ -87,15 +95,19 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "archive-container",
   "radio-france-selection",
   "radio-france-last-updated",
+  "install-app",
+  "connection-status",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.7"), "index.html : version v0.7 absente");
+assert(indexHtml.includes("v0.8"), "index.html : version v0.8 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
+assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
+assert(indexHtml.includes('src="js/pwa.js"'), "index.html : contrôleur PWA absent");
 
-const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data)\/[^"?#]+)"/g)]
+const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data|assets)\/[^"?#]+|manifest\.webmanifest)"/g)]
   .map((match) => match[1]);
 localAssets.forEach((relativePath) => {
   assert(fs.existsSync(path.join(projectRoot, relativePath)), `Ressource locale absente : ${relativePath}`);
@@ -395,4 +407,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, catalogue v0.7, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, catalogue v0.8, PWA, automatisations et structure conformes.");
