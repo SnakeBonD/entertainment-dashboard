@@ -16,6 +16,7 @@
     preferences: null,
     catalogue: { items: [] },
     archive: { items: [] },
+    radioFrance: { items: [] },
     availabilitySearch: "",
     availabilityStatus: "all",
     availabilityType: "all",
@@ -818,9 +819,96 @@
     container.replaceChildren(...cards);
   }
 
+  function createPodcastEpisodeCard(episode) {
+    const card = document.createElement("article");
+    card.className = "podcast-episode-card";
+
+    const cover = document.createElement("img");
+    cover.className = "podcast-cover";
+    cover.src = episode.imageUrl;
+    cover.alt = "";
+    cover.loading = "lazy";
+    cover.decoding = "async";
+    cover.referrerPolicy = "no-referrer";
+    cover.addEventListener("error", () => cover.remove(), { once: true });
+
+    const meta = document.createElement("div");
+    meta.className = "podcast-meta";
+    const station = document.createElement("span");
+    station.textContent = episode.station;
+    const duration = document.createElement("span");
+    duration.textContent = episode.durationLabel;
+    meta.append(station, duration);
+
+    const title = document.createElement("h3");
+    title.textContent = episode.title;
+
+    const show = document.createElement("p");
+    show.className = "podcast-show";
+    show.textContent = episode.podcastTitle;
+
+    const description = document.createElement("p");
+    description.className = "podcast-description";
+    description.textContent = episode.description;
+
+    const published = document.createElement("p");
+    published.className = "podcast-published";
+    published.textContent = `Publié le ${window.SnakeBonDAvailability.formatDate(episode.publishedAt)}`;
+
+    const audio = document.createElement("audio");
+    audio.className = "podcast-player";
+    audio.controls = true;
+    audio.preload = "none";
+    audio.src = episode.audioUrl;
+    audio.setAttribute("aria-label", `Écouter ${episode.title}`);
+
+    const actions = document.createElement("div");
+    actions.className = "podcast-actions";
+    const link = document.createElement("a");
+    link.className = "external-link";
+    link.href = episode.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Voir sur Radio France ↗";
+    const source = document.createElement("a");
+    source.className = "source-link";
+    source.href = episode.sourceUrl;
+    source.target = "_blank";
+    source.rel = "noopener noreferrer";
+    source.textContent = "Flux officiel ↗";
+    actions.append(link, source);
+
+    card.append(cover, meta, title, show, description, published, audio, actions);
+    return card;
+  }
+
+  function renderRadioFrance() {
+    const episodes = state.radioFrance.items ?? [];
+    const container = document.getElementById("radio-france-selection");
+    const updated = document.getElementById("radio-france-last-updated");
+
+    if (episodes.length) {
+      container.replaceChildren(...episodes.map(createPodcastEpisodeCard));
+    } else {
+      const empty = document.createElement("div");
+      empty.className = "availability-empty";
+      const title = document.createElement("h2");
+      title.textContent = "Sélection temporairement indisponible";
+      const text = document.createElement("p");
+      text.textContent = "Les flux officiels seront contrôlés à la prochaine synchronisation.";
+      empty.append(title, text);
+      container.replaceChildren(empty);
+    }
+
+    updated.textContent = state.radioFrance.lastUpdated
+      ? `Mis à jour le ${window.SnakeBonDAvailability.formatDate(state.radioFrance.lastUpdated)}`
+      : "En attente de la première synchronisation";
+  }
+
   function renderSchedules() {
     renderMusic();
     renderWeekend();
+    renderRadioFrance();
     renderTableRows("youtube-schedule", state.schedule.youtube ?? [], [
       "day", "category", "source", "search", "duration",
     ]);
@@ -841,13 +929,14 @@
     setupNavigation();
 
     try {
-      const [platforms, metadata, schedule, recommendations, catalogue, archive] = await Promise.all([
+      const [platforms, metadata, schedule, recommendations, catalogue, archive, radioFrance] = await Promise.all([
         fetchJson("data/platforms.json"),
         fetchJson("data/platform-metadata.json"),
         fetchJson("data/schedule.json"),
         fetchJson("data/recommendations.json"),
         fetchJson("data/catalogue.json"),
         fetchJson("data/archive.json"),
+        fetchJson("data/radio-france.json"),
       ]);
 
       state.platforms = platforms;
@@ -856,6 +945,7 @@
       state.preferences = window.SnakeBonDPreferences.read(Object.keys(platforms));
       state.catalogue = catalogue;
       state.archive = archive;
+      state.radioFrance = radioFrance;
 
       document.getElementById("platform-count").textContent = String(
         Object.values(platforms).flat().length,

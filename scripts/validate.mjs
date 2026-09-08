@@ -38,6 +38,7 @@ const requiredFiles = [
   "data/schedule.json",
   "data/catalogue.json",
   "data/archive.json",
+  "data/radio-france.json",
   "scripts/archive-expired.mjs",
   "scripts/test-availability.mjs",
   "scripts/epic-games.mjs",
@@ -46,9 +47,13 @@ const requiredFiles = [
   "scripts/arte.mjs",
   "scripts/fetch-arte.mjs",
   "scripts/test-arte.mjs",
+  "scripts/radio-france.mjs",
+  "scripts/fetch-radio-france.mjs",
+  "scripts/test-radio-france.mjs",
   ".github/workflows/archive-expired.yml",
   ".github/workflows/fetch-epic-games.yml",
   ".github/workflows/fetch-arte.yml",
+  ".github/workflows/fetch-radio-france.yml",
   "CNAME",
 ];
 
@@ -80,11 +85,13 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "availability-type-filter",
   "availability-container",
   "archive-container",
+  "radio-france-selection",
+  "radio-france-last-updated",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v0.6"), "index.html : version v0.6 absente");
+assert(indexHtml.includes("v0.7"), "index.html : version v0.7 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 
@@ -100,6 +107,7 @@ const recommendations = readJson("data/recommendations.json");
 const schedule = readJson("data/schedule.json");
 const catalogue = readJson("data/catalogue.json");
 const archive = readJson("data/archive.json");
+const radioFrance = readJson("data/radio-france.json");
 
 if (platforms) {
   const entries = Object.entries(platforms);
@@ -284,6 +292,23 @@ assert(arteWorkflow.includes('cron: "41 */12 * * *"'), "Le rythme de synchronisa
 assert(arteWorkflow.includes("scripts/fetch-arte.mjs"), "Le workflow ARTE n’exécute pas l’import");
 assert(arteWorkflow.includes("group: catalogue-maintenance"), "Le workflow ARTE ne partage pas la file de maintenance");
 
+const radioFranceWorkflow = fs.readFileSync(
+  path.join(projectRoot, ".github/workflows/fetch-radio-france.yml"),
+  "utf8",
+);
+assert(
+  radioFranceWorkflow.includes('cron: "17 */6 * * *"'),
+  "Le rythme de synchronisation Radio France est absent",
+);
+assert(
+  radioFranceWorkflow.includes("scripts/fetch-radio-france.mjs"),
+  "Le workflow Radio France n’exécute pas l’import",
+);
+assert(
+  radioFranceWorkflow.includes("group: catalogue-maintenance"),
+  "Le workflow Radio France ne partage pas la file de maintenance",
+);
+
 const archiveWorkflow = fs.readFileSync(
   path.join(projectRoot, ".github/workflows/archive-expired.yml"),
   "utf8",
@@ -292,6 +317,7 @@ const archiveWorkflow = fs.readFileSync(
 [
   ["ARTE", arteWorkflow],
   ["Epic Games", epicWorkflow],
+  ["Radio France", radioFranceWorkflow],
   ["Archivage", archiveWorkflow],
 ].forEach(([name, workflow]) => {
   assert(workflow.includes("actions: write"), `Le workflow ${name} ne peut pas relancer le déploiement`);
@@ -318,6 +344,48 @@ if (catalogue && archive) {
   assert(new Set(ids).size === ids.length, "Un identifiant de contenu est présent plusieurs fois");
 }
 
+if (radioFrance) {
+  assert(radioFrance.version === 1, "radio-france.json : version 1 attendue");
+  assert(validDate(radioFrance.lastUpdated), "radio-france.json : lastUpdated invalide");
+  assert(Array.isArray(radioFrance.items), "radio-france.json : items doit être un tableau");
+  assert(radioFrance.items?.length === 6, "radio-france.json : 6 épisodes sont attendus");
+
+  const radioIds = (radioFrance.items ?? []).map((item) => item.id);
+  assert(new Set(radioIds).size === radioIds.length, "radio-france.json contient un épisode en double");
+
+  (radioFrance.items ?? []).forEach((item) => {
+    const label = `radio-france.json : ${item?.id ?? "entrée sans identifiant"}`;
+    assert(
+      /^radio-france-[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(item?.id ?? ""),
+      `${label} possède un identifiant invalide`,
+    );
+    assert(item.provider === "radio-france", `${label} possède un fournisseur invalide`);
+    assert(["France Culture", "France Inter"].includes(item.station), `${label} possède une station invalide`);
+    assert(typeof item.title === "string" && item.title.length > 0, `${label} n’a pas de titre`);
+    assert(typeof item.podcastTitle === "string" && item.podcastTitle.length > 0, `${label} n’a pas d’émission`);
+    assert(typeof item.description === "string" && item.description.length > 0, `${label} n’a pas de description`);
+    assert(typeof item.durationLabel === "string" && item.durationLabel.length > 0, `${label} n’a pas de durée`);
+    assert(validDate(item.publishedAt), `${label} possède une date de publication invalide`);
+    assert(validDate(item.verifiedAt), `${label} possède une date de vérification invalide`);
+
+    [
+      ["url", "www.radiofrance.fr", null],
+      ["audioUrl", "proxycast.radiofrance.fr", null],
+      ["imageUrl", "www.radiofrance.fr", "/s3/"],
+      ["sourceUrl", "radiofrance-podcast.net", "/podcast09/"],
+    ].forEach(([field, hostname, pathPrefix]) => {
+      try {
+        const url = new URL(item[field]);
+        assert(url.protocol === "https:", `${label} : ${field} doit utiliser HTTPS`);
+        assert(url.hostname === hostname, `${label} : ${field} n’est pas une source Radio France officielle`);
+        if (pathPrefix) assert(url.pathname.startsWith(pathPrefix), `${label} : ${field} possède un chemin invalide`);
+      } catch {
+        failures.push(`${label} : ${field} est invalide`);
+      }
+    });
+  });
+}
+
 const cname = fs.readFileSync(path.join(projectRoot, "CNAME"), "utf8").trim();
 assert(cname === "entertainment.snakebond.net", "Le CNAME ne correspond pas au domaine prévu");
 
@@ -327,4 +395,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, catalogue v0.6, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, catalogue v0.7, automatisations et structure conformes.");

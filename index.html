@@ -36,7 +36,7 @@
           <span class="status-dot" aria-hidden="true"></span>
           France · gratuit et légal
         </div>
-        <span class="version-badge" aria-label="Version 0.6">v0.6</span>
+        <span class="version-badge" aria-label="Version 0.7">v0.7</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -139,8 +139,8 @@
         <aside class="info-banner">
           <strong>Catalogue contrôlé.</strong>
           <span>
-            Les liens officiels sont surveillés chaque semaine. Les sélections ARTE et les jeux
-            offerts par Epic Games sont importés automatiquement ; les entrées expirées sont archivées.
+            Les liens officiels sont surveillés chaque semaine. ARTE, Epic Games et les derniers
+            podcasts Radio France sont actualisés automatiquement depuis leurs sources officielles.
           </span>
         </aside>
       </section>
@@ -427,9 +427,22 @@
       </section>
 
       <section id="podcasts" class="page" aria-labelledby="podcasts-title">
-        <div class="section-heading">
-          <p class="eyebrow">RADIO PERSONNELLE</p>
-          <h1 id="podcasts-title">IA, technologies et culture numérique</h1>
+        <div class="section-heading section-heading-row podcast-heading">
+          <div>
+            <p class="eyebrow">SÉLECTION OFFICIELLE ACTUALISÉE</p>
+            <h1 id="podcasts-title">Les derniers podcasts Radio France</h1>
+            <p>
+              Six épisodes récents de France Culture et France Inter, avec écoute directe depuis
+              les flux officiels.
+            </p>
+          </div>
+          <span class="podcast-updated" id="radio-france-last-updated">Aucune mise à jour</span>
+        </div>
+        <div id="radio-france-selection" class="podcast-feed-grid"></div>
+
+        <div class="section-heading podcast-program-heading">
+          <p class="eyebrow">PROGRAMME PERSONNEL</p>
+          <h2>IA, technologies et culture numérique</h2>
         </div>
         <div class="table-wrap">
           <table>
@@ -520,7 +533,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v0.6 · Sans tracker · sélections ARTE et jeux Epic actualisés automatiquement</span>
+      <span>v0.7 · Sans tracker · ARTE, Epic Games et Radio France actualisés automatiquement</span>
     </footer>
   </body>
 </html>

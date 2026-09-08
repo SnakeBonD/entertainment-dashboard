@@ -1,9 +1,15 @@
-name: Archive expired content
+name: Refresh Radio France podcasts
 
 on:
   schedule:
-    - cron: "40 5 * * *"
+    - cron: "17 */6 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fetch-radio-france.yml"
+      - "scripts/radio-france.mjs"
+      - "scripts/fetch-radio-france.mjs"
 
 permissions:
   contents: write
@@ -14,39 +20,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  archive:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Archive expired entries
-        run: node scripts/archive-expired.mjs
+      - name: Fetch official Radio France podcast feeds
+        run: node scripts/fetch-radio-france.mjs
 
-      - name: Validate updated data
+      - name: Validate updated selection
         run: |
           node scripts/validate.mjs
-          node scripts/test-availability.mjs
-          node scripts/test-epic-games.mjs
-          node scripts/test-arte.mjs
           node scripts/test-radio-france.mjs
 
-      - name: Publish archive update
+      - name: Publish podcast update
         id: publish
         run: |
-          if git diff --quiet -- data/catalogue.json data/archive.json; then
-            echo "No expired content to archive."
+          if git diff --quiet -- data/radio-france.json; then
+            echo "No Radio France selection change."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalogue.json data/archive.json
-          git commit -m "chore: archive expired entertainment content"
+          git add data/radio-france.json
+          git commit -m "chore: refresh Radio France podcasts"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      - name: Deploy archive update
+      - name: Deploy podcast update
         if: steps.publish.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
