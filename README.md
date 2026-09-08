@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v0.6** automatise les sélections populaires d’ARTE et les jeux temporairement gratuits de l’Epic Games Store :
+La version **v0.7** ajoute une sélection de podcasts Radio France aux automatisations ARTE et Epic Games :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -35,6 +35,10 @@ La version **v0.6** automatise les sélections populaires d’ARTE et les jeux t
 - actualisation ARTE deux fois par jour, avec images, durées et liens officiels ;
 - exclusion des collections sans date, contenus futurs, indisponibles ou géobloqués en France ;
 - masquage de sécurité lorsqu’un programme quitte la sélection ARTE avant son expiration ;
+- sélection automatique de six épisodes récents issus des flux officiels de France Culture et France Inter ;
+- lecteur audio intégré, visuels, durées, dates de publication et liens vers Radio France ;
+- contrôle de l’identité des flux, des domaines audio et des images avant toute publication ;
+- actualisation des podcasts toutes les six heures sans inventer de date d’expiration ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -64,6 +68,7 @@ entertainment-dashboard/
 │   ├── catalogue.json
 │   ├── platform-metadata.json
 │   ├── platforms.json
+│   ├── radio-france.json
 │   ├── recommendations.json
 │   └── schedule.json
 ├── scripts/
@@ -73,17 +78,21 @@ entertainment-dashboard/
 │   ├── epic-games.mjs
 │   ├── fetch-arte.mjs
 │   ├── fetch-epic-games.mjs
+│   ├── fetch-radio-france.mjs
+│   ├── radio-france.mjs
 │   ├── test-availability.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
 │   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
+│   ├── test-radio-france.mjs
 │   └── validate.mjs
 ├── .github/workflows/
 │   ├── archive-expired.yml
 │   ├── check-links.yml
 │   ├── fetch-arte.yml
 │   ├── fetch-epic-games.yml
+│   ├── fetch-radio-france.yml
 │   └── deploy.yml
 ├── CNAME
 ├── LICENSE
@@ -109,6 +118,7 @@ node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
+node scripts/test-radio-france.mjs
 node --check js/app.js
 node --check js/availability.js
 node --check js/catalog.js
@@ -120,6 +130,8 @@ node --check scripts/epic-games.mjs
 node --check scripts/fetch-epic-games.mjs
 node --check scripts/arte.mjs
 node --check scripts/fetch-arte.mjs
+node --check scripts/radio-france.mjs
+node --check scripts/fetch-radio-france.mjs
 ```
 
 ## Données
@@ -186,6 +198,22 @@ Les collections sans date, les programmes à venir, les vidéos non lisibles, le
 et les contenus exclus de France sont ignorés. Une réponse vide ou invalide interrompt la tâche sans
 modifier les données déjà publiées.
 
+### Radio France
+
+`scripts/fetch-radio-france.mjs` consulte deux flux RSS officiels : **Les pieds sur terre** sur
+France Culture et **Affaires sensibles** sur France Inter. Les trois épisodes les plus récents de
+chaque émission alimentent `data/radio-france.json`.
+
+Chaque épisode inclut le visuel Radio France, la durée, la date de publication, le lecteur audio
+officiel et un lien vers l’émission ou sa page dédiée. L’import accepte uniquement les flux signés
+Radio France, les fichiers audio servis par `proxycast.radiofrance.fr` et les images du domaine
+officiel. Les contenus explicites, trop anciens, incomplets ou provenant d’un autre domaine sont
+écartés.
+
+Les podcasts restant accessibles après leur sortie de la sélection, aucune fausse date d’expiration
+n’est créée. Une sélection incomplète ou un flux invalide interrompt la tâche sans remplacer les six
+épisodes déjà publiés.
+
 ## Déploiement
 
 Le workflow `deploy.yml` valide le site et le publie sur GitHub Pages après chaque push sur `main`. Le dépôt utilise **GitHub Actions** comme source de publication Pages.
@@ -212,6 +240,11 @@ automatique du catalogue, le workflow GitHub Pages est relancé explicitement af
 nouvelles données. Un ordre commun et déterministe évite qu’ARTE et Epic Games ne créent des
 commits uniquement pour réordonner les mêmes entrées.
 
+Le workflow `fetch-radio-france.yml` s’exécute toutes les six heures. Il contrôle les deux flux,
+actualise les six épisodes sélectionnés et ne crée un commit que si le contenu change réellement.
+Il partage la file de maintenance existante et relance explicitement GitHub Pages après une mise à
+jour publiée.
+
 ## Feuille de route
 
 - **v0.1** — structure initiale et mise en production ;
@@ -220,7 +253,7 @@ commits uniquement pour réordonner les mêmes entrées.
 - **v0.4** — dates d’expiration, alertes et archivage automatique ;
 - **v0.5** — automatisation des jeux Epic Games, contrôle des offres et images officielles ;
 - **v0.6** — automatisation des sélections ARTE, contrôle géographique et dates de disponibilité ;
-- **v0.7** — autres sources officielles automatisées ;
+- **v0.7** — podcasts Radio France automatisés depuis deux flux officiels ;
 - **v0.8** — PWA installable ;
 - **v1.0** — version stable complète.
 
@@ -235,6 +268,7 @@ commits uniquement pour réordonner les mêmes entrées.
 - Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.
 - L’import Epic Games utilise uniquement des données officielles destinées à la France.
 - L’import ARTE accepte uniquement des programmes actifs, lisibles et autorisés en France.
+- L’import Radio France accepte uniquement les flux, audios, images et liens des domaines officiels.
 - Une réponse vide ou invalide ne peut pas effacer les données déjà publiées.
 - Liens limités aux plateformes officielles sélectionnées.
 

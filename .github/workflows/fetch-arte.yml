@@ -38,6 +38,7 @@ jobs:
           node scripts/test-availability.mjs
           node scripts/test-epic-games.mjs
           node scripts/test-arte.mjs
+          node scripts/test-radio-france.mjs
 
       - name: Publish catalogue update
         id: publish

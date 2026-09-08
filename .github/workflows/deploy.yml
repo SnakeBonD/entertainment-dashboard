@@ -31,6 +31,7 @@ jobs:
           node scripts/test-availability.mjs
           node scripts/test-epic-games.mjs
           node scripts/test-arte.mjs
+          node scripts/test-radio-france.mjs
           node --check js/app.js
           node --check js/availability.js
           node --check js/catalog.js
@@ -43,6 +44,8 @@ jobs:
           node --check scripts/fetch-epic-games.mjs
           node --check scripts/arte.mjs
           node --check scripts/fetch-arte.mjs
+          node --check scripts/radio-france.mjs
+          node --check scripts/fetch-radio-france.mjs
 
       - name: Prepare publication directory
         run: |
