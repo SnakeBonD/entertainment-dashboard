@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-07T19:40:30.240Z",
+  "lastUpdated": "2026-09-08T15:07:30.207Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -72,7 +72,7 @@
       "addedDate": "2026-09-02",
       "availabilityStartDate": "2026-09-02T03:00:00Z",
       "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -80,7 +80,9 @@
       "description": "L'irrésistible chronique d'une famille recomposée germano-turque dont l'humour trash égratigne les clichés culturels.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/HF28gSZ7QVUMpFRnqbb4Tm/768x432?type=TEXT",
       "durationLabel": "105 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-08T15:07:30.207Z"
     },
     {
       "id": "arte-116006-000-A-2026-09-05",
@@ -140,6 +142,26 @@
       "description": "Livreur à vélo, Souleymane pédale dans la nuit parisienne pour un salaire de misère, et rêve du sésame des papiers.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UAbVHBpFnqmFCwGFpEWwaF/768x432?type=TEXT",
       "durationLabel": "90 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-129843-000-A-2026-09-06",
+      "title": "Peter von Kant",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129843-000-A/peter-von-kant/",
+      "country": "FR",
+      "addedDate": "2026-09-06",
+      "availabilityStartDate": "2026-09-06T03:00:00Z",
+      "expiryDate": "2026-12-01T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-08T15:07:30.207Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129843-000-A",
+      "description": "Un cinéaste dominateur (Denis Ménochet) se laisse consumer d'amour pour un jeune inconnu. L'hommage d'Ozon à Fassbinder.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UjMCvfKoBNksFkwbfwRcGJ/768x432?type=TEXT",
+      "durationLabel": "82 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
