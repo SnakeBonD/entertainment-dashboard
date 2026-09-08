@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.0** stabilise le dashboard, son installation et sa publication tout en conservant les automatisations ARTE, Epic Games et Radio France :
+La version **v1.1** améliore l’accessibilité et la fluidité du dashboard stable tout en conservant les automatisations ARTE, Epic Games et Radio France :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -48,6 +48,11 @@ La version **v1.0** stabilise le dashboard, son installation et sa publication t
 - vérification manuelle d’une nouvelle version depuis le dashboard ;
 - guides d’installation pour ordinateur, Android, iPhone et iPad ;
 - URL canonique, métadonnées sociales, `robots.txt` et sitemap public ;
+- navigation synchronisée dès l’accueil et transfert du focus vers le titre de chaque espace ;
+- tableaux défilants utilisables au clavier, avec régions et légendes accessibles ;
+- résultats dynamiques annoncés entièrement par les lecteurs d’écran ;
+- recherches regroupées à la prochaine frame pour éviter les rendus intermédiaires inutiles ;
+- chargement différé des scripts, images distantes et lecteurs audio certifié automatiquement ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -104,6 +109,7 @@ entertainment-dashboard/
 │   ├── test-epic-games.mjs
 │   ├── test-personalization.mjs
 │   ├── test-pwa.mjs
+│   ├── test-quality.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
 │   └── validate.mjs
@@ -140,6 +146,7 @@ node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
+node scripts/test-quality.mjs
 node scripts/test-release.mjs
 node --check js/app.js
 node --check js/availability.js
@@ -303,6 +310,7 @@ jour publiée.
 - **v0.7** — podcasts Radio France automatisés depuis deux flux officiels ;
 - **v0.8** — PWA installable, mode hors ligne maîtrisé et mise à jour réseau prioritaire ;
 - **v1.0** — version stable, installation guidée, diagnostic PWA et métadonnées publiques.
+- **v1.1** — accessibilité clavier, gestion du focus et optimisation des recherches et médias.
 
 ## Sécurité et confidentialité
 

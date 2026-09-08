@@ -22,6 +22,17 @@
     availabilityType: "all",
   };
 
+  function scheduleFrame(callback) {
+    let frameId = null;
+    return () => {
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      frameId = window.requestAnimationFrame(() => {
+        frameId = null;
+        callback();
+      });
+    };
+  }
+
   async function fetchJson(path) {
     const response = await fetch(new URL(path, document.baseURI));
     if (!response.ok) {
@@ -30,7 +41,7 @@
     return response.json();
   }
 
-  function openTab(tabId, updateHash = true) {
+  function openTab(tabId, updateHash = true, moveFocus = false) {
     const target = document.getElementById(tabId);
     if (!target || !target.classList.contains("page")) return;
 
@@ -52,6 +63,14 @@
       history.replaceState(null, "", `#${tabId}`);
     }
 
+    if (moveFocus) {
+      const heading = target.querySelector("h1");
+      if (heading) {
+        heading.setAttribute("tabindex", "-1");
+        heading.focus({ preventScroll: true });
+      }
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -64,15 +83,15 @@
     });
 
     document.querySelectorAll("[data-tab]").forEach((button) => {
-      button.addEventListener("click", () => openTab(button.dataset.tab));
+      button.addEventListener("click", () => openTab(button.dataset.tab, true, true));
     });
     document.querySelectorAll("[data-open-tab]").forEach((button) => {
-      button.addEventListener("click", () => openTab(button.dataset.openTab));
+      button.addEventListener("click", () => openTab(button.dataset.openTab, true, true));
     });
 
     window.addEventListener("hashchange", () => {
       const tabId = window.location.hash.slice(1);
-      if (tabId) openTab(tabId, false);
+      if (tabId) openTab(tabId, false, true);
     });
 
     window.addEventListener("keydown", (event) => {
@@ -83,7 +102,7 @@
     });
 
     const initialTab = window.location.hash.slice(1);
-    if (initialTab) openTab(initialTab, false);
+    openTab(initialTab || "accueil", false);
   }
 
   function updateFavoriteCount() {
@@ -309,6 +328,7 @@
     const favoritesOnly = document.getElementById("favorites-only");
     const resetButton = document.getElementById("reset-filters");
     const advancedFilters = document.getElementById("advanced-filters");
+    const renderSearchResults = scheduleFrame(renderPlatforms);
     const selectBindings = {
       "access-filter": "access",
       "account-filter": "account",
@@ -323,7 +343,7 @@
 
     search.addEventListener("input", (event) => {
       state.search = event.target.value.trim();
-      renderPlatforms();
+      renderSearchResults();
     });
 
     favoritesOnly.addEventListener("click", () => {
@@ -670,7 +690,7 @@
         document.getElementById("availability-type-filter").value = "all";
         renderAvailability();
       } else {
-        openTab("plateformes");
+        openTab("plateformes", true, true);
       }
     });
     empty.append(title, text, button);
@@ -727,10 +747,11 @@
     const search = document.getElementById("availability-search");
     const status = document.getElementById("availability-status-filter");
     const type = document.getElementById("availability-type-filter");
+    const renderSearchResults = scheduleFrame(renderAvailability);
 
     search.addEventListener("input", (event) => {
       state.availabilitySearch = event.target.value.trim();
-      renderAvailability();
+      renderSearchResults();
     });
     status.addEventListener("change", (event) => {
       state.availabilityStatus = event.target.value;

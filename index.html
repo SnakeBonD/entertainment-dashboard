@@ -58,7 +58,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.0">v1.0</span>
+        <span class="version-badge" aria-label="Version 1.1">v1.1</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -73,7 +73,7 @@
     </header>
 
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
-      <button class="nav-button is-active" type="button" data-tab="accueil">Accueil</button>
+      <button class="nav-button is-active" type="button" data-tab="accueil" aria-current="page">Accueil</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
       <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">Disponibilités</button>
       <button class="nav-button nav-button-personal" type="button" data-tab="pour-moi">Pour moi</button>
@@ -262,7 +262,7 @@
           </details>
         </div>
 
-        <p id="platform-result-count" class="result-count" aria-live="polite"></p>
+        <p id="platform-result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
         <div id="platform-container"></div>
       </section>
 
@@ -326,7 +326,7 @@
           </label>
         </div>
 
-        <p id="availability-result-count" class="result-count" aria-live="polite"></p>
+        <p id="availability-result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
         <div id="availability-container" class="availability-grid"></div>
 
         <details class="archive-panel">
@@ -436,8 +436,9 @@
           <h1 id="youtube-title">YouTube organisé comme une plateforme</h1>
           <p>Une sélection courte par jour, classée par usage plutôt que par algorithme.</p>
         </div>
-        <div class="table-wrap">
+        <div class="table-wrap" role="region" aria-label="Programme YouTube hebdomadaire" tabindex="0">
           <table>
+            <caption class="visually-hidden">Programme YouTube hebdomadaire</caption>
             <thead>
               <tr><th>Jour</th><th>Catégorie</th><th>Source</th><th>Recherche</th><th>Durée</th></tr>
             </thead>
@@ -473,8 +474,9 @@
           <p class="eyebrow">PROGRAMME PERSONNEL</p>
           <h2>IA, technologies et culture numérique</h2>
         </div>
-        <div class="table-wrap">
+        <div class="table-wrap" role="region" aria-label="Programme personnel de podcasts" tabindex="0">
           <table>
+            <caption class="visually-hidden">Programme personnel de podcasts</caption>
             <thead><tr><th>Jour</th><th>Type</th><th>Recherche</th><th>Objectif</th></tr></thead>
             <tbody id="podcast-schedule"></tbody>
           </table>
@@ -487,8 +489,9 @@
           <h1 id="learning-title">Transformer le temps d’écran en compétence</h1>
           <p>Chaque session se termine par une idée à retenir et une action à tester.</p>
         </div>
-        <div class="table-wrap">
+        <div class="table-wrap" role="region" aria-label="Programme d’apprentissage hebdomadaire" tabindex="0">
           <table>
+            <caption class="visually-hidden">Programme d’apprentissage hebdomadaire</caption>
             <thead><tr><th>Jour</th><th>Durée</th><th>Source</th><th>Sujet</th><th>Résultat</th></tr></thead>
             <tbody id="learning-schedule"></tbody>
           </table>
@@ -618,7 +621,7 @@
         </aside>
       </section>
 
-      <section id="error-page" class="page" aria-labelledby="error-title">
+      <section id="error-page" class="page" aria-labelledby="error-title" role="alert">
         <div class="empty-state">
           <span aria-hidden="true">!</span>
           <h1 id="error-title">Impossible de charger les données</h1>
@@ -629,7 +632,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.0 · Version stable · Contenus actualisés automatiquement</span>
+      <span>v1.1 · Accessibilité et performance · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>
