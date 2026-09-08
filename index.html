@@ -7,13 +7,24 @@
       name="description"
       content="Tableau de bord personnel de contenus gratuits et légaux accessibles en France."
     >
+    <meta name="robots" content="index, follow">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#080a10">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="SnakeBonD">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:title" content="SnakeBonD Entertainment">
+    <meta
+      property="og:description"
+      content="Des contenus gratuits et légaux pour regarder, écouter, jouer et apprendre."
+    >
+    <meta property="og:url" content="https://entertainment.snakebond.net/">
+    <meta name="twitter:card" content="summary">
     <title>SnakeBonD Entertainment</title>
+    <link rel="canonical" href="https://entertainment.snakebond.net/">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="assets/pwa-icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/pwa-icon-192.png">
@@ -44,10 +55,10 @@
           <span class="status-dot" aria-hidden="true"></span>
           France · gratuit et légal
         </div>
-        <button class="install-button" id="install-app" type="button" hidden>
+        <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 0.8">v0.8</span>
+        <span class="version-badge" aria-label="Version 1.0">v1.0</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -157,6 +168,9 @@
             l’interface et le catalogue restent disponibles hors ligne ; les lecteurs audio et les
             visuels externes nécessitent une connexion.
           </span>
+          <button class="secondary-button compact-button" type="button" data-open-tab="application">
+            Gérer l’application
+          </button>
         </aside>
       </section>
 
@@ -537,6 +551,73 @@
         <div id="recommendation-results" class="recommendation-grid" aria-live="polite"></div>
       </section>
 
+      <section id="application" class="page" aria-labelledby="application-title">
+        <div class="section-heading">
+          <p class="eyebrow">APPLICATION</p>
+          <h1 id="application-title">Installation et mises à jour</h1>
+          <p>
+            Retrouve le dashboard depuis ton écran d’accueil, vérifie son fonctionnement hors ligne
+            et recherche une nouvelle version sans quitter la page.
+          </p>
+        </div>
+
+        <div class="app-health-grid" aria-label="État de l’application">
+          <article class="app-health-card">
+            <span>Installation</span>
+            <strong id="app-install-state">Vérification en cours…</strong>
+            <small>Selon les capacités de ce navigateur.</small>
+          </article>
+          <article class="app-health-card">
+            <span>Mode hors ligne</span>
+            <strong id="app-offline-state">Vérification en cours…</strong>
+            <small>L’interface et les données locales sont conservées après une première visite.</small>
+          </article>
+          <article class="app-health-card">
+            <span>Mises à jour</span>
+            <strong id="app-update-state">Vérification en cours…</strong>
+            <small>La dernière version est recherchée au démarrage et sur demande.</small>
+          </article>
+        </div>
+
+        <div class="application-actions">
+          <button class="primary-button" id="install-app-page" type="button" data-install-app hidden>
+            Installer l’application
+          </button>
+          <button class="secondary-button" id="check-app-update" type="button">
+            Rechercher une mise à jour
+          </button>
+        </div>
+        <p class="app-action-status" id="app-action-status" aria-live="polite"></p>
+
+        <div class="section-heading application-guide-heading">
+          <p class="eyebrow">GUIDE RAPIDE</p>
+          <h2>Ajouter le dashboard à ton appareil</h2>
+        </div>
+        <div class="install-guide-grid">
+          <article>
+            <span class="guide-number" aria-hidden="true">1</span>
+            <h3>Ordinateur</h3>
+            <p>Avec Chrome ou Edge, utilise le bouton d’installation affiché ici ou dans la barre d’adresse.</p>
+          </article>
+          <article>
+            <span class="guide-number" aria-hidden="true">2</span>
+            <h3>Android</h3>
+            <p>Dans Chrome, ouvre le menu puis choisis « Installer l’application » ou « Ajouter à l’écran d’accueil ».</p>
+          </article>
+          <article>
+            <span class="guide-number" aria-hidden="true">3</span>
+            <h3>iPhone et iPad</h3>
+            <p>Dans Safari, touche Partager puis « Sur l’écran d’accueil ». Cette installation reste manuelle sur iOS et iPadOS.</p>
+          </article>
+        </div>
+
+        <aside class="application-note">
+          <strong>Confidentialité et limites.</strong>
+          Les favoris et préférences restent dans ce navigateur. Hors ligne, les lecteurs audio,
+          les images externes et les liens vers les plateformes nécessitent toujours une connexion.
+        </aside>
+      </section>
+
       <section id="error-page" class="page" aria-labelledby="error-title">
         <div class="empty-state">
           <span aria-hidden="true">!</span>
@@ -548,7 +629,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v0.8 · PWA installable · Contenus actualisés automatiquement</span>
+      <span>v1.0 · Version stable · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

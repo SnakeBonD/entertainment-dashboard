@@ -535,8 +535,12 @@ p {
   justify-content: space-between;
 }
 
-.pwa-banner > span:last-child {
+.pwa-banner > span:nth-child(2) {
   max-width: 74ch;
+}
+
+.pwa-banner .compact-button {
+  flex: 0 0 auto;
 }
 
 .pwa-status {
@@ -560,6 +564,91 @@ p {
 .pwa-status.is-offline {
   border-color: rgb(255 200 120 / 30%);
   background: rgb(255 200 120 / 8%);
+}
+
+.app-health-grid,
+.install-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.app-health-card,
+.install-guide-grid article {
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgb(19 25 36 / 92%), rgb(13 18 27 / 92%));
+}
+
+.app-health-card > span,
+.app-health-card small {
+  color: var(--muted);
+}
+
+.app-health-card > span {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.app-health-card strong {
+  display: block;
+  margin: 0.65rem 0 0.35rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.application-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.app-action-status {
+  min-height: 1.5rem;
+  margin-top: 0.65rem;
+  color: var(--muted);
+}
+
+.application-guide-heading {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.install-guide-grid article h3 {
+  margin: 0.8rem 0 0.5rem;
+}
+
+.install-guide-grid article p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.guide-number {
+  display: grid;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(139 213 255 / 28%);
+  border-radius: 50%;
+  background: rgb(139 213 255 / 9%);
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.application-note {
+  margin-top: 1rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgb(183 160 255 / 25%);
+  border-radius: 14px;
+  background: rgb(183 160 255 / 7%);
+  color: var(--muted);
+}
+
+.application-note strong {
+  color: var(--violet);
 }
 
 .pwa-status.is-offline .status-dot {
@@ -1838,7 +1927,9 @@ footer {
   .availability-grid,
   .archive-grid,
   .podcast-feed-grid,
-  .stats-grid {
+  .stats-grid,
+  .app-health-grid,
+  .install-guide-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1938,8 +2029,10 @@ footer {
   .availability-stats,
   .availability-controls,
   .availability-grid,
-  .archive-grid,
-  .podcast-feed-grid {
+    .archive-grid,
+    .podcast-feed-grid,
+    .app-health-grid,
+    .install-guide-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1961,6 +2054,15 @@ footer {
 
   .pwa-banner {
     align-items: stretch;
+  }
+
+  .application-actions {
+    flex-direction: column;
+  }
+
+  .application-actions button,
+  .pwa-banner .compact-button {
+    width: 100%;
   }
 
   .pwa-status {

@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "snakebond-entertainment-";
-const CACHE_NAME = `${CACHE_PREFIX}v0.8.0`;
+const CACHE_NAME = `${CACHE_PREFIX}v1.0.0`;
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -47,6 +47,10 @@ self.addEventListener("activate", (event) => {
       ))
       .then(() => self.clients.claim()),
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data?.type === "SKIP_WAITING") self.skipWaiting();
 });
 
 async function networkFirst(request, navigationFallback = false) {
