@@ -6,6 +6,7 @@ import {
   extractEpicGames,
   syncEpicCatalogue,
 } from "./epic-games.mjs";
+import { updateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dryRun = process.argv.includes("--dry-run");
@@ -52,11 +53,23 @@ if (!epicGames.length) {
 
 const catalogue = readJson("data/catalogue.json");
 const result = syncEpicCatalogue(catalogue, epicGames, now);
+const sourceStatus = updateSourceStatus(
+  readJson("data/source-status.json"),
+  "epic-games-store",
+  now.toISOString(),
+  result.activeCount,
+);
 
-if (result.changed && !dryRun) {
+if (!dryRun) {
+  if (result.changed) {
+    fs.writeFileSync(
+      path.join(projectRoot, "data/catalogue.json"),
+      `${JSON.stringify(result.catalogue, null, 2)}\n`,
+    );
+  }
   fs.writeFileSync(
-    path.join(projectRoot, "data/catalogue.json"),
-    `${JSON.stringify(result.catalogue, null, 2)}\n`,
+    path.join(projectRoot, "data/source-status.json"),
+    `${JSON.stringify(sourceStatus, null, 2)}\n`,
   );
 }
 

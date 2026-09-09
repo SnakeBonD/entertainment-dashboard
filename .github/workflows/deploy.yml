@@ -34,6 +34,7 @@ jobs:
           node scripts/test-radio-france.mjs
           node scripts/test-pwa.mjs
           node scripts/test-quality.mjs
+          node scripts/test-source-health.mjs
           node scripts/test-release.mjs
           node --check js/app.js
           node --check js/availability.js
@@ -42,6 +43,7 @@ jobs:
           node --check js/preferences.js
           node --check js/personalization.js
           node --check js/recommendations.js
+          node --check js/source-health.js
           node --check js/pwa.js
           node --check service-worker.js
           node --check scripts/archive-expired.mjs
@@ -51,6 +53,7 @@ jobs:
           node --check scripts/fetch-arte.mjs
           node --check scripts/radio-france.mjs
           node --check scripts/fetch-radio-france.mjs
+          node --check scripts/source-status.mjs
 
       - name: Prepare publication directory
         run: |

@@ -17,6 +17,7 @@
     catalogue: { items: [] },
     archive: { items: [] },
     radioFrance: { items: [] },
+    sourceStatus: { sources: [] },
     availabilitySearch: "",
     availabilityStatus: "all",
     availabilityType: "all",
@@ -941,6 +942,44 @@
     ]);
   }
 
+  function renderSourceHealth() {
+    const summary = window.SnakeBonDSourceHealth.summarize(state.sourceStatus);
+    const summaryTarget = document.getElementById("source-health-summary");
+    const grid = document.getElementById("source-health-grid");
+
+    if (summary.warning || summary.unavailable) {
+      const count = summary.warning + summary.unavailable;
+      summaryTarget.className = "source-health-summary is-warning";
+      summaryTarget.textContent = `${count} source${count > 1 ? "s" : ""} à surveiller · les derniers contenus validés restent disponibles`;
+    } else {
+      summaryTarget.className = "source-health-summary is-fresh";
+      summaryTarget.textContent = `${summary.fresh} sources contrôlées récemment`;
+    }
+
+    const cards = summary.sources.map((source) => {
+      const card = document.createElement("article");
+      card.className = `source-health-card source-health-card-${source.state}`;
+
+      const heading = document.createElement("div");
+      heading.className = "source-health-card-heading";
+      const name = document.createElement("h3");
+      name.textContent = source.name;
+      const badge = document.createElement("span");
+      badge.className = `source-state source-state-${source.state}`;
+      badge.textContent = source.statusLabel;
+      heading.append(name, badge);
+
+      const checked = document.createElement("strong");
+      checked.textContent = source.relativeLabel;
+      const details = document.createElement("p");
+      details.textContent = `${source.itemLabel} actuellement publiés · ${source.scheduleLabel.toLowerCase()}`;
+      card.append(heading, checked, details);
+      return card;
+    });
+
+    grid.replaceChildren(...cards);
+  }
+
   function showLoadError(error) {
     console.error(error);
     openTab("error-page");
@@ -950,7 +989,7 @@
     setupNavigation();
 
     try {
-      const [platforms, metadata, schedule, recommendations, catalogue, archive, radioFrance] = await Promise.all([
+      const [platforms, metadata, schedule, recommendations, catalogue, archive, radioFrance, sourceStatus] = await Promise.all([
         fetchJson("data/platforms.json"),
         fetchJson("data/platform-metadata.json"),
         fetchJson("data/schedule.json"),
@@ -958,6 +997,7 @@
         fetchJson("data/catalogue.json"),
         fetchJson("data/archive.json"),
         fetchJson("data/radio-france.json"),
+        fetchJson("data/source-status.json"),
       ]);
 
       state.platforms = platforms;
@@ -967,6 +1007,7 @@
       state.catalogue = catalogue;
       state.archive = archive;
       state.radioFrance = radioFrance;
+      state.sourceStatus = sourceStatus;
 
       document.getElementById("platform-count").textContent = String(
         Object.values(platforms).flat().length,
@@ -975,6 +1016,7 @@
       renderCategoryFilters();
       renderPlatforms();
       renderSchedules();
+      renderSourceHealth();
       setupPlatformControls();
       setupAvailabilityControls();
       setupPreferences();

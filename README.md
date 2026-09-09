@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.1** améliore l’accessibilité et la fluidité du dashboard stable tout en conservant les automatisations ARTE, Epic Games et Radio France :
+La version **v1.2** rend la fraîcheur des sources automatisées visible et mesurable tout en conservant les améliorations d’accessibilité et les automatisations ARTE, Epic Games et Radio France :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -53,6 +53,11 @@ La version **v1.1** améliore l’accessibilité et la fluidité du dashboard st
 - résultats dynamiques annoncés entièrement par les lecteurs d’écran ;
 - recherches regroupées à la prochaine frame pour éviter les rendus intermédiaires inutiles ;
 - chargement différé des scripts, images distantes et lecteurs audio certifié automatiquement ;
+- espace « Application » enrichi avec l’état d’ARTE, Epic Games et Radio France ;
+- dernier contrôle réussi, fréquence prévue et nombre d’éléments publiés affichés par source ;
+- signalement automatique lorsqu’une source dépasse son délai normal d’actualisation ;
+- conservation des derniers contenus validés lorsqu’un contrôle est en retard ;
+- suivi de fraîcheur mis à jour par chaque automatisation réussie et disponible hors ligne ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -85,6 +90,7 @@ entertainment-dashboard/
 │   ├── preferences.js
 │   ├── personalization.js
 │   ├── pwa.js
+│   ├── source-health.js
 │   └── recommendations.js
 ├── data/
 │   ├── archive.json
@@ -92,6 +98,7 @@ entertainment-dashboard/
 │   ├── platform-metadata.json
 │   ├── platforms.json
 │   ├── radio-france.json
+│   ├── source-status.json
 │   ├── recommendations.json
 │   └── schedule.json
 ├── scripts/
@@ -103,6 +110,7 @@ entertainment-dashboard/
 │   ├── fetch-epic-games.mjs
 │   ├── fetch-radio-france.mjs
 │   ├── radio-france.mjs
+│   ├── source-status.mjs
 │   ├── test-availability.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
@@ -110,6 +118,7 @@ entertainment-dashboard/
 │   ├── test-personalization.mjs
 │   ├── test-pwa.mjs
 │   ├── test-quality.mjs
+│   ├── test-source-health.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
 │   └── validate.mjs
@@ -147,6 +156,7 @@ node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs
+node scripts/test-source-health.mjs
 node scripts/test-release.mjs
 node --check js/app.js
 node --check js/availability.js
@@ -156,6 +166,7 @@ node --check js/preferences.js
 node --check js/personalization.js
 node --check js/recommendations.js
 node --check js/pwa.js
+node --check js/source-health.js
 node --check service-worker.js
 node --check scripts/epic-games.mjs
 node --check scripts/fetch-epic-games.mjs
@@ -163,6 +174,7 @@ node --check scripts/arte.mjs
 node --check scripts/fetch-arte.mjs
 node --check scripts/radio-france.mjs
 node --check scripts/fetch-radio-france.mjs
+node --check scripts/source-status.mjs
 ```
 
 ## Données
@@ -245,6 +257,17 @@ Les podcasts restant accessibles après leur sortie de la sélection, aucune fau
 n’est créée. Une sélection incomplète ou un flux invalide interrompt la tâche sans remplacer les six
 épisodes déjà publiés.
 
+## Fraîcheur des sources
+
+`data/source-status.json` conserve, pour ARTE, Epic Games Store et Radio France, la date du dernier
+contrôle réussi, le nombre d’éléments confirmés, la fréquence prévue et le délai à partir duquel la
+source doit être surveillée. Le dashboard transforme ces données en trois états simples : **À jour**,
+**À surveiller** ou **En attente**.
+
+Chaque import réussi actualise ce suivi même lorsque la sélection elle-même n’a pas changé. Si une
+source ne répond plus, aucun contenu validé n’est supprimé : la date du dernier succès vieillit et
+l’interface signale automatiquement le retard.
+
 ## Application installable et mode hors ligne
 
 `manifest.webmanifest` décrit l’application, ses icônes adaptatives et ses raccourcis vers les
@@ -283,19 +306,19 @@ la date de fin est dépassée vers `data/archive.json`, valide les données, pui
 uniquement si un changement est nécessaire.
 
 Le workflow `fetch-epic-games.yml` s’exécute toutes les six heures. Il récupère les promotions
-Epic Games pour la France, actualise le catalogue, archive les offres terminées et ne crée un commit
-que lorsque les données ont réellement changé. Toutes les tâches de maintenance partagent la même
-file d’exécution afin d’éviter les mises à jour concurrentes.
+Epic Games pour la France, actualise le catalogue, archive les offres terminées et enregistre le
+dernier contrôle réussi. Toutes les tâches de maintenance partagent la même file d’exécution afin
+d’éviter les mises à jour concurrentes.
 
 Le workflow `fetch-arte.yml` s’exécute toutes les douze heures. Il actualise la sélection ARTE pour
-la France, archive les programmes expirés et publie seulement les changements réels. Les imports
+la France, archive les programmes expirés et enregistre le dernier contrôle réussi. Les imports
 ARTE, Epic Games et l’archivage utilisent la même file de maintenance. Après chaque modification
 automatique du catalogue, le workflow GitHub Pages est relancé explicitement afin de publier les
 nouvelles données. Un ordre commun et déterministe évite qu’ARTE et Epic Games ne créent des
 commits uniquement pour réordonner les mêmes entrées.
 
 Le workflow `fetch-radio-france.yml` s’exécute toutes les six heures. Il contrôle les deux flux,
-actualise les six épisodes sélectionnés et ne crée un commit que si le contenu change réellement.
+actualise les six épisodes sélectionnés et enregistre le dernier contrôle réussi.
 Il partage la file de maintenance existante et relance explicitement GitHub Pages après une mise à
 jour publiée.
 
@@ -311,6 +334,7 @@ jour publiée.
 - **v0.8** — PWA installable, mode hors ligne maîtrisé et mise à jour réseau prioritaire ;
 - **v1.0** — version stable, installation guidée, diagnostic PWA et métadonnées publiques.
 - **v1.1** — accessibilité clavier, gestion du focus et optimisation des recherches et médias.
+- **v1.2** — état des sources, suivi du dernier contrôle réussi et détection des retards.
 
 ## Sécurité et confidentialité
 

@@ -35,6 +35,7 @@
     <script src="js/preferences.js" defer></script>
     <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
+    <script src="js/source-health.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/pwa.js" defer></script>
   </head>
@@ -58,7 +59,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.1">v1.1</span>
+        <span class="version-badge" aria-label="Version 1.2">v1.2</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -592,6 +593,25 @@
         </div>
         <p class="app-action-status" id="app-action-status" aria-live="polite"></p>
 
+        <div class="section-heading source-health-heading">
+          <p class="eyebrow">SOURCES AUTOMATISÉES</p>
+          <h2>Fraîcheur des contenus</h2>
+          <p>
+            Le dernier contrôle réussi de chaque source est enregistré. Un retard est signalé sans
+            masquer les contenus déjà validés.
+          </p>
+        </div>
+        <div
+          class="source-health-summary"
+          id="source-health-summary"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          Vérification des sources…
+        </div>
+        <div class="source-health-grid" id="source-health-grid" aria-label="État des sources automatisées"></div>
+
         <div class="section-heading application-guide-heading">
           <p class="eyebrow">GUIDE RAPIDE</p>
           <h2>Ajouter le dashboard à ton appareil</h2>
@@ -632,7 +652,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.1 · Accessibilité et performance · Contenus actualisés automatiquement</span>
+      <span>v1.2 · Fraîcheur des sources · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

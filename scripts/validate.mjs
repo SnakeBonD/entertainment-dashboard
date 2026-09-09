@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
@@ -32,6 +33,7 @@ const requiredFiles = [
   "js/preferences.js",
   "js/personalization.js",
   "js/recommendations.js",
+  "js/source-health.js",
   "js/pwa.js",
   "manifest.webmanifest",
   "service-worker.js",
@@ -47,6 +49,7 @@ const requiredFiles = [
   "data/catalogue.json",
   "data/archive.json",
   "data/radio-france.json",
+  "data/source-status.json",
   "scripts/archive-expired.mjs",
   "scripts/test-availability.mjs",
   "scripts/epic-games.mjs",
@@ -58,6 +61,8 @@ const requiredFiles = [
   "scripts/radio-france.mjs",
   "scripts/fetch-radio-france.mjs",
   "scripts/test-radio-france.mjs",
+  "scripts/source-status.mjs",
+  "scripts/test-source-health.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
   "scripts/test-release.mjs",
@@ -107,15 +112,18 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "app-update-state",
   "check-app-update",
   "app-action-status",
+  "source-health-summary",
+  "source-health-grid",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.1"), "index.html : version v1.1 absente");
+assert(indexHtml.includes("v1.2"), "index.html : version v1.2 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
 assert(indexHtml.includes('src="js/pwa.js"'), "index.html : contrôleur PWA absent");
+assert(indexHtml.includes('src="js/source-health.js"'), "index.html : suivi des sources absent");
 
 const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data|assets)\/[^"?#]+|manifest\.webmanifest)"/g)]
   .map((match) => match[1]);
@@ -130,6 +138,15 @@ const schedule = readJson("data/schedule.json");
 const catalogue = readJson("data/catalogue.json");
 const archive = readJson("data/archive.json");
 const radioFrance = readJson("data/radio-france.json");
+const sourceStatus = readJson("data/source-status.json");
+
+if (sourceStatus) {
+  try {
+    validateSourceStatus(sourceStatus);
+  } catch (error) {
+    failures.push(error.message);
+  }
+}
 
 if (platforms) {
   const entries = Object.entries(platforms);
@@ -331,6 +348,14 @@ assert(
   "Le workflow Radio France ne partage pas la file de maintenance",
 );
 
+[
+  ["ARTE", arteWorkflow],
+  ["Epic Games", epicWorkflow],
+  ["Radio France", radioFranceWorkflow],
+].forEach(([name, workflow]) => {
+  assert(workflow.includes("data/source-status.json"), `Le workflow ${name} ne publie pas l’état de sa source`);
+});
+
 const archiveWorkflow = fs.readFileSync(
   path.join(projectRoot, ".github/workflows/archive-expired.yml"),
   "utf8",
@@ -417,4 +442,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.1, PWA, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.2, PWA, automatisations et structure conformes.");

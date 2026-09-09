@@ -37,14 +37,14 @@ jobs:
       - name: Publish podcast update
         id: publish
         run: |
-          if git diff --quiet -- data/radio-france.json; then
+          if git diff --quiet -- data/radio-france.json data/source-status.json; then
             echo "No Radio France selection change."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/radio-france.json
+          git add data/radio-france.json data/source-status.json
           git commit -m "chore: refresh Radio France podcasts"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
