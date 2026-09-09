@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-08T15:07:30.207Z",
+  "lastUpdated": "2026-09-09T15:11:23.420Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -52,7 +52,7 @@
       "addedDate": "2026-09-05",
       "availabilityStartDate": "2026-09-05T03:00:00Z",
       "expiryDate": "2026-11-13T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -60,7 +60,9 @@
       "description": "L’Orient-Express a ouvert une nouvelle voie entre l’Occident et l’Orient : plongée dans les secrets d'un train mythique.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/rQbu8sLGRAdgNCUbxXjtJR/768x432?type=TEXT",
       "durationLabel": "83 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-09T15:11:23.420Z"
     },
     {
       "id": "arte-079365-000-A-2026-09-02",
@@ -105,6 +107,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
+      "id": "arte-117174-001-A-2026-09-01",
+      "title": "Fuck la planète (1/3)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/117174-001-A/fuck-la-planete-1-3/",
+      "country": "FR",
+      "addedDate": "2026-09-01",
+      "availabilityStartDate": "2026-09-01T03:00:00Z",
+      "expiryDate": "2027-04-08T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-09T15:11:23.420Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "117174-001-A",
+      "description": "Comment les alertes scientifiques sur le dérèglement climatique ont été ignorées, sous la pression politique et économique.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/MK8M5QZm8qWTZ9jxJcSs7o/768x432?type=TEXT",
+      "durationLabel": "45 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-117646-000-A-2026-09-02",
       "title": "Bon voyage",
       "type": "movie",
@@ -134,7 +156,7 @@
       "addedDate": "2026-09-02",
       "availabilityStartDate": "2026-09-02T03:00:00Z",
       "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -142,6 +164,28 @@
       "description": "Livreur à vélo, Souleymane pédale dans la nuit parisienne pour un salaire de misère, et rêve du sésame des papiers.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UAbVHBpFnqmFCwGFpEWwaF/768x432?type=TEXT",
       "durationLabel": "90 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-09T15:11:23.420Z"
+    },
+    {
+      "id": "arte-129313-000-A-2026-09-07",
+      "title": "Terreur aveugle",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129313-000-A/terreur-aveugle/",
+      "country": "FR",
+      "addedDate": "2026-09-07",
+      "availabilityStartDate": "2026-09-07T03:00:00Z",
+      "expiryDate": "2026-09-14T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-09T15:11:23.420Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129313-000-A",
+      "description": "Une jeune femme aveugle (Mia Farrow) est pourchassée par un mystérieux tueur. Un thriller minimaliste de Richard Fleischer.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/6dZmgokikLozhjGBEuZbmi/768x432?type=TEXT",
+      "durationLabel": "86 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
