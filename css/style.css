@@ -622,6 +622,100 @@ p {
   color: var(--muted);
 }
 
+.source-health-heading {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.source-health-summary {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.source-health-summary.is-fresh {
+  border-color: rgb(114 221 176 / 28%);
+  background: rgb(114 221 176 / 7%);
+  color: var(--good);
+}
+
+.source-health-summary.is-warning {
+  border-color: rgb(255 200 120 / 32%);
+  background: rgb(255 200 120 / 8%);
+  color: var(--warning);
+}
+
+.source-health-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.source-health-card {
+  padding: 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgb(19 25 36 / 92%), rgb(13 18 27 / 92%));
+}
+
+.source-health-card-warning,
+.source-health-card-unavailable {
+  border-color: rgb(255 200 120 / 28%);
+}
+
+.source-health-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.source-health-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.source-health-card > strong {
+  display: block;
+  margin-top: 1rem;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.source-health-card > p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.source-state {
+  display: inline-flex;
+  min-height: 1.7rem;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgb(114 221 176 / 25%);
+  border-radius: 999px;
+  background: rgb(114 221 176 / 7%);
+  color: var(--good);
+  font-size: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.source-state-warning,
+.source-state-unavailable {
+  border-color: rgb(255 200 120 / 30%);
+  background: rgb(255 200 120 / 8%);
+  color: var(--warning);
+}
+
 .application-guide-heading {
   margin-top: clamp(2.5rem, 6vw, 4.5rem);
 }
@@ -1938,6 +2032,7 @@ footer {
   .podcast-feed-grid,
   .stats-grid,
   .app-health-grid,
+  .source-health-grid,
   .install-guide-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2041,6 +2136,7 @@ footer {
     .archive-grid,
     .podcast-feed-grid,
     .app-health-grid,
+    .source-health-grid,
     .install-guide-grid {
     grid-template-columns: 1fr;
   }

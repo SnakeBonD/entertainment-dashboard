@@ -43,14 +43,14 @@ jobs:
       - name: Publish catalogue update
         id: publish
         run: |
-          if git diff --quiet -- data/catalogue.json data/archive.json; then
+          if git diff --quiet -- data/catalogue.json data/archive.json data/source-status.json; then
             echo "No Epic Games catalogue change."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/catalogue.json data/archive.json
+          git add data/catalogue.json data/archive.json data/source-status.json
           git commit -m "chore: refresh Epic Games promotions"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"

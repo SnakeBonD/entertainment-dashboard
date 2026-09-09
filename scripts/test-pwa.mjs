@@ -59,7 +59,7 @@ assert(indexHtml.includes('id="app-offline-state"'), "Le diagnostic hors ligne e
 assert(indexHtml.includes('id="app-update-state"'), "Le diagnostic de mise à jour est absent");
 assert(indexHtml.includes('id="check-app-update"'), "La recherche manuelle de mise à jour est absente");
 assert(indexHtml.includes('src="js/pwa.js"'), "Le contrôleur PWA n’est pas chargé");
-assert(indexHtml.includes("v1.1"), "La version v1.1 est absente du HTML");
+assert(indexHtml.includes("v1.2"), "La version v1.2 est absente du HTML");
 
 const pwaScript = read("js/pwa.js");
 assert(pwaScript.includes("beforeinstallprompt"), "L’invite d’installation n’est pas gérée");
@@ -73,7 +73,7 @@ assert(pwaScript.includes("navigator.serviceWorker.ready"), "L’état prêt du 
 assert(pwaScript.includes("controllerchange"), "L’application d’une nouvelle version n’est pas gérée");
 
 const serviceWorker = read("service-worker.js");
-assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v1.1.0`'), "La version du cache v1.1 est absente");
+assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v1.2.0`'), "La version du cache v1.2 est absente");
 assert(serviceWorker.includes("cache.addAll(APP_SHELL)"), "Le préchargement hors ligne est absent");
 assert(serviceWorker.includes("self.skipWaiting()"), "L’activation immédiate d’une mise à jour est absente");
 assert(serviceWorker.includes("self.clients.claim()"), "La prise de contrôle immédiate est absente");
@@ -97,6 +97,7 @@ shellAssets.filter(Boolean).forEach((relativePath) => {
   "data/catalogue.json",
   "data/archive.json",
   "data/radio-france.json",
+  "data/source-status.json",
 ].forEach((relativePath) => {
   assert(shellAssets.includes(relativePath), `${relativePath} n’est pas disponible hors ligne`);
 });

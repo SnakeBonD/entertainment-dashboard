@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "snakebond-entertainment-";
-const CACHE_NAME = `${CACHE_PREFIX}v1.1.0`;
+const CACHE_NAME = `${CACHE_PREFIX}v1.2.0`;
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -16,6 +16,7 @@ const APP_SHELL = [
   "./js/preferences.js",
   "./js/personalization.js",
   "./js/recommendations.js",
+  "./js/source-health.js",
   "./js/app.js",
   "./js/pwa.js",
   "./data/platforms.json",
@@ -25,6 +26,7 @@ const APP_SHELL = [
   "./data/catalogue.json",
   "./data/archive.json",
   "./data/radio-france.json",
+  "./data/source-status.json",
 ];
 
 self.addEventListener("install", (event) => {

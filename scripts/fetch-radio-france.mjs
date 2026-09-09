@@ -6,6 +6,7 @@ import {
   radioFranceFeeds,
   syncRadioFranceSelection,
 } from "./radio-france.mjs";
+import { updateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dryRun = process.argv.includes("--dry-run");
@@ -59,11 +60,23 @@ if (episodes.length !== radioFranceFeeds.length * 3) {
 
 const selection = readJson("data/radio-france.json");
 const result = syncRadioFranceSelection(selection, episodes, now);
+const sourceStatus = updateSourceStatus(
+  readJson("data/source-status.json"),
+  "radio-france",
+  now.toISOString(),
+  result.count,
+);
 
-if (result.changed && !dryRun) {
+if (!dryRun) {
+  if (result.changed) {
+    fs.writeFileSync(
+      path.join(projectRoot, "data/radio-france.json"),
+      `${JSON.stringify(result.selection, null, 2)}\n`,
+    );
+  }
   fs.writeFileSync(
-    path.join(projectRoot, "data/radio-france.json"),
-    `${JSON.stringify(result.selection, null, 2)}\n`,
+    path.join(projectRoot, "data/source-status.json"),
+    `${JSON.stringify(sourceStatus, null, 2)}\n`,
   );
 }
 

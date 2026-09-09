@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "provider": "arte",
+      "name": "ARTE",
+      "scheduleLabel": "Toutes les 12 heures",
+      "warningAfterHours": 30,
+      "lastSuccessfulCheck": "2026-09-07T19:27:42.858Z",
+      "itemCount": 7
+    },
+    {
+      "provider": "epic-games-store",
+      "name": "Epic Games Store",
+      "scheduleLabel": "Toutes les 6 heures",
+      "warningAfterHours": 18,
+      "lastSuccessfulCheck": "2026-09-07T13:31:49.430Z",
+      "itemCount": 1
+    },
+    {
+      "provider": "radio-france",
+      "name": "Radio France",
+      "scheduleLabel": "Toutes les 6 heures",
+      "warningAfterHours": 18,
+      "lastSuccessfulCheck": "2026-09-09T11:31:45.942Z",
+      "itemCount": 6
+    }
+  ]
+}
