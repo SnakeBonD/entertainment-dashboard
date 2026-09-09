@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-08T14:54:23.301Z",
+  "lastUpdated": "2026-09-09T11:31:45.942Z",
   "items": [
     {
       "id": "radio-france-d2424509-c3f6-489b-8e4f-674246d5b65c",
@@ -53,13 +53,13 @@
       "podcastTitle": "Affaires sensibles",
       "station": "France Inter",
       "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0860d87d-cee8-433c-9889-db22b38d353d/13940-01.10.2025-ITEMA_24264451-2025F22805S0274-NET_MFI_A30624BB-93C5-46A1-813D-442F312CBB2C-27-3cd7479322ba3837b0b49529e8d73ede.m4a",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/1de08f8f-c47c-43c6-8755-bc52ca73a116/20904-01.10.2025-ITEMA_24264501-2025F22805S0274-NET_MFI_A30624BB-93C5-46A1-813D-442F312CBB2C-27-3cd7479322ba3837b0b49529e8d73ede.m4a",
       "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
       "publishedAt": "2026-09-08T13:04:50.000Z",
       "durationLabel": "48 min",
       "description": "Aujourd’hui dans Affaires sensibles, Louis Althusser, féminicide à l’Ecole Normale Supérieure de la rue d'Ulm.",
       "provider": "radio-france",
-      "verifiedAt": "2026-09-08T14:54:23.301Z",
+      "verifiedAt": "2026-09-09T11:31:45.942Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
@@ -68,13 +68,13 @@
       "podcastTitle": "Affaires sensibles",
       "station": "France Inter",
       "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/85baa576-86cb-4701-ad12-6d337ec1f642/20904-09.03.2026-ITEMA_24434208-2026F22805S0068-NET_MFI_6792D0DF-B611-48BA-AB2F-B5AE3004F3AD-27-a47fa619c9b82691cb730f17b15410dd.m4a",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/85baa576-86cb-4701-ad12-6d337ec1f642/20904-09.03.2026-ITEMA_24434208-2026F22805S0068-NET_MFI_6792D0DF-B611-48BA-AB2F-B5AE3004F3AD-27-140499d07c742336208d1aac42007f71.m4a",
       "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
       "publishedAt": "2026-09-07T13:04:50.000Z",
       "durationLabel": "47 min",
       "description": "Aujourd’hui dans Affaires Sensibles, retour sur l’un des premiers épisodes majeurs de l’histoire de la pollution industrielle : le brouillard toxique de la vallée de la Meuse.",
       "provider": "radio-france",
-      "verifiedAt": "2026-09-08T14:54:23.301Z",
+      "verifiedAt": "2026-09-09T11:31:45.942Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
