@@ -370,6 +370,7 @@ const archiveWorkflow = fs.readFileSync(
   assert(workflow.includes("actions: write"), `Le workflow ${name} ne peut pas relancer le déploiement`);
   assert(workflow.includes("id: publish"), `Le workflow ${name} ne signale pas ses changements`);
   assert(workflow.includes('changed=true'), `Le workflow ${name} ne détecte pas une mise à jour publiée`);
+  assert(workflow.includes("git pull --rebase origin main"), `Le workflow ${name} ne réintègre pas les mises à jour concurrentes`);
   assert(
     workflow.includes("gh workflow run deploy.yml --ref main"),
     `Le workflow ${name} ne redéploie pas le catalogue mis à jour`,
