@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.2** rend la fraîcheur des sources automatisées visible et mesurable tout en conservant les améliorations d’accessibilité et les automatisations ARTE, Epic Games et Radio France :
+La version **v1.3** rationalise les automatisations du dashboard : chaque publication de données déclenche un seul déploiement, tandis qu’ARTE, Epic Games et Radio France conservent leur suivi de fraîcheur :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -58,6 +58,10 @@ La version **v1.2** rend la fraîcheur des sources automatisées visible et mesu
 - signalement automatique lorsqu’une source dépasse son délai normal d’actualisation ;
 - conservation des derniers contenus validés lorsqu’un contrôle est en retard ;
 - suivi de fraîcheur mis à jour par chaque automatisation réussie et disponible hors ligne ;
+- synchronisations déclenchées uniquement par leur planification ou manuellement ;
+- suppression des lancements simultanés provoqués par une modification technique ;
+- un seul déploiement GitHub Pages déclenché automatiquement par chaque commit publié sur `main` ;
+- permissions GitHub Actions réduites au strict nécessaire pour les workflows de données ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
 - programmes YouTube, podcasts, apprentissage et week-end ;
@@ -119,6 +123,7 @@ entertainment-dashboard/
 │   ├── test-pwa.mjs
 │   ├── test-quality.mjs
 │   ├── test-source-health.mjs
+│   ├── test-workflows.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
 │   └── validate.mjs
@@ -157,6 +162,7 @@ node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs
 node scripts/test-source-health.mjs
+node scripts/test-workflows.mjs
 node scripts/test-release.mjs
 node --check js/app.js
 node --check js/availability.js
@@ -305,22 +311,22 @@ Le workflow `archive-expired.yml` s’exécute chaque jour à 05 h 40 UTC. Il d�
 la date de fin est dépassée vers `data/archive.json`, valide les données, puis publie la mise à jour
 uniquement si un changement est nécessaire.
 
-Le workflow `fetch-epic-games.yml` s’exécute toutes les six heures. Il récupère les promotions
+Le workflow `fetch-epic-games.yml` s’exécute toutes les six heures ou sur lancement manuel. Il récupère les promotions
 Epic Games pour la France, actualise le catalogue, archive les offres terminées et enregistre le
 dernier contrôle réussi. Toutes les tâches de maintenance partagent la même file d’exécution afin
 d’éviter les mises à jour concurrentes.
 
-Le workflow `fetch-arte.yml` s’exécute toutes les douze heures. Il actualise la sélection ARTE pour
+Le workflow `fetch-arte.yml` s’exécute toutes les douze heures ou sur lancement manuel. Il actualise la sélection ARTE pour
 la France, archive les programmes expirés et enregistre le dernier contrôle réussi. Les imports
 ARTE, Epic Games et l’archivage utilisent la même file de maintenance. Après chaque modification
-automatique du catalogue, le workflow GitHub Pages est relancé explicitement afin de publier les
-nouvelles données. Un ordre commun et déterministe évite qu’ARTE et Epic Games ne créent des
+automatique du catalogue, le push sur `main` déclenche une seule publication GitHub Pages. Un ordre
+commun et déterministe évite qu’ARTE et Epic Games ne créent des
 commits uniquement pour réordonner les mêmes entrées.
 
-Le workflow `fetch-radio-france.yml` s’exécute toutes les six heures. Il contrôle les deux flux,
+Le workflow `fetch-radio-france.yml` s’exécute toutes les six heures ou sur lancement manuel. Il contrôle les deux flux,
 actualise les six épisodes sélectionnés et enregistre le dernier contrôle réussi.
-Il partage la file de maintenance existante et relance explicitement GitHub Pages après une mise à
-jour publiée.
+Il partage la file de maintenance existante. Aucun workflow de données ne demande un second
+déploiement : la publication normale de `main` suffit.
 
 ## Feuille de route
 
@@ -335,6 +341,7 @@ jour publiée.
 - **v1.0** — version stable, installation guidée, diagnostic PWA et métadonnées publiques.
 - **v1.1** — accessibilité clavier, gestion du focus et optimisation des recherches et médias.
 - **v1.2** — état des sources, suivi du dernier contrôle réussi et détection des retards.
+- **v1.3** — planifications isolées, permissions réduites et déploiements redondants supprimés.
 
 ## Sécurité et confidentialité
 

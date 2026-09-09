@@ -63,6 +63,7 @@ const requiredFiles = [
   "scripts/test-radio-france.mjs",
   "scripts/source-status.mjs",
   "scripts/test-source-health.mjs",
+  "scripts/test-workflows.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
   "scripts/test-release.mjs",
@@ -118,7 +119,7 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.2"), "index.html : version v1.2 absente");
+assert(indexHtml.includes("v1.3"), "index.html : version v1.3 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
@@ -367,14 +368,12 @@ const archiveWorkflow = fs.readFileSync(
   ["Radio France", radioFranceWorkflow],
   ["Archivage", archiveWorkflow],
 ].forEach(([name, workflow]) => {
-  assert(workflow.includes("actions: write"), `Le workflow ${name} ne peut pas relancer le déploiement`);
   assert(workflow.includes("id: publish"), `Le workflow ${name} ne signale pas ses changements`);
   assert(workflow.includes('changed=true'), `Le workflow ${name} ne détecte pas une mise à jour publiée`);
   assert(workflow.includes("git pull --rebase origin main"), `Le workflow ${name} ne réintègre pas les mises à jour concurrentes`);
-  assert(
-    workflow.includes("gh workflow run deploy.yml --ref main"),
-    `Le workflow ${name} ne redéploie pas le catalogue mis à jour`,
-  );
+  assert(!workflow.includes("actions: write"), `Le workflow ${name} conserve une permission Actions inutile`);
+  assert(!workflow.includes("gh workflow run deploy.yml"), `Le workflow ${name} lance un déploiement redondant`);
+  assert(!workflow.includes("\n  push:"), `Le workflow ${name} se déclenche inutilement sur push`);
 });
 
 if (catalogue && archive) {
@@ -443,4 +442,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.2, PWA, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.3, PWA, automatisations et structure conformes.");

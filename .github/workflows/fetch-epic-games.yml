@@ -4,16 +4,9 @@ on:
   schedule:
     - cron: "23 */6 * * *"
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/fetch-epic-games.yml"
-      - "scripts/epic-games.mjs"
-      - "scripts/fetch-epic-games.mjs"
 
 permissions:
   contents: write
-  actions: write
 
 concurrency:
   group: catalogue-maintenance
@@ -55,9 +48,3 @@ jobs:
           git pull --rebase origin main
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
-
-      - name: Deploy catalogue update
-        if: steps.publish.outputs.changed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run deploy.yml --ref main
