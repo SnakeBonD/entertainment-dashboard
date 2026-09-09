@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 1.2">v1.2'), "La version visible doit être v1.2");
-assert(indexHtml.includes("v1.2 · Fraîcheur des sources"), "Le pied de page v1.2 est absent");
+assert(indexHtml.includes('aria-label="Version 1.3">v1.3'), "La version visible doit être v1.3");
+assert(indexHtml.includes("v1.3 · Automatisations rationalisées"), "Le pied de page v1.3 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v1.2**"), "Le README ne présente pas la v1.2");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v1.2.0`'), "Le cache applicatif n’est pas en v1.2.0");
+assert(readme.includes("version **v1.3**"), "Le README ne présente pas la v1.3");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v1.3.0`'), "Le cache applicatif n’est pas en v1.3.0");
 
 [
   "application",
@@ -61,9 +61,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v1.2 échouée :");
+  console.error("Certification v1.3 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v1.2 réussie : ${ids.length} identifiants uniques, diagnostic PWA et suivi des sources conformes.`);
+console.log(`Certification v1.3 réussie : ${ids.length} identifiants uniques, diagnostic PWA et automatisations rationalisées.`);

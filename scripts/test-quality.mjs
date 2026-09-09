@@ -42,9 +42,9 @@ const scripts = [...html.matchAll(/<script\b([^>]*)>/g)].map((match) => match[1]
 assert(scripts.length >= 8 && scripts.every((attributes) => /\bdefer\b/.test(attributes)), "Tous les scripts locaux doivent être différés");
 
 if (failures.length) {
-  console.error("Audit qualité v1.2 échoué :");
+  console.error("Audit qualité v1.3 échoué :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log("Audit qualité v1.2 réussi : navigation, focus, tableaux, recherches et médias conformes.");
+console.log("Audit qualité v1.3 réussi : navigation, focus, tableaux, recherches et médias conformes.");

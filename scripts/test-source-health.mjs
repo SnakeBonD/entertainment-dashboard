@@ -33,4 +33,4 @@ assert.equal(summary.unavailable, 1);
 assert.equal(summary.sources[0].statusLabel, "À jour");
 assert.equal(summary.sources[1].relativeLabel, "Contrôlé il y a 2 jours");
 
-console.log("Suivi des sources v1.2 validé : schéma, fraîcheur et états conformes.");
+console.log("Suivi des sources v1.3 validé : schéma, fraîcheur et états conformes.");
