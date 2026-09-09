@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-09T11:31:45.942Z",
+  "lastUpdated": "2026-09-09T16:43:39.409Z",
   "items": [
+    {
+      "id": "radio-france-1a278384-40d4-47c8-af93-8e11fbacd9c3",
+      "title": "Les nouveaux réservistes",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/les-nouveaux-reservistes-7883240",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/5516d08c-0bf7-41a9-b8d2-765ab19266db/27742-09.09.2026-ITEMA_24664526-2026C6612S0252-NET_MFC_2DF807C8-23E7-4DC7-B6AC-DD1399B25A3C-25-990612df77852a5b9b03bf8339d7ce50.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-09-09T11:30:00.000Z",
+      "durationLabel": "33 min",
+      "description": "Katsuki, issu d’une famille antimilitariste, fait ses premiers pas à 41 ans en tant que médecin de réserve. Pierre, 22 ans, étudiant, enchaîne les missions de réserviste de la gendarmerie depuis un an. Chaque année, de plus en plus de citoyens s’engagent, en réponse à un context…",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-09T16:43:39.409Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-d2424509-c3f6-489b-8e4f-674246d5b65c",
       "title": "Le bal du collège de Plestin-les-Grèves 2",
@@ -33,19 +48,34 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-f4cda5f3-87a6-4597-90ae-f2e186927534",
-      "title": "C'est la rentrée : bienvenue à l’académie de Créteil !",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/e94a189e-ef6a-4fb7-a69c-9f2342d34939/27742-15.09.2011-ITEMA_24658827-2011C6612E0201-NET_5A237BD5-13CC-4218-B267-C02E3D1D92F2_FC-25-71ee9c45c21f61e2a954d1742f00be4f.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-09-05T22:00:04.000Z",
-      "durationLabel": "28 min",
-      "description": "Les pieds sur terre",
+      "id": "radio-france-0cfdabce-4c15-469b-8f9f-49cdecfba7bb",
+      "title": "Coupe de monde 1934 ou le triomphe du fascisme",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/2dd04260-f444-45b8-b0c3-38d1e49a1611/13940-19.08.2025-ITEMA_24219613-2024F22805S0151-NET_MFI_55ACD7B8-AF91-422D-860E-14AB8CB97ED7-27-447e7806abec53afa70a057e0200a340.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-09T13:04:50.000Z",
+      "durationLabel": "49 min",
+      "description": "Aujourd’hui dans Affaires sensibles, la Coupe du monde de football 1934 en Italie ou le triomphe du fascisme.",
       "provider": "radio-france",
-      "verifiedAt": "2026-09-08T14:54:23.301Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-09-09T16:43:39.409Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-5bcde08e-78a3-4fd8-9949-200389dd61a0",
+      "title": "La loi Evin - L'intégrale",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/la-loi-evin-l-integrale-6483440",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/f9115060-264c-4dcf-b3f7-e65db224eca1/26774-09.09.2026-ITEMA_24664294-2026F22805S0252-NET_MFI_70402A9F-270A-4429-8822-3442C33ED146-27-2040aad31d84022dcded96c575243c81.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-09T13:04:40.000Z",
+      "durationLabel": "54 min",
+      "description": "Aujourd'hui dans Affaires Sensibles : la loi Evin",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-09T16:43:39.409Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-ade77ec7-e2bf-455e-9a99-d4a9fd0538c0",
@@ -60,36 +90,6 @@
       "description": "Aujourd’hui dans Affaires sensibles, Louis Althusser, féminicide à l’Ecole Normale Supérieure de la rue d'Ulm.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-09T11:31:45.942Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-478e82a6-f652-49b9-a224-56068e24d64a",
-      "title": "1930, le brouillard toxique de la vallée de la Meuse",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/85baa576-86cb-4701-ad12-6d337ec1f642/20904-09.03.2026-ITEMA_24434208-2026F22805S0068-NET_MFI_6792D0DF-B611-48BA-AB2F-B5AE3004F3AD-27-140499d07c742336208d1aac42007f71.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-07T13:04:50.000Z",
-      "durationLabel": "47 min",
-      "description": "Aujourd’hui dans Affaires Sensibles, retour sur l’un des premiers épisodes majeurs de l’histoire de la pollution industrielle : le brouillard toxique de la vallée de la Meuse.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-09T11:31:45.942Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-74c3ec9a-04b9-4fc0-8abf-a9a9949abfd8",
-      "title": "Roberto Calvi : vie et mort du banquier de Dieu",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/d03ac1b7-db88-4543-959a-6a855bbf44ae/13940-13.01.2026-ITEMA_24372097-2026F22805S0013-NET_MFI_644694A9-091E-4CB4-B3DE-C8D0F72D9F73-27-823f9281d9548172d30d75b45cc3849c.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-04T13:04:50.000Z",
-      "durationLabel": "49 min",
-      "description": "Aujourd’hui dans Affaires Sensibles, l'affaire de la banque Ambrosiano et de son directeur Roberto Calvi.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-08T14:54:23.301Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
