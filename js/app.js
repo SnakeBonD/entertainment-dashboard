@@ -21,6 +21,8 @@
     availabilitySearch: "",
     availabilityStatus: "all",
     availabilityType: "all",
+    watchlistFilter: "all",
+    newItemIds: new Set(),
   };
 
   function scheduleFrame(callback) {
@@ -521,6 +523,7 @@
   function handleFavoritesChanged() {
     updateFavoriteCount();
     renderPersonalArea();
+    renderPersonalAlerts();
   }
 
   function setupPreferences() {
@@ -572,6 +575,33 @@
     });
   }
 
+  function createWatchlistControl(item) {
+    const wrapper = document.createElement("label");
+    wrapper.className = "watchlist-control";
+    const label = document.createElement("span");
+    label.textContent = "Ma liste";
+    const select = document.createElement("select");
+    select.setAttribute("aria-label", `Classer ${item.title} dans ma liste`);
+
+    const options = [
+      ["", "Non classé"],
+      ...Object.entries(window.SnakeBonDWatchlist.statusLabels),
+    ];
+    options.forEach(([value, text]) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = text;
+      select.append(option);
+    });
+    select.value = window.SnakeBonDWatchlist.get(item.id)?.status ?? "";
+    select.addEventListener("change", () => {
+      if (select.value) window.SnakeBonDWatchlist.set(item, select.value);
+      else window.SnakeBonDWatchlist.remove(item.id);
+    });
+    wrapper.append(label, select);
+    return wrapper;
+  }
+
   function createAvailabilityCard(item, now, archived = false) {
     const availability = window.SnakeBonDAvailability;
     const status = archived ? "expired" : availability.getStatus(item, now);
@@ -586,7 +616,14 @@
     const statusBadge = document.createElement("span");
     statusBadge.className = `availability-status availability-status-${status}`;
     statusBadge.textContent = archived ? "Archivé" : availability.statusLabels[status];
-    meta.append(type, statusBadge);
+    meta.append(type);
+    if (state.newItemIds.has(item.id) && !archived) {
+      const newBadge = document.createElement("span");
+      newBadge.className = "availability-status availability-status-new";
+      newBadge.textContent = "Nouveau";
+      meta.append(newBadge);
+    }
+    meta.append(statusBadge);
 
     card.append(meta);
 
@@ -664,8 +701,93 @@
       actions.append(source);
     }
 
-    card.append(timing, verification, actions);
+    card.append(timing, verification, createWatchlistControl(item), actions);
     return card;
+  }
+
+  function renderPersonalWatchlist() {
+    const container = document.getElementById("personal-watchlist");
+    const entries = window.SnakeBonDWatchlist
+      .list(state.catalogue.items ?? [], state.archive.items ?? [])
+      .filter((entry) => state.watchlistFilter === "all" || entry.status === state.watchlistFilter)
+      .sort((a, b) => String(b.updatedAt).localeCompare(String(a.updatedAt)));
+    const archiveIds = new Set((state.archive.items ?? []).map((item) => item.id));
+
+    if (entries.length) {
+      container.replaceChildren(...entries.map((entry) => {
+        if (entry.item) return createAvailabilityCard(entry.item, new Date(), archiveIds.has(entry.id));
+        const missing = document.createElement("article");
+        missing.className = "availability-card availability-card-expired";
+        const title = document.createElement("h3");
+        title.textContent = entry.title;
+        const text = document.createElement("p");
+        text.textContent = `${entry.platform} · contenu retiré du catalogue`;
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "reset-button";
+        remove.textContent = "Retirer de ma liste";
+        remove.addEventListener("click", () => window.SnakeBonDWatchlist.remove(entry.id));
+        missing.append(title, text, remove);
+        return missing;
+      }));
+      return;
+    }
+
+    const empty = document.createElement("div");
+    empty.className = "personal-empty";
+    const title = document.createElement("h3");
+    title.textContent = state.watchlistFilter === "all" ? "Ta liste est vide" : "Aucun contenu dans cet état";
+    const text = document.createElement("p");
+    text.textContent = "Utilise le menu « Ma liste » sur un contenu disponible pour le retrouver ici.";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary-button compact-button";
+    button.textContent = "Voir les disponibilités";
+    button.addEventListener("click", () => openTab("disponibilites", true, true));
+    empty.append(title, text, button);
+    container.replaceChildren(empty);
+  }
+
+  function renderPersonalAlerts() {
+    const alert = document.getElementById("personal-alerts");
+    const counter = document.getElementById("new-content-count");
+    const now = new Date();
+    const verified = window.SnakeBonDAvailability.verifiedItems(state.catalogue);
+    const expiring = verified.filter((item) =>
+      ["expiring_soon", "expiring_today"].includes(window.SnakeBonDAvailability.getStatus(item, now)),
+    );
+    const favoriteExpiring = expiring.filter((item) =>
+      window.SnakeBonDFavorites?.hasPlatform(item.platform),
+    );
+    const trackedExpiring = expiring.filter((item) => {
+      const status = window.SnakeBonDWatchlist.get(item.id)?.status;
+      return status === "discover" || status === "progress";
+    });
+    const newCount = state.newItemIds.size;
+    counter.textContent = String(newCount);
+    counter.hidden = newCount === 0;
+    counter.setAttribute("aria-label", `${newCount} nouveauté${newCount > 1 ? "s" : ""}`);
+
+    const parts = [];
+    if (newCount) parts.push(`${newCount} nouveauté${newCount > 1 ? "s" : ""} depuis ta dernière visite`);
+    if (favoriteExpiring.length) parts.push(`${favoriteExpiring.length} échéance${favoriteExpiring.length > 1 ? "s" : ""} sur tes plateformes favorites`);
+    if (trackedExpiring.length) parts.push(`${trackedExpiring.length} contenu${trackedExpiring.length > 1 ? "s" : ""} de ta liste à voir bientôt`);
+
+    if (!parts.length) {
+      alert.hidden = true;
+      alert.replaceChildren();
+      return;
+    }
+
+    const text = document.createElement("strong");
+    text.textContent = parts.join(" · ");
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "secondary-button compact-button";
+    button.textContent = "Consulter";
+    button.addEventListener("click", () => openTab("disponibilites", true, true));
+    alert.replaceChildren(text, button);
+    alert.hidden = false;
   }
 
   function createAvailabilityEmpty(filtered) {
@@ -701,7 +823,8 @@
   function renderAvailability() {
     const availability = window.SnakeBonDAvailability;
     const now = new Date();
-    const verified = availability.verifiedItems(state.catalogue);
+    const verified = availability.verifiedItems(state.catalogue)
+      .filter((item) => window.SnakeBonDWatchlist.get(item.id)?.status !== "hidden");
     const summary = availability.summarize(verified, now);
     const filtered = availability.sortByExpiry(
       availability.filterItems(verified, {
@@ -764,6 +887,20 @@
     });
 
     renderAvailability();
+  }
+
+  function setupWatchlist() {
+    const filter = document.getElementById("watchlist-filter");
+    filter.addEventListener("change", (event) => {
+      state.watchlistFilter = event.target.value;
+      renderPersonalWatchlist();
+    });
+    window.addEventListener("snakebond:watchlist-changed", () => {
+      renderAvailability();
+      renderPersonalWatchlist();
+      renderPersonalAlerts();
+    });
+    renderPersonalWatchlist();
   }
 
   function renderMusic() {
@@ -1008,6 +1145,14 @@
       state.archive = archive;
       state.radioFrance = radioFrance;
       state.sourceStatus = sourceStatus;
+      const lastVisit = window.SnakeBonDWatchlist.readLastVisit();
+      state.newItemIds = new Set(
+        window.SnakeBonDWatchlist.newSince(
+          window.SnakeBonDAvailability.verifiedItems(catalogue),
+          lastVisit,
+        ).map((item) => item.id),
+      );
+      window.SnakeBonDWatchlist.recordVisit();
 
       document.getElementById("platform-count").textContent = String(
         Object.values(platforms).flat().length,
@@ -1020,6 +1165,8 @@
       setupPlatformControls();
       setupAvailabilityControls();
       setupPreferences();
+      setupWatchlist();
+      renderPersonalAlerts();
       window.SnakeBonDRecommendations?.init(recommendations, {
         platforms,
         metadata,

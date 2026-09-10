@@ -34,6 +34,7 @@ const requiredFiles = [
   "js/personalization.js",
   "js/recommendations.js",
   "js/source-health.js",
+  "js/watchlist.js",
   "js/pwa.js",
   "manifest.webmanifest",
   "service-worker.js",
@@ -63,6 +64,7 @@ const requiredFiles = [
   "scripts/test-radio-france.mjs",
   "scripts/source-status.mjs",
   "scripts/test-source-health.mjs",
+  "scripts/test-watchlist.mjs",
   "scripts/test-workflows.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
@@ -97,6 +99,10 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "preference-categories",
   "personal-recommendations",
   "personal-favorites",
+  "personal-watchlist",
+  "watchlist-filter",
+  "personal-alerts",
+  "new-content-count",
   "reset-preferences",
   "availability-search",
   "availability-status-filter",
@@ -119,12 +125,13 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.3"), "index.html : version v1.3 absente");
+assert(indexHtml.includes("v1.4"), "index.html : version v1.4 absente");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
 assert(indexHtml.includes('src="js/pwa.js"'), "index.html : contrôleur PWA absent");
 assert(indexHtml.includes('src="js/source-health.js"'), "index.html : suivi des sources absent");
+assert(indexHtml.includes('src="js/watchlist.js"'), "index.html : liste personnelle absente");
 
 const localAssets = [...indexHtml.matchAll(/(?:src|href)="((?:css|js|data|assets)\/[^"?#]+|manifest\.webmanifest)"/g)]
   .map((match) => match[1]);
@@ -442,4 +449,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.3, PWA, automatisations et structure conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.4, liste personnelle, PWA et structure conformes.");

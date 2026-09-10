@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 1.3">v1.3'), "La version visible doit être v1.3");
-assert(indexHtml.includes("v1.3 · Automatisations rationalisées"), "Le pied de page v1.3 est absent");
+assert(indexHtml.includes('aria-label="Version 1.4">v1.4'), "La version visible doit être v1.4");
+assert(indexHtml.includes("v1.4 · Liste personnelle et alertes locales"), "Le pied de page v1.4 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v1.3**"), "Le README ne présente pas la v1.3");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v1.3.0`'), "Le cache applicatif n’est pas en v1.3.0");
+assert(readme.includes("version **v1.4**"), "Le README ne présente pas la v1.4");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v1.4.0`'), "Le cache applicatif n’est pas en v1.4.0");
 
 [
   "application",
@@ -50,7 +50,7 @@ assert(indexHtml.includes('<meta name="robots" content="index, follow">'), "La c
 assert(indexHtml.includes('<meta name="twitter:card" content="summary">'), "La carte sociale minimale est absente");
 assert(robots.includes(`Sitemap: ${domain}sitemap.xml`), "robots.txt ne référence pas le sitemap public");
 assert(sitemap.includes(`<loc>${domain}</loc>`), "Le sitemap ne référence pas la racine publique");
-assert(sitemap.includes("<lastmod>2026-09-09</lastmod>"), "La date du sitemap est invalide");
+assert(sitemap.includes("<lastmod>2026-09-10</lastmod>"), "La date du sitemap est invalide");
 
 const externalBlankLinks = [...indexHtml.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)].map((match) => match[0]);
 externalBlankLinks.forEach((link) => {
@@ -61,9 +61,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v1.3 échouée :");
+  console.error("Certification v1.4 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v1.3 réussie : ${ids.length} identifiants uniques, diagnostic PWA et automatisations rationalisées.`);
+console.log(`Certification v1.4 réussie : ${ids.length} identifiants uniques, liste personnelle, nouveautés et alertes locales.`);
