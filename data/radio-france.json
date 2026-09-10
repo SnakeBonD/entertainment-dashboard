@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-09T16:43:39.409Z",
+  "lastUpdated": "2026-09-10T11:28:05.701Z",
   "items": [
+    {
+      "id": "radio-france-d57ff726-03d1-4222-9cb2-109521aaf56d",
+      "title": "Même pas mort 1/7 : Un petit matin d'octobre",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/48bcdc93-ab7c-48ac-91d1-83921e2eb9ad/27742-09.09.2026-ITEMA_24664526-2025C6612E6639-ITE_00153816_RSCE-25-3ec93595b8db001d892c10f80d7eecb1.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2025/10/7acb2d82-1b37-4261-8fcd-5c08ca78cdb4/1400x1400_sc_carre-meme-pas-mort-2.jpg",
+      "publishedAt": "2026-09-10T11:30:00.000Z",
+      "durationLabel": "30 min",
+      "description": "Grégoire, le fils de mon amie Bénédicte, est mort à 22 ans. Depuis qu’il est « parti », je suis devenue une « aidante ». Mais plus le temps passe, moins je sais comment aider. Alors, quand un petit matin d’octobre, elle me demande de le « faire rentrer dans ma boite », je finis…",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-10T11:28:05.701Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-1a278384-40d4-47c8-af93-8e11fbacd9c3",
       "title": "Les nouveaux réservistes",
@@ -28,21 +43,6 @@
       "publishedAt": "2026-09-08T11:30:00.000Z",
       "durationLabel": "30 min",
       "description": "En 2012, nous avions réalisé une émission sur le bal de fin d’année du collège Penker de Plestin-les-Grèves, dont le thème était “bal de promo américain”. Quatorze ans plus tard, le même thème est repris pour la promotion 2026. Fabienne Laumonier y est donc retournée munie…",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-08T14:53:35.977Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-a87af46a-4556-427f-a503-7aecf2b7b2ac",
-      "title": "Porno : l’ère des plateformes",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/porno-l-ere-des-plateformes-6753165",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/27d9467c-566e-4099-8744-c5514156e2f5/27742-07.09.2026-ITEMA_24661290-2026C6612S0250-NET_MFC_EA001CE8-C010-4D0F-9381-66D0E406B7D4-25-d63b9c67ff8f4c67eed61c00821db035.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-09-07T11:30:00.000Z",
-      "durationLabel": "29 min",
-      "description": "Kristin, influenceuse féministe, est un jour contactée par un homme qui lui promet de s'enrichir grâce à des vidéos érotiques sur une plateforme. Noé, lui, enchaîne les boulots pour financer ses études, jusqu'au jour où il décide aussi de poster du porno sur une plateforme.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-08T14:53:35.977Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
