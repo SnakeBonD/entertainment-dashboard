@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-10T16:32:38.773Z",
+  "lastUpdated": "2026-09-10T16:39:08.232Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -32,7 +32,7 @@
       "addedDate": "2026-08-30",
       "availabilityStartDate": "2026-08-30T03:00:00Z",
       "expiryDate": "2026-09-29T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -40,7 +40,9 @@
       "description": "Tom Cruise et Gene Hackman dans une histoire de jeune diplômé empêtré dans les pratiques peu légales de son cabinet d’avocats.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/rg7gs3xkEyUhEuJbNrfccb/768x432?type=TEXT",
       "durationLabel": "149 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-10T16:39:08.232Z"
     },
     {
       "id": "arte-077320-000-A-2026-09-05",
@@ -96,7 +98,7 @@
       "addedDate": "2026-09-05",
       "availabilityStartDate": "2026-09-05T03:00:00Z",
       "expiryDate": "2026-12-11T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -104,7 +106,9 @@
       "description": "Enquête archéologique dans la plus somptueuse des demeures de Pompéi, la Villa Oplontis.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/j9R2NbgKY6Aq5jpCfRqBtP/768x432?type=TEXT",
       "durationLabel": "91 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-10T16:39:08.232Z"
     },
     {
       "id": "arte-117174-001-A-2026-09-01",
@@ -156,7 +160,7 @@
       "addedDate": "2026-09-02",
       "availabilityStartDate": "2026-09-02T03:00:00Z",
       "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-10T05:12:23.310Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -164,6 +168,28 @@
       "description": "Livreur à vélo, Souleymane pédale dans la nuit parisienne pour un salaire de misère, et rêve du sésame des papiers.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UAbVHBpFnqmFCwGFpEWwaF/768x432?type=TEXT",
       "durationLabel": "90 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-10T16:39:08.232Z"
+    },
+    {
+      "id": "arte-127949-000-A-2026-09-09",
+      "title": "Tout s'est bien passé",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/127949-000-A/tout-s-est-bien-passe/",
+      "country": "FR",
+      "addedDate": "2026-09-09",
+      "availabilityStartDate": "2026-09-09T03:00:00Z",
+      "expiryDate": "2026-10-09T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-10T16:39:08.232Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "127949-000-A",
+      "description": "Diminué après un AVC, un octogénaire (André Dussollier) demande à sa fille aînée (Sophie Marceau) de l'aider à mourir.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/onHL8hH4JcbHjTASQSDht6/768x432?type=TEXT",
+      "durationLabel": "108 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
@@ -204,6 +230,26 @@
       "description": "Un cinéaste dominateur (Denis Ménochet) se laisse consumer d'amour pour un jeune inconnu. L'hommage d'Ozon à Fassbinder.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UjMCvfKoBNksFkwbfwRcGJ/768x432?type=TEXT",
       "durationLabel": "82 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-131501-000-A-2026-09-07",
+      "title": "Darling chérie",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/131501-000-A/darling-cherie/",
+      "country": "FR",
+      "addedDate": "2026-09-07",
+      "availabilityStartDate": "2026-09-07T03:00:00Z",
+      "expiryDate": "2026-10-07T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-10T16:39:08.232Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "131501-000-A",
+      "description": "En noir et blanc, et avec un esprit \"Nouvelle Vague\", l'Anglais John Schlesinger offre un splendide écrin à Julie Christie.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/PZTvdCpvTd3WfwNTUCuEtF/768x432?type=TEXT",
+      "durationLabel": "115 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
