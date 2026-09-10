@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-10T11:28:05.701Z",
+  "lastUpdated": "2026-09-10T16:29:41.005Z",
   "items": [
     {
       "id": "radio-france-d57ff726-03d1-4222-9cb2-109521aaf56d",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-dd8af7eb-b626-4963-9e72-b240efc17ced",
+      "title": "Tuam, les enfants fantômes de l’Irlande",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/099ae587-aaf7-4058-baaf-7771ac30e0a5/13940-17.11.2025-ITEMA_24313527-2025F22805S0321-NET_MFI_AB45AD93-FE4F-4A8D-A39D-159CCD724E39-27-7a58876d924b6c2d05b4bb93156cb45c.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-10T13:04:50.000Z",
+      "durationLabel": "46 min",
+      "description": "Aujourd’hui dans Affaires sensibles : Tuam, les enfants fantômes de l’Irlande.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-10T16:29:41.005Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-0cfdabce-4c15-469b-8f9f-49cdecfba7bb",
       "title": "Coupe de monde 1934 ou le triomphe du fascisme",
       "podcastTitle": "Affaires sensibles",
@@ -75,21 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles : la loi Evin",
       "provider": "radio-france",
       "verifiedAt": "2026-09-09T16:43:39.409Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-ade77ec7-e2bf-455e-9a99-d4a9fd0538c0",
-      "title": "Louis Althusser, féminicide à l’Ecole normale supérieure",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/1de08f8f-c47c-43c6-8755-bc52ca73a116/20904-01.10.2025-ITEMA_24264501-2025F22805S0274-NET_MFI_A30624BB-93C5-46A1-813D-442F312CBB2C-27-3cd7479322ba3837b0b49529e8d73ede.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-08T13:04:50.000Z",
-      "durationLabel": "48 min",
-      "description": "Aujourd’hui dans Affaires sensibles, Louis Althusser, féminicide à l’Ecole Normale Supérieure de la rue d'Ulm.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-09T11:31:45.942Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
