@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-10T05:12:23.310Z",
+  "lastUpdated": "2026-09-10T16:32:38.773Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -207,23 +207,42 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
-      "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
-      "title": "Alone With You",
+      "id": "epic-c76046dddcdb43619c33ce0395941033-2026-09-10",
+      "title": "Luftrausers",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/alone-with-you-028a15",
+      "url": "https://store.epicgames.com/fr/p/luftrausers-51e5e9",
       "country": "FR",
-      "addedDate": "2026-09-03",
-      "promotionStartDate": "2026-09-03T15:00:00.000Z",
-      "expiryDate": "2026-09-10T15:00:00.000Z",
+      "addedDate": "2026-09-10",
+      "promotionStartDate": "2026-09-10T15:00:00.000Z",
+      "expiryDate": "2026-09-17T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-09-07T13:31:49.430Z",
+      "verifiedAt": "2026-09-10T16:32:38.262Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "b8cc76ce7d6645f0a282b843a072cc78",
+      "externalId": "c76046dddcdb43619c33ce0395941033",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/04b7a1d78c904065b5c24f9e7816c99a/alone-with-you-cllc3.png",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/85ddeeec9d4243b3a2d78aab87bfae7f/luftrausers-1mxb1.png",
       "originalPrice": "8,99 €"
+    },
+    {
+      "id": "epic-e9bb092228f544c582e2c9395fae96f3-2026-09-10",
+      "title": "Astral Ascent",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/astral-ascent-b33bc2",
+      "country": "FR",
+      "addedDate": "2026-09-10",
+      "promotionStartDate": "2026-09-10T15:00:00.000Z",
+      "expiryDate": "2026-09-17T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-09-10T16:32:38.262Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "e9bb092228f544c582e2c9395fae96f3",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/974c8a587d714d8d9e0c3b0fefe61a35/astral-ascent-b0gcm.png",
+      "originalPrice": "24,50 €"
     }
   ]
 }
