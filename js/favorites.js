@@ -51,7 +51,9 @@
 
   window.SnakeBonDFavorites = {
     count: () => read().size,
+    entries: () => [...read()],
     has,
+    hasPlatform: (name) => [...read()].some((id) => id.endsWith(`::${name}`)),
     makeId,
     toggle,
   };

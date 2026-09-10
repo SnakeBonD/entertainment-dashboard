@@ -32,6 +32,7 @@
     <script src="js/favorites.js" defer></script>
     <script src="js/catalog.js" defer></script>
     <script src="js/availability.js" defer></script>
+    <script src="js/watchlist.js" defer></script>
     <script src="js/preferences.js" defer></script>
     <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
@@ -59,7 +60,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.3">v1.3</span>
+        <span class="version-badge" aria-label="Version 1.4">v1.4</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -76,7 +77,9 @@
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil" aria-current="page">Accueil</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
-      <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">Disponibilités</button>
+      <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">
+        Disponibilités <span class="nav-count" id="new-content-count" aria-label="0 nouveauté" hidden>0</span>
+      </button>
       <button class="nav-button nav-button-personal" type="button" data-tab="pour-moi">Pour moi</button>
       <button class="nav-button" type="button" data-tab="musique">Musique</button>
       <button class="nav-button" type="button" data-tab="youtube">YouTube</button>
@@ -122,6 +125,8 @@
             <span class="stat-label">contenus bientôt indisponibles</span>
           </article>
         </div>
+
+        <aside class="personal-alerts" id="personal-alerts" aria-live="polite" hidden></aside>
 
         <div class="section-heading">
           <div>
@@ -407,6 +412,27 @@
           </div>
         </div>
 
+        <div class="favorite-section watchlist-section">
+          <div class="section-heading section-heading-row">
+            <div>
+              <p class="eyebrow">MA LISTE</p>
+              <h2>À découvrir, en cours ou terminé</h2>
+            </div>
+            <label class="control-field compact-control" for="watchlist-filter">
+              <span>Afficher</span>
+              <select id="watchlist-filter">
+                <option value="all">Toute ma liste</option>
+                <option value="discover">À découvrir</option>
+                <option value="progress">En cours</option>
+                <option value="done">Terminés</option>
+                <option value="hidden">Masqués</option>
+              </select>
+            </label>
+          </div>
+          <p class="personal-intro">Ta liste reste uniquement sur cet appareil. Classe un contenu depuis l’onglet Disponibilités.</p>
+          <div id="personal-watchlist" class="availability-grid"></div>
+        </div>
+
         <div class="favorite-section">
           <div class="section-heading section-heading-row">
             <div>
@@ -652,7 +678,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.3 · Automatisations rationalisées · Contenus actualisés automatiquement</span>
+      <span>v1.4 · Liste personnelle et alertes locales · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

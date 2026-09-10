@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.3** rationalise les automatisations du dashboard : chaque publication de données déclenche un seul déploiement, tandis qu’ARTE, Epic Games et Radio France conservent leur suivi de fraîcheur :
+La version **v1.4** ajoute une liste personnelle locale et un résumé utile dès l’ouverture, tout en conservant les automatisations rationalisées de la v1.3 :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -15,6 +15,9 @@ La version **v1.3** rationalise les automatisations du dashboard : chaque public
 - tris par sélection, nom ou date de vérification ;
 - fiches enrichies avec badges et date de contrôle ;
 - favoris conservés dans le navigateur ;
+- contenus classés localement comme « À découvrir », « En cours », « Terminé » ou « Masqué » ;
+- nouveautés comptées depuis la dernière visite et signalées dans la navigation ;
+- alertes lorsque des contenus suivis ou issus d’une plateforme favorite arrivent à échéance ;
 - espace « Pour moi » avec accès direct aux favoris ;
 - profil local par univers préférés et priorités d’accès ;
 - classement personnalisé avec score et raisons visibles ;
@@ -95,7 +98,8 @@ entertainment-dashboard/
 │   ├── personalization.js
 │   ├── pwa.js
 │   ├── source-health.js
-│   └── recommendations.js
+│   ├── recommendations.js
+│   └── watchlist.js
 ├── data/
 │   ├── archive.json
 │   ├── catalogue.json
@@ -123,6 +127,7 @@ entertainment-dashboard/
 │   ├── test-pwa.mjs
 │   ├── test-quality.mjs
 │   ├── test-source-health.mjs
+│   ├── test-watchlist.mjs
 │   ├── test-workflows.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
@@ -162,6 +167,7 @@ node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs
 node scripts/test-source-health.mjs
+node scripts/test-watchlist.mjs
 node scripts/test-workflows.mjs
 node scripts/test-release.mjs
 node --check js/app.js
@@ -173,6 +179,7 @@ node --check js/personalization.js
 node --check js/recommendations.js
 node --check js/pwa.js
 node --check js/source-health.js
+node --check js/watchlist.js
 node --check service-worker.js
 node --check scripts/epic-games.mjs
 node --check scripts/fetch-epic-games.mjs
@@ -342,6 +349,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.1** — accessibilité clavier, gestion du focus et optimisation des recherches et médias.
 - **v1.2** — état des sources, suivi du dernier contrôle réussi et détection des retards.
 - **v1.3** — planifications isolées, permissions réduites et déploiements redondants supprimés.
+- **v1.4** — liste personnelle locale, nouveautés depuis la dernière visite et alertes ciblées.
 
 ## Sécurité et confidentialité
 
@@ -349,6 +357,7 @@ déploiement : la publication normale de `main` suffit.
 - Aucun tracker ni cookie publicitaire propre au dashboard.
 - Favoris stockés uniquement dans `localStorage`.
 - Préférences stockées uniquement dans `localStorage`, indépendamment des favoris.
+- Liste personnelle et date de dernière visite stockées uniquement dans `localStorage`.
 - Calcul des recommandations effectué dans le navigateur, avec raisons affichées.
 - Aucun contenu daté n’est affiché sans vérification et source officielle.
 - Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.

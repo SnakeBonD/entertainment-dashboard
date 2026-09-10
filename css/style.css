@@ -286,6 +286,23 @@ input:disabled {
   color: var(--warning);
 }
 
+.nav-count {
+  display: inline-grid;
+  min-width: 1.45rem;
+  min-height: 1.45rem;
+  margin-left: 0.35rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #06101a;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.nav-count[hidden] {
+  display: none;
+}
+
 .nav-button-availability.is-active {
   border-color: rgb(255 200 120 / 38%);
   background: rgb(255 200 120 / 10%);
@@ -1322,6 +1339,15 @@ tbody tr:last-child td {
   gap: 0.65rem;
 }
 
+.availability-card-meta {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.availability-card-meta .availability-status:last-child {
+  margin-left: auto;
+}
+
 .availability-type,
 .availability-status {
   display: inline-flex;
@@ -1353,6 +1379,12 @@ tbody tr:last-child td {
   border-color: rgb(255 142 155 / 28%);
   background: rgb(255 142 155 / 7%);
   color: var(--danger);
+}
+
+.availability-status-new {
+  border-color: rgb(126 211 255 / 35%);
+  background: rgb(126 211 255 / 10%);
+  color: var(--accent);
 }
 
 .availability-card h3 {
@@ -1399,6 +1431,55 @@ tbody tr:last-child td {
   justify-content: flex-start;
   padding-top: 0.7rem;
   border-top: 1px solid var(--line);
+}
+
+.watchlist-control {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0.45rem 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.watchlist-control select,
+.compact-control select {
+  min-height: 2.45rem;
+  padding: 0 2rem 0 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.personal-alerts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgb(126 211 255 / 32%);
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, rgb(126 211 255 / 10%), rgb(183 160 255 / 8%));
+}
+
+.personal-alerts[hidden] {
+  display: none;
+}
+
+.personal-alerts strong {
+  line-height: 1.5;
+}
+
+.compact-control {
+  min-width: min(100%, 13rem);
+}
+
+.compact-control select {
+  width: 100%;
 }
 
 .source-link {
@@ -2154,6 +2235,11 @@ footer {
   }
 
   .info-banner {
+    flex-direction: column;
+  }
+
+  .personal-alerts {
+    align-items: stretch;
     flex-direction: column;
   }
 
