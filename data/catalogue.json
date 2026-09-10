@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-09T15:11:23.420Z",
+  "lastUpdated": "2026-09-10T05:12:23.310Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -156,17 +156,15 @@
       "addedDate": "2026-09-02",
       "availabilityStartDate": "2026-09-02T03:00:00Z",
       "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": false,
-      "verifiedAt": "2026-09-07T19:27:42.858Z",
+      "verified": true,
+      "verifiedAt": "2026-09-10T05:12:23.310Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "124739-000-A",
       "description": "Livreur à vélo, Souleymane pédale dans la nuit parisienne pour un salaire de misère, et rêve du sésame des papiers.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UAbVHBpFnqmFCwGFpEWwaF/768x432?type=TEXT",
       "durationLabel": "90 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE",
-      "verificationNote": "not_in_current_selection",
-      "lastCheckedAt": "2026-09-09T15:11:23.420Z"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-129313-000-A-2026-09-07",
