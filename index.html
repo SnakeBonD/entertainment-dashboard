@@ -60,7 +60,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.5">v1.5</span>
+        <span class="version-badge" aria-label="Version 1.6">v1.6</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -561,7 +561,7 @@
         <div class="section-heading chooser-heading">
           <p class="eyebrow">MODE DÉCOUVERTE</p>
           <h1 id="chooser-title">Que regarder ce soir ?</h1>
-          <p>Quelques critères, puis cinq pistes reliées aux plateformes les plus adaptées.</p>
+          <p>Précise ton envie : les contenus vérifiés, leurs échéances et tes choix personnels passent en premier.</p>
         </div>
 
         <form id="chooser-form" class="chooser-layout">
@@ -598,14 +598,31 @@
               <option value="avec des amis">Avec des amis</option>
             </select>
 
+            <label for="format">Format souhaité</label>
+            <select id="format" name="format">
+              <option value="surprise">Surprends-moi</option>
+              <option value="movie">Film ou série</option>
+              <option value="doc">Documentaire</option>
+              <option value="podcast">Podcast</option>
+              <option value="youtube">YouTube</option>
+              <option value="game">Jeu</option>
+            </select>
+
+            <label for="priority">Priorité du soir</label>
+            <select id="priority" name="priority">
+              <option value="balanced">Le meilleur équilibre</option>
+              <option value="deadline">À voir avant disparition</option>
+              <option value="personal">Ma liste et mes favoris</option>
+            </select>
+
             <button class="primary-button" type="submit">Choisir pour moi</button>
           </div>
           <div class="chooser-copy">
             <span class="large-glyph" aria-hidden="true">?</span>
             <h2>Un choix simple et transparent.</h2>
             <p>
-              L’humeur détermine les propositions. Le temps, l’énergie, la compagnie, tes favoris
-              et tes préférences indiquent laquelle lancer en premier. Tout reste dans ton navigateur.
+              Chaque résultat explique son classement : durée compatible, format demandé,
+              échéance proche, favori ou contenu déjà suivi. Tout reste dans ton navigateur.
             </p>
           </div>
         </form>
@@ -710,7 +727,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.5 · Agenda des disponibilités · Contenus actualisés automatiquement</span>
+      <span>v1.6 · Choix du soir expliqué et sensible aux échéances · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>
