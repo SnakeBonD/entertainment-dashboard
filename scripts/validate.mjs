@@ -33,6 +33,7 @@ const requiredFiles = [
   "js/preferences.js",
   "js/personalization.js",
   "js/recommendations.js",
+  "js/backup.js",
   "js/source-health.js",
   "js/watchlist.js",
   "js/pwa.js",
@@ -67,6 +68,7 @@ const requiredFiles = [
   "scripts/test-watchlist.mjs",
   "scripts/test-agenda.mjs",
   "scripts/test-chooser.mjs",
+  "scripts/test-backup.mjs",
   "scripts/test-workflows.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
@@ -134,11 +136,20 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "format",
   "priority",
   "recommendation-results",
+  "export-local-data",
+  "import-local-data",
+  "backup-file",
+  "backup-status",
+  "backup-dialog",
+  "backup-preview",
+  "cancel-backup-import",
+  "confirm-backup-import",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.6"), "index.html : version v1.6 absente");
+assert(indexHtml.includes("v1.7"), "index.html : version v1.7 absente");
+assert(indexHtml.includes('src="js/backup.js"'), "index.html : module de sauvegarde absent");
 assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
@@ -463,4 +474,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.6, choix expliqué, agenda, liste personnelle et PWA conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.7, sauvegarde portable, choix expliqué et PWA conformes.");

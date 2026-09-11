@@ -29,6 +29,7 @@ jobs:
           node scripts/test-catalog.mjs
           node scripts/test-personalization.mjs
           node scripts/test-chooser.mjs
+          node scripts/test-backup.mjs
           node scripts/test-availability.mjs
           node scripts/test-epic-games.mjs
           node scripts/test-arte.mjs
@@ -41,6 +42,7 @@ jobs:
           node scripts/test-workflows.mjs
           node scripts/test-release.mjs
           node --check js/app.js
+          node --check js/backup.js
           node --check js/availability.js
           node --check js/catalog.js
           node --check js/favorites.js

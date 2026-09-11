@@ -31,6 +31,16 @@
     return `${category}::${name}`;
   }
 
+  function sanitize(entries) {
+    return Array.isArray(entries)
+      ? [...new Set(entries.filter((item) => typeof item === "string" && item.includes("::")))]
+      : [];
+  }
+
+  function replace(entries) {
+    return write(new Set(sanitize(entries)));
+  }
+
   function has(category, name) {
     return read().has(makeId(category, name));
   }
@@ -55,6 +65,9 @@
     has,
     hasPlatform: (name) => [...read()].some((id) => id.endsWith(`::${name}`)),
     makeId,
+    replace,
+    sanitize,
+    storageKey,
     toggle,
   };
 })();

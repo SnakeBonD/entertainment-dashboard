@@ -5,10 +5,23 @@
   const visitKey = "snakebondEntertainmentLastVisit";
   const allowedStatuses = new Set(["discover", "progress", "done", "hidden"]);
 
+  function sanitize(value) {
+    if (!value || typeof value !== "object" || Array.isArray(value)) return {};
+    return Object.fromEntries(Object.entries(value).flatMap(([id, entry]) => {
+      if (!id || !entry || typeof entry !== "object" || !allowedStatuses.has(entry.status)) return [];
+      return [[id, {
+        status: entry.status,
+        title: typeof entry.title === "string" ? entry.title : "Contenu suivi",
+        platform: typeof entry.platform === "string" ? entry.platform : "Plateforme inconnue",
+        updatedAt: Number.isFinite(Date.parse(entry.updatedAt)) ? entry.updatedAt : new Date(0).toISOString(),
+      }]];
+    }));
+  }
+
   function read() {
     try {
       const value = JSON.parse(localStorage.getItem(storageKey) ?? "{}");
-      return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+      return sanitize(value);
     } catch {
       return {};
     }
@@ -45,6 +58,10 @@
     if (!entries[itemId]) return true;
     delete entries[itemId];
     return write(entries);
+  }
+
+  function replace(entries) {
+    return write(sanitize(entries));
   }
 
   function list(catalogueItems = [], archiveItems = []) {
@@ -86,7 +103,10 @@
     readLastVisit,
     recordVisit,
     remove,
+    replace,
+    sanitize,
     set,
+    storageKey,
     statusLabels: {
       discover: "À découvrir",
       progress: "En cours",

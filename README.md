@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.6** rend le choix du soir plus précis : format souhaité, priorité aux échéances ou à la liste personnelle, contenus vérifiés et raisons détaillées :
+La version **v1.7** permet de sauvegarder et restaurer les données personnelles du dashboard dans un fichier JSON portable :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -29,6 +29,10 @@ La version **v1.6** rend le choix du soir plus précis : format souhaité, prior
 - choix direct du format et de la priorité du soir ;
 - classement sensible à la durée, aux dates de fin, aux favoris et à la liste personnelle ;
 - explication précise des critères retenus pour chaque suggestion ;
+- export des favoris, préférences et contenus suivis dans un fichier daté ;
+- validation stricte du format et nettoyage des valeurs avant importation ;
+- aperçu du nombre d’éléments avant confirmation de la restauration ;
+- retour aux données précédentes si une écriture locale échoue ;
 - espace « Disponibilités » réservé aux contenus datés et vérifiés ;
 - alerte automatique pendant les sept derniers jours de disponibilité ;
 - filtres par échéance, type, titre et plateforme ;
@@ -105,6 +109,7 @@ entertainment-dashboard/
 │   ├── pwa.js
 │   ├── source-health.js
 │   ├── recommendations.js
+│   ├── backup.js
 │   └── watchlist.js
 ├── data/
 │   ├── archive.json
@@ -127,6 +132,7 @@ entertainment-dashboard/
 │   ├── source-status.mjs
 │   ├── test-availability.mjs
 │   ├── test-agenda.mjs
+│   ├── test-backup.mjs
 │   ├── test-chooser.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
@@ -170,6 +176,7 @@ node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
 node scripts/test-agenda.mjs
+node scripts/test-backup.mjs
 node scripts/test-chooser.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
@@ -187,6 +194,7 @@ node --check js/favorites.js
 node --check js/preferences.js
 node --check js/personalization.js
 node --check js/recommendations.js
+node --check js/backup.js
 node --check js/pwa.js
 node --check js/source-health.js
 node --check js/watchlist.js
@@ -362,6 +370,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.4** — liste personnelle locale, nouveautés depuis la dernière visite et alertes ciblées.
 - **v1.5** — agenda des disponibilités par date, période et priorité personnelle.
 - **v1.6** — choix du soir enrichi, contenus datés prioritaires et explications détaillées.
+- **v1.7** — export et import sécurisés des favoris, préférences et contenus suivis.
 
 ## Sécurité et confidentialité
 

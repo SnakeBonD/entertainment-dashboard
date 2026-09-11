@@ -2190,6 +2190,56 @@ tbody tr:last-child td {
   margin-top: auto;
 }
 
+.backup-heading {
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.backup-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgb(31 51 69 / 75%), var(--panel));
+}
+
+.backup-panel p {
+  max-width: 58ch;
+  margin: 0.45rem 0 0;
+}
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.backup-dialog {
+  width: min(calc(100% - 2rem), 34rem);
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 55%);
+}
+
+.backup-dialog::backdrop {
+  background: rgb(2 5 10 / 78%);
+  backdrop-filter: blur(3px);
+}
+
+.backup-dialog h2 {
+  margin-top: 0;
+}
+
+.backup-dialog .backup-actions {
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
 .empty-state {
   max-width: 42rem;
   margin: 4rem auto;
@@ -2290,6 +2340,15 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .backup-panel {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .backup-actions > button {
+    flex: 1 1 12rem;
+  }
+
   .home-heading,
   .section-heading-row,
   footer {
