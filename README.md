@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.7** permet de sauvegarder et restaurer les données personnelles du dashboard dans un fichier JSON portable :
+La version **v1.8** permet d’ajouter les échéances du dashboard à une application de calendrier grâce à des fichiers ICS standards :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -33,6 +33,10 @@ La version **v1.7** permet de sauvegarder et restaurer les données personnelles
 - validation stricte du format et nettoyage des valeurs avant importation ;
 - aperçu du nombre d’éléments avant confirmation de la restauration ;
 - retour aux données précédentes si une écriture locale échoue ;
+- export de l’échéance d’un contenu précis depuis sa ligne d’agenda ;
+- export groupé de toutes les échéances correspondant à la période et aux filtres affichés ;
+- événements datés en UTC, triés, dédoublonnés et identifiés de manière stable ;
+- fichiers ICS correctement échappés et pliés pour une large compatibilité calendrier ;
 - espace « Disponibilités » réservé aux contenus datés et vérifiés ;
 - alerte automatique pendant les sept derniers jours de disponibilité ;
 - filtres par échéance, type, titre et plateforme ;
@@ -103,6 +107,7 @@ entertainment-dashboard/
 │   ├── app.js
 │   ├── availability.js
 │   ├── catalog.js
+│   ├── calendar.js
 │   ├── favorites.js
 │   ├── preferences.js
 │   ├── personalization.js
@@ -133,6 +138,7 @@ entertainment-dashboard/
 │   ├── test-availability.mjs
 │   ├── test-agenda.mjs
 │   ├── test-backup.mjs
+│   ├── test-calendar.mjs
 │   ├── test-chooser.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
@@ -177,6 +183,7 @@ node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
 node scripts/test-agenda.mjs
 node scripts/test-backup.mjs
+node scripts/test-calendar.mjs
 node scripts/test-chooser.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
@@ -195,6 +202,7 @@ node --check js/preferences.js
 node --check js/personalization.js
 node --check js/recommendations.js
 node --check js/backup.js
+node --check js/calendar.js
 node --check js/pwa.js
 node --check js/source-health.js
 node --check js/watchlist.js
@@ -371,6 +379,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.5** — agenda des disponibilités par date, période et priorité personnelle.
 - **v1.6** — choix du soir enrichi, contenus datés prioritaires et explications détaillées.
 - **v1.7** — export et import sécurisés des favoris, préférences et contenus suivis.
+- **v1.8** — export ICS d’une échéance ou de l’agenda filtré vers une application de calendrier.
 
 ## Sécurité et confidentialité
 

@@ -32,6 +32,7 @@
     <script src="js/favorites.js" defer></script>
     <script src="js/catalog.js" defer></script>
     <script src="js/availability.js" defer></script>
+    <script src="js/calendar.js" defer></script>
     <script src="js/watchlist.js" defer></script>
     <script src="js/preferences.js" defer></script>
     <script src="js/backup.js" defer></script>
@@ -61,7 +62,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.7">v1.7</span>
+        <span class="version-badge" aria-label="Version 1.8">v1.8</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -299,9 +300,13 @@
           <button class="secondary-button" id="agenda-tracked-only" type="button" aria-pressed="false">
             Ma liste uniquement
           </button>
+          <button class="secondary-button" id="export-agenda-calendar" type="button">
+            Exporter l’agenda
+          </button>
         </div>
 
         <p id="agenda-result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
+        <p id="agenda-calendar-status" class="agenda-calendar-status" aria-live="polite"></p>
         <div id="agenda-container" class="agenda-timeline"></div>
       </section>
 
@@ -759,7 +764,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.7 · Sauvegarde portable des données locales · Contenus actualisés automatiquement</span>
+      <span>v1.8 · Export calendrier des échéances · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>
