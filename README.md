@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.5** ajoute un agenda des disponibilités pour visualiser les prochaines échéances par jour, tout en conservant le suivi local de la v1.4 :
+La version **v1.6** rend le choix du soir plus précis : format souhaité, priorité aux échéances ou à la liste personnelle, contenus vérifiés et raisons détaillées :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -25,7 +25,10 @@ La version **v1.5** ajoute un agenda des disponibilités pour visualiser les pro
 - profil local par univers préférés et priorités d’accès ;
 - classement personnalisé avec score et raisons visibles ;
 - recommandations qui tiennent compte des favoris, du français, de la publicité et du compte ;
-- module « Que regarder ce soir ? » relié à de vraies plateformes ;
+- module « Que regarder ce soir ? » relié à de vrais contenus vérifiés et à leurs plateformes ;
+- choix direct du format et de la priorité du soir ;
+- classement sensible à la durée, aux dates de fin, aux favoris et à la liste personnelle ;
+- explication précise des critères retenus pour chaque suggestion ;
 - espace « Disponibilités » réservé aux contenus datés et vérifiés ;
 - alerte automatique pendant les sept derniers jours de disponibilité ;
 - filtres par échéance, type, titre et plateforme ;
@@ -124,6 +127,7 @@ entertainment-dashboard/
 │   ├── source-status.mjs
 │   ├── test-availability.mjs
 │   ├── test-agenda.mjs
+│   ├── test-chooser.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
 │   ├── test-epic-games.mjs
@@ -166,6 +170,7 @@ node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
 node scripts/test-agenda.mjs
+node scripts/test-chooser.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
@@ -356,6 +361,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.3** — planifications isolées, permissions réduites et déploiements redondants supprimés.
 - **v1.4** — liste personnelle locale, nouveautés depuis la dernière visite et alertes ciblées.
 - **v1.5** — agenda des disponibilités par date, période et priorité personnelle.
+- **v1.6** — choix du soir enrichi, contenus datés prioritaires et explications détaillées.
 
 ## Sécurité et confidentialité
 

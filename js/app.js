@@ -1301,8 +1301,10 @@
       window.SnakeBonDRecommendations?.init(recommendations, {
         platforms,
         metadata,
+        catalogue,
         getPreferences: () => state.preferences,
         isFavorite: (category, name) => window.SnakeBonDFavorites?.has(category, name) ?? false,
+        getWatchlistStatus: (id) => window.SnakeBonDWatchlist?.get(id)?.status ?? null,
       });
     } catch (error) {
       showLoadError(error);

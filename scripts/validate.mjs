@@ -66,6 +66,7 @@ const requiredFiles = [
   "scripts/test-source-health.mjs",
   "scripts/test-watchlist.mjs",
   "scripts/test-agenda.mjs",
+  "scripts/test-chooser.mjs",
   "scripts/test-workflows.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
@@ -130,11 +131,14 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "app-action-status",
   "source-health-summary",
   "source-health-grid",
+  "format",
+  "priority",
+  "recommendation-results",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.5"), "index.html : version v1.5 absente");
+assert(indexHtml.includes("v1.6"), "index.html : version v1.6 absente");
 assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
@@ -459,4 +463,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.5, agenda, liste personnelle et PWA conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.6, choix expliqué, agenda, liste personnelle et PWA conformes.");
