@@ -1298,6 +1298,7 @@
       setupWatchlist();
       setupAgenda();
       renderPersonalAlerts();
+      window.SnakeBonDBackup?.init({ allowedCategories: Object.keys(platforms) });
       window.SnakeBonDRecommendations?.init(recommendations, {
         platforms,
         metadata,

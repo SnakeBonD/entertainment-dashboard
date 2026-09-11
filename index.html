@@ -34,6 +34,7 @@
     <script src="js/availability.js" defer></script>
     <script src="js/watchlist.js" defer></script>
     <script src="js/preferences.js" defer></script>
+    <script src="js/backup.js" defer></script>
     <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
     <script src="js/source-health.js" defer></script>
@@ -60,7 +61,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.6">v1.6</span>
+        <span class="version-badge" aria-label="Version 1.7">v1.7</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -668,6 +669,37 @@
         </div>
         <p class="app-action-status" id="app-action-status" aria-live="polite"></p>
 
+        <div class="section-heading backup-heading">
+          <p class="eyebrow">DONNÉES LOCALES</p>
+          <h2>Sauvegarder tes choix</h2>
+          <p>
+            Télécharge une copie de tes favoris, préférences et contenus suivis, puis restaure-la
+            sur cet appareil ou dans un autre navigateur.
+          </p>
+        </div>
+        <div class="backup-panel">
+          <div>
+            <strong>Une sauvegarde portable, sans compte.</strong>
+            <p>L’importation affiche un résumé et demande confirmation avant de remplacer les données actuelles.</p>
+          </div>
+          <div class="backup-actions">
+            <button class="primary-button" id="export-local-data" type="button">Exporter mes données</button>
+            <button class="secondary-button" id="import-local-data" type="button">Importer une sauvegarde</button>
+            <input class="visually-hidden" id="backup-file" type="file" accept="application/json,.json">
+          </div>
+        </div>
+        <p class="app-action-status" id="backup-status" aria-live="polite"></p>
+
+        <dialog class="backup-dialog" id="backup-dialog" aria-labelledby="backup-dialog-title">
+          <h2 id="backup-dialog-title">Confirmer la restauration</h2>
+          <p id="backup-preview"></p>
+          <p>Les données locales actuelles seront remplacées.</p>
+          <div class="backup-actions">
+            <button class="secondary-button" id="cancel-backup-import" type="button">Annuler</button>
+            <button class="primary-button" id="confirm-backup-import" type="button">Restaurer</button>
+          </div>
+        </dialog>
+
         <div class="section-heading source-health-heading">
           <p class="eyebrow">SOURCES AUTOMATISÉES</p>
           <h2>Fraîcheur des contenus</h2>
@@ -727,7 +759,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.6 · Choix du soir expliqué et sensible aux échéances · Contenus actualisés automatiquement</span>
+      <span>v1.7 · Sauvegarde portable des données locales · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>
