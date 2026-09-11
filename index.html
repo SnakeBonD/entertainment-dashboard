@@ -60,7 +60,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.4">v1.4</span>
+        <span class="version-badge" aria-label="Version 1.5">v1.5</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -80,6 +80,7 @@
       <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">
         Disponibilités <span class="nav-count" id="new-content-count" aria-label="0 nouveauté" hidden>0</span>
       </button>
+      <button class="nav-button nav-button-agenda" type="button" data-tab="agenda">Agenda</button>
       <button class="nav-button nav-button-personal" type="button" data-tab="pour-moi">Pour moi</button>
       <button class="nav-button" type="button" data-tab="musique">Musique</button>
       <button class="nav-button" type="button" data-tab="youtube">YouTube</button>
@@ -270,6 +271,37 @@
 
         <p id="platform-result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
         <div id="platform-container"></div>
+      </section>
+
+      <section id="agenda" class="page" aria-labelledby="agenda-title">
+        <div class="section-heading section-heading-row agenda-heading">
+          <div>
+            <p class="eyebrow">AGENDA DES DISPONIBILITÉS</p>
+            <h1 id="agenda-title">À voir ou récupérer avant la date limite</h1>
+            <p>Les échéances sont regroupées par jour pour repérer immédiatement les priorités.</p>
+          </div>
+          <label class="control-field compact-control" for="agenda-window">
+            <span>Période</span>
+            <select id="agenda-window">
+              <option value="7">7 prochains jours</option>
+              <option value="14" selected>14 prochains jours</option>
+              <option value="30">30 prochains jours</option>
+              <option value="all">Toutes les échéances</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="agenda-summary" aria-label="Résumé de l’agenda">
+          <article><span id="agenda-today-count">0</span><small>aujourd’hui</small></article>
+          <article><span id="agenda-week-count">0</span><small>dans les 7 jours</small></article>
+          <article><span id="agenda-tracked-count">0</span><small>contenus suivis</small></article>
+          <button class="secondary-button" id="agenda-tracked-only" type="button" aria-pressed="false">
+            Ma liste uniquement
+          </button>
+        </div>
+
+        <p id="agenda-result-count" class="result-count" aria-live="polite" aria-atomic="true"></p>
+        <div id="agenda-container" class="agenda-timeline"></div>
       </section>
 
       <section id="disponibilites" class="page" aria-labelledby="availability-title">
@@ -678,7 +710,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.4 · Liste personnelle et alertes locales · Contenus actualisés automatiquement</span>
+      <span>v1.5 · Agenda des disponibilités · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

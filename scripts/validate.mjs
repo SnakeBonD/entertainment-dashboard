@@ -65,6 +65,7 @@ const requiredFiles = [
   "scripts/source-status.mjs",
   "scripts/test-source-health.mjs",
   "scripts/test-watchlist.mjs",
+  "scripts/test-agenda.mjs",
   "scripts/test-workflows.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
@@ -103,6 +104,14 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "watchlist-filter",
   "personal-alerts",
   "new-content-count",
+  "agenda-title",
+  "agenda-window",
+  "agenda-tracked-only",
+  "agenda-today-count",
+  "agenda-week-count",
+  "agenda-tracked-count",
+  "agenda-result-count",
+  "agenda-container",
   "reset-preferences",
   "availability-search",
   "availability-status-filter",
@@ -125,7 +134,8 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.4"), "index.html : version v1.4 absente");
+assert(indexHtml.includes("v1.5"), "index.html : version v1.5 absente");
+assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
 assert(indexHtml.includes('id="disponibilites"'), "index.html : espace Disponibilités absent");
 assert(indexHtml.includes('rel="manifest" href="manifest.webmanifest"'), "index.html : manifeste PWA absent");
@@ -449,4 +459,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.4, liste personnelle, PWA et structure conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.5, agenda, liste personnelle et PWA conformes.");

@@ -36,6 +36,7 @@ jobs:
           node scripts/test-quality.mjs
           node scripts/test-source-health.mjs
           node scripts/test-watchlist.mjs
+          node scripts/test-agenda.mjs
           node scripts/test-workflows.mjs
           node scripts/test-release.mjs
           node --check js/app.js

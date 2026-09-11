@@ -104,6 +104,55 @@
     });
   }
 
+  function agendaDateKey(value) {
+    const parsed = timestamp(value);
+    if (parsed === null) return "";
+    return new Intl.DateTimeFormat("en-CA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      timeZone: "Europe/Paris",
+    }).format(new Date(parsed));
+  }
+
+  function agendaDayLabel(value, now = new Date()) {
+    const key = agendaDateKey(value);
+    if (key === agendaDateKey(now)) return "Aujourd’hui";
+    if (key === agendaDateKey(new Date(now.getTime() + dayMs))) return "Demain";
+    return new Intl.DateTimeFormat("fr-FR", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      timeZone: "Europe/Paris",
+    }).format(new Date(value));
+  }
+
+  function buildAgenda(items, {
+    days = 14,
+    trackedOnly = false,
+    isTracked = () => false,
+  } = {}, now = new Date()) {
+    const limit = Number.isFinite(Number(days)) ? Number(days) : Number.POSITIVE_INFINITY;
+    const eligible = sortByExpiry(items).filter((item) => {
+      const remaining = daysUntil(item.expiryDate, now);
+      if (remaining === null || remaining < 0 || remaining > limit) return false;
+      return !trackedOnly || isTracked(item);
+    });
+    const groups = new Map();
+    eligible.forEach((item) => {
+      const key = agendaDateKey(item.expiryDate);
+      if (!groups.has(key)) {
+        groups.set(key, {
+          key,
+          label: agendaDayLabel(item.expiryDate, now),
+          items: [],
+        });
+      }
+      groups.get(key).items.push(item);
+    });
+    return [...groups.values()];
+  }
+
   function summarize(items, now = new Date()) {
     const summary = { active: 0, expiring: 0, permanent: 0, expired: 0, total: items.length };
     items.forEach((item) => {
@@ -151,6 +200,9 @@
 
   globalThis.SnakeBonDAvailability = {
     archiveExpired,
+    agendaDateKey,
+    agendaDayLabel,
+    buildAgenda,
     daysUntil,
     filterItems,
     formatDate,
