@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-10T16:39:08.232Z",
+  "lastUpdated": "2026-09-11T16:44:05.801Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -131,6 +131,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
+      "id": "arte-117174-002-A-2026-09-01",
+      "title": "Fuck la planète (2/3)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/117174-002-A/fuck-la-planete-2-3/",
+      "country": "FR",
+      "addedDate": "2026-09-01",
+      "availabilityStartDate": "2026-09-01T03:00:00Z",
+      "expiryDate": "2027-04-08T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-11T16:44:05.801Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "117174-002-A",
+      "description": "En 1979, le deuxième choc pétrolier affecte les économies mondiales. Jimmy Carter consulte les meilleurs climatologues du pays...",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/tM3wiknyHZHqf2frFvTywM/768x432?type=TEXT",
+      "durationLabel": "45 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-117646-000-A-2026-09-02",
       "title": "Bon voyage",
       "type": "movie",
@@ -141,13 +161,33 @@
       "availabilityStartDate": "2026-09-02T09:45:00Z",
       "expiryDate": "2027-03-02T10:45:00Z",
       "verified": true,
-      "verifiedAt": "2026-09-07T19:27:42.858Z",
+      "verifiedAt": "2026-09-11T16:44:05.801Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "117646-000-A",
       "description": "Une folle sarabande romanesque signée Jean-Paul Rappeneau, avec Isabelle Adjani, Gérard Depardieu, Yvan Attal, Virginie Ledoyen.",
-      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/2XE5QMRnjP7tENXLHHiF53/768x432?type=TEXT",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/cEJpoiK7zjnSACvE8cFzmB/768x432?type=TEXT",
       "durationLabel": "109 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-123344-000-A-2026-09-08",
+      "title": "Ultra-riches - Taxe-moi (si tu peux !) (1/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/123344-000-A/ultra-riches-taxe-moi-si-tu-peux-1-2/",
+      "country": "FR",
+      "addedDate": "2026-09-08",
+      "availabilityStartDate": "2026-09-08T03:00:00Z",
+      "expiryDate": "2026-10-15T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-11T16:44:05.801Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "123344-000-A",
+      "description": "Depuis les années 1980, les ultra-riches ont vu leur patrimoine bondir et leurs impôts baisser !",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KbYAd8D2dJ96VuBetAwrhZ/768x432?type=TEXT",
+      "durationLabel": "47 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
@@ -202,7 +242,7 @@
       "addedDate": "2026-09-07",
       "availabilityStartDate": "2026-09-07T03:00:00Z",
       "expiryDate": "2026-09-14T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-09T15:11:23.420Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -210,7 +250,9 @@
       "description": "Une jeune femme aveugle (Mia Farrow) est pourchassée par un mystérieux tueur. Un thriller minimaliste de Richard Fleischer.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/6dZmgokikLozhjGBEuZbmi/768x432?type=TEXT",
       "durationLabel": "86 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-11T16:44:05.801Z"
     },
     {
       "id": "arte-129843-000-A-2026-09-06",
@@ -242,7 +284,7 @@
       "addedDate": "2026-09-07",
       "availabilityStartDate": "2026-09-07T03:00:00Z",
       "expiryDate": "2026-10-07T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-10T16:39:08.232Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -250,7 +292,9 @@
       "description": "En noir et blanc, et avec un esprit \"Nouvelle Vague\", l'Anglais John Schlesinger offre un splendide écrin à Julie Christie.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/PZTvdCpvTd3WfwNTUCuEtF/768x432?type=TEXT",
       "durationLabel": "115 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-11T16:44:05.801Z"
     },
     {
       "id": "epic-c76046dddcdb43619c33ce0395941033-2026-09-10",
