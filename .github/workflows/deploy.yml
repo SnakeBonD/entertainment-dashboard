@@ -39,12 +39,14 @@ jobs:
           node scripts/test-source-health.mjs
           node scripts/test-watchlist.mjs
           node scripts/test-agenda.mjs
+          node scripts/test-calendar.mjs
           node scripts/test-workflows.mjs
           node scripts/test-release.mjs
           node --check js/app.js
           node --check js/backup.js
           node --check js/availability.js
           node --check js/catalog.js
+          node --check js/calendar.js
           node --check js/favorites.js
           node --check js/preferences.js
           node --check js/personalization.js

@@ -1,7 +1,7 @@
 "use strict";
 
 const CACHE_PREFIX = "snakebond-entertainment-";
-const CACHE_NAME = `${CACHE_PREFIX}v1.7.0`;
+const CACHE_NAME = `${CACHE_PREFIX}v1.8.0`;
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -13,6 +13,7 @@ const APP_SHELL = [
   "./js/favorites.js",
   "./js/catalog.js",
   "./js/availability.js",
+  "./js/calendar.js",
   "./js/watchlist.js",
   "./js/preferences.js",
   "./js/backup.js",

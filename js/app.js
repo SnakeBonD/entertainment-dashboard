@@ -25,6 +25,7 @@
     newItemIds: new Set(),
     agendaWindow: "14",
     agendaTrackedOnly: false,
+    agendaVisibleItems: [],
   };
 
   function scheduleFrame(callback) {
@@ -744,6 +745,18 @@
     const actions = document.createElement("div");
     actions.className = "agenda-item-actions";
     actions.append(createWatchlistControl(item));
+    const calendarButton = document.createElement("button");
+    calendarButton.type = "button";
+    calendarButton.className = "calendar-button";
+    calendarButton.textContent = "Ajouter au calendrier";
+    calendarButton.addEventListener("click", () => {
+      window.SnakeBonDCalendar.download([item], `echeance-${item.id}.ics`, {
+        name: `Échéance · ${item.title}`,
+      });
+      document.getElementById("agenda-calendar-status").textContent =
+        `Échéance « ${item.title} » téléchargée.`;
+    });
+    actions.append(calendarButton);
     const link = document.createElement("a");
     link.className = "external-link";
     link.href = item.url;
@@ -768,6 +781,7 @@
       isTracked: isAgendaTracked,
     }, now);
     const shown = groups.reduce((total, group) => total + group.items.length, 0);
+    state.agendaVisibleItems = groups.flatMap((group) => group.items);
     const upcoming = items.filter((item) => {
       const remaining = availability.daysUntil(item.expiryDate, now);
       return remaining !== null && remaining >= 0;
@@ -784,6 +798,7 @@
     );
     document.getElementById("agenda-result-count").textContent =
       `${shown} échéance${shown > 1 ? "s" : ""} affichée${shown > 1 ? "s" : ""}`;
+    document.getElementById("export-agenda-calendar").disabled = shown === 0;
 
     const container = document.getElementById("agenda-container");
     if (!groups.length) {
@@ -821,6 +836,7 @@
   function setupAgenda() {
     const windowSelect = document.getElementById("agenda-window");
     const trackedOnly = document.getElementById("agenda-tracked-only");
+    const exportCalendar = document.getElementById("export-agenda-calendar");
     windowSelect.addEventListener("change", (event) => {
       state.agendaWindow = event.target.value;
       renderAgenda();
@@ -830,6 +846,15 @@
       trackedOnly.setAttribute("aria-pressed", String(state.agendaTrackedOnly));
       trackedOnly.textContent = state.agendaTrackedOnly ? "Afficher tout" : "Ma liste uniquement";
       renderAgenda();
+    });
+    exportCalendar.addEventListener("click", () => {
+      if (!state.agendaVisibleItems.length) return;
+      window.SnakeBonDCalendar.download(
+        state.agendaVisibleItems,
+        `agenda-snakebond-${new Date().toISOString().slice(0, 10)}.ics`,
+      );
+      document.getElementById("agenda-calendar-status").textContent =
+        `${state.agendaVisibleItems.length} échéance${state.agendaVisibleItems.length > 1 ? "s" : ""} téléchargée${state.agendaVisibleItems.length > 1 ? "s" : ""}.`;
     });
     renderAgenda();
   }

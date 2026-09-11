@@ -1242,7 +1242,7 @@ tbody tr:last-child td {
 
 .agenda-summary {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) repeat(2, auto);
   gap: 0.75rem;
   margin-bottom: 1rem;
 }
@@ -1271,6 +1271,13 @@ tbody tr:last-child td {
 
 .agenda-summary > button {
   align-self: stretch;
+}
+
+.agenda-calendar-status {
+  min-height: 1.25rem;
+  margin: -0.3rem 0 0.8rem;
+  color: var(--good);
+  font-size: 0.84rem;
 }
 
 .agenda-timeline {
@@ -1362,6 +1369,24 @@ tbody tr:last-child td {
 
 .agenda-item-actions .external-link {
   justify-self: end;
+}
+
+.calendar-button {
+  min-height: 2.35rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgb(139 213 255 / 28%);
+  border-radius: 9px;
+  background: rgb(139 213 255 / 7%);
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.calendar-button:hover {
+  border-color: rgb(139 213 255 / 55%);
+  background: rgb(139 213 255 / 12%);
 }
 
 .availability-updated {

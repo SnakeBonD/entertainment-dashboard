@@ -29,6 +29,7 @@ const requiredFiles = [
   "js/app.js",
   "js/availability.js",
   "js/catalog.js",
+  "js/calendar.js",
   "js/favorites.js",
   "js/preferences.js",
   "js/personalization.js",
@@ -67,6 +68,7 @@ const requiredFiles = [
   "scripts/test-source-health.mjs",
   "scripts/test-watchlist.mjs",
   "scripts/test-agenda.mjs",
+  "scripts/test-calendar.mjs",
   "scripts/test-chooser.mjs",
   "scripts/test-backup.mjs",
   "scripts/test-workflows.mjs",
@@ -144,11 +146,14 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   "backup-preview",
   "cancel-backup-import",
   "confirm-backup-import",
+  "export-agenda-calendar",
+  "agenda-calendar-status",
 ].forEach((id) => {
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.7"), "index.html : version v1.7 absente");
+assert(indexHtml.includes("v1.8"), "index.html : version v1.8 absente");
+assert(indexHtml.includes('src="js/calendar.js"'), "index.html : module calendrier absent");
 assert(indexHtml.includes('src="js/backup.js"'), "index.html : module de sauvegarde absent");
 assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
 assert(indexHtml.includes('id="pour-moi"'), "index.html : espace Pour moi absent");
@@ -474,4 +479,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.7, sauvegarde portable, choix expliqué et PWA conformes.");
+console.log("Validation réussie : 40 plateformes, version v1.8, calendrier ICS, sauvegarde portable et PWA conformes.");
