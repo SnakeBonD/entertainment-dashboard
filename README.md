@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.4** ajoute une liste personnelle locale et un résumé utile dès l’ouverture, tout en conservant les automatisations rationalisées de la v1.3 :
+La version **v1.5** ajoute un agenda des disponibilités pour visualiser les prochaines échéances par jour, tout en conservant le suivi local de la v1.4 :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -18,6 +18,9 @@ La version **v1.4** ajoute une liste personnelle locale et un résumé utile dè
 - contenus classés localement comme « À découvrir », « En cours », « Terminé » ou « Masqué » ;
 - nouveautés comptées depuis la dernière visite et signalées dans la navigation ;
 - alertes lorsque des contenus suivis ou issus d’une plateforme favorite arrivent à échéance ;
+- agenda regroupé par jour avec périodes de 7, 14, 30 jours ou toutes les échéances ;
+- vue limitée aux contenus suivis ou aux plateformes favorites ;
+- compteurs dédiés aux échéances du jour, de la semaine et de la liste personnelle ;
 - espace « Pour moi » avec accès direct aux favoris ;
 - profil local par univers préférés et priorités d’accès ;
 - classement personnalisé avec score et raisons visibles ;
@@ -120,6 +123,7 @@ entertainment-dashboard/
 │   ├── radio-france.mjs
 │   ├── source-status.mjs
 │   ├── test-availability.mjs
+│   ├── test-agenda.mjs
 │   ├── test-arte.mjs
 │   ├── test-catalog.mjs
 │   ├── test-epic-games.mjs
@@ -161,6 +165,7 @@ node scripts/validate.mjs
 node scripts/test-catalog.mjs
 node scripts/test-personalization.mjs
 node scripts/test-availability.mjs
+node scripts/test-agenda.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-radio-france.mjs
@@ -350,6 +355,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.2** — état des sources, suivi du dernier contrôle réussi et détection des retards.
 - **v1.3** — planifications isolées, permissions réduites et déploiements redondants supprimés.
 - **v1.4** — liste personnelle locale, nouveautés depuis la dernière visite et alertes ciblées.
+- **v1.5** — agenda des disponibilités par date, période et priorité personnelle.
 
 ## Sécurité et confidentialité
 

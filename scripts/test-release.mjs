@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 1.4">v1.4'), "La version visible doit être v1.4");
-assert(indexHtml.includes("v1.4 · Liste personnelle et alertes locales"), "Le pied de page v1.4 est absent");
+assert(indexHtml.includes('aria-label="Version 1.5">v1.5'), "La version visible doit être v1.5");
+assert(indexHtml.includes("v1.5 · Agenda des disponibilités"), "Le pied de page v1.5 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v1.4**"), "Le README ne présente pas la v1.4");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v1.4.0`'), "Le cache applicatif n’est pas en v1.4.0");
+assert(readme.includes("version **v1.5**"), "Le README ne présente pas la v1.5");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v1.5.0`'), "Le cache applicatif n’est pas en v1.5.0");
 
 [
   "application",
@@ -38,6 +38,10 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v1.4.0`'), "Le cache applicatif n
   "app-action-status",
   "source-health-summary",
   "source-health-grid",
+  "agenda",
+  "agenda-window",
+  "agenda-tracked-only",
+  "agenda-container",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -50,7 +54,7 @@ assert(indexHtml.includes('<meta name="robots" content="index, follow">'), "La c
 assert(indexHtml.includes('<meta name="twitter:card" content="summary">'), "La carte sociale minimale est absente");
 assert(robots.includes(`Sitemap: ${domain}sitemap.xml`), "robots.txt ne référence pas le sitemap public");
 assert(sitemap.includes(`<loc>${domain}</loc>`), "Le sitemap ne référence pas la racine publique");
-assert(sitemap.includes("<lastmod>2026-09-10</lastmod>"), "La date du sitemap est invalide");
+assert(sitemap.includes("<lastmod>2026-09-11</lastmod>"), "La date du sitemap est invalide");
 
 const externalBlankLinks = [...indexHtml.matchAll(/<a\b[^>]*target="_blank"[^>]*>/g)].map((match) => match[0]);
 externalBlankLinks.forEach((link) => {
@@ -61,9 +65,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v1.4 échouée :");
+  console.error("Certification v1.5 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v1.4 réussie : ${ids.length} identifiants uniques, liste personnelle, nouveautés et alertes locales.`);
+console.log(`Certification v1.5 réussie : ${ids.length} identifiants uniques, agenda et suivi local des échéances.`);

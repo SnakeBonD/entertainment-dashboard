@@ -23,6 +23,8 @@
     availabilityType: "all",
     watchlistFilter: "all",
     newItemIds: new Set(),
+    agendaWindow: "14",
+    agendaTrackedOnly: false,
   };
 
   function scheduleFrame(callback) {
@@ -524,6 +526,7 @@
     updateFavoriteCount();
     renderPersonalArea();
     renderPersonalAlerts();
+    renderAgenda();
   }
 
   function setupPreferences() {
@@ -703,6 +706,132 @@
 
     card.append(timing, verification, createWatchlistControl(item), actions);
     return card;
+  }
+
+  function isAgendaTracked(item) {
+    const status = window.SnakeBonDWatchlist.get(item.id)?.status;
+    return status === "discover"
+      || status === "progress"
+      || (window.SnakeBonDFavorites?.hasPlatform(item.platform) ?? false);
+  }
+
+  function createAgendaItem(item) {
+    const article = document.createElement("article");
+    article.className = "agenda-item";
+
+    const time = document.createElement("time");
+    time.dateTime = item.expiryDate;
+    time.textContent = new Intl.DateTimeFormat("fr-FR", {
+      hour: "2-digit",
+      minute: "2-digit",
+      timeZone: "Europe/Paris",
+    }).format(new Date(item.expiryDate));
+
+    const content = document.createElement("div");
+    content.className = "agenda-item-content";
+    const meta = document.createElement("div");
+    meta.className = "agenda-item-meta";
+    meta.append(createBadge(window.SnakeBonDAvailability.typeLabels[item.type] ?? item.type));
+    if (isAgendaTracked(item)) meta.append(createBadge("Suivi", "tracked"));
+    const title = document.createElement("h3");
+    title.textContent = item.title;
+    const platform = document.createElement("p");
+    platform.textContent = item.durationLabel
+      ? `${item.platform} · ${item.durationLabel}`
+      : item.platform;
+    content.append(meta, title, platform);
+
+    const actions = document.createElement("div");
+    actions.className = "agenda-item-actions";
+    actions.append(createWatchlistControl(item));
+    const link = document.createElement("a");
+    link.className = "external-link";
+    link.href = item.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = item.provider === "epic-games-store" ? "Récupérer ↗" : "Ouvrir ↗";
+    actions.append(link);
+
+    article.append(time, content, actions);
+    return article;
+  }
+
+  function renderAgenda() {
+    const availability = window.SnakeBonDAvailability;
+    const now = new Date();
+    const items = availability.verifiedItems(state.catalogue)
+      .filter((item) => window.SnakeBonDWatchlist.get(item.id)?.status !== "hidden");
+    const days = state.agendaWindow === "all" ? Number.POSITIVE_INFINITY : Number(state.agendaWindow);
+    const groups = availability.buildAgenda(items, {
+      days,
+      trackedOnly: state.agendaTrackedOnly,
+      isTracked: isAgendaTracked,
+    }, now);
+    const shown = groups.reduce((total, group) => total + group.items.length, 0);
+    const upcoming = items.filter((item) => {
+      const remaining = availability.daysUntil(item.expiryDate, now);
+      return remaining !== null && remaining >= 0;
+    });
+
+    document.getElementById("agenda-today-count").textContent = String(
+      upcoming.filter((item) => availability.agendaDateKey(item.expiryDate) === availability.agendaDateKey(now)).length,
+    );
+    document.getElementById("agenda-week-count").textContent = String(
+      upcoming.filter((item) => availability.daysUntil(item.expiryDate, now) <= 7).length,
+    );
+    document.getElementById("agenda-tracked-count").textContent = String(
+      upcoming.filter(isAgendaTracked).length,
+    );
+    document.getElementById("agenda-result-count").textContent =
+      `${shown} échéance${shown > 1 ? "s" : ""} affichée${shown > 1 ? "s" : ""}`;
+
+    const container = document.getElementById("agenda-container");
+    if (!groups.length) {
+      const empty = document.createElement("div");
+      empty.className = "availability-empty";
+      const title = document.createElement("h2");
+      title.textContent = state.agendaTrackedOnly ? "Aucune échéance suivie" : "Aucune échéance sur cette période";
+      const text = document.createElement("p");
+      text.textContent = state.agendaTrackedOnly
+        ? "Ajoute un contenu à ta liste ou une plateforme aux favoris pour le voir ici."
+        : "Choisis une période plus longue pour afficher les prochaines dates limites.";
+      empty.append(title, text);
+      container.replaceChildren(empty);
+      return;
+    }
+
+    container.replaceChildren(...groups.map((group) => {
+      const section = document.createElement("section");
+      section.className = "agenda-day";
+      const heading = document.createElement("div");
+      heading.className = "agenda-day-heading";
+      const title = document.createElement("h2");
+      title.textContent = group.label;
+      const count = document.createElement("span");
+      count.textContent = `${group.items.length} échéance${group.items.length > 1 ? "s" : ""}`;
+      heading.append(title, count);
+      const list = document.createElement("div");
+      list.className = "agenda-day-list";
+      list.append(...group.items.map(createAgendaItem));
+      section.append(heading, list);
+      return section;
+    }));
+  }
+
+  function setupAgenda() {
+    const windowSelect = document.getElementById("agenda-window");
+    const trackedOnly = document.getElementById("agenda-tracked-only");
+    windowSelect.addEventListener("change", (event) => {
+      state.agendaWindow = event.target.value;
+      renderAgenda();
+    });
+    trackedOnly.addEventListener("click", () => {
+      state.agendaTrackedOnly = !state.agendaTrackedOnly;
+      trackedOnly.setAttribute("aria-pressed", String(state.agendaTrackedOnly));
+      trackedOnly.textContent = state.agendaTrackedOnly ? "Afficher tout" : "Ma liste uniquement";
+      renderAgenda();
+    });
+    renderAgenda();
   }
 
   function renderPersonalWatchlist() {
@@ -899,6 +1028,7 @@
       renderAvailability();
       renderPersonalWatchlist();
       renderPersonalAlerts();
+      renderAgenda();
     });
     renderPersonalWatchlist();
   }
@@ -1166,6 +1296,7 @@
       setupAvailabilityControls();
       setupPreferences();
       setupWatchlist();
+      setupAgenda();
       renderPersonalAlerts();
       window.SnakeBonDRecommendations?.init(recommendations, {
         platforms,

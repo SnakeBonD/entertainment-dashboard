@@ -26,6 +26,11 @@
   ],
   "shortcuts": [
     {
+      "name": "Agenda des disponibilités",
+      "short_name": "Agenda",
+      "url": "./#agenda"
+    },
+    {
       "name": "Disponibilités",
       "short_name": "À voir",
       "url": "./#disponibilites"
