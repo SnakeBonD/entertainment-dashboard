@@ -18,8 +18,14 @@ for (const [name, path, cron] of sources) {
   assert(workflow.includes("workflow_dispatch:"), `${name} : lancement manuel absent`);
   assert(!workflow.includes("\n  push:"), `${name} : déclenchement push redondant`);
   assert(workflow.includes("contents: write"), `${name} : publication des données impossible`);
-  assert(!workflow.includes("actions: write"), `${name} : permission Actions devenue inutile`);
-  assert(!workflow.includes("gh workflow run deploy.yml"), `${name} : second déploiement explicite détecté`);
+  assert(workflow.includes("actions: write"), `${name} : déclenchement du déploiement impossible`);
+  assert(workflow.includes("if: steps.publish.outputs.changed == 'true'"), `${name} : déploiement non conditionné à une modification réelle`);
+  assert(workflow.includes("GH_TOKEN: ${{ github.token }}"), `${name} : authentification du déploiement absente`);
+  assert.equal(
+    workflow.match(/gh workflow run deploy\.yml --ref main/g)?.length,
+    1,
+    `${name} : le déploiement doit être déclenché exactement une fois`,
+  );
   assert(workflow.includes("git pull --rebase origin main"), `${name} : protection contre les mises à jour concurrentes absente`);
 }
 
@@ -28,4 +34,4 @@ assert(deploy.includes("push:\n    branches: [main]"), "Le déploiement automati
 assert(deploy.includes("pull_request:\n    branches: [main]"), "La validation des pull requests est absente");
 assert(deploy.includes("workflow_dispatch:"), "Le déploiement manuel de secours est absent");
 
-console.log("Workflows v1.3 validés : planifications isolées et un seul déploiement par publication.");
+console.log("Workflows v1.8.1 validés : chaque publication de données déclenche exactement un déploiement Pages.");
