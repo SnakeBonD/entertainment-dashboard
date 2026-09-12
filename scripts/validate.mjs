@@ -408,8 +408,15 @@ const archiveWorkflow = fs.readFileSync(
   assert(workflow.includes("id: publish"), `Le workflow ${name} ne signale pas ses changements`);
   assert(workflow.includes('changed=true'), `Le workflow ${name} ne détecte pas une mise à jour publiée`);
   assert(workflow.includes("git pull --rebase origin main"), `Le workflow ${name} ne réintègre pas les mises à jour concurrentes`);
-  assert(!workflow.includes("actions: write"), `Le workflow ${name} conserve une permission Actions inutile`);
-  assert(!workflow.includes("gh workflow run deploy.yml"), `Le workflow ${name} lance un déploiement redondant`);
+  assert(workflow.includes("actions: write"), `Le workflow ${name} ne peut pas déclencher le déploiement`);
+  assert(
+    workflow.includes("if: steps.publish.outputs.changed == 'true'"),
+    `Le workflow ${name} peut déployer sans modification réelle`,
+  );
+  assert(
+    workflow.match(/gh workflow run deploy\.yml --ref main/g)?.length === 1,
+    `Le workflow ${name} doit déclencher exactement un déploiement`,
+  );
   assert(!workflow.includes("\n  push:"), `Le workflow ${name} se déclenche inutilement sur push`);
 });
 

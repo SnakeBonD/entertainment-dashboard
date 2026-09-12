@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: catalogue-maintenance
@@ -48,3 +49,9 @@ jobs:
           git pull --rebase origin main
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy updated catalogue
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

@@ -77,7 +77,7 @@ La version **v1.8** permet d’ajouter les échéances du dashboard à une appli
 - suivi de fraîcheur mis à jour par chaque automatisation réussie et disponible hors ligne ;
 - synchronisations déclenchées uniquement par leur planification ou manuellement ;
 - suppression des lancements simultanés provoqués par une modification technique ;
-- un seul déploiement GitHub Pages déclenché automatiquement par chaque commit publié sur `main` ;
+- un seul déploiement GitHub Pages déclenché explicitement après chaque publication automatisée ayant réellement modifié les données ;
 - permissions GitHub Actions réduites au strict nécessaire pour les workflows de données ;
 - menu mobile compact et accessible ;
 - station musicale hebdomadaire ;
