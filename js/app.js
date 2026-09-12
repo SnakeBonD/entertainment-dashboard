@@ -26,6 +26,9 @@
     agendaWindow: "14",
     agendaTrackedOnly: false,
     agendaVisibleItems: [],
+    globalSearchIndex: [],
+    globalSearchQuery: "",
+    globalSearchType: "all",
   };
 
   function scheduleFrame(callback) {
@@ -1234,6 +1237,29 @@
     ]);
   }
 
+  function renderGlobalSearch() {
+    const container = document.getElementById("global-search-results");
+    const count = document.getElementById("global-search-count");
+    if (!state.globalSearchQuery) { count.textContent = "Saisis un mot pour commencer."; container.replaceChildren(); return; }
+    const results = window.SnakeBonDGlobalSearch.search(state.globalSearchIndex, state.globalSearchQuery, state.globalSearchType);
+    count.textContent = `${results.length} résultat${results.length > 1 ? "s" : ""}`;
+    container.replaceChildren(...results.map((result) => {
+      const card = document.createElement("article"); card.className = "global-search-card";
+      const badge = document.createElement("span"); badge.className = `global-search-kind global-search-kind-${result.kind}`; badge.textContent = result.kindLabel;
+      const title = document.createElement("h2"); title.textContent = result.title;
+      const subtitle = document.createElement("strong"); subtitle.textContent = result.subtitle;
+      const description = document.createElement("p"); description.textContent = result.description;
+      const link = document.createElement("a"); link.className = "external-link"; link.href = result.url; link.target = "_blank"; link.rel = "noopener noreferrer"; link.textContent = "Ouvrir le résultat ↗";
+      card.append(badge, title, subtitle, description, link); return card;
+    }));
+  }
+
+  function setupGlobalSearch() {
+    const scheduledRender = scheduleFrame(renderGlobalSearch);
+    document.getElementById("global-search-input").addEventListener("input", (event) => { state.globalSearchQuery = event.target.value.trim(); scheduledRender(); });
+    document.getElementById("global-search-type").addEventListener("change", (event) => { state.globalSearchType = event.target.value; renderGlobalSearch(); });
+  }
+
   function renderSourceHealth() {
     const summary = window.SnakeBonDSourceHealth.summarize(state.sourceStatus);
     const summaryTarget = document.getElementById("source-health-summary");
@@ -1300,6 +1326,7 @@
       state.archive = archive;
       state.radioFrance = radioFrance;
       state.sourceStatus = sourceStatus;
+      state.globalSearchIndex = window.SnakeBonDGlobalSearch.buildIndex({ platforms, catalogue, radioFrance });
       const lastVisit = window.SnakeBonDWatchlist.readLastVisit();
       state.newItemIds = new Set(
         window.SnakeBonDWatchlist.newSince(
@@ -1317,6 +1344,7 @@
       renderPlatforms();
       renderSchedules();
       renderSourceHealth();
+      setupGlobalSearch();
       setupPlatformControls();
       setupAvailabilityControls();
       setupPreferences();

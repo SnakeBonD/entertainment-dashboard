@@ -39,6 +39,7 @@
     <script src="js/personalization.js" defer></script>
     <script src="js/recommendations.js" defer></script>
     <script src="js/source-health.js" defer></script>
+    <script src="js/global-search.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/pwa.js" defer></script>
   </head>
@@ -62,7 +63,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.8">v1.8</span>
+        <span class="version-badge" aria-label="Version 1.9">v1.9</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -78,6 +79,7 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil" aria-current="page">Accueil</button>
+      <button class="nav-button" type="button" data-tab="recherche">Recherche</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
       <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">
         Disponibilités <span class="nav-count" id="new-content-count" aria-label="0 nouveauté" hidden>0</span>
@@ -181,6 +183,29 @@
             Gérer l’application
           </button>
         </aside>
+      </section>
+
+      <section id="recherche" class="page" aria-labelledby="global-search-title">
+        <div class="section-heading">
+          <p class="eyebrow">RECHERCHE GLOBALE</p>
+          <h1 id="global-search-title">Tout retrouver depuis un seul endroit</h1>
+          <p>Recherche parmi les plateformes, les contenus disponibles et les podcasts.</p>
+        </div>
+        <div class="search-panel global-search-panel">
+          <label class="search-field" for="global-search-input">
+            <span class="visually-hidden">Rechercher dans tout le dashboard</span><span aria-hidden="true">⌕</span>
+            <input id="global-search-input" type="search" placeholder="Titre, plateforme, émission, thème…" autocomplete="off">
+          </label>
+          <label class="control-field" for="global-search-type">
+            <span>Type de résultat</span>
+            <select id="global-search-type">
+              <option value="all">Tous</option><option value="platform">Plateformes</option>
+              <option value="content">Contenus</option><option value="podcast">Podcasts</option>
+            </select>
+          </label>
+        </div>
+        <p id="global-search-count" class="result-count" aria-live="polite" aria-atomic="true">Saisis un mot pour commencer.</p>
+        <div id="global-search-results" class="global-search-results"></div>
       </section>
 
       <section id="plateformes" class="page" aria-labelledby="platforms-title">
@@ -764,7 +789,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.8 · Export calendrier des échéances · Contenus actualisés automatiquement</span>
+      <span>v1.9 · Recherche globale unifiée · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

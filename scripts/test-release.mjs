@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 1.8">v1.8'), "La version visible doit être v1.8");
-assert(indexHtml.includes("v1.8 · Export calendrier"), "Le pied de page v1.8 est absent");
+assert(indexHtml.includes('aria-label="Version 1.9">v1.9'), "La version visible doit être v1.9");
+assert(indexHtml.includes("v1.9 · Recherche globale"), "Le pied de page v1.9 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v1.8**"), "Le README ne présente pas la v1.8");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v1.8.0`'), "Le cache applicatif n’est pas en v1.8.0");
+assert(readme.includes("version **v1.9**"), "Le README ne présente pas la v1.9");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v1.9.0`'), "Le cache applicatif n’est pas en v1.9.0");
 
 [
   "application",
@@ -52,6 +52,9 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v1.8.0`'), "Le cache applicatif n
   "confirm-backup-import",
   "export-agenda-calendar",
   "agenda-calendar-status",
+  "global-search-input",
+  "global-search-type",
+  "global-search-results",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -75,9 +78,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v1.8 échouée :");
+  console.error("Certification v1.9 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v1.8 réussie : ${ids.length} identifiants uniques, export calendrier et sauvegarde portable conformes.`);
+console.log(`Certification v1.9 réussie : ${ids.length} identifiants uniques, recherche globale, calendrier et sauvegarde conformes.`);
