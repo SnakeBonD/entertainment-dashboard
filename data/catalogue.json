@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-11T16:44:05.801Z",
+  "lastUpdated": "2026-09-12T15:47:49.746Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -12,7 +12,7 @@
       "addedDate": "2026-09-04",
       "availabilityStartDate": "2026-09-04T14:30:00Z",
       "expiryDate": "2027-03-04T15:30:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-07T19:27:42.858Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -20,7 +20,9 @@
       "description": "Stéphane (Romain Duris), la vingtaine, traverse la Roumanie à la recherche d’une chanteuse inconnue.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/H7UQ3fmWVeFeinoKTFZxsa/768x432?type=TEXT",
       "durationLabel": "98 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-12T15:47:49.746Z"
     },
     {
       "id": "arte-045719-000-A-2026-08-30",
@@ -140,7 +142,7 @@
       "addedDate": "2026-09-01",
       "availabilityStartDate": "2026-09-01T03:00:00Z",
       "expiryDate": "2027-04-08T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-11T16:44:05.801Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -148,7 +150,9 @@
       "description": "En 1979, le deuxième choc pétrolier affecte les économies mondiales. Jimmy Carter consulte les meilleurs climatologues du pays...",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/tM3wiknyHZHqf2frFvTywM/768x432?type=TEXT",
       "durationLabel": "45 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-12T15:47:49.746Z"
     },
     {
       "id": "arte-117646-000-A-2026-09-02",
@@ -255,6 +259,46 @@
       "lastCheckedAt": "2026-09-11T16:44:05.801Z"
     },
     {
+      "id": "arte-129315-000-A-2026-09-09",
+      "title": "L'affaire Nevenka",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129315-000-A/l-affaire-nevenka/",
+      "country": "FR",
+      "addedDate": "2026-09-09",
+      "availabilityStartDate": "2026-09-09T03:00:00Z",
+      "expiryDate": "2026-11-08T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-12T15:47:49.746Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129315-000-A",
+      "description": "Le combat d'une conseillère municipale pour faire condamner le harcèlement sexuel d'un élu puissant.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/CjFc9jmXg4TwFS8Vg5Lfk/768x432?type=TEXT",
+      "durationLabel": "111 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-129337-000-A-2026-09-09",
+      "title": "Libertad",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129337-000-A/libertad/",
+      "country": "FR",
+      "addedDate": "2026-09-09",
+      "availabilityStartDate": "2026-09-09T03:00:00Z",
+      "expiryDate": "2027-03-09T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-12T15:47:49.746Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129337-000-A",
+      "description": "Espagne, l'été. Libertad fait irruption dans la vie de Nora, 15 ans, et bouscule le calme habituel de ses vacances en famille.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/VFzzwzsUipDuR9whkVLQdb/768x432?type=TEXT",
+      "durationLabel": "105 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-129843-000-A-2026-09-06",
       "title": "Peter von Kant",
       "type": "movie",
@@ -264,7 +308,7 @@
       "addedDate": "2026-09-06",
       "availabilityStartDate": "2026-09-06T03:00:00Z",
       "expiryDate": "2026-12-01T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-08T15:07:30.207Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -272,7 +316,9 @@
       "description": "Un cinéaste dominateur (Denis Ménochet) se laisse consumer d'amour pour un jeune inconnu. L'hommage d'Ozon à Fassbinder.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UjMCvfKoBNksFkwbfwRcGJ/768x432?type=TEXT",
       "durationLabel": "82 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-12T15:47:49.746Z"
     },
     {
       "id": "arte-131501-000-A-2026-09-07",
