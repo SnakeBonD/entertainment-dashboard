@@ -1,20 +1,35 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-11T16:34:04.560Z",
+  "lastUpdated": "2026-09-12T04:41:58.680Z",
   "items": [
+    {
+      "id": "radio-france-94e3589a-92a7-466f-a5e1-953c5d55bbe0",
+      "title": "Policiers indociles",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/f6673db3-8a31-4dc2-b876-ebd59377893e/27742-02.11.2023-ITEMA_24667179-2023C6612S0306-NET_MFC_1FA6102A-E52F-4213-8ACF-7C07EBEC3D1C-25-8db6c9ad7ee5617cb523f38e95ea096c.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-09-11T22:00:04.000Z",
+      "durationLabel": "31 min",
+      "description": "Leur vie a basculé depuis qu’ils ont parlé. Jean-Marc et Fabien, policiers gradés, ont tous deux dénoncé les abus de leurs collègues. L’un a pointé la corruption et le racisme qui gangrènent sa brigade, l’autre les violences illégitimes commises par ses pairs. Par Olivia Müller.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-12T04:41:58.680Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-96103eca-37ab-408c-93c4-ae0da7a2eecf",
       "title": "L'affaire Aramburú",
       "podcastTitle": "Les pieds sur terre",
       "station": "France Culture",
       "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/abec9b1b-497f-489e-b6c3-83d00a47745d/27742-11.09.2026-ITEMA_24667807-2026C6612S0254-NET_MFC_4F7ADB05-87E0-4007-916D-B3A9E718A42A-25-c9055f705174b90a9186613906ed31cf.m4a",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/d375fc00-1b07-432e-bf5b-33be0205f728/10078-11.09.2026-ITEMA_24667795-2026C6612S0254-NET_MFC_4F7ADB05-87E0-4007-916D-B3A9E718A42A-25-c9055f705174b90a9186613906ed31cf.m4a",
       "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
       "publishedAt": "2026-09-11T11:30:00.000Z",
       "durationLabel": "30 min",
       "description": "Dans la nuit du 18 au 19 mars 2022, Shaun Hegarty et Federico Martin Aramburú, anciens rugbymen professionnels, fêtent un marché qu'ils viennent d'obtenir pour leur agence de voyage. La soirée va cependant tourner au drame quand les deux hommes croisent la route de deux militant…",
       "provider": "radio-france",
-      "verifiedAt": "2026-09-11T16:34:04.560Z",
+      "verifiedAt": "2026-09-12T04:41:58.680Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
@@ -30,21 +45,6 @@
       "description": "Grégoire, le fils de mon amie Bénédicte, est mort à 22 ans. Depuis qu’il est « parti », je suis devenue une « aidante ». Mais plus le temps passe, moins je sais comment aider. Alors, quand un petit matin d’octobre, elle me demande de le « faire rentrer dans ma boite », je finis…",
       "provider": "radio-france",
       "verifiedAt": "2026-09-11T04:47:53.141Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-1a278384-40d4-47c8-af93-8e11fbacd9c3",
-      "title": "Les nouveaux réservistes",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/les-nouveaux-reservistes-7883240",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/5516d08c-0bf7-41a9-b8d2-765ab19266db/27742-09.09.2026-ITEMA_24664526-2026C6612S0252-NET_MFC_2DF807C8-23E7-4DC7-B6AC-DD1399B25A3C-25-990612df77852a5b9b03bf8339d7ce50.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-09-09T11:30:00.000Z",
-      "durationLabel": "33 min",
-      "description": "Katsuki, issu d’une famille antimilitariste, fait ses premiers pas à 41 ans en tant que médecin de réserve. Pierre, 22 ans, étudiant, enchaîne les missions de réserviste de la gendarmerie depuis un an. Chaque année, de plus en plus de citoyens s’engagent, en réponse à un context…",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-09T16:43:39.409Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
