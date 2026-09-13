@@ -1260,6 +1260,13 @@
     document.getElementById("global-search-type").addEventListener("change", (event) => { state.globalSearchType = event.target.value; renderGlobalSearch(); });
   }
 
+  function renderToday() {
+    const items = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+    document.getElementById("today-count").textContent = `${items.length} suggestion${items.length > 1 ? "s" : ""} actuellement`;
+    const labels={new:"Nouveau",lastChance:"Dernière chance",epic:"Epic Free",podcast:"Podcast récent"};
+    document.getElementById("today-results").replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";card.append(badge,title,meta,link);return card;}));
+  }
+
   function renderSourceHealth() {
     const summary = window.SnakeBonDSourceHealth.summarize(state.sourceStatus);
     const summaryTarget = document.getElementById("source-health-summary");
@@ -1345,6 +1352,7 @@
       renderSchedules();
       renderSourceHealth();
       setupGlobalSearch();
+      renderToday();
       setupPlatformControls();
       setupAvailabilityControls();
       setupPreferences();

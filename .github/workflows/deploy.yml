@@ -41,6 +41,7 @@ jobs:
           node scripts/test-agenda.mjs
           node scripts/test-calendar.mjs
           node scripts/test-global-search.mjs
+          node scripts/test-today.mjs
           node scripts/test-workflows.mjs
           node scripts/test-release.mjs
           node --check js/app.js
