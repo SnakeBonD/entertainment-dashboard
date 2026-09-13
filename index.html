@@ -40,6 +40,7 @@
     <script src="js/recommendations.js" defer></script>
     <script src="js/source-health.js" defer></script>
     <script src="js/global-search.js" defer></script>
+    <script src="js/today.js" defer></script>
     <script src="js/app.js" defer></script>
     <script src="js/pwa.js" defer></script>
   </head>
@@ -63,7 +64,7 @@
         <button class="install-button" id="install-app" type="button" data-install-app hidden>
           Installer l’app
         </button>
-        <span class="version-badge" aria-label="Version 1.9">v1.9</span>
+        <span class="version-badge" aria-label="Version 2.0">v2.0</span>
         <button
           class="menu-toggle"
           id="menu-toggle"
@@ -79,6 +80,7 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <button class="nav-button is-active" type="button" data-tab="accueil" aria-current="page">Accueil</button>
+      <button class="nav-button nav-button-accent" type="button" data-tab="aujourdhui">Aujourd’hui</button>
       <button class="nav-button" type="button" data-tab="recherche">Recherche</button>
       <button class="nav-button" type="button" data-tab="plateformes">Plateformes</button>
       <button class="nav-button nav-button-availability" type="button" data-tab="disponibilites">
@@ -184,6 +186,8 @@
           </button>
         </aside>
       </section>
+
+      <section id="aujourdhui" class="page" aria-labelledby="today-title"><div class="section-heading"><p class="eyebrow">À NE PAS MANQUER</p><h1 id="today-title">Aujourd’hui sur ton dashboard</h1><p>Nouveautés, dernières chances, jeux offerts et podcasts récents, avec tes contenus suivis en priorité.</p></div><p id="today-count" class="result-count" aria-live="polite"></p><div id="today-results" class="today-results"></div></section>
 
       <section id="recherche" class="page" aria-labelledby="global-search-title">
         <div class="section-heading">
@@ -789,7 +793,7 @@
 
     <footer>
       <span>SnakeBonD Entertainment</span>
-      <span>v1.9 · Recherche globale unifiée · Contenus actualisés automatiquement</span>
+      <span>v2.0 · Tableau de bord Aujourd’hui · Contenus actualisés automatiquement</span>
     </footer>
   </body>
 </html>

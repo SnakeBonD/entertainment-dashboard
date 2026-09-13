@@ -73,6 +73,7 @@ const requiredFiles = [
   "scripts/test-backup.mjs",
   "scripts/test-workflows.mjs",
   "scripts/test-global-search.mjs",
+  "scripts/test-today.mjs",
   "scripts/test-pwa.mjs",
   "scripts/test-quality.mjs",
   "scripts/test-release.mjs",
@@ -153,7 +154,7 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v1.9"), "index.html : version v1.9 absente");
+assert(indexHtml.includes("v2.0"), "index.html : version v2.0 absente");
 assert(indexHtml.includes('src="js/calendar.js"'), "index.html : module calendrier absent");
 assert(indexHtml.includes('src="js/backup.js"'), "index.html : module de sauvegarde absent");
 assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
@@ -487,4 +488,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v1.9, recherche globale, calendrier ICS et PWA conformes.");
+console.log("Validation réussie : 40 plateformes, version v2.0, espace Aujourd’hui, recherche globale et PWA conformes.");

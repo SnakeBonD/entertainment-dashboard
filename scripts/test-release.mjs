@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 1.9">v1.9'), "La version visible doit être v1.9");
-assert(indexHtml.includes("v1.9 · Recherche globale"), "Le pied de page v1.9 est absent");
+assert(indexHtml.includes('aria-label="Version 2.0">v2.0'), "La version visible doit être v2.0");
+assert(indexHtml.includes("v2.0 · Tableau de bord Aujourd’hui"), "Le pied de page v2.0 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v1.9**"), "Le README ne présente pas la v1.9");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v1.9.0`'), "Le cache applicatif n’est pas en v1.9.0");
+assert(readme.includes("version **v2.0**"), "Le README ne présente pas la v2.0");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.0.0`'), "Le cache applicatif n’est pas en v2.0.0");
 
 [
   "application",
@@ -55,6 +55,7 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v1.9.0`'), "Le cache applicatif n
   "global-search-input",
   "global-search-type",
   "global-search-results",
+  "today-results",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -78,9 +79,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v1.9 échouée :");
+  console.error("Certification v2.0 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v1.9 réussie : ${ids.length} identifiants uniques, recherche globale, calendrier et sauvegarde conformes.`);
+console.log(`Certification v2.0 réussie : ${ids.length} identifiants uniques, espace Aujourd’hui et fonctions historiques conformes.`);

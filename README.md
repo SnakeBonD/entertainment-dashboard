@@ -6,12 +6,14 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v1.9** ajoute une recherche globale unifiée sur les plateformes, contenus disponibles et podcasts :
+La version **v2.0** ajoute un tableau de bord Aujourd’hui réunissant les contenus prioritaires :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
 - recherche tolérante aux accents ;
 - recherche globale avec filtres par type et accès direct aux résultats ;
+- espace Aujourd’hui avec nouveautés, dernières chances, jeux Epic gratuits et podcasts récents ;
+- contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
 - tris par sélection, nom ou date de vérification ;
 - fiches enrichies avec badges et date de contrôle ;
@@ -382,6 +384,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.7** — export et import sécurisés des favoris, préférences et contenus suivis.
 - **v1.8** — export ICS d’une échéance ou de l’agenda filtré vers une application de calendrier.
 - **v1.9** — recherche globale unifiée des plateformes, contenus datés et podcasts.
+- **v2.0** — tableau de bord Aujourd’hui et priorisation personnelle locale.
 
 ## Sécurité et confidentialité
 
