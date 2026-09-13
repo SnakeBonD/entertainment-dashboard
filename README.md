@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.1** ajoute des filtres rapides au tableau de bord Aujourd’hui :
+La version **v2.1.1** corrige le filtre Epic Free et fiabilise l’activation du nouveau code PWA :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -387,6 +387,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.9** — recherche globale unifiée des plateformes, contenus datés et podcasts.
 - **v2.0** — tableau de bord Aujourd’hui et priorisation personnelle locale.
 - **v2.1** — filtres rapides pour cibler immédiatement les suggestions du jour.
+- **v2.1.1** — correctif du filtre Epic Free et versionnement des scripts Aujourd’hui.
 
 ## Sécurité et confidentialité
 
