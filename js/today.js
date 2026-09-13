@@ -13,5 +13,10 @@
     const recentPodcasts = (podcasts.items ?? []).filter((item) => nowTime - time(item.publishedAt) <= 7 * 86400000).map((item) => ({ ...item, group: "podcast", tracked: false, priority: 50 + time(item.publishedAt) / 1e12 }));
     return [...contents, ...recentPodcasts].sort((a, b) => b.priority - a.priority);
   }
-  window.SnakeBonDToday = { build };
+  function filter(items, value = "all") {
+    if (value === "all") return items;
+    if (value === "tracked") return items.filter((item) => item.tracked);
+    return items.filter((item) => item.group === value);
+  }
+  window.SnakeBonDToday = { build, filter };
 })();

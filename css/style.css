@@ -845,6 +845,8 @@ p {
 .global-search-kind-content { background: rgb(255 200 120 / 12%); color: var(--warning); }
 .global-search-kind-podcast { background: rgb(183 160 255 / 12%); color: var(--violet); }
 .today-results { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+.today-filters { margin-bottom:.85rem; }
+.today-results > .empty-state { grid-column:1/-1; }
 .today-card { display:flex; flex-direction:column; gap:.7rem; padding:1.15rem; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); }
 .today-card h2,.today-card p { margin:0; }.today-card p { color:var(--muted); flex:1; }
 .today-badge { align-self:flex-start; padding:.25rem .55rem; border-radius:999px; background:rgb(139 213 255 / 12%); color:var(--accent); font-size:.72rem; font-weight:850; text-transform:uppercase; }
