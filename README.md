@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.1.1** corrige le filtre Epic Free et fiabilise l’activation du nouveau code PWA :
+La version **v2.2** permet de personnaliser la sélection quotidienne sans compte ni serveur :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -14,6 +14,8 @@ La version **v2.1.1** corrige le filtre Epic Free et fiabilise l’activation du
 - recherche globale avec filtres par type et accès direct aux résultats ;
 - espace Aujourd’hui avec nouveautés, dernières chances, jeux Epic gratuits et podcasts récents ;
 - filtres rapides Tout, Mes priorités, Nouveautés, Dernière chance, Epic Free et Podcasts ;
+- masquage d’une suggestion pour la journée, avec réaffichage global à tout moment ;
+- remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
 - tris par sélection, nom ou date de vérification ;
@@ -388,6 +390,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.0** — tableau de bord Aujourd’hui et priorisation personnelle locale.
 - **v2.1** — filtres rapides pour cibler immédiatement les suggestions du jour.
 - **v2.1.1** — correctif du filtre Epic Free et versionnement des scripts Aujourd’hui.
+- **v2.2** — sélection quotidienne personnalisable avec masquage local temporaire.
 
 ## Sécurité et confidentialité
 
