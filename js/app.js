@@ -29,6 +29,7 @@
     globalSearchIndex: [],
     globalSearchQuery: "",
     globalSearchType: "all",
+    todayFilter: "all",
   };
 
   function scheduleFrame(callback) {
@@ -1261,10 +1262,18 @@
   }
 
   function renderToday() {
-    const items = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
-    document.getElementById("today-count").textContent = `${items.length} suggestion${items.length > 1 ? "s" : ""} actuellement`;
+    const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+    const items = window.SnakeBonDToday.filter(allItems, state.todayFilter);
+    document.querySelectorAll(".today-filter").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.todayFilter === state.todayFilter)));
+    document.getElementById("today-count").textContent = `${items.length} suggestion${items.length > 1 ? "s" : ""} affichée${items.length > 1 ? "s" : ""}`;
     const labels={new:"Nouveau",lastChance:"Dernière chance",epic:"Epic Free",podcast:"Podcast récent"};
-    document.getElementById("today-results").replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";card.append(badge,title,meta,link);return card;}));
+    const container = document.getElementById("today-results");
+    if (!items.length) { const empty=document.createElement("p");empty.className="empty-state";empty.textContent="Aucune suggestion dans ce filtre pour le moment.";container.replaceChildren(empty);return; }
+    container.replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";card.append(badge,title,meta,link);return card;}));
+  }
+
+  function setupTodayFilters() {
+    document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = button.dataset.todayFilter; renderToday(); }));
   }
 
   function renderSourceHealth() {
@@ -1352,6 +1361,7 @@
       renderSchedules();
       renderSourceHealth();
       setupGlobalSearch();
+      setupTodayFilters();
       renderToday();
       setupPlatformControls();
       setupAvailabilityControls();

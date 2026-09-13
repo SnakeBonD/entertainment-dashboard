@@ -6,13 +6,14 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.0** ajoute un tableau de bord Aujourd’hui réunissant les contenus prioritaires :
+La version **v2.1** ajoute des filtres rapides au tableau de bord Aujourd’hui :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
 - recherche tolérante aux accents ;
 - recherche globale avec filtres par type et accès direct aux résultats ;
 - espace Aujourd’hui avec nouveautés, dernières chances, jeux Epic gratuits et podcasts récents ;
+- filtres rapides Tout, Mes priorités, Nouveautés, Dernière chance, Epic Free et Podcasts ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
 - tris par sélection, nom ou date de vérification ;
@@ -385,6 +386,7 @@ déploiement : la publication normale de `main` suffit.
 - **v1.8** — export ICS d’une échéance ou de l’agenda filtré vers une application de calendrier.
 - **v1.9** — recherche globale unifiée des plateformes, contenus datés et podcasts.
 - **v2.0** — tableau de bord Aujourd’hui et priorisation personnelle locale.
+- **v2.1** — filtres rapides pour cibler immédiatement les suggestions du jour.
 
 ## Sécurité et confidentialité
 

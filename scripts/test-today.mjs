@@ -7,4 +7,8 @@ const items=context.window.SnakeBonDToday.build({now,catalogue:{items:[
  {id:"old",title:"Ancien",platform:"ARTE",verified:true,addedDate:"2026-01-01",expiryDate:"2027-01-01"}
 ]},podcasts:{items:[{id:"pod",title:"Podcast",publishedAt:"2026-09-12",url:"https://radiofrance.fr"}]},isTracked:id=>id==="tracked"});
 assert.deepEqual(Array.from(items,x=>x.id),["tracked","epic","pod"]); assert.equal(items[0].group,"lastChance");
-console.log("Espace Aujourd’hui v2.0 validé : priorités, nouveautés, échéances, Epic et podcasts conformes.");
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"tracked"),x=>x.id),["tracked"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"epic"),x=>x.id),["epic"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"podcast"),x=>x.id),["pod"]);
+assert.equal(context.window.SnakeBonDToday.filter(items,"new").length,0);
+console.log("Espace Aujourd’hui v2.1 validé : priorités, nouveautés, échéances, Epic, podcasts et filtres conformes.");
