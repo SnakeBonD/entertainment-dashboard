@@ -11,4 +11,10 @@ assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"tracked"
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"epic"),x=>x.id),["epic"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"podcast"),x=>x.id),["pod"]);
 assert.equal(context.window.SnakeBonDToday.filter(items,"new").length,0);
-console.log("Espace Aujourd’hui v2.1.1 validé : identifiant Epic réel, priorités, échéances, podcasts et filtres conformes.");
+const memory=new Map(); const storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)};
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.dismiss("epic",storage,now)),["epic"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,now)),["epic"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.visible(items,["epic"]),x=>x.id),["tracked","pod"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,new Date("2026-09-14T12:00:00Z"))),[]);
+context.window.SnakeBonDToday.clearDismissed(storage); assert.equal(memory.size,0);
+console.log("Espace Aujourd’hui v2.2 validé : filtres, masquage quotidien, expiration et réinitialisation conformes.");

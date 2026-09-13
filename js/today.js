@@ -1,6 +1,11 @@
 (() => {
   "use strict";
+  const STORAGE_KEY = "snakebond-today-dismissed-v1";
   const time = (value) => new Date(value).getTime();
+  const dayKey = (value = new Date()) => {
+    const date = new Date(value);
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+  };
   function build({ catalogue = { items: [] }, podcasts = { items: [] }, now = new Date(), isTracked = () => false, isFavorite = () => false }) {
     const nowTime = now.getTime();
     const contents = (catalogue.items ?? []).filter((item) => item.verified && (!item.expiryDate || time(item.expiryDate) >= nowTime)).map((item) => {
@@ -18,5 +23,24 @@
     if (value === "tracked") return items.filter((item) => item.tracked);
     return items.filter((item) => item.group === value);
   }
-  window.SnakeBonDToday = { build, filter };
+  function readDismissed(storage = window.localStorage, now = new Date()) {
+    try {
+      const parsed = JSON.parse(storage.getItem(STORAGE_KEY) || "null");
+      if (parsed?.date !== dayKey(now) || !Array.isArray(parsed?.ids)) return [];
+      return [...new Set(parsed.ids.filter((id) => typeof id === "string"))];
+    } catch { return []; }
+  }
+  function dismiss(id, storage = window.localStorage, now = new Date()) {
+    const ids = [...new Set([...readDismissed(storage, now), id])];
+    storage.setItem(STORAGE_KEY, JSON.stringify({ date: dayKey(now), ids }));
+    return ids;
+  }
+  function clearDismissed(storage = window.localStorage) {
+    storage.removeItem(STORAGE_KEY);
+  }
+  function visible(items, dismissedIds = []) {
+    const hidden = new Set(dismissedIds);
+    return items.filter((item) => !hidden.has(item.id));
+  }
+  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, clearDismissed, visible };
 })();

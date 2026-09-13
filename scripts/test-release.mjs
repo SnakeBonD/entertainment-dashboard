@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.1.1">v2.1.1'), "La version visible doit être v2.1.1");
-assert(indexHtml.includes("v2.1.1 · Correctif filtres et cache PWA"), "Le pied de page v2.1.1 est absent");
+assert(indexHtml.includes('aria-label="Version 2.2">v2.2'), "La version visible doit être v2.2");
+assert(indexHtml.includes("v2.2 · Sélection quotidienne personnalisable"), "Le pied de page v2.2 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.1.1**"), "Le README ne présente pas la v2.1.1");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.1.1`'), "Le cache applicatif n’est pas en v2.1.1");
+assert(readme.includes("version **v2.2**"), "Le README ne présente pas la v2.2");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.2.0`'), "Le cache applicatif n’est pas en v2.2.0");
 
 [
   "application",
@@ -56,6 +56,7 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.1.1`'), "Le cache applicatif n
   "global-search-type",
   "global-search-results",
   "today-results",
+  "today-reset",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -79,9 +80,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.1.1 échouée :");
+  console.error("Certification v2.2 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.1.1 réussie : ${ids.length} identifiants uniques, filtres Aujourd’hui, Epic Free et fonctions historiques conformes.`);
+console.log(`Certification v2.2 réussie : ${ids.length} identifiants uniques, sélection quotidienne et fonctions historiques conformes.`);
