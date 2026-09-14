@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-14T12:58:07.397Z",
+  "lastUpdated": "2026-09-14T21:53:10.735Z",
   "items": [
     {
       "id": "radio-france-79f77742-99a4-4071-b72b-6eae9cd10b18",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-3f1f7266-da92-4059-82bf-ccda6ce6e540",
+      "title": "Le peuple des Sentinelles ou l'isolement impossible",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0053a748-9d9b-420e-8620-d38809dc4b01/26774-27.05.2025-ITEMA_24644019-2025F22805S0147-NET_MFI_041128B7-7B4B-4579-BE0B-782E41516316-27-3bb707616823c2d9f55ca1c00bb37981.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-14T13:04:50.000Z",
+      "durationLabel": "48 min",
+      "description": "Aujourd’hui dans Affaires sensibles, le peuple des Sentinelles ou l'isolement impossible.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-14T21:53:10.735Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-a45ee314-d84e-4a1f-a018-a0df9f5cf50f",
       "title": "Viser la Lune : La catastrophe d’Apollo 1",
       "podcastTitle": "Affaires sensibles",
@@ -75,21 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles, La Question d'Henri Alleg, en direct et en public du Livre sur la place à Nancy",
       "provider": "radio-france",
       "verifiedAt": "2026-09-11T16:34:04.560Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-dd8af7eb-b626-4963-9e72-b240efc17ced",
-      "title": "Tuam, les enfants fantômes de l’Irlande",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/099ae587-aaf7-4058-baaf-7771ac30e0a5/13940-17.11.2025-ITEMA_24313527-2025F22805S0321-NET_MFI_AB45AD93-FE4F-4A8D-A39D-159CCD724E39-27-7a58876d924b6c2d05b4bb93156cb45c.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-10T13:04:50.000Z",
-      "durationLabel": "46 min",
-      "description": "Aujourd’hui dans Affaires sensibles : Tuam, les enfants fantômes de l’Irlande.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-10T16:29:41.005Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
