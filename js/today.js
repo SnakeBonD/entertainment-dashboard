@@ -35,6 +35,12 @@
     storage.setItem(STORAGE_KEY, JSON.stringify({ date: dayKey(now), ids }));
     return ids;
   }
+  function restore(id, storage = window.localStorage, now = new Date()) {
+    const ids = readDismissed(storage, now).filter((dismissedId) => dismissedId !== id);
+    if (ids.length) storage.setItem(STORAGE_KEY, JSON.stringify({ date: dayKey(now), ids }));
+    else storage.removeItem(STORAGE_KEY);
+    return ids;
+  }
   function clearDismissed(storage = window.localStorage) {
     storage.removeItem(STORAGE_KEY);
   }
@@ -42,5 +48,5 @@
     const hidden = new Set(dismissedIds);
     return items.filter((item) => !hidden.has(item.id));
   }
-  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, clearDismissed, visible };
+  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, restore, clearDismissed, visible };
 })();

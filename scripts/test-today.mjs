@@ -15,8 +15,11 @@ const memory=new Map(); const storage={getItem:key=>memory.get(key)??null,setIte
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.dismiss("epic",storage,now)),["epic"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,now)),["epic"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.visible(items,["epic"]),x=>x.id),["tracked","pod"]);
+assert.deepEqual(Array.from(context.window.SnakeBonDToday.restore("epic",storage,now)),[]); assert.equal(memory.size,0);
+context.window.SnakeBonDToday.dismiss("epic",storage,now);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,new Date("2026-09-14T12:00:00Z"))),[]);
 context.window.SnakeBonDToday.clearDismissed(storage); assert.equal(memory.size,0);
 const app=fs.readFileSync(new URL("../js/app.js",import.meta.url),"utf8");
-assert(app.includes("today-watchlist")); assert(app.includes("SnakeBonDWatchlist?.set(target,listSelect.value)")); assert(app.includes("SnakeBonDWatchlist?.remove(item.id)"));
-console.log("Espace Aujourd’hui v2.3 validé : filtres, masquage quotidien et gestion de la liste personnelle conformes.");
+assert(app.includes("today-watchlist")); assert(app.includes("SnakeBonDWatchlist?.set(target,nextStatus)")); assert(app.includes("SnakeBonDWatchlist?.remove(item.id)"));
+assert(app.includes("offerTodayUndo")); assert(app.includes("SnakeBonDToday.restore(item.id)"));
+console.log("Espace Aujourd’hui v2.4 validé : filtres, liste personnelle, masquage quotidien et annulation conformes.");
