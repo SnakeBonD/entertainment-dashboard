@@ -32,6 +32,8 @@
     todayFilter: "all",
     todayDismissedIds: [],
     todayUndoTimer: null,
+    todayPickOffset: 0,
+    todayPickedId: null,
   };
 
   function offerTodayUndo(message, undo) {
@@ -1284,8 +1286,21 @@
     state.todayDismissedIds = window.SnakeBonDToday.readDismissed();
     const visibleItems = window.SnakeBonDToday.visible(allItems, state.todayDismissedIds).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
     const items = window.SnakeBonDToday.filter(visibleItems, state.todayFilter);
+    const picked = items.find((item) => item.id === state.todayPickedId) || null;
     document.querySelectorAll(".today-filter").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.todayFilter === state.todayFilter)));
     const reset = document.getElementById("today-reset"); reset.hidden = state.todayDismissedIds.length === 0;
+    const pickPanel = document.getElementById("today-pick-result");
+    if (picked) {
+      document.getElementById("today-pick-title").textContent = picked.title;
+      document.getElementById("today-pick-meta").textContent = picked.platform || `${picked.station} · ${picked.podcastTitle}`;
+      const pickLink = document.getElementById("today-pick-link");
+      pickLink.href = picked.url;
+      pickLink.textContent = picked.group === "epic" ? "Récupérer ce choix ↗" : "Voir ce choix ↗";
+      pickPanel.hidden = false;
+    } else {
+      state.todayPickedId = null;
+      pickPanel.hidden = true;
+    }
     document.getElementById("today-count").textContent = `${items.length} suggestion${items.length > 1 ? "s" : ""} affichée${items.length > 1 ? "s" : ""}`;
     const labels={new:"Nouveau",lastChance:"Dernière chance",epic:"Epic Free",podcast:"Podcast récent"};
     const container = document.getElementById("today-results");
@@ -1294,8 +1309,15 @@
   }
 
   function setupTodayFilters() {
-    document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = button.dataset.todayFilter; renderToday(); }));
+    document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = button.dataset.todayFilter; state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
+    document.getElementById("today-pick").addEventListener("click", () => {
+      const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+      const visibleItems = window.SnakeBonDToday.visible(allItems, window.SnakeBonDToday.readDismissed()).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
+      const choice = window.SnakeBonDToday.pick(window.SnakeBonDToday.filter(visibleItems, state.todayFilter), state.todayPickOffset++);
+      state.todayPickedId = choice?.id || null;
+      renderToday();
+    });
   }
 
   function renderSourceHealth() {

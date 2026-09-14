@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.4">v2.4'), "La version visible doit être v2.4");
-assert(indexHtml.includes("v2.4 · Actions Aujourd’hui annulables"), "Le pied de page v2.4 est absent");
+assert(indexHtml.includes('aria-label="Version 2.5">v2.5'), "La version visible doit être v2.5");
+assert(indexHtml.includes("v2.5 · Choix express Aujourd’hui"), "Le pied de page v2.5 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.4**"), "Le README ne présente pas la v2.4");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.4.0`'), "Le cache applicatif n’est pas en v2.4.0");
+assert(readme.includes("version **v2.5**"), "Le README ne présente pas la v2.5");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.5.0`'), "Le cache applicatif n’est pas en v2.5.0");
 
 [
   "application",
@@ -59,6 +59,10 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.4.0`'), "Le cache applicatif n
   "today-reset",
   "today-notice",
   "today-undo",
+  "today-pick",
+  "today-pick-result",
+  "today-pick-title",
+  "today-pick-link",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -82,9 +86,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.4 échouée :");
+  console.error("Certification v2.5 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.4 réussie : ${ids.length} identifiants uniques, actions Aujourd’hui annulables et fonctions historiques conformes.`);
+console.log(`Certification v2.5 réussie : ${ids.length} identifiants uniques, choix express Aujourd’hui et fonctions historiques conformes.`);

@@ -48,5 +48,10 @@
     const hidden = new Set(dismissedIds);
     return items.filter((item) => !hidden.has(item.id));
   }
-  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, restore, clearDismissed, visible };
+  function pick(items, offset = 0) {
+    if (!items.length) return null;
+    const index = Math.abs(Number.isFinite(offset) ? Math.trunc(offset) : 0) % items.length;
+    return items[index];
+  }
+  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, restore, clearDismissed, visible, pick };
 })();
