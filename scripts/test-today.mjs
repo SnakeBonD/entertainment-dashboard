@@ -17,4 +17,6 @@ assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.visible(items,["epic"]),x=>x.id),["tracked","pod"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,new Date("2026-09-14T12:00:00Z"))),[]);
 context.window.SnakeBonDToday.clearDismissed(storage); assert.equal(memory.size,0);
-console.log("Espace Aujourd’hui v2.2 validé : filtres, masquage quotidien, expiration et réinitialisation conformes.");
+const app=fs.readFileSync(new URL("../js/app.js",import.meta.url),"utf8");
+assert(app.includes("today-watchlist")); assert(app.includes("SnakeBonDWatchlist?.set(target,listSelect.value)")); assert(app.includes("SnakeBonDWatchlist?.remove(item.id)"));
+console.log("Espace Aujourd’hui v2.3 validé : filtres, masquage quotidien et gestion de la liste personnelle conformes.");
