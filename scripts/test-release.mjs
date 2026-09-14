@@ -21,7 +21,7 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.2">v2.3'), "La version visible doit être v2.3");
+assert(indexHtml.includes('aria-label="Version 2.3">v2.3'), "La version visible doit être v2.3");
 assert(indexHtml.includes("v2.3 · Liste personnelle depuis Aujourd’hui"), "Le pied de page v2.3 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
 assert(readme.includes("version **v2.3**"), "Le README ne présente pas la v2.3");
