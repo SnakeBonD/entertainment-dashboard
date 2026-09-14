@@ -31,7 +31,24 @@
     globalSearchType: "all",
     todayFilter: "all",
     todayDismissedIds: [],
+    todayUndoTimer: null,
   };
+
+  function offerTodayUndo(message, undo) {
+    const notice = document.getElementById("today-notice");
+    const text = document.getElementById("today-notice-text");
+    const button = document.getElementById("today-undo");
+    window.clearTimeout(state.todayUndoTimer);
+    text.textContent = message;
+    notice.hidden = false;
+    button.onclick = () => {
+      window.clearTimeout(state.todayUndoTimer);
+      undo();
+      notice.hidden = true;
+      renderToday();
+    };
+    state.todayUndoTimer = window.setTimeout(() => { notice.hidden = true; }, 8000);
+  }
 
   function scheduleFrame(callback) {
     let frameId = null;
@@ -1273,7 +1290,7 @@
     const labels={new:"Nouveau",lastChance:"Dernière chance",epic:"Epic Free",podcast:"Podcast récent"};
     const container = document.getElementById("today-results");
     if (!items.length) { const empty=document.createElement("p");empty.className="empty-state";empty.textContent="Aucune suggestion dans ce filtre pour le moment.";container.replaceChildren(empty);return; }
-    container.replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const listLabel=document.createElement("label");listLabel.className="today-watchlist";const listText=document.createElement("span");listText.textContent="Ma liste";const listSelect=document.createElement("select");listSelect.setAttribute("aria-label",`Classer ${item.title} dans ma liste`);[["","Non classé"],["discover","À découvrir"],["progress","En cours"],["done","Terminé"],["hidden","Masqué"]].forEach(([value,text])=>{const option=document.createElement("option");option.value=value;option.textContent=text;listSelect.append(option);});listSelect.value=window.SnakeBonDWatchlist?.get(item.id)?.status||"";listSelect.addEventListener("change",()=>{const target={...item,platform:item.platform||item.station||"Source officielle"};if(listSelect.value)window.SnakeBonDWatchlist?.set(target,listSelect.value);else window.SnakeBonDWatchlist?.remove(item.id);renderToday();});listLabel.append(listText,listSelect);const actions=document.createElement("div");actions.className="today-card-actions";const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";const dismiss=document.createElement("button");dismiss.className="today-dismiss";dismiss.type="button";dismiss.textContent="Masquer aujourd’hui";dismiss.setAttribute("aria-label",`Masquer ${item.title} pour aujourd’hui`);dismiss.addEventListener("click",()=>{window.SnakeBonDToday.dismiss(item.id);renderToday();});actions.append(link,dismiss);card.append(badge,title,meta,listLabel,actions);return card;}));
+    container.replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const listLabel=document.createElement("label");listLabel.className="today-watchlist";const listText=document.createElement("span");listText.textContent="Ma liste";const listSelect=document.createElement("select");listSelect.setAttribute("aria-label",`Classer ${item.title} dans ma liste`);[["","Non classé"],["discover","À découvrir"],["progress","En cours"],["done","Terminé"],["hidden","Masqué"]].forEach(([value,text])=>{const option=document.createElement("option");option.value=value;option.textContent=text;listSelect.append(option);});const previousStatus=window.SnakeBonDWatchlist?.get(item.id)?.status||"";listSelect.value=previousStatus;listSelect.addEventListener("change",()=>{const nextStatus=listSelect.value;const target={...item,platform:item.platform||item.station||"Source officielle"};if(nextStatus)window.SnakeBonDWatchlist?.set(target,nextStatus);else window.SnakeBonDWatchlist?.remove(item.id);renderToday();offerTodayUndo(`${item.title} : classement modifié.`,()=>{if(previousStatus)window.SnakeBonDWatchlist?.set(target,previousStatus);else window.SnakeBonDWatchlist?.remove(item.id);});});listLabel.append(listText,listSelect);const actions=document.createElement("div");actions.className="today-card-actions";const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";const dismiss=document.createElement("button");dismiss.className="today-dismiss";dismiss.type="button";dismiss.textContent="Masquer aujourd’hui";dismiss.setAttribute("aria-label",`Masquer ${item.title} pour aujourd’hui`);dismiss.addEventListener("click",()=>{window.SnakeBonDToday.dismiss(item.id);renderToday();offerTodayUndo(`${item.title} masqué pour aujourd’hui.`,()=>window.SnakeBonDToday.restore(item.id));});actions.append(link,dismiss);card.append(badge,title,meta,listLabel,actions);return card;}));
   }
 
   function setupTodayFilters() {

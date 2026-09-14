@@ -855,6 +855,10 @@ p {
 .today-dismiss { padding:.35rem 0; border:0; background:transparent; color:var(--faint); cursor:pointer; font:inherit; font-size:.78rem; text-decoration:underline; text-underline-offset:3px; }
 .today-dismiss:hover,.today-dismiss:focus-visible { color:var(--text); }
 .today-reset { margin-left:auto; }
+.today-notice { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 .85rem; padding:.75rem 1rem; border:1px solid rgb(139 213 255 / 28%); border-radius:10px; background:rgb(139 213 255 / 10%); color:var(--text); }
+.today-notice[hidden] { display:none; }
+.today-notice button { padding:.35rem .7rem; border:1px solid var(--accent); border-radius:8px; background:transparent; color:var(--accent); cursor:pointer; font:inherit; font-weight:800; }
+.today-notice button:hover,.today-notice button:focus-visible { background:rgb(139 213 255 / 14%); }
 .today-badge { align-self:flex-start; padding:.25rem .55rem; border-radius:999px; background:rgb(139 213 255 / 12%); color:var(--accent); font-size:.72rem; font-weight:850; text-transform:uppercase; }
 .today-badge-lastChance { color:var(--warning); background:rgb(255 200 120 / 12%); }.today-badge-epic { color:#85e89d; background:rgb(133 232 157 / 12%); }.today-badge-podcast { color:var(--violet); background:rgb(183 160 255 / 12%); }
 

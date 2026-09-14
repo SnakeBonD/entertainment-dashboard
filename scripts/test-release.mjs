@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.3">v2.3'), "La version visible doit être v2.3");
-assert(indexHtml.includes("v2.3 · Liste personnelle depuis Aujourd’hui"), "Le pied de page v2.3 est absent");
+assert(indexHtml.includes('aria-label="Version 2.4">v2.4'), "La version visible doit être v2.4");
+assert(indexHtml.includes("v2.4 · Actions Aujourd’hui annulables"), "Le pied de page v2.4 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.3**"), "Le README ne présente pas la v2.3");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.3.0`'), "Le cache applicatif n’est pas en v2.3.0");
+assert(readme.includes("version **v2.4**"), "Le README ne présente pas la v2.4");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.4.0`'), "Le cache applicatif n’est pas en v2.4.0");
 
 [
   "application",
@@ -57,6 +57,8 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.3.0`'), "Le cache applicatif n
   "global-search-results",
   "today-results",
   "today-reset",
+  "today-notice",
+  "today-undo",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -80,9 +82,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.3 échouée :");
+  console.error("Certification v2.4 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.3 réussie : ${ids.length} identifiants uniques, liste personnelle depuis Aujourd’hui et fonctions historiques conformes.`);
+console.log(`Certification v2.4 réussie : ${ids.length} identifiants uniques, actions Aujourd’hui annulables et fonctions historiques conformes.`);

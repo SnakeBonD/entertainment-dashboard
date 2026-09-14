@@ -154,7 +154,7 @@ const indexHtml = fs.readFileSync(path.join(projectRoot, "index.html"), "utf8");
   assert(indexHtml.includes(`id="${id}"`), `index.html : contrôle #${id} absent`);
 });
 
-assert(indexHtml.includes("v2.3"), "index.html : version v2.3 absente");
+assert(indexHtml.includes("v2.4"), "index.html : version v2.4 absente");
 assert(indexHtml.includes('src="js/calendar.js"'), "index.html : module calendrier absent");
 assert(indexHtml.includes('src="js/backup.js"'), "index.html : module de sauvegarde absent");
 assert(indexHtml.includes('id="agenda"'), "index.html : agenda des disponibilités absent");
@@ -488,4 +488,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log("Validation réussie : 40 plateformes, version v2.3, liste personnelle depuis Aujourd’hui et cache PWA conformes.");
+console.log("Validation réussie : 40 plateformes, version v2.4, actions Aujourd’hui annulables et cache PWA conformes.");

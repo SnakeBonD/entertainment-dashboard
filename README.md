@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.3** permet de gérer la liste personnelle directement depuis la sélection Aujourd’hui :
+La version **v2.4** permet d’annuler immédiatement les changements effectués depuis la sélection Aujourd’hui :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -16,6 +16,7 @@ La version **v2.3** permet de gérer la liste personnelle directement depuis la 
 - filtres rapides Tout, Mes priorités, Nouveautés, Dernière chance, Epic Free et Podcasts ;
 - masquage d’une suggestion pour la journée, avec réaffichage global à tout moment ;
 - classement direct dans « À découvrir », « En cours », « Terminé » ou « Masqué » depuis chaque carte Aujourd’hui ;
+- annulation pendant huit secondes après un changement de classement ou un masquage quotidien ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -393,6 +394,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.1.1** — correctif du filtre Epic Free et versionnement des scripts Aujourd’hui.
 - **v2.2** — sélection quotidienne personnalisable avec masquage local temporaire.
 - **v2.3** — gestion de la liste personnelle directement depuis les suggestions Aujourd’hui.
+- **v2.4** — annulation immédiate d’un classement ou d’un masquage depuis Aujourd’hui.
 
 ## Sécurité et confidentialité
 
