@@ -59,7 +59,7 @@ assert(indexHtml.includes('id="app-offline-state"'), "Le diagnostic hors ligne e
 assert(indexHtml.includes('id="app-update-state"'), "Le diagnostic de mise à jour est absent");
 assert(indexHtml.includes('id="check-app-update"'), "La recherche manuelle de mise à jour est absente");
 assert(indexHtml.includes('src="js/pwa.js"'), "Le contrôleur PWA n’est pas chargé");
-assert(indexHtml.includes("v2.2"), "La version v2.2 est absente du HTML");
+assert(indexHtml.includes("v2.3"), "La version v2.3 est absente du HTML");
 assert(manifest.shortcuts?.some((shortcut) => shortcut.url === "./#agenda"), "Le raccourci Agenda est absent du manifeste");
 
 const pwaScript = read("js/pwa.js");
@@ -74,7 +74,7 @@ assert(pwaScript.includes("navigator.serviceWorker.ready"), "L’état prêt du 
 assert(pwaScript.includes("controllerchange"), "L’application d’une nouvelle version n’est pas gérée");
 
 const serviceWorker = read("service-worker.js");
-assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v2.2.0`'), "La version du cache v2.2 est absente");
+assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v2.3.0`'), "La version du cache v2.3 est absente");
 assert(serviceWorker.includes('"./js/today.js?v=2.2.0"'), "L’espace Aujourd’hui versionné n’est pas disponible hors ligne");
 assert(serviceWorker.includes('"./js/app.js?v=2.2.0"'), "Le contrôleur versionné n’est pas disponible hors ligne");
 assert(serviceWorker.includes('"./js/global-search.js"'), "La recherche globale n’est pas disponible hors ligne");
