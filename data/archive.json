@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-10T16:32:38.773Z",
+  "lastUpdated": "2026-09-14T05:09:20.304Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -23,6 +23,30 @@
       "verificationNote": "not_in_current_feed",
       "lastCheckedAt": "2026-09-10T16:32:38.262Z",
       "archivedAt": "2026-09-10T16:32:38.773Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-129313-000-A-2026-09-07",
+      "title": "Terreur aveugle",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129313-000-A/terreur-aveugle/",
+      "country": "FR",
+      "addedDate": "2026-09-07",
+      "availabilityStartDate": "2026-09-07T03:00:00Z",
+      "expiryDate": "2026-09-14T03:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-09-09T15:11:23.420Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129313-000-A",
+      "description": "Une jeune femme aveugle (Mia Farrow) est pourchassée par un mystérieux tueur. Un thriller minimaliste de Richard Fleischer.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/6dZmgokikLozhjGBEuZbmi/768x432?type=TEXT",
+      "durationLabel": "86 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-11T16:44:05.801Z",
+      "archivedAt": "2026-09-14T05:09:20.304Z",
       "archiveReason": "expired"
     }
   ]
