@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.4** permet d’annuler immédiatement les changements effectués depuis la sélection Aujourd’hui :
+La version **v2.5** propose un choix express parmi les suggestions visibles dans Aujourd’hui :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -17,6 +17,8 @@ La version **v2.4** permet d’annuler immédiatement les changements effectués
 - masquage d’une suggestion pour la journée, avec réaffichage global à tout moment ;
 - classement direct dans « À découvrir », « En cours », « Terminé » ou « Masqué » depuis chaque carte Aujourd’hui ;
 - annulation pendant huit secondes après un changement de classement ou un masquage quotidien ;
+- bouton « Choisis pour moi » respectant le filtre actif et les priorités personnelles ;
+- proposition renouvelable avec accès direct à la source officielle ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -395,6 +397,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.2** — sélection quotidienne personnalisable avec masquage local temporaire.
 - **v2.3** — gestion de la liste personnelle directement depuis les suggestions Aujourd’hui.
 - **v2.4** — annulation immédiate d’un classement ou d’un masquage depuis Aujourd’hui.
+- **v2.5** — choix express renouvelable parmi les suggestions Aujourd’hui visibles.
 
 ## Sécurité et confidentialité
 

@@ -859,6 +859,13 @@ p {
 .today-notice[hidden] { display:none; }
 .today-notice button { padding:.35rem .7rem; border:1px solid var(--accent); border-radius:8px; background:transparent; color:var(--accent); cursor:pointer; font:inherit; font-weight:800; }
 .today-notice button:hover,.today-notice button:focus-visible { background:rgb(139 213 255 / 14%); }
+.today-pick { border-color:var(--accent); color:var(--accent); }
+.today-pick-result { display:grid; grid-template-columns:auto minmax(0,1fr) auto; gap:1rem; align-items:center; margin:0 0 .85rem; padding:1rem; border:1px solid rgb(183 160 255 / 35%); border-radius:var(--radius); background:linear-gradient(135deg,rgb(183 160 255 / 14%),rgb(139 213 255 / 8%)); }
+.today-pick-result[hidden] { display:none; }
+.today-pick-result > span { color:var(--violet); font-size:.72rem; font-weight:850; text-transform:uppercase; }
+.today-pick-result div { display:flex; flex-direction:column; min-width:0; }
+.today-pick-result strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.today-pick-result small { color:var(--muted); }
 .today-badge { align-self:flex-start; padding:.25rem .55rem; border-radius:999px; background:rgb(139 213 255 / 12%); color:var(--accent); font-size:.72rem; font-weight:850; text-transform:uppercase; }
 .today-badge-lastChance { color:var(--warning); background:rgb(255 200 120 / 12%); }.today-badge-epic { color:#85e89d; background:rgb(133 232 157 / 12%); }.today-badge-podcast { color:var(--violet); background:rgb(183 160 255 / 12%); }
 
@@ -2395,6 +2402,7 @@ footer {
   .global-search-panel,
   .global-search-results { grid-template-columns: 1fr; }
   .today-results { grid-template-columns:1fr; }
+  .today-pick-result { grid-template-columns:1fr; }
   .backup-panel {
     align-items: stretch;
     flex-direction: column;

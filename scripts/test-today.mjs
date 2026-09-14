@@ -11,6 +11,9 @@ assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"tracked"
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"epic"),x=>x.id),["epic"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.filter(items,"podcast"),x=>x.id),["pod"]);
 assert.equal(context.window.SnakeBonDToday.filter(items,"new").length,0);
+assert.equal(context.window.SnakeBonDToday.pick(items,0).id,"tracked");
+assert.equal(context.window.SnakeBonDToday.pick(items,4).id,"epic");
+assert.equal(context.window.SnakeBonDToday.pick([],0),null);
 const memory=new Map(); const storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)};
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.dismiss("epic",storage,now)),["epic"]);
 assert.deepEqual(Array.from(context.window.SnakeBonDToday.readDismissed(storage,now)),["epic"]);
@@ -22,4 +25,5 @@ context.window.SnakeBonDToday.clearDismissed(storage); assert.equal(memory.size,
 const app=fs.readFileSync(new URL("../js/app.js",import.meta.url),"utf8");
 assert(app.includes("today-watchlist")); assert(app.includes("SnakeBonDWatchlist?.set(target,nextStatus)")); assert(app.includes("SnakeBonDWatchlist?.remove(item.id)"));
 assert(app.includes("offerTodayUndo")); assert(app.includes("SnakeBonDToday.restore(item.id)"));
-console.log("Espace Aujourd’hui v2.4 validé : filtres, liste personnelle, masquage quotidien et annulation conformes.");
+assert(app.includes("SnakeBonDToday.pick")); assert(app.includes("today-pick-result"));
+console.log("Espace Aujourd’hui v2.5 validé : filtres, choix express, liste personnelle, masquage et annulation conformes.");
