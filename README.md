@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.5** propose un choix express parmi les suggestions visibles dans Aujourd’hui :
+La version **v2.6** mémorise le dernier filtre utilisé dans Aujourd’hui :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -19,6 +19,8 @@ La version **v2.5** propose un choix express parmi les suggestions visibles dans
 - annulation pendant huit secondes après un changement de classement ou un masquage quotidien ;
 - bouton « Choisis pour moi » respectant le filtre actif et les priorités personnelles ;
 - proposition renouvelable avec accès direct à la source officielle ;
+- restauration automatique du filtre Tout, Mes priorités, Nouveautés, Dernière chance, Epic Free ou Podcasts au prochain lancement ;
+- validation des valeurs restaurées avec repli sûr vers Tout ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -398,6 +400,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.3** — gestion de la liste personnelle directement depuis les suggestions Aujourd’hui.
 - **v2.4** — annulation immédiate d’un classement ou d’un masquage depuis Aujourd’hui.
 - **v2.5** — choix express renouvelable parmi les suggestions Aujourd’hui visibles.
+- **v2.6** — mémorisation locale et restauration sûre du filtre Aujourd’hui.
 
 ## Sécurité et confidentialité
 
