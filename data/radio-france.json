@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-14T21:53:10.735Z",
+  "lastUpdated": "2026-09-15T17:05:15.439Z",
   "items": [
+    {
+      "id": "radio-france-f9551ad8-b54d-4b53-a283-aabae1976103",
+      "title": "Tous égaux quand on a chaud ?",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/tous-egaux-quand-on-a-chaud-4385604",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/6f42c897-3821-4dd1-9276-ed0c74a3dc0d/27742-15.09.2026-ITEMA_24672611-2026C6612S0258-NET_MFC_A5289BBC-D876-4CDE-8CDF-9718D1020EF0-25-752e696491a241fd5a0326dd9f9ab77b.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-09-15T11:30:00.000Z",
+      "durationLabel": "29 min",
+      "description": "Que ce soit dans un logement social du XVᵉ arrondissement, à Argenteuil ou à Bagnolet, des habitants racontent l'enfer des fortes chaleurs estivales, leur sentiment d'abandon, et leur mobilisation à l'échelle du quartier pour se venir en aide et rompre l'isolement de certains.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-15T17:05:15.439Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-79f77742-99a4-4071-b72b-6eae9cd10b18",
       "title": "Malaise dans la police",
@@ -33,19 +48,19 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-96103eca-37ab-408c-93c4-ae0da7a2eecf",
-      "title": "L'affaire Aramburú",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/abec9b1b-497f-489e-b6c3-83d00a47745d/27742-11.09.2026-ITEMA_24667807-2026C6612S0254-NET_MFC_4F7ADB05-87E0-4007-916D-B3A9E718A42A-25-c9055f705174b90a9186613906ed31cf.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-09-11T11:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "Dans la nuit du 18 au 19 mars 2022, Shaun Hegarty et Federico Martin Aramburú, anciens rugbymen professionnels, fêtent un marché qu'ils viennent d'obtenir pour leur agence de voyage. La soirée va cependant tourner au drame quand les deux hommes croisent la route de deux militant…",
+      "id": "radio-france-afe04a76-a0cb-417b-830b-6d47d5b240bf",
+      "title": "Dior et misère : la chute de Marcel Boussac",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/75e5265f-26dc-4d7c-b6b1-1a3d7572f56d/20904-12.11.2025-ITEMA_24308659-2025F22805S0316-NET_MFI_A13C7661-0E92-4289-9A7B-EC75AC0DC69B-27-05f498e35c65d232d73185a7ed32fb79.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-15T13:04:50.000Z",
+      "durationLabel": "50 min",
+      "description": "Aujourd’hui dans Affaires sensibles, Dior et misère : la chute de Marcel Boussac.",
       "provider": "radio-france",
-      "verifiedAt": "2026-09-14T12:58:07.397Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-09-15T17:05:15.439Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-3f1f7266-da92-4059-82bf-ccda6ce6e540",
@@ -75,21 +90,6 @@
       "description": "Aujourd’hui dans Affaires Sensibles, la catastrophe d’Apollo 1",
       "provider": "radio-france",
       "verifiedAt": "2026-09-14T12:58:07.397Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-8163dcf9-aa52-4faf-a2ee-e97f34b23d82",
-      "title": "La Question de Henri Alleg, en direct et en public du Livre sur la place à Nancy - L'intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/la-question-de-henri-alleg-en-direct-et-en-public-du-livre-sur-la-place-a-nancy-l-integrale-2422155",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/cecfef24-c43f-4225-b62d-773d3aa6f0b2/26774-11.09.2026-ITEMA_24666950-2026F22805S0254-NET_MFI_F22CFCD3-DA0D-4E93-81EE-EB2918289FD1-27-40d69caa0c975bbc17a7e1b18a658146.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-11T13:04:40.000Z",
-      "durationLabel": "54 min",
-      "description": "Aujourd'hui dans Affaires Sensibles, La Question d'Henri Alleg, en direct et en public du Livre sur la place à Nancy",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-11T16:34:04.560Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
