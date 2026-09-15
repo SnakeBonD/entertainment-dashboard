@@ -1,6 +1,8 @@
 (() => {
   "use strict";
   const STORAGE_KEY = "snakebond-today-dismissed-v1";
+  const FILTER_STORAGE_KEY = "snakebond-today-filter-v1";
+  const FILTERS = new Set(["all", "tracked", "new", "lastChance", "epic", "podcast"]);
   const time = (value) => new Date(value).getTime();
   const dayKey = (value = new Date()) => {
     const date = new Date(value);
@@ -22,6 +24,17 @@
     if (value === "all") return items;
     if (value === "tracked") return items.filter((item) => item.tracked);
     return items.filter((item) => item.group === value);
+  }
+  function readFilter(storage = window.localStorage) {
+    try {
+      const value = storage.getItem(FILTER_STORAGE_KEY) || "all";
+      return FILTERS.has(value) ? value : "all";
+    } catch { return "all"; }
+  }
+  function writeFilter(value, storage = window.localStorage) {
+    const safeValue = FILTERS.has(value) ? value : "all";
+    try { storage.setItem(FILTER_STORAGE_KEY, safeValue); } catch { /* préférence non persistée */ }
+    return safeValue;
   }
   function readDismissed(storage = window.localStorage, now = new Date()) {
     try {
@@ -53,5 +66,5 @@
     const index = Math.abs(Number.isFinite(offset) ? Math.trunc(offset) : 0) % items.length;
     return items[index];
   }
-  window.SnakeBonDToday = { build, filter, readDismissed, dismiss, restore, clearDismissed, visible, pick };
+  window.SnakeBonDToday = { build, filter, readFilter, writeFilter, readDismissed, dismiss, restore, clearDismissed, visible, pick };
 })();

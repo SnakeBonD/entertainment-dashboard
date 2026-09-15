@@ -1309,7 +1309,7 @@
   }
 
   function setupTodayFilters() {
-    document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = button.dataset.todayFilter; state.todayPickedId = null; renderToday(); }));
+    document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
     document.getElementById("today-pick").addEventListener("click", () => {
       const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
@@ -1386,6 +1386,7 @@
       state.archive = archive;
       state.radioFrance = radioFrance;
       state.sourceStatus = sourceStatus;
+      state.todayFilter = window.SnakeBonDToday.readFilter();
       state.globalSearchIndex = window.SnakeBonDGlobalSearch.buildIndex({ platforms, catalogue, radioFrance });
       const lastVisit = window.SnakeBonDWatchlist.readLastVisit();
       state.newItemIds = new Set(
