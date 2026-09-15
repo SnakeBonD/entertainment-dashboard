@@ -14,6 +14,9 @@ assert.equal(context.window.SnakeBonDToday.filter(items,"new").length,0);
 assert.equal(context.window.SnakeBonDToday.pick(items,0).id,"tracked");
 assert.equal(context.window.SnakeBonDToday.pick(items,4).id,"epic");
 assert.equal(context.window.SnakeBonDToday.pick([],0),null);
+assert.equal(context.window.SnakeBonDToday.explain(items[0]),"Dans tes priorités personnelles.");
+assert.equal(context.window.SnakeBonDToday.explain(items[1]),"Jeu temporairement offert sur Epic Games Store.");
+assert.equal(context.window.SnakeBonDToday.explain(items[2]),"Épisode récent publié par Radio France.");
 const memory=new Map(); const storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value),removeItem:key=>memory.delete(key)};
 assert.equal(context.window.SnakeBonDToday.readFilter(storage),"all");
 assert.equal(context.window.SnakeBonDToday.writeFilter("podcast",storage),"podcast");
@@ -32,4 +35,5 @@ assert(app.includes("today-watchlist")); assert(app.includes("SnakeBonDWatchlist
 assert(app.includes("offerTodayUndo")); assert(app.includes("SnakeBonDToday.restore(item.id)"));
 assert(app.includes("SnakeBonDToday.pick")); assert(app.includes("today-pick-result"));
 assert(app.includes("SnakeBonDToday.readFilter")); assert(app.includes("SnakeBonDToday.writeFilter"));
-console.log("Espace Aujourd’hui v2.6 validé : filtre mémorisé, choix express, liste personnelle, masquage et annulation conformes.");
+assert(app.includes("SnakeBonDToday.explain")); assert(app.includes("today-pick-reason"));
+console.log("Espace Aujourd’hui v2.7 validé : choix expliqué, filtre mémorisé, liste personnelle, masquage et annulation conformes.");

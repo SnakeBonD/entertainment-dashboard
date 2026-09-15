@@ -1293,6 +1293,7 @@
     if (picked) {
       document.getElementById("today-pick-title").textContent = picked.title;
       document.getElementById("today-pick-meta").textContent = picked.platform || `${picked.station} · ${picked.podcastTitle}`;
+      document.getElementById("today-pick-reason").textContent = window.SnakeBonDToday.explain(picked);
       const pickLink = document.getElementById("today-pick-link");
       pickLink.href = picked.url;
       pickLink.textContent = picked.group === "epic" ? "Récupérer ce choix ↗" : "Voir ce choix ↗";

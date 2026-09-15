@@ -66,5 +66,14 @@
     const index = Math.abs(Number.isFinite(offset) ? Math.trunc(offset) : 0) % items.length;
     return items[index];
   }
-  window.SnakeBonDToday = { build, filter, readFilter, writeFilter, readDismissed, dismiss, restore, clearDismissed, visible, pick };
+  function explain(item) {
+    if (!item) return "";
+    if (item.tracked) return "Dans tes priorités personnelles.";
+    if (item.group === "lastChance") return "À voir avant sa prochaine expiration.";
+    if (item.group === "epic") return "Jeu temporairement offert sur Epic Games Store.";
+    if (item.group === "new") return "Ajout récent au catalogue vérifié.";
+    if (item.group === "podcast") return "Épisode récent publié par Radio France.";
+    return "Suggestion issue du catalogue vérifié.";
+  }
+  window.SnakeBonDToday = { build, filter, readFilter, writeFilter, readDismissed, dismiss, restore, clearDismissed, visible, pick, explain };
 })();
