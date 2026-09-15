@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-15T05:16:22.551Z",
+  "lastUpdated": "2026-09-15T17:14:36.723Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -33,9 +33,9 @@
       "country": "FR",
       "addedDate": "2026-09-13",
       "availabilityStartDate": "2026-09-13T19:00:00Z",
-      "expiryDate": "2026-10-13T19:00:00Z",
+      "expiryDate": "2026-10-13T19:02:19Z",
       "verified": true,
-      "verifiedAt": "2026-09-15T05:16:22.551Z",
+      "verifiedAt": "2026-09-15T17:14:36.723Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "045559-000-A",
@@ -65,6 +65,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-10T16:39:08.232Z"
+    },
+    {
+      "id": "arte-049813-001-A-2026-09-06",
+      "title": "Corleone, le parrain des parrains (1/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/049813-001-A/corleone-le-parrain-des-parrains-1-2/",
+      "country": "FR",
+      "addedDate": "2026-09-06",
+      "availabilityStartDate": "2026-09-06T21:48:04Z",
+      "expiryDate": "2027-01-12T22:59:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-15T17:14:36.723Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "049813-001-A",
+      "description": "Comment, de 1977 à 1994, Totò Riina a régné par le sang et la terreur sur la mafia sicilienne. Premier volet.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/CNMFSSncXj2G68GMVcCjK7/768x432?type=TEXT",
+      "durationLabel": "78 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-077320-000-A-2026-09-05",
@@ -140,7 +160,7 @@
       "addedDate": "2026-09-01",
       "availabilityStartDate": "2026-09-01T03:00:00Z",
       "expiryDate": "2027-04-08T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-09T15:11:23.420Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -148,7 +168,9 @@
       "description": "Comment les alertes scientifiques sur le dérèglement climatique ont été ignorées, sous la pression politique et économique.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/MK8M5QZm8qWTZ9jxJcSs7o/768x432?type=TEXT",
       "durationLabel": "45 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-15T17:14:36.723Z"
     },
     {
       "id": "arte-117174-002-A-2026-09-01",
