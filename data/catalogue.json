@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-15T17:14:36.723Z",
+  "lastUpdated": "2026-09-16T17:15:32.239Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -140,7 +140,7 @@
       "addedDate": "2026-09-05",
       "availabilityStartDate": "2026-09-05T03:00:00Z",
       "expiryDate": "2026-12-11T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-13T16:36:12.105Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -148,7 +148,9 @@
       "description": "Enquête archéologique dans la plus somptueuse des demeures de Pompéi, la Villa Oplontis.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/j9R2NbgKY6Aq5jpCfRqBtP/768x432?type=TEXT",
       "durationLabel": "91 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-16T17:15:32.239Z"
     },
     {
       "id": "arte-117174-001-A-2026-09-01",
@@ -212,6 +214,26 @@
       "description": "Une folle sarabande romanesque signée Jean-Paul Rappeneau, avec Isabelle Adjani, Gérard Depardieu, Yvan Attal, Virginie Ledoyen.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/cEJpoiK7zjnSACvE8cFzmB/768x432?type=TEXT",
       "durationLabel": "109 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-121620-151-A-2026-08-04",
+      "title": "Les \"safaris humains\" de Sarajevo ont-ils vraiment eu lieu ?",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/121620-151-A/les-safaris-humains-de-sarajevo-ont-ils-vraiment-eu-lieu/",
+      "country": "FR",
+      "addedDate": "2026-08-04",
+      "availabilityStartDate": "2026-08-04T15:04:00Z",
+      "expiryDate": "2027-08-04T21:59:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-16T17:15:32.239Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "121620-151-A",
+      "description": "Des \"touristes snipers\" pendant le siège de Sarajevo ? Une enquête du Réseau de journalisme d'investigation des Balkans remet en question ces accusations.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/dSzPWA2H3nXTAEQCjTQZJQ/768x432?type=TEXT",
+      "durationLabel": "11 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
