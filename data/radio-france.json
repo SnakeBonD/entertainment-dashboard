@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-17T11:49:41.738Z",
+  "lastUpdated": "2026-09-17T17:06:00.059Z",
   "items": [
     {
       "id": "radio-france-d22e27b5-1f0c-4cff-aa37-32c20290e439",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-bab791d0-3c59-4ce5-aba8-d2d0cff5ac59",
+      "title": "Constantin Brancusi contre les États-Unis d’Amérique",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/f019fd54-197f-4b09-9697-1d4e540623f8/26774-13.05.2025-ITEMA_24644020-2025F22805S0133-NET_MFI_FE99226A-CBC6-4C21-B1DD-323804BE5D11-27-c317e4e54519f7a4ddb10c5d4b881746.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-17T13:04:50.000Z",
+      "durationLabel": "47 min",
+      "description": "Aujourd’hui, dans Affaires Sensibles : Constantin Brancusi contre les États-Unis d’Amérique, ou le procès de l’art moderne",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-17T17:06:00.059Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-8d8b15db-b731-41d3-83ea-26ea8aeceae1",
       "title": "Le C.L.O.DO. ou la révolte contre l'informatisation de la société",
       "podcastTitle": "Affaires sensibles",
@@ -75,21 +90,6 @@
       "description": "Aujourd’hui dans Affaires sensibles, Dior et misère : la chute de Marcel Boussac.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-15T17:05:15.439Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-3f1f7266-da92-4059-82bf-ccda6ce6e540",
-      "title": "Le peuple des Sentinelles ou l'isolement impossible",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0053a748-9d9b-420e-8620-d38809dc4b01/26774-27.05.2025-ITEMA_24644019-2025F22805S0147-NET_MFI_041128B7-7B4B-4579-BE0B-782E41516316-27-3bb707616823c2d9f55ca1c00bb37981.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-14T13:04:50.000Z",
-      "durationLabel": "48 min",
-      "description": "Aujourd’hui dans Affaires sensibles, le peuple des Sentinelles ou l'isolement impossible.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-14T21:53:10.735Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
