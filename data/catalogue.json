@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-16T17:15:32.239Z",
+  "lastUpdated": "2026-09-17T17:09:23.515Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -383,42 +383,42 @@
       "lastCheckedAt": "2026-09-11T16:44:05.801Z"
     },
     {
-      "id": "epic-c76046dddcdb43619c33ce0395941033-2026-09-10",
-      "title": "Luftrausers",
+      "id": "epic-8a20c6c8d5b5417e800c687e9d72013e-2026-09-17",
+      "title": "Mindcop",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/luftrausers-51e5e9",
+      "url": "https://store.epicgames.com/fr/p/mindcop-78e6c1",
       "country": "FR",
-      "addedDate": "2026-09-10",
-      "promotionStartDate": "2026-09-10T15:00:00.000Z",
-      "expiryDate": "2026-09-17T15:00:00.000Z",
+      "addedDate": "2026-09-17",
+      "promotionStartDate": "2026-09-17T15:00:00.000Z",
+      "expiryDate": "2026-09-24T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-09-10T16:32:38.262Z",
+      "verifiedAt": "2026-09-17T17:09:22.443Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "c76046dddcdb43619c33ce0395941033",
+      "externalId": "8a20c6c8d5b5417e800c687e9d72013e",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/85ddeeec9d4243b3a2d78aab87bfae7f/luftrausers-1mxb1.png",
-      "originalPrice": "8,99 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/984cdc148ea6423e866ca6e04a1b429f/mindcop-kplp1.jpg",
+      "originalPrice": "14,99 €"
     },
     {
-      "id": "epic-e9bb092228f544c582e2c9395fae96f3-2026-09-10",
-      "title": "Astral Ascent",
+      "id": "epic-b9ff3f98367a45cdac289dff6683a2bc-2026-09-17",
+      "title": "Shogun Showdown",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/astral-ascent-b33bc2",
+      "url": "https://store.epicgames.com/fr/p/shogun-showdown-61832d",
       "country": "FR",
-      "addedDate": "2026-09-10",
-      "promotionStartDate": "2026-09-10T15:00:00.000Z",
-      "expiryDate": "2026-09-17T15:00:00.000Z",
+      "addedDate": "2026-09-17",
+      "promotionStartDate": "2026-09-17T15:00:00.000Z",
+      "expiryDate": "2026-09-24T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-09-10T16:32:38.262Z",
+      "verifiedAt": "2026-09-17T17:09:22.443Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "e9bb092228f544c582e2c9395fae96f3",
+      "externalId": "b9ff3f98367a45cdac289dff6683a2bc",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/974c8a587d714d8d9e0c3b0fefe61a35/astral-ascent-b0gcm.png",
-      "originalPrice": "24,50 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/450bcfdb9c00453394d7ccc2948ba5db/shogun-showdown-hz1yh.jpg",
+      "originalPrice": "13,49 €"
     }
   ]
 }
