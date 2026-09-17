@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-17T17:09:23.515Z",
+  "lastUpdated": "2026-09-17T17:14:31.267Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -67,6 +67,26 @@
       "lastCheckedAt": "2026-09-10T16:39:08.232Z"
     },
     {
+      "id": "arte-047570-000-A-2026-08-01",
+      "title": "Two Lovers",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/047570-000-A/two-lovers/",
+      "country": "FR",
+      "addedDate": "2026-08-01",
+      "availabilityStartDate": "2026-08-01T03:00:00Z",
+      "expiryDate": "2026-10-09T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-17T17:14:31.267Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "047570-000-A",
+      "description": "Par James Gray, un drame romantique émouvant avec Joaquin Phoenix, Gwyneth Paltrow et Vinessa Shaw.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/ouEMtLKGSqaBNvdTYZwZS7/768x432?type=TEXT",
+      "durationLabel": "103 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-049813-001-A-2026-09-06",
       "title": "Corleone, le parrain des parrains (1/2)",
       "type": "documentary",
@@ -129,6 +149,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-08T15:07:30.207Z"
+    },
+    {
+      "id": "arte-106236-035-A-2026-09-15",
+      "title": "Les Rita Mitsouko au cinéma",
+      "type": "tv",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/106236-035-A/les-rita-mitsouko-au-cinema/",
+      "country": "FR",
+      "addedDate": "2026-09-15",
+      "availabilityStartDate": "2026-09-15T10:50:00Z",
+      "expiryDate": "2027-09-16T22:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-17T17:14:31.267Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "106236-035-A",
+      "description": "Catherine Ringer, chanteuse des Rita Mitsouko, vient de nous quitter. \"Blow up\" lui rend hommage.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Sde5o3gr4drvdYGh9Xri2m/768x432?type=TEXT",
+      "durationLabel": "18 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-116006-000-A-2026-09-05",
@@ -206,7 +246,7 @@
       "addedDate": "2026-09-02",
       "availabilityStartDate": "2026-09-02T09:45:00Z",
       "expiryDate": "2027-03-02T10:45:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-11T16:44:05.801Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -214,7 +254,9 @@
       "description": "Une folle sarabande romanesque signée Jean-Paul Rappeneau, avec Isabelle Adjani, Gérard Depardieu, Yvan Attal, Virginie Ledoyen.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/cEJpoiK7zjnSACvE8cFzmB/768x432?type=TEXT",
       "durationLabel": "109 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-17T17:14:31.267Z"
     },
     {
       "id": "arte-121620-151-A-2026-08-04",
@@ -226,7 +268,7 @@
       "addedDate": "2026-08-04",
       "availabilityStartDate": "2026-08-04T15:04:00Z",
       "expiryDate": "2027-08-04T21:59:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-16T17:15:32.239Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -234,7 +276,9 @@
       "description": "Des \"touristes snipers\" pendant le siège de Sarajevo ? Une enquête du Réseau de journalisme d'investigation des Balkans remet en question ces accusations.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/dSzPWA2H3nXTAEQCjTQZJQ/768x432?type=TEXT",
       "durationLabel": "11 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-17T17:14:31.267Z"
     },
     {
       "id": "arte-123344-000-A-2026-09-08",
@@ -246,8 +290,30 @@
       "addedDate": "2026-09-08",
       "availabilityStartDate": "2026-09-08T03:00:00Z",
       "expiryDate": "2026-10-15T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-11T16:44:05.801Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "123344-000-A",
+      "description": "Depuis les années 1980, les ultra-riches ont vu leur patrimoine bondir et leurs impôts baisser !",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KbYAd8D2dJ96VuBetAwrhZ/768x432?type=TEXT",
+      "durationLabel": "47 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-17T17:14:31.267Z"
+    },
+    {
+      "id": "arte-123344-000-A-2026-09-17",
+      "title": "Ultra-riches - Taxe-moi (si tu peux !) (1/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/123344-000-A/ultra-riches-taxe-moi-si-tu-peux-1-2/",
+      "country": "FR",
+      "addedDate": "2026-09-17",
+      "availabilityStartDate": "2026-09-17T08:53:44Z",
+      "expiryDate": "2026-10-15T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-17T17:14:31.267Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "123344-000-A",
