@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-17T17:14:31.267Z",
+  "lastUpdated": "2026-09-18T16:41:39.840Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -35,13 +35,13 @@
       "availabilityStartDate": "2026-09-13T19:00:00Z",
       "expiryDate": "2026-10-13T19:02:19Z",
       "verified": true,
-      "verifiedAt": "2026-09-15T17:14:36.723Z",
+      "verifiedAt": "2026-09-18T16:41:39.840Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "045559-000-A",
       "description": "Ciselé par Francis Ford Coppola, le premier volet de la saga, incarné avec intensité par Marlon Brando et Al Pacino.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/AjFeE225DKXmHi36c7aUth/768x432?type=TEXT",
-      "durationLabel": "169 min",
+      "durationLabel": "167 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
@@ -96,7 +96,7 @@
       "addedDate": "2026-09-06",
       "availabilityStartDate": "2026-09-06T21:48:04Z",
       "expiryDate": "2027-01-12T22:59:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-15T17:14:36.723Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -104,7 +104,9 @@
       "description": "Comment, de 1977 à 1994, Totò Riina a régné par le sang et la terreur sur la mafia sicilienne. Premier volet.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/CNMFSSncXj2G68GMVcCjK7/768x432?type=TEXT",
       "durationLabel": "78 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-18T16:41:39.840Z"
     },
     {
       "id": "arte-077320-000-A-2026-09-05",
@@ -323,6 +325,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
+      "id": "arte-123345-000-A-2026-09-17",
+      "title": "Ultra-riches - Taxe-moi (si tu peux !) (2/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/123345-000-A/ultra-riches-taxe-moi-si-tu-peux-2-2/",
+      "country": "FR",
+      "addedDate": "2026-09-17",
+      "availabilityStartDate": "2026-09-17T08:53:52Z",
+      "expiryDate": "2026-10-15T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-18T16:41:39.840Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "123345-000-A",
+      "description": "Dès son retour au pouvoir, début 2025, Donald Trump porte un coup sévère à l’administration fiscale en torpillant ses effectifs.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zPkzK9cJBXG9acv8dBa9gL/768x432?type=TEXT",
+      "durationLabel": "46 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-124739-000-A-2026-09-02",
       "title": "L'histoire de Souleymane",
       "type": "movie",
@@ -345,6 +367,26 @@
       "lastCheckedAt": "2026-09-10T16:39:08.232Z"
     },
     {
+      "id": "arte-124793-001-A-2026-09-15",
+      "title": "Inquisitions (1/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/124793-001-A/inquisitions-1-2/",
+      "country": "FR",
+      "addedDate": "2026-09-15",
+      "availabilityStartDate": "2026-09-15T03:00:00Z",
+      "expiryDate": "2027-04-22T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-18T16:41:39.840Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "124793-001-A",
+      "description": "Stan Neumann raconte les origines et l'évolution de l'inquisition, cette \"police des âmes\" à la fois secrète et spectaculaire.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zjHCe7hh32n83VJ5e2Fizn/768x432?type=TEXT",
+      "durationLabel": "55 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-127949-000-A-2026-09-09",
       "title": "Tout s'est bien passé",
       "type": "movie",
@@ -354,7 +396,7 @@
       "addedDate": "2026-09-09",
       "availabilityStartDate": "2026-09-09T03:00:00Z",
       "expiryDate": "2026-10-09T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-10T16:39:08.232Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -362,7 +404,9 @@
       "description": "Diminué après un AVC, un octogénaire (André Dussollier) demande à sa fille aînée (Sophie Marceau) de l'aider à mourir.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/onHL8hH4JcbHjTASQSDht6/768x432?type=TEXT",
       "durationLabel": "108 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-18T16:41:39.840Z"
     },
     {
       "id": "arte-129315-000-A-2026-09-09",
@@ -394,7 +438,7 @@
       "addedDate": "2026-09-09",
       "availabilityStartDate": "2026-09-09T03:00:00Z",
       "expiryDate": "2027-03-09T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-12T15:47:49.746Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -402,6 +446,28 @@
       "description": "Espagne, l'été. Libertad fait irruption dans la vie de Nora, 15 ans, et bouscule le calme habituel de ses vacances en famille.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/VFzzwzsUipDuR9whkVLQdb/768x432?type=TEXT",
       "durationLabel": "105 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-18T16:41:39.840Z"
+    },
+    {
+      "id": "arte-129349-000-A-2026-09-15",
+      "title": "Liberté, la statue qui voulait changer le monde",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129349-000-A/liberte-la-statue-qui-voulait-changer-le-monde/",
+      "country": "FR",
+      "addedDate": "2026-09-15",
+      "availabilityStartDate": "2026-09-15T03:00:00Z",
+      "expiryDate": "2026-11-17T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-18T16:41:39.840Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129349-000-A",
+      "description": "Imaginée par l’ambitieux Auguste Bartholdi, la statue de la Liberté a vu le jour après une épopée rocambolesque.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/AM9cq4RWpDpCAuDYicQP/768x432?type=TEXT",
+      "durationLabel": "89 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
