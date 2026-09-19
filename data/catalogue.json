@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-18T16:41:39.840Z",
+  "lastUpdated": "2026-09-19T04:59:06.796Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -334,7 +334,7 @@
       "addedDate": "2026-09-17",
       "availabilityStartDate": "2026-09-17T08:53:52Z",
       "expiryDate": "2026-10-15T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-18T16:41:39.840Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -342,7 +342,9 @@
       "description": "Dès son retour au pouvoir, début 2025, Donald Trump porte un coup sévère à l’administration fiscale en torpillant ses effectifs.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zPkzK9cJBXG9acv8dBa9gL/768x432?type=TEXT",
       "durationLabel": "46 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-19T04:59:06.796Z"
     },
     {
       "id": "arte-124739-000-A-2026-09-02",
