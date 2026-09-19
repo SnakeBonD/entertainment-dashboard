@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-19T04:59:06.796Z",
+  "lastUpdated": "2026-09-19T16:02:12.517Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -107,6 +107,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-18T16:41:39.840Z"
+    },
+    {
+      "id": "arte-077273-000-A-2026-09-16",
+      "title": "Rester vertical",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/077273-000-A/rester-vertical/",
+      "country": "FR",
+      "addedDate": "2026-09-16",
+      "availabilityStartDate": "2026-09-16T03:00:00Z",
+      "expiryDate": "2027-03-01T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-19T16:02:12.517Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "077273-000-A",
+      "description": "Par Alain Guiraudie, un voyage intime à travers la France d’aujourd’hui. Un film rugueux, d'une beauté incongrue.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/jF7Nz2VTZhJkyP3kKhFEST/768x432?type=TEXT",
+      "durationLabel": "95 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-077320-000-A-2026-09-05",
@@ -420,7 +440,7 @@
       "addedDate": "2026-09-09",
       "availabilityStartDate": "2026-09-09T03:00:00Z",
       "expiryDate": "2026-11-08T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-12T15:47:49.746Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -428,7 +448,9 @@
       "description": "Le combat d'une conseillère municipale pour faire condamner le harcèlement sexuel d'un élu puissant.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/CjFc9jmXg4TwFS8Vg5Lfk/768x432?type=TEXT",
       "durationLabel": "111 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-19T16:02:12.517Z"
     },
     {
       "id": "arte-129337-000-A-2026-09-09",
@@ -462,7 +484,7 @@
       "addedDate": "2026-09-15",
       "availabilityStartDate": "2026-09-15T03:00:00Z",
       "expiryDate": "2026-11-17T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-18T16:41:39.840Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -470,7 +492,9 @@
       "description": "Imaginée par l’ambitieux Auguste Bartholdi, la statue de la Liberté a vu le jour après une épopée rocambolesque.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/AM9cq4RWpDpCAuDYicQP/768x432?type=TEXT",
       "durationLabel": "89 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-19T16:02:12.517Z"
     },
     {
       "id": "arte-129843-000-A-2026-09-06",
