@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-19T16:02:12.517Z",
+  "lastUpdated": "2026-09-20T05:21:38.130Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -35,13 +35,13 @@
       "availabilityStartDate": "2026-09-13T19:00:00Z",
       "expiryDate": "2026-10-13T19:02:19Z",
       "verified": true,
-      "verifiedAt": "2026-09-18T16:41:39.840Z",
+      "verifiedAt": "2026-09-20T05:21:38.130Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "045559-000-A",
       "description": "Ciselé par Francis Ford Coppola, le premier volet de la saga, incarné avec intensité par Marlon Brando et Al Pacino.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/AjFeE225DKXmHi36c7aUth/768x432?type=TEXT",
-      "durationLabel": "167 min",
+      "durationLabel": "169 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
