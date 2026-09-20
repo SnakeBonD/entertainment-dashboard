@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-20T05:21:38.130Z",
+  "lastUpdated": "2026-09-20T16:27:15.697Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -23,6 +23,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-12T15:47:49.746Z"
+    },
+    {
+      "id": "arte-045550-000-A-2026-09-16",
+      "title": "Le roi de l'évasion",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/045550-000-A/le-roi-de-l-evasion/",
+      "country": "FR",
+      "addedDate": "2026-09-16",
+      "availabilityStartDate": "2026-09-16T03:00:00Z",
+      "expiryDate": "2027-03-01T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-20T16:27:15.697Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "045550-000-A",
+      "description": "Avec Hafsia Herzi et Ludovic Berthillot, une comédie ruralo-sexuelle d'Alain Guiraudie, tendre et loufoque.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/2vz4Job8dadNTbz42mEUz8/768x432?type=TEXT",
+      "durationLabel": "88 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-045559-000-A-2026-09-13",
@@ -182,7 +202,7 @@
       "addedDate": "2026-09-15",
       "availabilityStartDate": "2026-09-15T10:50:00Z",
       "expiryDate": "2027-09-16T22:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-17T17:14:31.267Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -190,6 +210,28 @@
       "description": "Catherine Ringer, chanteuse des Rita Mitsouko, vient de nous quitter. \"Blow up\" lui rend hommage.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Sde5o3gr4drvdYGh9Xri2m/768x432?type=TEXT",
       "durationLabel": "18 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-20T16:27:15.697Z"
+    },
+    {
+      "id": "arte-110210-000-A-2026-09-16",
+      "title": "Viens je t'emmène",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/110210-000-A/viens-je-t-emmene/",
+      "country": "FR",
+      "addedDate": "2026-09-16",
+      "availabilityStartDate": "2026-09-16T03:00:00Z",
+      "expiryDate": "2027-03-01T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-09-20T16:27:15.697Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "110210-000-A",
+      "description": "Avec Noémie Lvovsky, un réjouissant cocktail à la Guiraudie, qui injecte de la légèreté dans un réel ultramorose.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/6oGKkbNp66oRSzgNdGA5tN/768x432?type=TEXT",
+      "durationLabel": "94 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
@@ -334,7 +376,7 @@
       "addedDate": "2026-09-17",
       "availabilityStartDate": "2026-09-17T08:53:44Z",
       "expiryDate": "2026-10-15T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-17T17:14:31.267Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -342,7 +384,9 @@
       "description": "Depuis les années 1980, les ultra-riches ont vu leur patrimoine bondir et leurs impôts baisser !",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KbYAd8D2dJ96VuBetAwrhZ/768x432?type=TEXT",
       "durationLabel": "47 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-20T16:27:15.697Z"
     },
     {
       "id": "arte-123345-000-A-2026-09-17",
@@ -398,7 +442,7 @@
       "addedDate": "2026-09-15",
       "availabilityStartDate": "2026-09-15T03:00:00Z",
       "expiryDate": "2027-04-22T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-18T16:41:39.840Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -406,7 +450,9 @@
       "description": "Stan Neumann raconte les origines et l'évolution de l'inquisition, cette \"police des âmes\" à la fois secrète et spectaculaire.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zjHCe7hh32n83VJ5e2Fizn/768x432?type=TEXT",
       "durationLabel": "55 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-20T16:27:15.697Z"
     },
     {
       "id": "arte-127949-000-A-2026-09-09",
