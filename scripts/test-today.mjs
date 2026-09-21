@@ -36,4 +36,5 @@ assert(app.includes("offerTodayUndo")); assert(app.includes("SnakeBonDToday.rest
 assert(app.includes("SnakeBonDToday.pick")); assert(app.includes("today-pick-result"));
 assert(app.includes("SnakeBonDToday.readFilter")); assert(app.includes("SnakeBonDToday.writeFilter"));
 assert(app.includes("SnakeBonDToday.explain")); assert(app.includes("today-pick-reason"));
-console.log("Espace Aujourd’hui v2.7 validé : choix expliqué, filtre mémorisé, liste personnelle, masquage et annulation conformes.");
+assert(app.includes('getElementById("today-pick-dismiss")')); assert(app.includes("state.todayPickedId = dismissedId"));
+console.log("Espace Aujourd’hui v2.8 validé : choix renouvelable, expliqué, filtré, masqué et annulable conformément aux préférences locales.");

@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.7** explique immédiatement chaque proposition du Choix express :
+La version **v2.8** permet d’écarter une proposition du Choix express et d’obtenir immédiatement la suivante :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -22,6 +22,7 @@ La version **v2.7** explique immédiatement chaque proposition du Choix express 
 - restauration automatique du filtre Tout, Mes priorités, Nouveautés, Dernière chance, Epic Free ou Podcasts au prochain lancement ;
 - validation des valeurs restaurées avec repli sûr vers Tout ;
 - raison concise liée à la priorité personnelle, l’expiration, l’offre Epic, la nouveauté ou la publication récente ;
+- action « Un autre choix » depuis la proposition, avec masquage pour la journée et annulation immédiate ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -403,6 +404,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.5** — choix express renouvelable parmi les suggestions Aujourd’hui visibles.
 - **v2.6** — mémorisation locale et restauration sûre du filtre Aujourd’hui.
 - **v2.7** — explication contextuelle de chaque proposition du Choix express.
+- **v2.8** — remplacement immédiat d’un Choix express, avec masquage quotidien réversible.
 
 ## Sécurité et confidentialité
 
