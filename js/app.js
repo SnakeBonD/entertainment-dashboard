@@ -1312,6 +1312,18 @@
   function setupTodayFilters() {
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
+    document.getElementById("today-pick-dismiss").addEventListener("click", () => {
+      const dismissedId = state.todayPickedId;
+      if (!dismissedId) return;
+      const dismissedTitle = document.getElementById("today-pick-title").textContent;
+      window.SnakeBonDToday.dismiss(dismissedId);
+      const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+      const visibleItems = window.SnakeBonDToday.visible(allItems, window.SnakeBonDToday.readDismissed()).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
+      const choice = window.SnakeBonDToday.pick(window.SnakeBonDToday.filter(visibleItems, state.todayFilter), state.todayPickOffset++);
+      state.todayPickedId = choice?.id || null;
+      renderToday();
+      offerTodayUndo(`${dismissedTitle} écarté pour aujourd’hui.`, () => { window.SnakeBonDToday.restore(dismissedId); state.todayPickedId = dismissedId; });
+    });
     document.getElementById("today-pick").addEventListener("click", () => {
       const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
       const visibleItems = window.SnakeBonDToday.visible(allItems, window.SnakeBonDToday.readDismissed()).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");

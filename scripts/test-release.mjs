@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.7">v2.7'), "La version visible doit être v2.7");
-assert(indexHtml.includes("v2.7 · Choix express expliqué"), "Le pied de page v2.7 est absent");
+assert(indexHtml.includes('aria-label="Version 2.8">v2.8'), "La version visible doit être v2.8");
+assert(indexHtml.includes("v2.8 · Choix express renouvelé"), "Le pied de page v2.8 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.7**"), "Le README ne présente pas la v2.7");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.7.0`'), "Le cache applicatif n’est pas en v2.7.0");
+assert(readme.includes("version **v2.8**"), "Le README ne présente pas la v2.8");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.8.0`'), "Le cache applicatif n’est pas en v2.8.0");
 
 [
   "application",
@@ -64,6 +64,7 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.7.0`'), "Le cache applicatif n
   "today-pick-title",
   "today-pick-link",
   "today-pick-reason",
+  "today-pick-dismiss",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -87,9 +88,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.7 échouée :");
+  console.error("Certification v2.8 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.7 réussie : ${ids.length} identifiants uniques, choix express expliqué et fonctions historiques conformes.`);
+console.log(`Certification v2.8 réussie : ${ids.length} identifiants uniques, choix express renouvelable et fonctions historiques conformes.`);
