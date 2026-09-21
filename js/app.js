@@ -1294,6 +1294,7 @@
       document.getElementById("today-pick-title").textContent = picked.title;
       document.getElementById("today-pick-meta").textContent = picked.platform || `${picked.station} · ${picked.podcastTitle}`;
       document.getElementById("today-pick-reason").textContent = window.SnakeBonDToday.explain(picked);
+      document.getElementById("today-pick-watchlist").value = window.SnakeBonDWatchlist?.get(picked.id)?.status || "";
       const pickLink = document.getElementById("today-pick-link");
       pickLink.href = picked.url;
       pickLink.textContent = picked.group === "epic" ? "Récupérer ce choix ↗" : "Voir ce choix ↗";
@@ -1312,6 +1313,20 @@
   function setupTodayFilters() {
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
+    document.getElementById("today-pick-watchlist").addEventListener("change", (event) => {
+      const pickedId = state.todayPickedId;
+      if (!pickedId) return;
+      const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+      const picked = allItems.find((item) => item.id === pickedId);
+      if (!picked) return;
+      const previousStatus = window.SnakeBonDWatchlist?.get(pickedId)?.status || "";
+      const nextStatus = event.target.value;
+      const target = { ...picked, platform: picked.platform || picked.station || "Source officielle" };
+      if (nextStatus) window.SnakeBonDWatchlist?.set(target, nextStatus);
+      else window.SnakeBonDWatchlist?.remove(pickedId);
+      renderToday();
+      offerTodayUndo(`${picked.title} : classement modifié.`, () => { if (previousStatus) window.SnakeBonDWatchlist?.set(target, previousStatus); else window.SnakeBonDWatchlist?.remove(pickedId); state.todayPickedId = pickedId; });
+    });
     document.getElementById("today-pick-dismiss").addEventListener("click", () => {
       const dismissedId = state.todayPickedId;
       if (!dismissedId) return;

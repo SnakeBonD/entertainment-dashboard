@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.8">v2.8'), "La version visible doit être v2.8");
-assert(indexHtml.includes("v2.8 · Choix express renouvelé"), "Le pied de page v2.8 est absent");
+assert(indexHtml.includes('aria-label="Version 2.9">v2.9'), "La version visible doit être v2.9");
+assert(indexHtml.includes("v2.9 · Choix express classable"), "Le pied de page v2.9 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.8**"), "Le README ne présente pas la v2.8");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.8.0`'), "Le cache applicatif n’est pas en v2.8.0");
+assert(readme.includes("version **v2.9**"), "Le README ne présente pas la v2.9");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v2.9.0`'), "Le cache applicatif n’est pas en v2.9.0");
 
 [
   "application",
@@ -65,6 +65,7 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.8.0`'), "Le cache applicatif n
   "today-pick-link",
   "today-pick-reason",
   "today-pick-dismiss",
+  "today-pick-watchlist",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -88,9 +89,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.8 échouée :");
+  console.error("Certification v2.9 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.8 réussie : ${ids.length} identifiants uniques, choix express renouvelable et fonctions historiques conformes.`);
+console.log(`Certification v2.9 réussie : ${ids.length} identifiants uniques, choix express classable et fonctions historiques conformes.`);

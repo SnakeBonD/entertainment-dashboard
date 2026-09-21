@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v2.8** permet d’écarter une proposition du Choix express et d’obtenir immédiatement la suivante :
+La version **v2.9** permet de classer directement une proposition du Choix express dans la liste personnelle :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -23,6 +23,7 @@ La version **v2.8** permet d’écarter une proposition du Choix express et d’
 - validation des valeurs restaurées avec repli sûr vers Tout ;
 - raison concise liée à la priorité personnelle, l’expiration, l’offre Epic, la nouveauté ou la publication récente ;
 - action « Un autre choix » depuis la proposition, avec masquage pour la journée et annulation immédiate ;
+- classement du Choix express comme « À découvrir », « En cours », « Terminé » ou « Masqué », avec annulation ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -405,6 +406,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.6** — mémorisation locale et restauration sûre du filtre Aujourd’hui.
 - **v2.7** — explication contextuelle de chaque proposition du Choix express.
 - **v2.8** — remplacement immédiat d’un Choix express, avec masquage quotidien réversible.
+- **v2.9** — classement direct du Choix express dans la liste personnelle, avec annulation.
 
 ## Sécurité et confidentialité
 
