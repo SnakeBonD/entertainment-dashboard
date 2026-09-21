@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-20T04:59:43.573Z",
+  "lastUpdated": "2026-09-21T12:57:27.331Z",
   "items": [
+    {
+      "id": "radio-france-ebccf66e-ae52-489a-98c1-cb3daae1fe76",
+      "title": "L'homme qui a vu l'ours",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/l-homme-qui-a-vu-l-ours-2478740",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/c037cef0-0e77-4158-aad2-f59a8d451f35/10078-21.09.2026-ITEMA_24680313-2026C6612S0264-NET_MFC_027890F7-4090-420E-8914-3D39377B7A2B-25-45ecb4182fbe9fbaa0d88c84ca1ca046.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-09-21T11:30:00.000Z",
+      "durationLabel": "29 min",
+      "description": "En 1997, un ours est aperçu autour de Ploëzal, petite commune des Côtes-d'Armor. Pendant plusieurs semaines, l'ours est vu ou entendu par des habitants, et de nombreux gendarmes se mobilisent, sans succès. Vingt-neuf ans plus tard, les habitants se souviennent. Et s'il n'y avait…",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-21T12:57:27.331Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-3d5bf3ee-d9f2-4e8d-9f2d-ab23d71ea729",
       "title": "Profession pêcheur",
@@ -30,21 +45,6 @@
       "description": "Lundi 11 janvier 2010, jour de fermeture du château de Versailles, la fondation Total organise une journée de visite pour des jeunes encadrés par la Protection Judiciaire de la Jeunesse de Créteil.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-19T04:43:36.562Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-02608520-19c9-4938-aa63-177ae23252e8",
-      "title": "J'ai été néo-nazi",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/5221cf1c-cdf4-408d-b2e3-ae49a624f76d/27742-18.09.2026-ITEMA_24677253-2026C6612S0261-NET_MFC_077D31D7-6335-4186-8BA9-A28D6E4843CF-25-8573fa9a680fac022ef538de01f18f7f.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-09-18T11:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "Amateur de NSBM, “national socialist black metal”, Thomas s’est progressivement laissé séduire par le néo-nazisme. Pendant sept ans, il fut un agent actif de l’idéologie. Aujourd’hui repenti, il raconte. Par Pierre Bafoil.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-18T16:30:28.361Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
