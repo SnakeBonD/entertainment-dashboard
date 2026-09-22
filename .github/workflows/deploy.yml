@@ -42,6 +42,7 @@ jobs:
           node scripts/test-calendar.mjs
           node scripts/test-global-search.mjs
           node scripts/test-today.mjs
+          node scripts/test-today-program.mjs
           node scripts/test-workflows.mjs
           node scripts/test-release.mjs
           node --check js/app.js
@@ -56,6 +57,7 @@ jobs:
           node --check js/source-health.js
           node --check js/watchlist.js
           node --check js/pwa.js
+          node --check js/today-program.js
           node --check service-worker.js
           node --check scripts/archive-expired.mjs
           node --check scripts/epic-games.mjs

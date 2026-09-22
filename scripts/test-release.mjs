@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 2.9">v2.9'), "La version visible doit être v2.9");
-assert(indexHtml.includes("v2.9 · Choix express classable"), "Le pied de page v2.9 est absent");
+assert(indexHtml.includes('aria-label="Version 3.0">v3.0'), "La version visible doit être v3.0");
+assert(indexHtml.includes("v3.0 · Programme du jour"), "Le pied de page v3.0 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v2.9**"), "Le README ne présente pas la v2.9");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v2.9.0`'), "Le cache applicatif n’est pas en v2.9.0");
+assert(readme.includes("version **v3.0**"), "Le README ne présente pas la v3.0");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v3.0.0`'), "Le cache applicatif n’est pas en v3.0.0");
 
 [
   "application",
@@ -66,6 +66,12 @@ assert(serviceWorker.includes('`${CACHE_PREFIX}v2.9.0`'), "Le cache applicatif n
   "today-pick-reason",
   "today-pick-dismiss",
   "today-pick-watchlist",
+  "today-pick-program",
+  "today-program",
+  "today-program-title",
+  "today-program-count",
+  "today-program-list",
+  "today-program-clear",
 ].forEach((id) => assert(indexHtml.includes(`id="${id}"`), `Contrôle stable absent : #${id}`));
 
 const ids = [...indexHtml.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
@@ -89,9 +95,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v2.9 échouée :");
+  console.error("Certification v3.0 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v2.9 réussie : ${ids.length} identifiants uniques, choix express classable et fonctions historiques conformes.`);
+console.log(`Certification v3.0 réussie : ${ids.length} identifiants uniques, programme quotidien et fonctions historiques conformes.`);
