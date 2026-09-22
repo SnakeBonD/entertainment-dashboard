@@ -41,6 +41,7 @@
     const text = document.getElementById("today-notice-text");
     const button = document.getElementById("today-undo");
     window.clearTimeout(state.todayUndoTimer);
+    button.hidden = false;
     text.textContent = message;
     notice.hidden = false;
     button.onclick = () => {
@@ -50,6 +51,17 @@
       renderToday();
     };
     state.todayUndoTimer = window.setTimeout(() => { notice.hidden = true; }, 8000);
+  }
+
+  function showTodayMessage(message) {
+    const notice = document.getElementById("today-notice");
+    const text = document.getElementById("today-notice-text");
+    const button = document.getElementById("today-undo");
+    window.clearTimeout(state.todayUndoTimer);
+    text.textContent = message;
+    button.hidden = true;
+    notice.hidden = false;
+    state.todayUndoTimer = window.setTimeout(() => { notice.hidden = true; }, 5000);
   }
 
   function scheduleFrame(callback) {
@@ -1282,6 +1294,7 @@
   }
 
   function renderToday() {
+    renderTodayProgram();
     const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
     state.todayDismissedIds = window.SnakeBonDToday.readDismissed();
     const visibleItems = window.SnakeBonDToday.visible(allItems, state.todayDismissedIds).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
@@ -1307,12 +1320,40 @@
     const labels={new:"Nouveau",lastChance:"Dernière chance",epic:"Epic Free",podcast:"Podcast récent"};
     const container = document.getElementById("today-results");
     if (!items.length) { const empty=document.createElement("p");empty.className="empty-state";empty.textContent="Aucune suggestion dans ce filtre pour le moment.";container.replaceChildren(empty);return; }
-    container.replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const listLabel=document.createElement("label");listLabel.className="today-watchlist";const listText=document.createElement("span");listText.textContent="Ma liste";const listSelect=document.createElement("select");listSelect.setAttribute("aria-label",`Classer ${item.title} dans ma liste`);[["","Non classé"],["discover","À découvrir"],["progress","En cours"],["done","Terminé"],["hidden","Masqué"]].forEach(([value,text])=>{const option=document.createElement("option");option.value=value;option.textContent=text;listSelect.append(option);});const previousStatus=window.SnakeBonDWatchlist?.get(item.id)?.status||"";listSelect.value=previousStatus;listSelect.addEventListener("change",()=>{const nextStatus=listSelect.value;const target={...item,platform:item.platform||item.station||"Source officielle"};if(nextStatus)window.SnakeBonDWatchlist?.set(target,nextStatus);else window.SnakeBonDWatchlist?.remove(item.id);renderToday();offerTodayUndo(`${item.title} : classement modifié.`,()=>{if(previousStatus)window.SnakeBonDWatchlist?.set(target,previousStatus);else window.SnakeBonDWatchlist?.remove(item.id);});});listLabel.append(listText,listSelect);const actions=document.createElement("div");actions.className="today-card-actions";const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";const dismiss=document.createElement("button");dismiss.className="today-dismiss";dismiss.type="button";dismiss.textContent="Masquer aujourd’hui";dismiss.setAttribute("aria-label",`Masquer ${item.title} pour aujourd’hui`);dismiss.addEventListener("click",()=>{window.SnakeBonDToday.dismiss(item.id);renderToday();offerTodayUndo(`${item.title} masqué pour aujourd’hui.`,()=>window.SnakeBonDToday.restore(item.id));});actions.append(link,dismiss);card.append(badge,title,meta,listLabel,actions);return card;}));
+    container.replaceChildren(...items.map((item)=>{const card=document.createElement("article");card.className="today-card";const badge=document.createElement("span");badge.className=`today-badge today-badge-${item.group}`;badge.textContent=labels[item.group];const title=document.createElement("h2");title.textContent=item.title;const meta=document.createElement("p");meta.textContent=item.platform||`${item.station} · ${item.podcastTitle}`;const listLabel=document.createElement("label");listLabel.className="today-watchlist";const listText=document.createElement("span");listText.textContent="Ma liste";const listSelect=document.createElement("select");listSelect.setAttribute("aria-label",`Classer ${item.title} dans ma liste`);[["","Non classé"],["discover","À découvrir"],["progress","En cours"],["done","Terminé"],["hidden","Masqué"]].forEach(([value,text])=>{const option=document.createElement("option");option.value=value;option.textContent=text;listSelect.append(option);});const previousStatus=window.SnakeBonDWatchlist?.get(item.id)?.status||"";listSelect.value=previousStatus;listSelect.addEventListener("change",()=>{const nextStatus=listSelect.value;const target={...item,platform:item.platform||item.station||"Source officielle"};if(nextStatus)window.SnakeBonDWatchlist?.set(target,nextStatus);else window.SnakeBonDWatchlist?.remove(item.id);renderToday();offerTodayUndo(`${item.title} : classement modifié.`,()=>{if(previousStatus)window.SnakeBonDWatchlist?.set(target,previousStatus);else window.SnakeBonDWatchlist?.remove(item.id);});});listLabel.append(listText,listSelect);const actions=document.createElement("div");actions.className="today-card-actions";const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.group==="epic"?"Récupérer ↗":"Voir ↗";const add=document.createElement("button");add.className="today-program-add";add.type="button";add.textContent="Au programme";add.setAttribute("aria-label",`Ajouter ${item.title} au programme du jour`);add.addEventListener("click",()=>addToTodayProgram(item));const dismiss=document.createElement("button");dismiss.className="today-dismiss";dismiss.type="button";dismiss.textContent="Masquer aujourd’hui";dismiss.setAttribute("aria-label",`Masquer ${item.title} pour aujourd’hui`);dismiss.addEventListener("click",()=>{window.SnakeBonDToday.dismiss(item.id);renderToday();offerTodayUndo(`${item.title} masqué pour aujourd’hui.`,()=>window.SnakeBonDToday.restore(item.id));});actions.append(link,add,dismiss);card.append(badge,title,meta,listLabel,actions);return card;}));
+  }
+
+  function todayProgramItem(item) {
+    return { id:item.id, title:item.title, meta:item.platform||`${item.station} · ${item.podcastTitle}`, url:item.url, group:item.group };
+  }
+
+  function addToTodayProgram(item) {
+    const result = window.SnakeBonDTodayProgram.add(todayProgramItem(item));
+    renderTodayProgram();
+    if (result.status === "duplicate") { showTodayMessage(`${item.title} est déjà dans ton programme.`); return; }
+    if (result.status === "full") { showTodayMessage("Ton programme contient déjà trois choix."); return; }
+    if (result.status !== "added") { showTodayMessage("Impossible de modifier le programme local."); return; }
+    offerTodayUndo(`${item.title} ajouté au programme du jour.`, () => window.SnakeBonDTodayProgram.remove(item.id));
+  }
+
+  function renderTodayProgram() {
+    const items = window.SnakeBonDTodayProgram.read();
+    const list = document.getElementById("today-program-list");
+    document.getElementById("today-program-count").textContent = `${items.length} / ${window.SnakeBonDTodayProgram.MAX_ITEMS}`;
+    document.getElementById("today-program-clear").hidden = items.length === 0;
+    if (!items.length) { const empty=document.createElement("p");empty.className="today-program-empty";empty.textContent="Ajoute jusqu’à trois suggestions pour construire ton programme du jour.";list.replaceChildren(empty);return; }
+    list.replaceChildren(...items.map((item,index)=>{const row=document.createElement("article");row.className="today-program-item";const number=document.createElement("span");number.textContent=String(index+1);const details=document.createElement("div");const title=document.createElement("strong");title.textContent=item.title;const meta=document.createElement("small");meta.textContent=item.meta;details.append(title,meta);const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Ouvrir ↗";const remove=document.createElement("button");remove.className="today-dismiss";remove.type="button";remove.textContent="Retirer";remove.setAttribute("aria-label",`Retirer ${item.title} du programme du jour`);remove.addEventListener("click",()=>{window.SnakeBonDTodayProgram.remove(item.id);renderTodayProgram();});row.append(number,details,link,remove);return row;}));
   }
 
   function setupTodayFilters() {
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
+    document.getElementById("today-program-clear").addEventListener("click", () => { window.SnakeBonDTodayProgram.clear(); renderTodayProgram(); });
+    document.getElementById("today-pick-program").addEventListener("click", () => {
+      const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+      const picked = allItems.find((item) => item.id === state.todayPickedId);
+      if (picked) addToTodayProgram(picked);
+    });
     document.getElementById("today-pick-watchlist").addEventListener("change", (event) => {
       const pickedId = state.todayPickedId;
       if (!pickedId) return;
