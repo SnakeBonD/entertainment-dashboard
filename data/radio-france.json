@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-23T17:10:28.828Z",
+  "lastUpdated": "2026-09-23T21:34:04.843Z",
   "items": [
     {
       "id": "radio-france-fb08d6a1-df8a-4168-8388-7a44ddf9bd75",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-b823942f-776d-4975-8ca3-f94bc0478424",
+      "title": "Viser la Lune : La catastrophe d’Apollo 1",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/d6abd07c-de5c-422d-8d2a-6ef121884174/26774-16.02.2026-ITEMA_24593706-2026F22805S0047-NET_MFI_58C39D20-43C5-4043-8491-30E8A3BC7645-27-30995b61841bd0b3440f974109fad941.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2026/02/e0d2fcb2-d324-4765-a850-bb0276f4a377/1400x1400_sc_carre-viser-la-lune.jpg",
+      "publishedAt": "2026-09-23T21:12:50.000Z",
+      "durationLabel": "48 min",
+      "description": "Aujourd’hui dans Affaires Sensibles, la catastrophe d’Apollo 1",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-23T21:34:04.843Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-45a96e90-d5b2-47a5-af6e-8881c71f375f",
       "title": "Les Invité.es : Chloé Gerbier, juriste, et Joël Domenjoud, militant écologiste, de l'association \"Terres de Luttes\"",
       "podcastTitle": "Affaires sensibles",
@@ -73,21 +88,6 @@
       "publishedAt": "2026-09-23T13:04:50.000Z",
       "durationLabel": "35 min",
       "description": ".",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-23T17:10:28.828Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-c549bf44-ffc0-454f-a356-0d461ca539be",
-      "title": "No TAV, le mouvement d’opposition à la ligne ferroviaire Lyon-Turin - L'intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/no-tav-le-mouvement-d-opposition-a-la-ligne-ferroviaire-lyon-turin-l-integrale-2139326",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/fc3a8640-16dd-4cad-ab3c-cae206ab2cf8/26774-26.08.2026-ITEMA_24643520-2026F22805S0238-NET_MFI_4F57419E-9B9E-4B92-ABCE-7036C9E07D60-27-e7154efaaafc566ed07aafe70134a2a3.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-23T13:04:40.000Z",
-      "durationLabel": "50 min",
-      "description": "Aujourd’hui dans Affaires sensibles, No TAV, le mouvement d’opposition à la ligne ferroviaire Lyon-Turin.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-23T17:10:28.828Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
