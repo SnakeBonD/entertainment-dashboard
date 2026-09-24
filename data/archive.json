@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-17T17:09:23.515Z",
+  "lastUpdated": "2026-09-24T17:22:01.590Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -93,6 +93,52 @@
       "verificationNote": "not_in_current_feed",
       "lastCheckedAt": "2026-09-17T17:09:22.443Z",
       "archivedAt": "2026-09-17T17:09:23.515Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-8a20c6c8d5b5417e800c687e9d72013e-2026-09-17",
+      "title": "Mindcop",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/mindcop-78e6c1",
+      "country": "FR",
+      "addedDate": "2026-09-17",
+      "promotionStartDate": "2026-09-17T15:00:00.000Z",
+      "expiryDate": "2026-09-24T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-09-17T17:09:22.443Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "8a20c6c8d5b5417e800c687e9d72013e",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/984cdc148ea6423e866ca6e04a1b429f/mindcop-kplp1.jpg",
+      "originalPrice": "14,99 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-09-24T17:22:00.438Z",
+      "archivedAt": "2026-09-24T17:22:01.590Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-b9ff3f98367a45cdac289dff6683a2bc-2026-09-17",
+      "title": "Shogun Showdown",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/shogun-showdown-61832d",
+      "country": "FR",
+      "addedDate": "2026-09-17",
+      "promotionStartDate": "2026-09-17T15:00:00.000Z",
+      "expiryDate": "2026-09-24T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-09-17T17:09:22.443Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "b9ff3f98367a45cdac289dff6683a2bc",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/450bcfdb9c00453394d7ccc2948ba5db/shogun-showdown-hz1yh.jpg",
+      "originalPrice": "13,49 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-09-24T17:22:00.438Z",
+      "archivedAt": "2026-09-24T17:22:01.590Z",
       "archiveReason": "expired"
     }
   ]

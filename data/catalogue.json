@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-21T18:18:10.728Z",
+  "lastUpdated": "2026-09-24T17:22:01.590Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -609,42 +609,42 @@
       "lastCheckedAt": "2026-09-11T16:44:05.801Z"
     },
     {
-      "id": "epic-8a20c6c8d5b5417e800c687e9d72013e-2026-09-17",
-      "title": "Mindcop",
+      "id": "epic-6d99eae44d724baf84d6261a7a0f05d2-2026-09-24",
+      "title": "Mechabellum",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/mindcop-78e6c1",
+      "url": "https://store.epicgames.com/fr/p/mechabellum-88a843",
       "country": "FR",
-      "addedDate": "2026-09-17",
-      "promotionStartDate": "2026-09-17T15:00:00.000Z",
-      "expiryDate": "2026-09-24T15:00:00.000Z",
+      "addedDate": "2026-09-24",
+      "promotionStartDate": "2026-09-24T15:00:00.000Z",
+      "expiryDate": "2026-10-01T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-09-17T17:09:22.443Z",
+      "verifiedAt": "2026-09-24T17:22:00.438Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "8a20c6c8d5b5417e800c687e9d72013e",
+      "externalId": "6d99eae44d724baf84d6261a7a0f05d2",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/984cdc148ea6423e866ca6e04a1b429f/mindcop-kplp1.jpg",
-      "originalPrice": "14,99 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/131adc2288294d74aaff6a2f02b51d59/mechabellum-95319.jpg",
+      "originalPrice": "14,79 €"
     },
     {
-      "id": "epic-b9ff3f98367a45cdac289dff6683a2bc-2026-09-17",
-      "title": "Shogun Showdown",
+      "id": "epic-7c14bf0cffdd43be968fdcf28e5af653-2026-09-24",
+      "title": "Astrea Six Sided Oracles",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/shogun-showdown-61832d",
+      "url": "https://store.epicgames.com/fr/p/astrea-six-sided-oracles-33c949",
       "country": "FR",
-      "addedDate": "2026-09-17",
-      "promotionStartDate": "2026-09-17T15:00:00.000Z",
-      "expiryDate": "2026-09-24T15:00:00.000Z",
+      "addedDate": "2026-09-24",
+      "promotionStartDate": "2026-09-24T15:00:00.000Z",
+      "expiryDate": "2026-10-01T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-09-17T17:09:22.443Z",
+      "verifiedAt": "2026-09-24T17:22:00.438Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "b9ff3f98367a45cdac289dff6683a2bc",
+      "externalId": "7c14bf0cffdd43be968fdcf28e5af653",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/450bcfdb9c00453394d7ccc2948ba5db/shogun-showdown-hz1yh.jpg",
-      "originalPrice": "13,49 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/4515173972ae4444a2582bc690c150bd/astrea-six-sided-oracles-offer-bvy0n.png",
+      "originalPrice": "22,39 €"
     }
   ]
 }
