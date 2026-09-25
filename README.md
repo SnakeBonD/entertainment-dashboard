@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v3.0** introduit un Programme du jour local composé de trois suggestions au maximum :
+La version **v3.1** rend le Programme du jour réorganisable localement. Il reste composé de trois suggestions au maximum :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -26,6 +26,7 @@ La version **v3.0** introduit un Programme du jour local composé de trois sugge
 - classement du Choix express comme « À découvrir », « En cours », « Terminé » ou « Masqué », avec annulation ;
 - programme quotidien de trois contenus au maximum, alimenté depuis le Choix express ou les cartes Aujourd’hui ;
 - accès direct, retrait individuel et remise à zéro automatique du programme au changement de jour ;
+- déplacement accessible de chaque choix vers le haut ou le bas, avec ordre conservé pour la journée ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -410,6 +411,7 @@ déploiement : la publication normale de `main` suffit.
 - **v2.8** — remplacement immédiat d’un Choix express, avec masquage quotidien réversible.
 - **v2.9** — classement direct du Choix express dans la liste personnelle, avec annulation.
 - **v3.0** — programme quotidien local de trois contenus, accessible depuis les suggestions Aujourd’hui.
+- **v3.1** — réorganisation accessible et persistante du Programme du jour.
 
 ## Sécurité et confidentialité
 
