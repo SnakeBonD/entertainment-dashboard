@@ -15,6 +15,7 @@
       meta: typeof item.meta === "string" ? item.meta : "Source officielle",
       url: item.url,
       group: typeof item.group === "string" ? item.group : "new",
+      done: item.done === true,
     };
   };
   function read(storage = window.localStorage, now = new Date()) {
@@ -62,9 +63,17 @@
     write(next, storage, now);
     return next;
   }
+  function toggleDone(id, storage = window.localStorage, now = new Date()) {
+    const items = read(storage, now);
+    const index = items.findIndex((item) => item.id === id);
+    if (index < 0) return items;
+    const next = items.map((item, itemIndex) => itemIndex === index ? { ...item, done: !item.done } : item);
+    write(next, storage, now);
+    return next;
+  }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, toggleDone };
 })();
