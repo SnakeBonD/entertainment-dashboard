@@ -59,7 +59,7 @@ assert(indexHtml.includes('id="app-offline-state"'), "Le diagnostic hors ligne e
 assert(indexHtml.includes('id="app-update-state"'), "Le diagnostic de mise à jour est absent");
 assert(indexHtml.includes('id="check-app-update"'), "La recherche manuelle de mise à jour est absente");
 assert(indexHtml.includes('src="js/pwa.js"'), "Le contrôleur PWA n’est pas chargé");
-assert(indexHtml.includes("v3.4"), "La version v3.4 est absente du HTML");
+assert(indexHtml.includes("v3.5"), "La version v3.5 est absente du HTML");
 assert(manifest.shortcuts?.some((shortcut) => shortcut.url === "./#agenda"), "Le raccourci Agenda est absent du manifeste");
 
 const pwaScript = read("js/pwa.js");
@@ -74,10 +74,10 @@ assert(pwaScript.includes("navigator.serviceWorker.ready"), "L’état prêt du 
 assert(pwaScript.includes("controllerchange"), "L’application d’une nouvelle version n’est pas gérée");
 
 const serviceWorker = read("service-worker.js");
-assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v3.4.0`'), "La version du cache v3.4 est absente");
-assert(serviceWorker.includes('"./js/today.js?v=3.4.0"'), "L’espace Aujourd’hui versionné n’est pas disponible hors ligne");
-assert(serviceWorker.includes('"./js/today-program.js?v=3.4.0"'), "Le programme quotidien n’est pas disponible hors ligne");
-assert(serviceWorker.includes('"./js/app.js?v=3.4.0"'), "Le contrôleur versionné n’est pas disponible hors ligne");
+assert(serviceWorker.includes('CACHE_NAME = `${CACHE_PREFIX}v3.5.0`'), "La version du cache v3.5 est absente");
+assert(serviceWorker.includes('"./js/today.js?v=3.5.0"'), "L’espace Aujourd’hui versionné n’est pas disponible hors ligne");
+assert(serviceWorker.includes('"./js/today-program.js?v=3.5.0"'), "Le programme quotidien n’est pas disponible hors ligne");
+assert(serviceWorker.includes('"./js/app.js?v=3.5.0"'), "Le contrôleur versionné n’est pas disponible hors ligne");
 assert(serviceWorker.includes('"./js/global-search.js"'), "La recherche globale n’est pas disponible hors ligne");
 assert(serviceWorker.includes('"./js/backup.js"'), "Le module de sauvegarde n’est pas disponible hors ligne");
 assert(serviceWorker.includes('"./js/calendar.js"'), "Le module calendrier n’est pas disponible hors ligne");
