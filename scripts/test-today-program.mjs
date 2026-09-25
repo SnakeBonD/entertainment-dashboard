@@ -38,5 +38,6 @@ assert(app.includes("addToTodayProgram"));
 assert(app.includes("SnakeBonDTodayProgram.add"));
 assert(app.includes("SnakeBonDTodayProgram.move"));
 assert(app.includes("SnakeBonDTodayProgram.toggleDone"));
+assert(app.includes("today-program-progress"));
 assert(app.includes("today-pick-program"));
-console.log("Programme du jour v3.2 validé : progression, réorganisation, limites, doublons, retrait et réinitialisation quotidienne conformes.");
+console.log("Programme du jour v3.3 validé : indicateur global, progression, réorganisation et limites conformes.");
