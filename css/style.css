@@ -877,6 +877,10 @@ p {
 .today-program-heading span { color:#85e89d; font-size:.72rem; font-weight:850; text-transform:uppercase; }
 .today-program-heading h2 { margin:.2rem 0 0; font-size:1.05rem; }
 .today-program-heading > strong { color:#85e89d; }
+.today-program-progress { width:100%; height:.42rem; margin-top:.7rem; border:0; border-radius:999px; overflow:hidden; background:var(--line); }
+.today-program-progress::-webkit-progress-bar { background:var(--line); }
+.today-program-progress::-webkit-progress-value { background:#85e89d; }
+.today-program-progress::-moz-progress-bar { background:#85e89d; }
 .today-program-list { display:grid; gap:.55rem; margin-top:.75rem; }
 .today-program-empty { margin:0; color:var(--muted); font-size:.88rem; }
 .today-program-item { display:grid; grid-template-columns:auto minmax(0,1fr) auto auto auto auto; gap:.75rem; align-items:center; padding:.65rem .75rem; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
