@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v3.4** ajoute une action groupée au Programme du jour, toujours localement et pour trois suggestions au maximum :
+La version **v3.5** rend les actions du Programme du jour annulables, toujours localement et pour trois suggestions au maximum :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -30,6 +30,7 @@ La version **v3.4** ajoute une action groupée au Programme du jour, toujours lo
 - marquage d’un choix comme terminé, avec réactivation possible et état conservé après rechargement ;
 - compteur des choix terminés et barre de progression mis à jour instantanément ;
 - action accessible pour terminer ou réactiver tous les choix en une fois ;
+- annulation pendant huit secondes après un déplacement, un retrait, un changement de progression ou un vidage ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -418,6 +419,7 @@ déploiement : la publication normale de `main` suffit.
 - **v3.2** — suivi local des choix terminés dans le Programme du jour.
 - **v3.3** — indicateur global de progression du Programme du jour.
 - **v3.4** — progression groupée de tous les choix du Programme du jour.
+- **v3.5** — annulation immédiate des modifications du Programme du jour.
 
 ## Sécurité et confidentialité
 

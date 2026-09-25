@@ -78,9 +78,20 @@
     write(next, storage, now);
     return next;
   }
+  function replace(items, storage = window.localStorage, now = new Date()) {
+    if (!Array.isArray(items)) return false;
+    const seen = new Set();
+    const safeItems = items.flatMap((item) => {
+      const safe = sanitizeItem(item);
+      if (!safe || seen.has(safe.id)) return [];
+      seen.add(safe.id);
+      return [safe];
+    }).slice(0, MAX_ITEMS);
+    return write(safeItems, storage, now);
+  }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, setAllDone, toggleDone };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, replace, setAllDone, toggleDone };
 })();
