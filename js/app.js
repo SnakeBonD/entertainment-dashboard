@@ -1343,14 +1343,27 @@
     document.getElementById("today-program-count").textContent = `${doneCount} terminé${doneCount > 1 ? "s" : ""} · ${items.length} / ${window.SnakeBonDTodayProgram.MAX_ITEMS}`;
     document.getElementById("today-program-progress").value = doneCount;
     document.getElementById("today-program-clear").hidden = items.length === 0;
+    const toggleAll = document.getElementById("today-program-toggle-all");
+    toggleAll.hidden = items.length === 0;
+    toggleAll.textContent = items.length > 0 && doneCount === items.length ? "Tout réactiver" : "Tout terminer";
+    toggleAll.setAttribute("aria-pressed", String(items.length > 0 && doneCount === items.length));
     if (!items.length) { const empty=document.createElement("p");empty.className="today-program-empty";empty.textContent="Ajoute jusqu’à trois suggestions pour construire ton programme du jour.";list.replaceChildren(empty);return; }
     list.replaceChildren(...items.map((item,index)=>{const row=document.createElement("article");row.className=`today-program-item${item.done?" is-done":""}`;const number=document.createElement("span");number.textContent=item.done?"✓":String(index+1);const details=document.createElement("div");const title=document.createElement("strong");title.textContent=item.title;const meta=document.createElement("small");meta.textContent=item.meta;details.append(title,meta);const complete=document.createElement("button");complete.className="today-program-complete";complete.type="button";complete.textContent=item.done?"Réactiver":"Terminé";complete.setAttribute("aria-pressed",String(item.done));complete.setAttribute("aria-label",`${item.done?"Réactiver":"Marquer comme terminé"} ${item.title}`);complete.addEventListener("click",()=>{window.SnakeBonDTodayProgram.toggleDone(item.id);renderTodayProgram();});const order=document.createElement("div");order.className="today-program-order";[["up","↑","Monter"],["down","↓","Descendre"]].forEach(([direction,symbol,label])=>{const button=document.createElement("button");button.type="button";button.textContent=symbol;button.disabled=direction==="up"?index===0:index===items.length-1;button.setAttribute("aria-label",`${label} ${item.title} dans le programme`);button.addEventListener("click",()=>{window.SnakeBonDTodayProgram.move(item.id,direction);renderTodayProgram();});order.append(button);});const link=document.createElement("a");link.className="external-link";link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Ouvrir ↗";const remove=document.createElement("button");remove.className="today-dismiss";remove.type="button";remove.textContent="Retirer";remove.setAttribute("aria-label",`Retirer ${item.title} du programme du jour`);remove.addEventListener("click",()=>{window.SnakeBonDTodayProgram.remove(item.id);renderTodayProgram();});row.append(number,details,complete,order,link,remove);return row;}));
   }
 
   function setupTodayFilters() {
+    const clearProgram = document.getElementById("today-program-clear");
+    const toggleAllProgram = document.createElement("button");
+    toggleAllProgram.id = "today-program-toggle-all";
+    toggleAllProgram.className = "today-program-add";
+    toggleAllProgram.type = "button";
+    toggleAllProgram.hidden = true;
+    toggleAllProgram.setAttribute("aria-pressed", "false");
+    clearProgram.before(toggleAllProgram);
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
-    document.getElementById("today-program-clear").addEventListener("click", () => { window.SnakeBonDTodayProgram.clear(); renderTodayProgram(); });
+    clearProgram.addEventListener("click", () => { window.SnakeBonDTodayProgram.clear(); renderTodayProgram(); });
+    document.getElementById("today-program-toggle-all").addEventListener("click", () => { const items=window.SnakeBonDTodayProgram.read();window.SnakeBonDTodayProgram.setAllDone(!items.every((item)=>item.done));renderTodayProgram(); });
     document.getElementById("today-pick-program").addEventListener("click", () => {
       const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
       const picked = allItems.find((item) => item.id === state.todayPickedId);

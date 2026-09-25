@@ -71,9 +71,16 @@
     write(next, storage, now);
     return next;
   }
+  function setAllDone(done, storage = window.localStorage, now = new Date()) {
+    const items = read(storage, now);
+    if (!items.length || typeof done !== "boolean") return items;
+    const next = items.map((item) => ({ ...item, done }));
+    write(next, storage, now);
+    return next;
+  }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, toggleDone };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, setAllDone, toggleDone };
 })();
