@@ -51,9 +51,20 @@
     write(next, storage, now);
     return next;
   }
+  function move(id, direction, storage = window.localStorage, now = new Date()) {
+    const items = read(storage, now);
+    const sourceIndex = items.findIndex((item) => item.id === id);
+    const offset = direction === "up" ? -1 : direction === "down" ? 1 : 0;
+    const targetIndex = sourceIndex + offset;
+    if (!offset || sourceIndex < 0 || targetIndex < 0 || targetIndex >= items.length) return items;
+    const next = [...items];
+    [next[sourceIndex], next[targetIndex]] = [next[targetIndex], next[sourceIndex]];
+    write(next, storage, now);
+    return next;
+  }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, read, remove };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove };
 })();
