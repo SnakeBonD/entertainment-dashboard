@@ -26,6 +26,9 @@ assert.deepEqual(Array.from(program.move("missing", "up", storage, now), (entry)
 assert.equal(program.toggleDone("a", storage, now).find((entry) => entry.id === "a").done, true);
 assert.equal(program.read(storage, now).find((entry) => entry.id === "a").done, true);
 assert.equal(program.toggleDone("a", storage, now).find((entry) => entry.id === "a").done, false);
+assert.equal(program.setAllDone(true, storage, now).every((entry) => entry.done), true);
+assert.equal(program.setAllDone(false, storage, now).some((entry) => entry.done), false);
+assert.equal(program.setAllDone("yes", storage, now).some((entry) => entry.done), false);
 assert.deepEqual(Array.from(program.toggleDone("missing", storage, now), (entry) => entry.id), ["c", "a", "b"]);
 assert.deepEqual(Array.from(program.remove("b", storage, now), (entry) => entry.id), ["c", "a"]);
 assert.deepEqual(Array.from(program.read(storage, new Date("2026-09-23T10:00:00Z"))), []);
@@ -38,6 +41,7 @@ assert(app.includes("addToTodayProgram"));
 assert(app.includes("SnakeBonDTodayProgram.add"));
 assert(app.includes("SnakeBonDTodayProgram.move"));
 assert(app.includes("SnakeBonDTodayProgram.toggleDone"));
+assert(app.includes("SnakeBonDTodayProgram.setAllDone"));
 assert(app.includes("today-program-progress"));
 assert(app.includes("today-pick-program"));
-console.log("Programme du jour v3.3 validé : indicateur global, progression, réorganisation et limites conformes.");
+console.log("Programme du jour v3.4 validé : progression groupée, indicateur global, réorganisation et limites conformes.");
