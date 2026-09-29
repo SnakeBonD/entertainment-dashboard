@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-09-29T13:01:34.399Z",
+  "lastUpdated": "2026-09-29T22:21:20.581Z",
   "items": [
     {
       "id": "radio-france-cf855ecf-8cd4-491e-8e8a-b149a7de2b78",
@@ -48,6 +48,36 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-81fb8613-2567-4c04-aacf-dc065eb6436e",
+      "title": "Invité : Thierry Lévêque, journaliste indépendant spécialiste des affaires judiciaires",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-mardi-01-septembre-2026-6406466",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/ae54d28d-f98f-42ef-99df-0ad9ca46ee70/26774-01.09.2026-ITEMA_24653276-2026F22805S4244-NET_MFI_B1F74F50-81F8-41AB-B37E-2D05C1D6E3C7-27-a183adb457fde78a7c0cb7de0cf7f9be.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-29T13:41:00.000Z",
+      "durationLabel": "16 min",
+      "description": "équipe : Frédéric Milano, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire, Marjolaine Koch - invités : Thierry Lévêque Journaliste indépendant",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-29T22:21:20.581Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-c2abd0d2-6ecb-4796-b661-ff4ab1c133a9",
+      "title": "Le trésor de guerre disparu de la DGSE - Le récit",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-le-recit-du-mardi-01-septembre-2026-5055733",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/ad3f9528-edb5-4c88-ae62-5cb3035cda7d/26774-01.09.2026-ITEMA_24653276-2026F22805S1244-NET_MFI_E6BF3085-2CEC-4E70-AB32-C85A42E012A5-27-54f77d9fb3d3c9fb52894737b0af8c6c.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-09-29T13:04:50.000Z",
+      "durationLabel": "32 min",
+      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire",
+      "provider": "radio-france",
+      "verifiedAt": "2026-09-29T22:21:20.581Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-489ba1e0-287b-41e9-a999-6da138a876b3",
       "title": "Le Trésor perdu de la DGSE - L'intégrale",
       "podcastTitle": "Affaires sensibles",
@@ -60,36 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles le trésor perdu de la DGSE.",
       "provider": "radio-france",
       "verifiedAt": "2026-09-29T13:01:34.399Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-31601d34-fb88-4c3b-b6d5-d2211efeca76",
-      "title": "L'invité : Rudy Reichstadt, politologue et directeur du site “Conspiracy Watch”",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-lundi-31-aout-2026-1225456",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/49aa2dd6-bcc1-44f4-b98b-bd16a18822ae/26774-31.08.2026-ITEMA_24651394-2026F22805S4243-NET_MFI_774E15BB-BB18-4ABF-8DC7-F8D902DBAD19-27-61fe180452386c0c36fa498745934d85.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-28T13:41:00.000Z",
-      "durationLabel": "14 min",
-      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire - invités : Rudy Reichstadt Politologue, fondateur de Conspiracy Watch",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-28T14:06:45.122Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-b9030a56-139d-4edd-a63d-5acf6e4c06f3",
-      "title": "Histoire d'un faux livre : Les protocoles des sages de Sion -Récit",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/c88d8d89-75ab-40fb-bd42-e09fbb30577f/26774-31.08.2026-ITEMA_24651394-2026F22805S1243-NET_MFI_E2B2C6F9-7A6D-4402-ADB9-8ED2BF381F66-27-788644671b017985fd5fb5c7876af8f7.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-28T13:04:50.000Z",
-      "durationLabel": "36 min",
-      "description": "Aujourd'hui dans Affaires Sensibles, on revient sur l'histoire du livre : Les protocoles des sages de Sion",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-28T14:06:45.122Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
