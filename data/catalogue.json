@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-29T18:13:59.739Z",
+  "lastUpdated": "2026-09-30T05:55:37.898Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -464,17 +464,15 @@
       "addedDate": "2026-09-22",
       "availabilityStartDate": "2026-09-22T03:00:00Z",
       "expiryDate": "2027-04-29T03:00:00Z",
-      "verified": false,
-      "verifiedAt": "2026-09-28T05:47:59.666Z",
+      "verified": true,
+      "verifiedAt": "2026-09-30T05:55:37.898Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "122704-002-A",
       "description": "Au tournant du XXIe siècle, le groupe LVMH multiplie les offensives, transformant chaque revers en profits massifs.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/cL9HS8frcWiyhoYQS4BHtL/768x432?type=TEXT",
       "durationLabel": "62 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE",
-      "verificationNote": "not_in_current_selection",
-      "lastCheckedAt": "2026-09-29T18:13:59.739Z"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-123344-000-A-2026-09-08",
