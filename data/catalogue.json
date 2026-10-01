@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-01T18:33:35.270Z",
+  "lastUpdated": "2026-10-01T22:47:30.691Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -797,6 +797,44 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-11T16:44:05.801Z"
+    },
+    {
+      "id": "epic-7ae00c3e89174012b175cc73b4737723-2026-10-01",
+      "title": "System Shock 2: 25th Anniversary Remaster",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/system-shock-2-25th-anniversary-remaster-cb94d9",
+      "country": "FR",
+      "addedDate": "2026-10-01",
+      "promotionStartDate": "2026-10-01T15:00:00.000Z",
+      "expiryDate": "2026-10-08T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-10-01T22:47:30.691Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "7ae00c3e89174012b175cc73b4737723",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/690ff600d5134d9ab12c96862ed5257a/system-shock-2-25th-anniversary-remaster-1e28j.jpg",
+      "originalPrice": "26,99 €"
+    },
+    {
+      "id": "epic-af4c34934afe4db0870b8a1d82dceb94-2026-10-01",
+      "title": "BURIED STARS",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/buried-stars-d7c88c",
+      "country": "FR",
+      "addedDate": "2026-10-01",
+      "promotionStartDate": "2026-10-01T15:00:00.000Z",
+      "expiryDate": "2026-10-08T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-10-01T22:47:30.691Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "af4c34934afe4db0870b8a1d82dceb94",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/e2dc55c2709641a18fc37ef7ce32cfdd/buried-stars-1j9of.jpg",
+      "originalPrice": "33,99 €"
     }
   ]
 }
