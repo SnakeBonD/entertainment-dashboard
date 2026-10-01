@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-09-29T05:53:44.387Z",
+  "lastUpdated": "2026-10-01T18:33:35.270Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -163,6 +163,48 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-10T16:39:08.232Z",
       "archivedAt": "2026-09-29T05:53:44.387Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-6d99eae44d724baf84d6261a7a0f05d2-2026-09-24",
+      "title": "Mechabellum",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/mechabellum-88a843",
+      "country": "FR",
+      "addedDate": "2026-09-24",
+      "promotionStartDate": "2026-09-24T15:00:00.000Z",
+      "expiryDate": "2026-10-01T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-09-24T17:22:00.438Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "6d99eae44d724baf84d6261a7a0f05d2",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/131adc2288294d74aaff6a2f02b51d59/mechabellum-95319.jpg",
+      "originalPrice": "14,79 €",
+      "archivedAt": "2026-10-01T18:33:35.270Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-7c14bf0cffdd43be968fdcf28e5af653-2026-09-24",
+      "title": "Astrea Six Sided Oracles",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/astrea-six-sided-oracles-33c949",
+      "country": "FR",
+      "addedDate": "2026-09-24",
+      "promotionStartDate": "2026-09-24T15:00:00.000Z",
+      "expiryDate": "2026-10-01T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-09-24T17:22:00.438Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "7c14bf0cffdd43be968fdcf28e5af653",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/4515173972ae4444a2582bc690c150bd/astrea-six-sided-oracles-offer-bvy0n.png",
+      "originalPrice": "22,39 €",
+      "archivedAt": "2026-10-01T18:33:35.270Z",
       "archiveReason": "expired"
     }
   ]
