@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-01T13:27:48.891Z",
+  "lastUpdated": "2026-10-01T22:45:13.905Z",
   "items": [
     {
       "id": "radio-france-151a5a1a-39e5-4675-8976-c1ae7e8ddde5",
@@ -8,13 +8,13 @@
       "podcastTitle": "Les pieds sur terre",
       "station": "France Culture",
       "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/44aefd2e-ade7-4cb4-b701-12294d34a2cb/27742-10.10.2025-ITEMA_24669167-2025C6612E6642-ITE_00153828_RSCE-25-3b3f188252f4d52ef91db181500ab209.m4a",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/44aefd2e-ade7-4cb4-b701-12294d34a2cb/27742-10.10.2025-ITEMA_24669167-2025C6612E6642-ITE_00153828_RSCE-25-eeb237fa52b2a79f3253846965e2f257.m4a",
       "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2025/10/7acb2d82-1b37-4261-8fcd-5c08ca78cdb4/1400x1400_sc_carre-meme-pas-mort-2.jpg",
       "publishedAt": "2026-10-01T11:30:00.000Z",
       "durationLabel": "31 min",
       "description": "Grégoire s’est beaucoup cherché, et au collège, le royaume de l’intolérance, les autres n’ont pas toujours été tendres avec lui. Heureusement, sur sa route, il a fait des rencontres : Zoé, sa meilleure amie de lycée et Joé, un ami rencontré sur une application. À eux, il disait…",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-01T13:27:48.891Z",
+      "verifiedAt": "2026-10-01T22:45:13.905Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-19577170-dfc8-4b70-9935-9855389f817d",
+      "title": "L'invité : Jean Pelletier, journaliste québécois, co-auteur du livre « Évadés d’Iran » (Ed. La Presse, 1981)",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-jeudi-03-septembre-2026-3767660",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/c38ecb13-f5ae-4c8b-ad45-ee089e7b33b8/26774-03.09.2026-ITEMA_24656379-2026F22805S4246-NET_MFI_75531289-8F92-4143-AEB7-9438FC5E800E-27-9874ee74766b308802790b2d120f97cd.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-01T13:41:00.000Z",
+      "durationLabel": "14 min",
+      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-01T22:45:13.905Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-7e4ed318-e16f-4110-b390-49a252875323",
       "title": "L'opération Argo - le récit",
       "podcastTitle": "Affaires sensibles",
@@ -75,21 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles, l’opération Argo ou l’exfiltration de six diplomates états-uniens à Téhéran",
       "provider": "radio-france",
       "verifiedAt": "2026-10-01T13:27:48.891Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-4ddc201c-b7e5-413e-842d-a126f7bbff7c",
-      "title": "Invité : Le journaliste Geoffrey Le Guilcher, auteur des \"Deux Mégots\" (Ed. Goutte d’Or)",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-mercredi-02-septembre-2026-6467882",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0b291514-e36d-46be-ab15-b242acf21446/26774-02.09.2026-ITEMA_24654799-2026F22805S4245-NET_MFI_E481EB69-30CF-4C49-ADBC-F8F07F168661-27-0b289936922e55884efa641d02ce4924.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-09-30T13:41:00.000Z",
-      "durationLabel": "16 min",
-      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire - invités : Geoffrey Le Guilcher Journaliste indépendant",
-      "provider": "radio-france",
-      "verifiedAt": "2026-09-30T22:21:26.028Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
