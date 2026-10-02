@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-02T05:54:22.864Z",
+  "lastUpdated": "2026-10-02T18:00:16.168Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -612,7 +612,7 @@
       "addedDate": "2026-09-28",
       "availabilityStartDate": "2026-09-28T03:00:00Z",
       "expiryDate": "2026-10-28T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-01T18:33:32.482Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -620,7 +620,9 @@
       "description": "Quand un détenu se prend de passion por les oiseaux. Un étonnant film carcéral où Burt Lancaster, de tous les plans, bouleverse.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/muoCWDkvWJnzwaiTj95Fni/768x432?type=TEXT",
       "durationLabel": "143 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-02T18:00:16.168Z"
     },
     {
       "id": "arte-129315-000-A-2026-09-09",
