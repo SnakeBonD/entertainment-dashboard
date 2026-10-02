@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-01T22:47:30.691Z",
+  "lastUpdated": "2026-10-02T05:54:22.864Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -235,28 +235,6 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-09T15:11:23.420Z"
-    },
-    {
-      "id": "arte-079365-000-A-2026-09-02",
-      "title": "Family Mix",
-      "type": "movie",
-      "platform": "ARTE",
-      "url": "https://www.arte.tv/fr/videos/079365-000-A/family-mix/",
-      "country": "FR",
-      "addedDate": "2026-09-02",
-      "availabilityStartDate": "2026-09-02T03:00:00Z",
-      "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": false,
-      "verifiedAt": "2026-09-07T19:27:42.858Z",
-      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
-      "provider": "arte",
-      "externalId": "079365-000-A",
-      "description": "L'irrésistible chronique d'une famille recomposée germano-turque dont l'humour trash égratigne les clichés culturels.",
-      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/HF28gSZ7QVUMpFRnqbb4Tm/768x432?type=TEXT",
-      "durationLabel": "105 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE",
-      "verificationNote": "not_in_current_selection",
-      "lastCheckedAt": "2026-09-08T15:07:30.207Z"
     },
     {
       "id": "arte-087848-000-A-2026-09-28",
@@ -579,28 +557,6 @@
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DsSdMujLVwBi3pvAe2Na8f/768x432?type=TEXT",
       "durationLabel": "101 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
-    },
-    {
-      "id": "arte-124739-000-A-2026-09-02",
-      "title": "L'histoire de Souleymane",
-      "type": "movie",
-      "platform": "ARTE",
-      "url": "https://www.arte.tv/fr/videos/124739-000-A/l-histoire-de-souleymane/",
-      "country": "FR",
-      "addedDate": "2026-09-02",
-      "availabilityStartDate": "2026-09-02T03:00:00Z",
-      "expiryDate": "2026-10-02T03:00:00Z",
-      "verified": false,
-      "verifiedAt": "2026-09-10T05:12:23.310Z",
-      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
-      "provider": "arte",
-      "externalId": "124739-000-A",
-      "description": "Livreur à vélo, Souleymane pédale dans la nuit parisienne pour un salaire de misère, et rêve du sésame des papiers.",
-      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/UAbVHBpFnqmFCwGFpEWwaF/768x432?type=TEXT",
-      "durationLabel": "90 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE",
-      "verificationNote": "not_in_current_selection",
-      "lastCheckedAt": "2026-09-10T16:39:08.232Z"
     },
     {
       "id": "arte-124793-001-A-2026-09-15",
