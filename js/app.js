@@ -1324,7 +1324,8 @@
   }
 
   function todayProgramItem(item) {
-    return { id:item.id, title:item.title, meta:item.platform||`${item.station} · ${item.podcastTitle}`, url:item.url, group:item.group };
+    const durationMatch = typeof item.durationLabel === "string" ? item.durationLabel.match(/^(\d+)\s*min$/i) : null;
+    return { id:item.id, title:item.title, meta:item.platform||`${item.station} · ${item.podcastTitle}`, url:item.url, group:item.group, durationMinutes:durationMatch ? Number(durationMatch[1]) : null };
   }
 
   function addToTodayProgram(item) {
@@ -1340,7 +1341,16 @@
     const items = window.SnakeBonDTodayProgram.read();
     const list = document.getElementById("today-program-list");
     const doneCount = items.filter((item) => item.done).length;
+    const duration = window.SnakeBonDTodayProgram.knownDuration(items);
     document.getElementById("today-program-count").textContent = `${doneCount} terminé${doneCount > 1 ? "s" : ""} · ${items.length} / ${window.SnakeBonDTodayProgram.MAX_ITEMS}`;
+    let durationLabel = document.getElementById("today-program-duration");
+    if (!durationLabel) {
+      durationLabel = document.createElement("p");
+      durationLabel.id = "today-program-duration";
+      durationLabel.className = "today-program-duration";
+      document.querySelector(".today-program-heading").after(durationLabel);
+    }
+    durationLabel.textContent = duration.knownItems ? `${duration.minutes} min connues${duration.knownItems < duration.totalItems ? ` · ${duration.knownItems}/${duration.totalItems} choix renseignés` : ""}` : "Durée non renseignée";
     document.getElementById("today-program-progress").value = doneCount;
     document.getElementById("today-program-clear").hidden = items.length === 0;
     const toggleAll = document.getElementById("today-program-toggle-all");

@@ -877,6 +877,7 @@ p {
 .today-program-heading span { color:#85e89d; font-size:.72rem; font-weight:850; text-transform:uppercase; }
 .today-program-heading h2 { margin:.2rem 0 0; font-size:1.05rem; }
 .today-program-heading > strong { color:#85e89d; }
+.today-program-duration { margin:.45rem 0 0; color:var(--muted); font-size:.78rem; text-align:right; }
 .today-program-progress { width:100%; height:.42rem; margin-top:.7rem; border:0; border-radius:999px; overflow:hidden; background:var(--line); }
 .today-program-progress::-webkit-progress-bar { background:var(--line); }
 .today-program-progress::-webkit-progress-value { background:#85e89d; }
