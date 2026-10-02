@@ -15,6 +15,7 @@
       meta: typeof item.meta === "string" ? item.meta : "Source officielle",
       url: item.url,
       group: typeof item.group === "string" ? item.group : "new",
+      durationMinutes: Number.isInteger(item.durationMinutes) && item.durationMinutes > 0 ? item.durationMinutes : null,
       done: item.done === true,
     };
   };
@@ -93,5 +94,17 @@
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, move, read, remove, replace, setAllDone, toggleDone };
+  function knownDuration(items) {
+    if (!Array.isArray(items)) return { minutes: 0, knownItems: 0, totalItems: 0 };
+    return items.reduce((total, item) => {
+      total.totalItems += 1;
+      if (Number.isInteger(item?.durationMinutes) && item.durationMinutes > 0) {
+        total.minutes += item.durationMinutes;
+        total.knownItems += 1;
+      }
+      return total;
+    }, { minutes: 0, knownItems: 0, totalItems: 0 });
+  }
+
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, knownDuration, move, read, remove, replace, setAllDone, toggleDone };
 })();
