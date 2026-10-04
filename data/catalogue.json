@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-04T16:59:58.302Z",
+  "lastUpdated": "2026-10-04T21:40:21.485Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -831,14 +831,16 @@
       "addedDate": "2026-10-01",
       "promotionStartDate": "2026-10-01T15:00:00.000Z",
       "expiryDate": "2026-10-08T15:00:00.000Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-01T22:47:30.691Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
       "externalId": "af4c34934afe4db0870b8a1d82dceb94",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
       "imageUrl": "https://cdn1.epicgames.com/spt-assets/e2dc55c2709641a18fc37ef7ce32cfdd/buried-stars-1j9of.jpg",
-      "originalPrice": "33,99 €"
+      "originalPrice": "33,99 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-04T21:40:21.485Z"
     }
   ]
 }
