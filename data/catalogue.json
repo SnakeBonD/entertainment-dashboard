@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-04T21:40:21.485Z",
+  "lastUpdated": "2026-10-05T06:09:58.941Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -142,7 +142,7 @@
       "addedDate": "2026-09-20",
       "availabilityStartDate": "2026-09-20T19:00:00Z",
       "expiryDate": "2026-10-20T19:02:43Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-29T18:13:59.739Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -150,7 +150,9 @@
       "description": "Porté par Al Pacino, Robert Duvall, Diane Keaton et Robert De Niro, le deuxième volet de la saga de Francis Ford Coppola,",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KGCBoBSaiXEDgzNpiXX2XS/768x432?type=TEXT",
       "durationLabel": "190 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-05T06:09:58.941Z"
     },
     {
       "id": "arte-047570-000-A-2026-08-01",
