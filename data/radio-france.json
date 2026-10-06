@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-05T14:52:27.203Z",
+  "lastUpdated": "2026-10-06T18:27:03.467Z",
   "items": [
+    {
+      "id": "radio-france-9c888bc8-46a0-4bbe-abfe-2804b96609ad",
+      "title": "Avenue Jean Moulin : Annecy et Cran-Gevrier",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/avenue-jean-moulin-annecy-et-cran-gevrier-7935271",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/716cbb30-0453-41d3-a0fc-b0b7e0544089/27742-06.10.2026-ITEMA_24700796-2026C6612S0279-NET_MFC_95614272-958F-45CB-9585-44E90572EAB0-25-4e91f2eede97c73e7fa075f06dfe33ae.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-06T11:30:00.000Z",
+      "durationLabel": "30 min",
+      "description": "Nadia, 54 ans, est assistante sociale. Eugenio, 20 ans, veut devenir pilote ou sculpteur sur marbre. André, 80 ans, était professeur d'histoire. Pendant leur pause déjeuner, sur un banc attendant un ami, à l'arrêt de bus, nous les avons rencontrés place Jean Moulin, à Annecy.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-06T18:27:03.467Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-cccc7d91-66dc-47e8-abeb-11fa657d9159",
       "title": "Conte d'été : amours de jeunesse",
@@ -33,19 +48,34 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-7ef92087-8029-4f76-8ad4-cbfaa7fba86f",
-      "title": "Déni de mariage",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/d3487d68-bd05-4993-b1ac-961f4300d217/27742-17.10.2023-ITEMA_24696604-2023C6612S0290-NET_MFC_3B50BD02-0A49-45BE-ACAC-0D0F0613806E-25-6abe777bd990970b8bd613015f099b90.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-10-02T22:00:03.000Z",
-      "durationLabel": "32 min",
-      "description": "C’est une pratique qui se répand à bas bruit en toute illégalité. Soupçonnant des mariages blancs, certains maires refusent le mariage à des couples dont c’est pourtant un droit fondamental. Eva et Mustafa en ont fait les frais, Aurélie et Hassan aussi. Un reportage de Karine Le…",
+      "id": "radio-france-44de927d-2998-4152-8be8-bb261b4b62e5",
+      "title": "L'invité : Olivier Faye, journaliste au Monde.",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-mardi-08-septembre-2026-6094452",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/bae4920d-9e82-4b4e-93ed-eebe4a77fa54/26774-08.09.2026-ITEMA_24662933-2026F22805S4251-NET_MFI_7BEEE9B2-FBE1-4DDA-BE0C-BDD02538B745-27-23733d9ca12438316a0a0f41e4f6638e.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-06T13:41:00.000Z",
+      "durationLabel": "15 min",
+      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-02T22:19:05.575Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-10-06T18:27:03.467Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-d73ffb07-8190-46c1-9e37-6e8fc538cb07",
+      "title": "Le Camp des Saints ou le roman du grand remplacement - Le récit",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-le-recit-du-mardi-08-septembre-2026-7998705",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/1d67e194-4323-4829-b7b9-6baf8cd05344/26774-08.09.2026-ITEMA_24662933-2026F22805S1251-NET_MFI_9F601CCD-CDA3-4600-9269-01015F139ED6-27-8256e2bd8cd01ab307edf729e9920f1f.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-06T13:04:50.000Z",
+      "durationLabel": "34 min",
+      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-06T18:27:03.467Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-6b357c7d-477c-4649-96be-736d4d1c72ea",
@@ -60,36 +90,6 @@
       "description": "Aujourd’hui dans Affaires Sensibles, Martha Gellhorn, la dame du D-Day.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-05T14:52:27.203Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-1007f518-4080-41e7-9036-c5a0c9f0b1a0",
-      "title": "L’affaire Christiane K ou le quintuple infanticide",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/bf5798f1-859c-454b-a93d-81ec285dd9e8/20904-29.09.2025-ITEMA_24262188-2025F22805S0272-NET_MFI_3FB49C72-A9ED-4F08-BF85-6DF076459AC4-27-86216f5865717466c38f0675d93bf139.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-02T13:04:40.000Z",
-      "durationLabel": "48 min",
-      "description": "Aujourd’hui dans “Affaires sensibles”, retour sur l’un des pires infanticides qu’a connu l’Allemagne : l’affaire Christiane K, du nom de cette jeune femme de 27 ans, qui, en septembre 2020, a tué, de ses propres mains, ses 5 plus jeunes enfants.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-02T22:19:05.575Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-19577170-dfc8-4b70-9935-9855389f817d",
-      "title": "L'invité : Jean Pelletier, journaliste québécois, co-auteur du livre « Évadés d’Iran » (Ed. La Presse, 1981)",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-jeudi-03-septembre-2026-3767660",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/c38ecb13-f5ae-4c8b-ad45-ee089e7b33b8/26774-03.09.2026-ITEMA_24656379-2026F22805S4246-NET_MFI_75531289-8F92-4143-AEB7-9438FC5E800E-27-9874ee74766b308802790b2d120f97cd.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-01T13:41:00.000Z",
-      "durationLabel": "14 min",
-      "description": "équipe : Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin, Valentine Chédebois, Franck Cognard, Rebecca Denantes, Claire Teisseire",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-01T22:45:13.905Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
