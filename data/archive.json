@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-02T05:54:22.864Z",
+  "lastUpdated": "2026-10-07T06:12:26.027Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -253,6 +253,30 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-10T16:39:08.232Z",
       "archivedAt": "2026-10-02T05:54:22.864Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-131501-000-A-2026-09-07",
+      "title": "Darling chérie",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/131501-000-A/darling-cherie/",
+      "country": "FR",
+      "addedDate": "2026-09-07",
+      "availabilityStartDate": "2026-09-07T03:00:00Z",
+      "expiryDate": "2026-10-07T03:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-09-10T16:39:08.232Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "131501-000-A",
+      "description": "En noir et blanc, et avec un esprit \"Nouvelle Vague\", l'Anglais John Schlesinger offre un splendide écrin à Julie Christie.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/PZTvdCpvTd3WfwNTUCuEtF/768x432?type=TEXT",
+      "durationLabel": "115 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-11T16:44:05.801Z",
+      "archivedAt": "2026-10-07T06:12:26.027Z",
       "archiveReason": "expired"
     }
   ]
