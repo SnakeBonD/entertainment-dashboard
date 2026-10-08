@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v3.6** affiche la durée totale connue du Programme du jour, sans estimer les durées absentes et toujours localement :
+La version **v3.7** affiche la durée totale connue et le temps restant du Programme du jour, sans estimer les durées absentes et toujours localement :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -32,6 +32,7 @@ La version **v3.6** affiche la durée totale connue du Programme du jour, sans e
 - action accessible pour terminer ou réactiver tous les choix en une fois ;
 - annulation pendant huit secondes après un déplacement, un retrait, un changement de progression ou un vidage ;
 - durée totale calculée uniquement à partir des métadonnées officielles disponibles, avec couverture explicite des choix renseignés ;
+- temps restant connu recalculé immédiatement lorsqu’un choix est terminé ou réactivé ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
