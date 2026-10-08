@@ -95,15 +95,16 @@
   }
 
   function knownDuration(items) {
-    if (!Array.isArray(items)) return { minutes: 0, knownItems: 0, totalItems: 0 };
+    if (!Array.isArray(items)) return { minutes: 0, remainingMinutes: 0, knownItems: 0, totalItems: 0 };
     return items.reduce((total, item) => {
       total.totalItems += 1;
       if (Number.isInteger(item?.durationMinutes) && item.durationMinutes > 0) {
         total.minutes += item.durationMinutes;
+        if (item.done !== true) total.remainingMinutes += item.durationMinutes;
         total.knownItems += 1;
       }
       return total;
-    }, { minutes: 0, knownItems: 0, totalItems: 0 });
+    }, { minutes: 0, remainingMinutes: 0, knownItems: 0, totalItems: 0 });
   }
 
   window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, knownDuration, move, read, remove, replace, setAllDone, toggleDone };

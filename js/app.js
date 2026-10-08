@@ -1350,7 +1350,8 @@
       durationLabel.className = "today-program-duration";
       document.querySelector(".today-program-heading").after(durationLabel);
     }
-    durationLabel.textContent = duration.knownItems ? `${duration.minutes} min connues${duration.knownItems < duration.totalItems ? ` · ${duration.knownItems}/${duration.totalItems} choix renseignés` : ""}` : "Durée non renseignée";
+    const formatDuration = (minutes) => minutes >= 60 ? `${Math.floor(minutes / 60)} h${minutes % 60 ? ` ${minutes % 60} min` : ""}` : `${minutes} min`;
+    durationLabel.textContent = duration.knownItems ? `${formatDuration(duration.minutes)} connues · ${formatDuration(duration.remainingMinutes)} restantes${duration.knownItems < duration.totalItems ? ` · ${duration.knownItems}/${duration.totalItems} choix renseignés` : ""}` : "Durée non renseignée";
     document.getElementById("today-program-progress").value = doneCount;
     document.getElementById("today-program-clear").hidden = items.length === 0;
     const toggleAll = document.getElementById("today-program-toggle-all");
