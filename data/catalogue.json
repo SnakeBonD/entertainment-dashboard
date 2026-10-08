@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-07T19:03:50.490Z",
+  "lastUpdated": "2026-10-08T18:59:47.266Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -305,6 +305,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-03T16:41:06.342Z"
+    },
+    {
+      "id": "arte-092924-000-A-2026-10-07",
+      "title": "Zero Dark Thirty",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/092924-000-A/zero-dark-thirty/",
+      "country": "FR",
+      "addedDate": "2026-10-07",
+      "availabilityStartDate": "2026-10-07T03:00:00Z",
+      "expiryDate": "2026-10-14T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-08T18:59:44.533Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "092924-000-A",
+      "description": "Kathryn Bigelow raconte la traque de Ben Laden par les services secrets américains. Un thriller ultraréaliste avec Jessica Chastain.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/6aXFd5qPEEXvTTKtvLfAue/768x432?type=TEXT",
+      "durationLabel": "148 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-104449-000-A-2026-09-25",
@@ -622,7 +642,7 @@
       "addedDate": "2026-09-23",
       "availabilityStartDate": "2026-09-23T03:00:00Z",
       "expiryDate": "2027-01-23T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-28T05:47:59.666Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -630,7 +650,9 @@
       "description": "Par Guillaume Nicloux, un polar labyrinthique et stylisé, porté par Thierry Lhermitte, Marion Cotillard, Jeanne Balibar...",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DsSdMujLVwBi3pvAe2Na8f/768x432?type=TEXT",
       "durationLabel": "101 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-08T18:59:44.533Z"
     },
     {
       "id": "arte-124793-001-A-2026-09-15",
@@ -849,6 +871,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
+      "id": "arte-132154-000-A-2026-10-05",
+      "title": "Un duplex pour trois",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/132154-000-A/un-duplex-pour-trois/",
+      "country": "FR",
+      "addedDate": "2026-10-05",
+      "availabilityStartDate": "2026-10-05T03:00:00Z",
+      "expiryDate": "2027-04-01T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-08T18:59:44.533Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "132154-000-A",
+      "description": "Avec Ben Stiller et Drew Barrymore, une comédie acide signée Danny DeVito.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/D9hBGGcbSrHWkQQJSufFDM/768x432?type=TEXT",
+      "durationLabel": "86 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-133808-000-A-2026-10-01",
       "title": "Au plus près du paradis",
       "type": "movie",
@@ -867,44 +909,6 @@
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BqJdLqBCk6VP7xBHsj2qaH/768x432?type=TEXT",
       "durationLabel": "97 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
-    },
-    {
-      "id": "epic-7ae00c3e89174012b175cc73b4737723-2026-10-01",
-      "title": "System Shock 2: 25th Anniversary Remaster",
-      "type": "game",
-      "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/system-shock-2-25th-anniversary-remaster-cb94d9",
-      "country": "FR",
-      "addedDate": "2026-10-01",
-      "promotionStartDate": "2026-10-01T15:00:00.000Z",
-      "expiryDate": "2026-10-08T15:00:00.000Z",
-      "verified": true,
-      "verifiedAt": "2026-10-01T22:47:30.691Z",
-      "sourceUrl": "https://store.epicgames.com/fr/free-games",
-      "provider": "epic-games-store",
-      "externalId": "7ae00c3e89174012b175cc73b4737723",
-      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/690ff600d5134d9ab12c96862ed5257a/system-shock-2-25th-anniversary-remaster-1e28j.jpg",
-      "originalPrice": "26,99 €"
-    },
-    {
-      "id": "epic-af4c34934afe4db0870b8a1d82dceb94-2026-10-01",
-      "title": "BURIED STARS",
-      "type": "game",
-      "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/buried-stars-d7c88c",
-      "country": "FR",
-      "addedDate": "2026-10-01",
-      "promotionStartDate": "2026-10-01T15:00:00.000Z",
-      "expiryDate": "2026-10-08T15:00:00.000Z",
-      "verified": true,
-      "verifiedAt": "2026-10-06T18:29:49.576Z",
-      "sourceUrl": "https://store.epicgames.com/fr/free-games",
-      "provider": "epic-games-store",
-      "externalId": "af4c34934afe4db0870b8a1d82dceb94",
-      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/e2dc55c2709641a18fc37ef7ce32cfdd/buried-stars-1j9of.jpg",
-      "originalPrice": "33,99 €"
     }
   ]
 }
