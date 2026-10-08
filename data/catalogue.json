@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-08T18:59:47.266Z",
+  "lastUpdated": "2026-10-08T23:27:42.269Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -909,6 +909,44 @@
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BqJdLqBCk6VP7xBHsj2qaH/768x432?type=TEXT",
       "durationLabel": "97 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "epic-af6b823b8698465f9aedc3bddf2e8686-2026-10-08",
+      "title": "TerraScape",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/terrascape-2b12b1",
+      "country": "FR",
+      "addedDate": "2026-10-08",
+      "promotionStartDate": "2026-10-08T15:00:00.000Z",
+      "expiryDate": "2026-10-15T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-10-08T23:27:42.269Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "af6b823b8698465f9aedc3bddf2e8686",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/a740a2eed807469f88b9dff17e7cd3a3/terrascape-j7p8d.png",
+      "originalPrice": "15,29 €"
+    },
+    {
+      "id": "epic-cb733f3432db46bca94965b422c33ede-2026-10-08",
+      "title": "Out of Sight",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/out-of-sight-b96ca8",
+      "country": "FR",
+      "addedDate": "2026-10-08",
+      "promotionStartDate": "2026-10-08T15:00:00.000Z",
+      "expiryDate": "2026-10-15T15:00:00.000Z",
+      "verified": true,
+      "verifiedAt": "2026-10-08T23:27:42.269Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "cb733f3432db46bca94965b422c33ede",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/6e1bf54cfa6344c89d41e4e7af036ac9/out-of-sight-1l12n.jpg",
+      "originalPrice": "13,99 €"
     }
   ]
 }
