@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-08T18:59:47.266Z",
+  "lastUpdated": "2026-10-09T06:22:27.288Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -319,6 +319,54 @@
       "imageUrl": "https://cdn1.epicgames.com/spt-assets/e2dc55c2709641a18fc37ef7ce32cfdd/buried-stars-1j9of.jpg",
       "originalPrice": "33,99 €",
       "archivedAt": "2026-10-08T18:59:47.266Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-047570-000-A-2026-08-01",
+      "title": "Two Lovers",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/047570-000-A/two-lovers/",
+      "country": "FR",
+      "addedDate": "2026-08-01",
+      "availabilityStartDate": "2026-08-01T03:00:00Z",
+      "expiryDate": "2026-10-09T03:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-09-17T17:14:31.267Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "047570-000-A",
+      "description": "Par James Gray, un drame romantique émouvant avec Joaquin Phoenix, Gwyneth Paltrow et Vinessa Shaw.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/ouEMtLKGSqaBNvdTYZwZS7/768x432?type=TEXT",
+      "durationLabel": "103 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-28T05:47:59.666Z",
+      "archivedAt": "2026-10-09T06:22:27.288Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-127949-000-A-2026-09-09",
+      "title": "Tout s'est bien passé",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/127949-000-A/tout-s-est-bien-passe/",
+      "country": "FR",
+      "addedDate": "2026-09-09",
+      "availabilityStartDate": "2026-09-09T03:00:00Z",
+      "expiryDate": "2026-10-09T03:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-09-10T16:39:08.232Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "127949-000-A",
+      "description": "Diminué après un AVC, un octogénaire (André Dussollier) demande à sa fille aînée (Sophie Marceau) de l'aider à mourir.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/onHL8hH4JcbHjTASQSDht6/768x432?type=TEXT",
+      "durationLabel": "108 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-09-18T16:41:39.840Z",
+      "archivedAt": "2026-10-09T06:22:27.288Z",
       "archiveReason": "expired"
     }
   ]
