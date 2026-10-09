@@ -107,5 +107,13 @@
     }, { minutes: 0, remainingMinutes: 0, knownItems: 0, totalItems: 0 });
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, knownDuration, move, read, remove, replace, setAllDone, toggleDone };
+  function formatDuration(minutes) {
+    if (!Number.isInteger(minutes) || minutes <= 0) return null;
+    if (minutes < 60) return `${minutes} min`;
+    const hours = Math.floor(minutes / 60);
+    const remainder = minutes % 60;
+    return `${hours} h${remainder ? ` ${remainder} min` : ""}`;
+  }
+
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, formatDuration, knownDuration, move, read, remove, replace, setAllDone, toggleDone };
 })();
