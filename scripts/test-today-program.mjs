@@ -11,6 +11,10 @@ const now = new Date("2026-09-22T10:00:00Z");
 const item = (id, durationMinutes = null) => ({ id, title:`Choix ${id}`, meta:"Source officielle", url:`https://example.com/${id}`, group:"new", durationMinutes });
 
 assert.equal(program.MAX_ITEMS, 3);
+assert.equal(program.formatDuration(155), "2 h 35 min");
+assert.equal(program.formatDuration(60), "1 h");
+assert.equal(program.formatDuration(30), "30 min");
+assert.equal(program.formatDuration(null), null);
 assert.deepEqual(Array.from(program.read(storage, now)), []);
 assert.equal(program.add(item("a", 98), storage, now).status, "added");
 assert.equal(program.add(item("a"), storage, now).status, "duplicate");
@@ -52,4 +56,5 @@ assert(app.includes("SnakeBonDTodayProgram.setAllDone"));
 assert(app.includes("SnakeBonDTodayProgram.replace"));
 assert(app.includes("today-program-progress"));
 assert(app.includes("today-pick-program"));
-console.log("Programme du jour v3.7 validé : durées totale et restante, restauration et progression conformes.");
+assert(app.includes("itemDuration?`${item.meta} · ${itemDuration}`:item.meta"));
+console.log("Programme du jour v3.8 validé : durée par choix, total, temps restant, restauration et progression conformes.");
