@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-09T06:22:27.288Z",
+  "lastUpdated": "2026-10-09T18:29:44.058Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -655,6 +655,26 @@
       "lastCheckedAt": "2026-09-20T16:27:15.697Z"
     },
     {
+      "id": "arte-125682-001-A-2026-09-29",
+      "title": "USA, la révolution conservatrice (1/3)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/125682-001-A/usa-la-revolution-conservatrice-1-3/",
+      "country": "FR",
+      "addedDate": "2026-09-29",
+      "availabilityStartDate": "2026-09-29T03:00:00Z",
+      "expiryDate": "2027-05-04T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-09T18:29:44.058Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "125682-001-A",
+      "description": "Comment, entre 1960 et 1980, une frange conservatrice ultraminoritaire s'est imposée au sein du Parti républicain.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8tpxadgEkkPwbHpAiVX6TP/768x432?type=TEXT",
+      "durationLabel": "53 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-126941-000-A-2026-10-05",
       "title": "Septembre sans attendre",
       "type": "movie",
@@ -816,7 +836,7 @@
       "addedDate": "2026-10-03",
       "availabilityStartDate": "2026-10-03T03:00:00Z",
       "expiryDate": "2027-10-03T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-06T06:49:09.843Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -824,7 +844,9 @@
       "description": "Fils de marchand devenu ascète, François d'Assise a fait de la pauvreté un idéal et bouleversé les codes religieux de son temps.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8Aj9B3QSXrZCT3GhMPUJAX/768x432?type=TEXT",
       "durationLabel": "87 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-09T18:29:44.058Z"
     },
     {
       "id": "arte-132154-000-A-2026-10-05",
@@ -856,7 +878,7 @@
       "addedDate": "2026-10-01",
       "availabilityStartDate": "2026-10-01T03:00:00Z",
       "expiryDate": "2027-01-01T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-03T16:41:06.342Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -864,7 +886,9 @@
       "description": "S’envolant vers New York, Fanette (Catherine Deneuve) espère renouer avec un amour de jeunesse.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BqJdLqBCk6VP7xBHsj2qaH/768x432?type=TEXT",
       "durationLabel": "97 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-09T18:29:44.058Z"
     },
     {
       "id": "epic-af6b823b8698465f9aedc3bddf2e8686-2026-10-08",
