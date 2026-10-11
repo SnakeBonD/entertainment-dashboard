@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-11T06:01:56.173Z",
+  "lastUpdated": "2026-10-11T17:45:56.513Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -840,7 +840,7 @@
       "addedDate": "2026-10-03",
       "availabilityStartDate": "2026-10-03T03:00:00Z",
       "expiryDate": "2027-10-03T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-10T17:27:15.657Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -848,6 +848,28 @@
       "description": "Fils de marchand devenu ascète, François d'Assise a fait de la pauvreté un idéal et bouleversé les codes religieux de son temps.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8Aj9B3QSXrZCT3GhMPUJAX/768x432?type=TEXT",
       "durationLabel": "87 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-11T17:45:56.513Z"
+    },
+    {
+      "id": "arte-132065-000-A-2026-10-05",
+      "title": "La ville fantôme",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/132065-000-A/la-ville-fantome/",
+      "country": "FR",
+      "addedDate": "2026-10-05",
+      "availabilityStartDate": "2026-10-05T03:00:00Z",
+      "expiryDate": "2027-04-01T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-11T17:45:56.513Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "132065-000-A",
+      "description": "Une comédie fantastico-sentimentale avec Ricky Gervais, le cocréateur et acteur génial de \"The Office\".",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/7QiB3VSmAG9DcDwNjCEYTn/768x432?type=TEXT",
+      "durationLabel": "99 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
