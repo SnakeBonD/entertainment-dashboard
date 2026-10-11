@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-09T06:22:27.288Z",
+  "lastUpdated": "2026-10-11T06:01:56.173Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -367,6 +367,28 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-18T16:41:39.840Z",
       "archivedAt": "2026-10-09T06:22:27.288Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-060750-000-A-2026-10-04",
+      "title": "Le pont de la rivière Kwaï",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/060750-000-A/le-pont-de-la-riviere-kwai/",
+      "country": "FR",
+      "addedDate": "2026-10-04",
+      "availabilityStartDate": "2026-10-04T03:00:00Z",
+      "expiryDate": "2026-10-11T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-06T06:49:09.843Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "060750-000-A",
+      "description": "Récompensée par sept Oscars, une des grandes réussites de David Lean, avec un Alec Guinness hypnotique.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Aj5F2ZXUPSaZ5Wj79nUzah/768x432?type=TEXT",
+      "durationLabel": "155 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "archivedAt": "2026-10-11T06:01:56.173Z",
       "archiveReason": "expired"
     }
   ]
