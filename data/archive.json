@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-15T04:54:22.642Z",
+  "lastUpdated": "2026-10-15T17:12:00.461Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -507,6 +507,52 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-19T04:59:06.796Z",
       "archivedAt": "2026-10-15T04:54:22.642Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-af6b823b8698465f9aedc3bddf2e8686-2026-10-08",
+      "title": "TerraScape",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/terrascape-2b12b1",
+      "country": "FR",
+      "addedDate": "2026-10-08",
+      "promotionStartDate": "2026-10-08T15:00:00.000Z",
+      "expiryDate": "2026-10-15T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-10-08T23:27:42.269Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "af6b823b8698465f9aedc3bddf2e8686",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/a740a2eed807469f88b9dff17e7cd3a3/terrascape-j7p8d.png",
+      "originalPrice": "15,29 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-15T17:11:59.840Z",
+      "archivedAt": "2026-10-15T17:12:00.461Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-cb733f3432db46bca94965b422c33ede-2026-10-08",
+      "title": "Out of Sight",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/out-of-sight-b96ca8",
+      "country": "FR",
+      "addedDate": "2026-10-08",
+      "promotionStartDate": "2026-10-08T15:00:00.000Z",
+      "expiryDate": "2026-10-15T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-10-08T23:27:42.269Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "cb733f3432db46bca94965b422c33ede",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/6e1bf54cfa6344c89d41e4e7af036ac9/out-of-sight-1l12n.jpg",
+      "originalPrice": "13,99 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-15T17:11:59.840Z",
+      "archivedAt": "2026-10-15T17:12:00.461Z",
       "archiveReason": "expired"
     }
   ]
