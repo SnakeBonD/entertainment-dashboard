@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-15T21:29:35.849Z",
+  "lastUpdated": "2026-10-16T16:44:45.872Z",
   "items": [
+    {
+      "id": "radio-france-23e38d9d-2bbf-4735-9780-e6030f8c4064",
+      "title": "La sélection pour enfants des Pieds sur terre 3/10 : David le braqueur",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/a62eb948-293c-4829-ac54-7d7ef648b9bd/27742-16.10.2026-ITEMA_24714451-2026C6612S0289-NET_MFC_A573E92D-7425-426D-9050-0E778CC12A3C-25-260171619ec0aa0bf2a9a8c5292005db.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2021/11/643951dd-44fa-4474-9fdc-2d50552c6d2c/1400x1400_sc_les-pieds-sur-terre-enfants.jpg",
+      "publishedAt": "2026-10-16T11:30:00.000Z",
+      "durationLabel": "31 min",
+      "description": "David, cambrioleur, est spécialisé dans la neutralisation des alarmes et dans le vol des grandes surfaces et des banques. Un jour, décidé à en finir avec le banditisme, il prépare un dernier gros coup : voler le siège social de la Société Générale à Caen. Opération qui va tourne…",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-16T16:44:45.872Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-36567935-b1ed-43f3-a969-3ccee25603c2",
       "title": "Même pas mort 6/7 : De beaux pères",
@@ -33,19 +48,19 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-8b75207d-2e1f-42be-8a81-6e2cc70383a0",
-      "title": "Une rentrée sous pression : ma vie de prof contractuel",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/une-rentree-sous-pression-ma-vie-de-prof-contractuel-6616956",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/93be3425-d94e-47a7-af37-cec158ca213a/27742-13.10.2026-ITEMA_24709890-2026C6612S0286-NET_MFC_4476A65F-5438-4B97-96EB-0070F74CA141-25-156b8691e4708746c435309aa54c332c.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-10-13T11:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "L'une a fait un passage éclair à l’école, aux prises avec les menaces d'une mère d'élève, l'autre tente de se frayer un chemin dans les méandres kafkaïens de l'Éducation nationale. Une formation déroutante et un système insécurisant, et c'est toute une vocation qui se trouve rem…",
+      "id": "radio-france-e335f232-b44a-416f-8a3a-95e8362ce741",
+      "title": "La censure du roman “Ravages” de Violette Leduc",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-vendredi-18-septembre-2026-7074194",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/7690fcac-7e66-47e1-8d73-d6699d49657c/26774-30.09.2024-ITEMA_24677732-2024F22805S0274-NET_MFI_E516852D-C4CA-4330-95E8-F547D4B057D7-27-4ca65b9ba9d6457affd8b0a07bdbd0ce.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-16T13:04:40.000Z",
+      "durationLabel": "48 min",
+      "description": "Aujourd’hui dans Affaires sensibles, la censure du roman Ravages de Violette Leduc.",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-14T17:18:18.002Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-10-16T16:44:45.872Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-f4a7f5ae-8e86-4982-a31f-6902fc479f87",
@@ -73,21 +88,6 @@
       "publishedAt": "2026-10-15T13:04:50.000Z",
       "durationLabel": "35 min",
       "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Bimbenet Jérôme historien du cinéma",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-15T17:07:32.155Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-bad941ec-5abc-4a58-abda-216d7f06bcfb",
-      "title": "Leni Riefenstahl, une cinéaste problématique - L'intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-jeudi-17-septembre-2026-2143729",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/224eadf7-5ff7-4e39-b8e5-bd4d4f7c23ef/26774-17.09.2026-ITEMA_24675483-2026F22805S0260-NET_MFI_9B891F64-7598-4BA3-8C95-BE07BA4B84A4-27-062b56ce3954b63740a61cd85808934b.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-15T13:04:40.000Z",
-      "durationLabel": "54 min",
-      "description": "Aujourd’hui dans Affaires sensibles, Leni Riefenstahl, une cinéaste problématique.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-15T17:07:32.155Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
