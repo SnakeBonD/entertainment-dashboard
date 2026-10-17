@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-16T16:44:45.872Z",
+  "lastUpdated": "2026-10-17T04:36:54.997Z",
   "items": [
+    {
+      "id": "radio-france-0fea04a6-3e6f-46d1-b2c5-f807df44334f",
+      "title": "La manif des gilets jaunes",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/b079d670-173e-4ba8-9d44-7c9a891a93a1/27742-21.11.2018-ITEMA_24714988-2018C6612S0325-NET_FC_E311E591-E008-4F15-BBC6-13CBC6B2C97E-25-697644434f0fbfbb4bb1234051551201.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-16T22:00:04.000Z",
+      "durationLabel": "28 min",
+      "description": "Ronds-points, parkings de supermarchés, périph’ parisien et encore d'autres lieux symboliques ont été bloqués ce samedi 17 novembre par des milliers de citoyens réunis partout en France pour protester, au départ, contre la hausse du prix du carburant.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-17T04:36:54.997Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-23e38d9d-2bbf-4735-9780-e6030f8c4064",
       "title": "La sélection pour enfants des Pieds sur terre 3/10 : David le braqueur",
@@ -30,21 +45,6 @@
       "description": "Je vais faire LA chose que je repoussais depuis des mois : aller voir Vincent, le père de Grégoire. Vincent, qui porte en lui un fardeau, en essayant de ne pas trop se culpabiliser.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-15T21:29:35.849Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-33d47cf0-8249-41d3-adcc-d10aed38d022",
-      "title": "Profession : ramasseur de poulets",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/profession-ramasseur-de-poulets-6722972",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/712629f7-b636-4d93-b9c7-942e40c22514/27742-14.10.2026-ITEMA_24711299-2026C6612S0287-NET_MFC_20946754-821A-4C7C-916D-6DA7806CA102-25-d4254b242efc4ae6f705ec70f13c2303.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-10-14T11:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "Chaque nuit, les ramasseurs de volailles chargent des milliers de bêtes en direction des abattoirs. À plus de 70 ans, Nicole a dû s'initier à cette profession éreintante pour compléter sa retraite. Jason, 27 ans, est au contraire un passionné qui ne jure que par ce travail.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-14T17:18:18.002Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
