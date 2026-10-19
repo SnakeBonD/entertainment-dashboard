@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-18T04:42:27.212Z",
+  "lastUpdated": "2026-10-19T13:30:41.810Z",
   "items": [
+    {
+      "id": "radio-france-a3a750e3-b09f-4dc0-a1de-78ffda872114",
+      "title": "Itinéraire d'un pâtissier",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/itineraire-d-un-patissier-8648143",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/41e0e525-f64b-4fa7-b90a-2f0a8de8c4d9/18722-19.10.2026-ITEMA_24717406-2026C6612S0292-NET_MFC_3B965B89-4668-4F19-A46C-B8671F10D0A4-25-72a6cc82e3a8833083ad5f019011a2c3.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-19T11:30:00.000Z",
+      "durationLabel": "30 min",
+      "description": "Yazid Ichemrahen a grandi entre une famille d'accueil et un foyer de l'Aide sociale à l'enfance. À l’adolescence, pris de passion pour la pâtisserie, une rencontre transforme sa vie. À force de travail, il devient à 22 ans le plus jeune champion du monde de pâtisserie glacée.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-19T13:30:41.810Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-a9e84ed4-8c5d-4e44-aebf-add4d51215d2",
       "title": "Elles ou les infidélités féminines",
@@ -33,19 +48,34 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-23e38d9d-2bbf-4735-9780-e6030f8c4064",
-      "title": "La sélection pour enfants des Pieds sur terre 3/10 : David le braqueur",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/a62eb948-293c-4829-ac54-7d7ef648b9bd/27742-16.10.2026-ITEMA_24714451-2026C6612S0289-NET_MFC_A573E92D-7425-426D-9050-0E778CC12A3C-25-260171619ec0aa0bf2a9a8c5292005db.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2021/11/643951dd-44fa-4474-9fdc-2d50552c6d2c/1400x1400_sc_les-pieds-sur-terre-enfants.jpg",
-      "publishedAt": "2026-10-16T11:30:00.000Z",
-      "durationLabel": "31 min",
-      "description": "David, cambrioleur, est spécialisé dans la neutralisation des alarmes et dans le vol des grandes surfaces et des banques. Un jour, décidé à en finir avec le banditisme, il prépare un dernier gros coup : voler le siège social de la Société Générale à Caen. Opération qui va tourne…",
+      "id": "radio-france-1ddc3c21-ef1e-4d9b-8e7d-2509018c690c",
+      "title": "Les camps de regroupement de population un drame de la guerre d'Algérie - Le récit",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-le-recit-du-lundi-21-septembre-2026-1613541",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/899a5fe9-74d0-4469-b432-524679fd800a/26774-21.09.2026-ITEMA_24680216-2026F22805S1264-NET_MFI_C54A4EB1-5411-40B0-BB95-C82E1356859D-27-9870a14dd4c921d2fcbdfbaa79afe073.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-19T13:04:50.000Z",
+      "durationLabel": "33 min",
+      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-16T16:44:45.872Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-10-19T13:30:41.810Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-57b0d08e-97fa-4744-99f9-f072ea0fbd5c",
+      "title": "Les camps de regroupement, une autre tragédie de la guerre d’Algérie - L'intégrale",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-lundi-21-septembre-2026-6541029",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/412ef693-8b4f-49df-95cc-a3f6b1525201/26774-21.09.2026-ITEMA_24680216-2026F22805S0264-NET_MFI_AB62DE61-887A-4CBD-90FB-7DD55C3C0234-27-cfdc9cea2fdfd210e460ae88786f7652.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-19T13:04:40.000Z",
+      "durationLabel": "55 min",
+      "description": "Aujourd’hui dans Affaires Sensibles, les camps de regroupement, une autre tragédie de la guerre d’Algérie…",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-19T13:30:41.810Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-e335f232-b44a-416f-8a3a-95e8362ce741",
@@ -60,36 +90,6 @@
       "description": "Aujourd’hui dans Affaires sensibles, la censure du roman Ravages de Violette Leduc.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-16T16:44:45.872Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-f4a7f5ae-8e86-4982-a31f-6902fc479f87",
-      "title": "L'invité : l’historien Jérôme Bimbenet",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-l-invite-du-jeudi-17-septembre-2026-2287183",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/7d6ad85d-2e8b-4186-a110-2c4c5f97e0d9/26774-17.09.2026-ITEMA_24675483-2026F22805S4260-NET_MFI_9AFA3154-3F67-4915-A1CA-D3E4DF4FF9DB-27-d5292420a3ec93ec039b1a61365800a6.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-15T13:41:00.000Z",
-      "durationLabel": "14 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Bimbenet Jérôme historien du cinéma",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-15T17:07:32.155Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-ba22e778-f6ee-4842-a8ad-2b4a8a80c811",
-      "title": "Leni Riefenstahl, la cinéaste surdouée du régime nazi - Le récit",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-le-recit-du-jeudi-17-septembre-2026-5868363",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/97534bed-17fd-4d6d-9c4f-85c513c5d0b4/26774-17.09.2026-ITEMA_24675483-2026F22805S1260-NET_MFI_ED12D350-F966-4A6E-AB98-36E9EE14E71D-27-d2f595773a0360c1a4571320a3990b4e.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-15T13:04:50.000Z",
-      "durationLabel": "35 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Bimbenet Jérôme historien du cinéma",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-15T17:07:32.155Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
