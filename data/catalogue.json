@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-15T17:12:00.461Z",
+  "lastUpdated": "2026-10-20T05:12:51.869Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -223,6 +223,26 @@
       "lastCheckedAt": "2026-09-09T15:11:23.420Z"
     },
     {
+      "id": "arte-083853-000-A-2026-10-16",
+      "title": "Le poison de la vengeance",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/083853-000-A/le-poison-de-la-vengeance/",
+      "country": "FR",
+      "addedDate": "2026-10-16",
+      "availabilityStartDate": "2026-10-16T03:00:00Z",
+      "expiryDate": "2026-10-23T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "083853-000-A",
+      "description": "À la fin de la guerre, Max, rescapé des camps, infiltre un réseau juif qui projette de venger les victimes de la Shoah.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/umHeAMaGKxZY6c93tks5AY/768x432?type=TEXT",
+      "durationLabel": "100 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-087848-000-A-2026-09-28",
       "title": "L'ordre des choses",
       "type": "movie",
@@ -243,6 +263,46 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-03T16:41:06.342Z"
+    },
+    {
+      "id": "arte-101328-000-A-2026-10-11",
+      "title": "Stardust, le mystère de l'étoile",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/101328-000-A/stardust-le-mystere-de-l-etoile/",
+      "country": "FR",
+      "addedDate": "2026-10-11",
+      "availabilityStartDate": "2026-10-11T03:00:00Z",
+      "expiryDate": "2026-11-10T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "101328-000-A",
+      "description": "Un conte de fées à l’imagination débridée, avec Sienna Miller, Charlie Cox, Michelle Pfeiffer, Robert De Niro et Peter O’Toole.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/quz3CYEXtWpxwd5YReibxW/768x432?type=TEXT",
+      "durationLabel": "120 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
+      "id": "arte-101352-000-A-2026-10-07",
+      "title": "Au nom du maintien de l'ordre (1/2)",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/101352-000-A/au-nom-du-maintien-de-l-ordre-1-2/",
+      "country": "FR",
+      "addedDate": "2026-10-07",
+      "availabilityStartDate": "2026-10-07T07:10:00Z",
+      "expiryDate": "2027-04-06T22:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "101352-000-A",
+      "description": "Partout dans le monde, des foules en colère affrontent des forces de l’ordre surarmées. Une enquête de Paul Moreira.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DHMzvZTGw8qJ5JwFPpTrnV/768x432?type=TEXT",
+      "durationLabel": "56 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-104449-000-A-2026-09-25",
@@ -443,6 +503,26 @@
       "lastCheckedAt": "2026-09-17T17:14:31.267Z"
     },
     {
+      "id": "arte-122150-000-A-2026-10-10",
+      "title": "Byzance, mille ans qui ont changé le monde",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/122150-000-A/byzance-mille-ans-qui-ont-change-le-monde/",
+      "country": "FR",
+      "addedDate": "2026-10-10",
+      "availabilityStartDate": "2026-10-10T03:00:00Z",
+      "expiryDate": "2026-12-17T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "122150-000-A",
+      "description": "D’Istanbul jusqu’au Louvre, une exploration des mille ans d’histoire de l’Empire byzantin, de 330 à 1453.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/tWWvrYYctgBPfp4bT4PVrR/768x432?type=TEXT",
+      "durationLabel": "90 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-122704-001-A-2026-09-22",
       "title": "L'empire LVMH (1/2)",
       "type": "documentary",
@@ -452,7 +532,7 @@
       "addedDate": "2026-09-22",
       "availabilityStartDate": "2026-09-22T03:00:00Z",
       "expiryDate": "2027-04-29T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-09-28T05:47:59.666Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -460,7 +540,9 @@
       "description": "L'ascension fulgurante du géant mondial du luxe et de son patron, Bernard Arnault.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/hCkt9SowKHvWqaAkYp2Zbh/768x432?type=TEXT",
       "durationLabel": "60 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
       "id": "arte-122704-002-A-2026-09-22",
@@ -551,6 +633,26 @@
       "lastCheckedAt": "2026-10-10T17:27:15.657Z"
     },
     {
+      "id": "arte-126168-000-A-2026-10-16",
+      "title": "Impossible",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/126168-000-A/impossible/",
+      "country": "FR",
+      "addedDate": "2026-10-16",
+      "availabilityStartDate": "2026-10-16T03:00:00Z",
+      "expiryDate": "2027-01-21T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "126168-000-A",
+      "description": "Un juge et un vieil homme s’affrontent autour de la mort d’un randonneur. Emmanuel Finkiel adapte Erri De Luca.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Xdi6NVnzA2UKQ9uf3QCRqe/768x432?type=TEXT",
+      "durationLabel": "100 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-126941-000-A-2026-10-05",
       "title": "Septembre sans attendre",
       "type": "movie",
@@ -560,7 +662,7 @@
       "addedDate": "2026-10-05",
       "availabilityStartDate": "2026-10-05T03:00:00Z",
       "expiryDate": "2026-11-04T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-07T19:03:50.490Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -568,6 +670,28 @@
       "description": "Un couple décide d’organiser une fête pour célébrer sa séparation. Les méandres de l’amour par Jonás Trueba.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/LGYa9TDutXXHBhELxsZQLb/768x432?type=TEXT",
       "durationLabel": "110 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
+    },
+    {
+      "id": "arte-128673-000-A-2026-10-14",
+      "title": "Miséricorde",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/128673-000-A/misericorde/",
+      "country": "FR",
+      "addedDate": "2026-10-14",
+      "availabilityStartDate": "2026-10-14T03:00:00Z",
+      "expiryDate": "2026-11-13T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "128673-000-A",
+      "description": "Entre burlesque et drame, Alain Guiraudie ausculte les flux contraires du désir dans la beauté automnale d'un village aveyronnais.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/pJ6BLiTJ8eELFpg8qUHQLn/768x432?type=TEXT",
+      "durationLabel": "99 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
@@ -659,6 +783,26 @@
       "lastCheckedAt": "2026-09-19T16:02:12.517Z"
     },
     {
+      "id": "arte-129825-000-A-2026-10-12",
+      "title": "Maigret voit rouge",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129825-000-A/maigret-voit-rouge/",
+      "country": "FR",
+      "addedDate": "2026-10-12",
+      "availabilityStartDate": "2026-10-12T19:00:00Z",
+      "expiryDate": "2026-10-27T19:59:16Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129825-000-A",
+      "description": "Jean Gabin, Françoise Fabian et une BO de Michel Legrand pour un \"Maigret\" où le commissaire se mesure à la pègre américaine.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DPyNHvJXTeNqwKb6BrbMgG/768x432?type=TEXT",
+      "durationLabel": "84 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-129843-000-A-2026-09-06",
       "title": "Peter von Kant",
       "type": "movie",
@@ -690,7 +834,7 @@
       "addedDate": "2026-10-07",
       "availabilityStartDate": "2026-10-07T03:00:00Z",
       "expiryDate": "2026-11-06T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-10T06:20:28.998Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -698,7 +842,9 @@
       "description": "Par Alexander Payne et avec les excellents Bruce Dern et Will Forte, un road-movie d'une mélancolique drôlerie.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/gusfHb9jAuo6vDZxADnFQn/768x432?type=TEXT",
       "durationLabel": "109 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
       "id": "arte-130577-000-A-2026-09-14",
@@ -745,6 +891,26 @@
       "lastCheckedAt": "2026-10-11T17:45:56.513Z"
     },
     {
+      "id": "arte-132042-000-A-2026-10-14",
+      "title": "Compétition officielle",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/132042-000-A/competition-officielle/",
+      "country": "FR",
+      "addedDate": "2026-10-14",
+      "availabilityStartDate": "2026-10-14T03:00:00Z",
+      "expiryDate": "2026-11-13T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "132042-000-A",
+      "description": "Une satire jubilatoire du cinéma avec Penélope Cruz en réalisatrice excentrique et Antonio Banderas en star bling-bling.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zfucMA7F7Yphzumj8HAczc/768x432?type=TEXT",
+      "durationLabel": "109 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+    },
+    {
       "id": "arte-132065-000-A-2026-10-05",
       "title": "La ville fantôme",
       "type": "movie",
@@ -754,7 +920,7 @@
       "addedDate": "2026-10-05",
       "availabilityStartDate": "2026-10-05T03:00:00Z",
       "expiryDate": "2027-04-01T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-11T17:45:56.513Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -762,7 +928,9 @@
       "description": "Une comédie fantastico-sentimentale avec Ricky Gervais, le cocréateur et acteur génial de \"The Office\".",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/7QiB3VSmAG9DcDwNjCEYTn/768x432?type=TEXT",
       "durationLabel": "99 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
       "id": "arte-132154-000-A-2026-10-05",
@@ -774,7 +942,7 @@
       "addedDate": "2026-10-05",
       "availabilityStartDate": "2026-10-05T03:00:00Z",
       "expiryDate": "2027-04-01T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-08T18:59:44.533Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -782,7 +950,9 @@
       "description": "Avec Ben Stiller et Drew Barrymore, une comédie acide signée Danny DeVito.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/D9hBGGcbSrHWkQQJSufFDM/768x432?type=TEXT",
       "durationLabel": "86 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
       "id": "arte-133808-000-A-2026-10-01",
@@ -794,7 +964,7 @@
       "addedDate": "2026-10-01",
       "availabilityStartDate": "2026-10-01T03:00:00Z",
       "expiryDate": "2027-01-01T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-10T17:27:15.657Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -802,7 +972,9 @@
       "description": "S’envolant vers New York, Fanette (Catherine Deneuve) espère renouer avec un amour de jeunesse.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BqJdLqBCk6VP7xBHsj2qaH/768x432?type=TEXT",
       "durationLabel": "97 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
       "id": "epic-6a846880836044a2adad614ac771f487-2026-10-15",
