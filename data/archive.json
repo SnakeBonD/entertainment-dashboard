@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-15T17:12:00.461Z",
+  "lastUpdated": "2026-10-20T21:44:19.940Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -553,6 +553,30 @@
       "verificationNote": "not_in_current_feed",
       "lastCheckedAt": "2026-10-15T17:11:59.840Z",
       "archivedAt": "2026-10-15T17:12:00.461Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-045560-000-A-2026-09-20",
+      "title": "Le parrain II",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/045560-000-A/le-parrain-ii/",
+      "country": "FR",
+      "addedDate": "2026-09-20",
+      "availabilityStartDate": "2026-09-20T19:00:00Z",
+      "expiryDate": "2026-10-20T19:02:43Z",
+      "verified": false,
+      "verifiedAt": "2026-10-07T06:24:13.528Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "045560-000-A",
+      "description": "Porté par Al Pacino, Robert Duvall, Diane Keaton et Robert De Niro, le deuxième volet de la saga de Francis Ford Coppola,",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KGCBoBSaiXEDgzNpiXX2XS/768x432?type=TEXT",
+      "durationLabel": "191 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-07T19:03:50.490Z",
+      "archivedAt": "2026-10-20T21:44:19.940Z",
       "archiveReason": "expired"
     }
   ]
