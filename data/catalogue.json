@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-20T21:44:19.940Z",
+  "lastUpdated": "2026-10-21T17:36:58.537Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -252,7 +252,7 @@
       "addedDate": "2026-10-11",
       "availabilityStartDate": "2026-10-11T03:00:00Z",
       "expiryDate": "2026-11-10T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-20T05:12:51.869Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -260,7 +260,9 @@
       "description": "Un conte de fées à l’imagination débridée, avec Sienna Miller, Charlie Cox, Michelle Pfeiffer, Robert De Niro et Peter O’Toole.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/quz3CYEXtWpxwd5YReibxW/768x432?type=TEXT",
       "durationLabel": "120 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-21T17:36:58.537Z"
     },
     {
       "id": "arte-101352-000-A-2026-10-07",
@@ -621,12 +623,12 @@
       "availabilityStartDate": "2026-10-16T03:00:00Z",
       "expiryDate": "2027-01-21T04:00:00Z",
       "verified": true,
-      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "verifiedAt": "2026-10-21T17:36:58.537Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "126168-000-A",
       "description": "Un juge et un vieil homme s’affrontent autour de la mort d’un randonneur. Emmanuel Finkiel adapte Erri De Luca.",
-      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Xdi6NVnzA2UKQ9uf3QCRqe/768x432?type=TEXT",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/qj9TeER7yqgVV2JTMMrPED/768x432?type=TEXT",
       "durationLabel": "100 min",
       "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
@@ -772,7 +774,7 @@
       "addedDate": "2026-10-12",
       "availabilityStartDate": "2026-10-12T19:00:00Z",
       "expiryDate": "2026-10-27T19:59:16Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-20T05:12:51.869Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -780,7 +782,9 @@
       "description": "Jean Gabin, Françoise Fabian et une BO de Michel Legrand pour un \"Maigret\" où le commissaire se mesure à la pègre américaine.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DPyNHvJXTeNqwKb6BrbMgG/768x432?type=TEXT",
       "durationLabel": "84 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-21T17:36:58.537Z"
     },
     {
       "id": "arte-129843-000-A-2026-09-06",
