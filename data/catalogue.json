@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-22T17:21:32.947Z",
+  "lastUpdated": "2026-10-22T17:35:34.343Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -327,6 +327,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-20T16:27:15.697Z"
+    },
+    {
+      "id": "arte-110207-000-A-2026-10-21",
+      "title": "Potiche",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/110207-000-A/potiche/",
+      "country": "FR",
+      "addedDate": "2026-10-21",
+      "availabilityStartDate": "2026-10-21T03:00:00Z",
+      "expiryDate": "2026-10-28T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-22T17:35:34.343Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "110207-000-A",
+      "description": "L'épouse d'un patron de province conquiert sa liberté. Catherine Deneuve excelle dans cette comédie sardonique de François Ozon.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/gLVzV6JSuRynBfqB9ENanZ/768x432?type=TEXT",
+      "durationLabel": "99 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-110210-000-A-2026-09-16",
