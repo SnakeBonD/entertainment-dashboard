@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-21T17:36:58.537Z",
+  "lastUpdated": "2026-10-22T17:21:32.947Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -961,42 +961,42 @@
       "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
-      "id": "epic-6a846880836044a2adad614ac771f487-2026-10-15",
-      "title": "Bad Cheese",
+      "id": "epic-06190191cede42afb633fe89ef08c27e-2026-10-22",
+      "title": "Home - A Unique Horror Adventure",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/bad-cheese-4256d9",
+      "url": "https://store.epicgames.com/fr/p/home-19212a",
       "country": "FR",
-      "addedDate": "2026-10-15",
-      "promotionStartDate": "2026-10-15T15:00:00.000Z",
-      "expiryDate": "2026-10-22T15:00:00.000Z",
+      "addedDate": "2026-10-22",
+      "promotionStartDate": "2026-10-22T15:00:00.000Z",
+      "expiryDate": "2026-10-29T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-10-15T17:11:59.840Z",
+      "verifiedAt": "2026-10-22T17:21:31.011Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "6a846880836044a2adad614ac771f487",
+      "externalId": "06190191cede42afb633fe89ef08c27e",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/6cbb0e3805c4436bafd028cafff48307/bad-cheese-16hj0.png",
-      "originalPrice": "11,69 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/46fc0cdb9f164a848e916249a8f68fc7/home-1f6qi.png",
+      "originalPrice": "4,49 €"
     },
     {
-      "id": "epic-db1202a30c5541dd99cdf54c918a9348-2026-10-15",
-      "title": "Agent A - Casse-tête d’espions",
+      "id": "epic-6aab3ddef4f84fbc9dd81c60f9d8549c-2026-10-22",
+      "title": "Sker Ritual",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/agent-a-a-puzzle-in-disguise-42fe5f",
+      "url": "https://store.epicgames.com/fr/p/sker-ritual-aac702",
       "country": "FR",
-      "addedDate": "2026-10-15",
-      "promotionStartDate": "2026-10-15T15:00:00.000Z",
-      "expiryDate": "2026-10-22T15:00:00.000Z",
+      "addedDate": "2026-10-22",
+      "promotionStartDate": "2026-10-22T15:00:00.000Z",
+      "expiryDate": "2026-10-29T15:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-10-15T17:11:59.840Z",
+      "verifiedAt": "2026-10-22T17:21:31.011Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "db1202a30c5541dd99cdf54c918a9348",
+      "externalId": "6aab3ddef4f84fbc9dd81c60f9d8549c",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/45db4fbe68fe43f4b025dec2014d42e7/agent-a-a-puzzle-in-disguise-3cppl.png",
-      "originalPrice": "17,99 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/43d96f4437e34c87b7eff08831d1b1de/sker-ritual-1tuka.png",
+      "originalPrice": "22,39 €"
     }
   ]
 }
