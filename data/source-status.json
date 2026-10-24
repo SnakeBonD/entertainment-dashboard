@@ -6,8 +6,8 @@
       "name": "ARTE",
       "scheduleLabel": "Toutes les 12 heures",
       "warningAfterHours": 30,
-      "lastSuccessfulCheck": "2026-10-24T04:58:45.216Z",
-      "itemCount": 6
+      "lastSuccessfulCheck": "2026-10-24T16:12:59.995Z",
+      "itemCount": 5
     },
     {
       "provider": "epic-games-store",
