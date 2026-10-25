@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-25T04:58:05.211Z",
+  "lastUpdated": "2026-10-25T16:46:48.826Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -232,17 +232,15 @@
       "addedDate": "2026-10-11",
       "availabilityStartDate": "2026-10-11T03:00:00Z",
       "expiryDate": "2026-11-10T04:00:00Z",
-      "verified": false,
-      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "verified": true,
+      "verifiedAt": "2026-10-25T16:46:48.826Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "101328-000-A",
       "description": "Un conte de fées à l’imagination débridée, avec Sienna Miller, Charlie Cox, Michelle Pfeiffer, Robert De Niro et Peter O’Toole.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/quz3CYEXtWpxwd5YReibxW/768x432?type=TEXT",
       "durationLabel": "120 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE",
-      "verificationNote": "not_in_current_selection",
-      "lastCheckedAt": "2026-10-21T17:36:58.537Z"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-101352-000-A-2026-10-07",
@@ -884,7 +882,7 @@
       "addedDate": "2026-10-14",
       "availabilityStartDate": "2026-10-14T03:00:00Z",
       "expiryDate": "2026-11-13T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-20T05:12:51.869Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -892,7 +890,9 @@
       "description": "Une satire jubilatoire du cinéma avec Penélope Cruz en réalisatrice excentrique et Antonio Banderas en star bling-bling.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/zfucMA7F7Yphzumj8HAczc/768x432?type=TEXT",
       "durationLabel": "109 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-25T16:46:48.826Z"
     },
     {
       "id": "arte-132065-000-A-2026-10-05",
