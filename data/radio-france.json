@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-26T13:14:17.700Z",
+  "lastUpdated": "2026-10-26T22:44:29.108Z",
   "items": [
     {
       "id": "radio-france-026448b4-e07f-43a3-806e-f082b16014e3",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-040e610a-778c-40d0-9ea9-49d6a8b3d6e4",
+      "title": "L'invitée : Lior Lalieu, responsable de la photothèque du Mémorial de la Shoah",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/3c438973-f9de-4f45-b75a-14c355039765/26774-28.09.2026-ITEMA_24689583-2026F22805S4271-NET_MFI_1F2DA7A9-D03B-44D4-A59E-AC15EBAEDE79-27-1bd2cc2cde8760cc3ce08966bef6d37d.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-26T13:41:00.000Z",
+      "durationLabel": "13 min",
+      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Lior Lalieu-Smadja Responsable du service photothèque du Mémorial de la Shoah",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-26T22:44:29.108Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-5a69fc2a-3496-4c6f-bac5-770b353305da",
       "title": "Paris, 14 mai 1941, la rafle du billet vert - Le récit",
       "podcastTitle": "Affaires sensibles",
@@ -75,21 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles, la rafle du billet vert.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-26T13:14:17.700Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-9521c173-baec-45ed-9a18-3444bd776a32",
-      "title": "L'affaire Robert Hendy-Freegard",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-vendredi-25-septembre-2026-9393182",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/81cb3fd3-2f0a-49da-a15f-33a14cd8933d/20904-27.03.2024-ITEMA_23691203-2024F22805S0087-NET_MFI_C2953B51-96FB-4AB9-A520-5C4EDC1A0B01-27-1a62ddea8b9d5d2ed2b49001007135c0.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-23T13:04:40.000Z",
-      "durationLabel": "49 min",
-      "description": "Aujourd’hui dans Affaires Sensibles : L'escroc contre le monde ordinaire.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-23T17:14:41.254Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
