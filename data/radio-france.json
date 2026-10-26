@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-25T04:52:09.963Z",
+  "lastUpdated": "2026-10-26T13:14:17.700Z",
   "items": [
+    {
+      "id": "radio-france-026448b4-e07f-43a3-806e-f082b16014e3",
+      "title": "Quand les chercheurs entraînent l'IA",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/quand-les-chercheurs-entrainent-l-ia-3639223",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/193600a7-6bcf-493a-b666-5568314a1446/27742-26.10.2026-ITEMA_24726584-2026C6612S0299-NET_MFC_553BC0DE-8F6C-46B0-B564-65DD52385245-25-21e2f26bb0504722c1f413fb1bd6e3ed.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-26T12:30:00.000Z",
+      "durationLabel": "33 min",
+      "description": "Après son doctorat en philosophie, Thibaut peine à trouver du travail. Pour gagner sa vie, il se met à entraîner des intelligences artificielles, un travail très bien payé, mais qui lui donne parfois l’impression de vendre son âme au diable.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-26T13:14:17.700Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-dd5e722a-cef8-4a97-9f37-f2f6497ad30a",
       "title": "[BEST OF 🔥] Deux journées extraordinaires",
@@ -33,19 +48,34 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-864a88cb-592c-48c6-a087-aec65fcbcdd8",
-      "title": "Dix femmes inspirantes : Anna, balayeuse heureuse",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/2cf4d15e-884b-4b61-a18e-9ac06939f8ee/27742-23.10.2026-ITEMA_24723649-2026C6612S0296-NET_MFC_7DF763B9-EC8B-438A-AB76-B83A7AF198E3-25-17e860140ee6e604e2c842be14af7131.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-10-23T11:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "Pendant deux ans, Anna a balayé les trottoirs de Paris. Un quotidien fait de froid, de saleté mais aussi de solidarité. Elle raconte son expérience.",
+      "id": "radio-france-5a69fc2a-3496-4c6f-bac5-770b353305da",
+      "title": "Paris, 14 mai 1941, la rafle du billet vert - Le récit",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/77b9da9c-30e3-4d17-88c9-bf6f55ba23a4/26774-28.09.2026-ITEMA_24689583-2026F22805S1271-NET_MFI_5C8D71F9-028B-48F4-9946-4B4737AD8C90-27-c023c9f6c7aeed77c58c0013c7677de8.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-26T13:04:50.000Z",
+      "durationLabel": "35 min",
+      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Lior Lalieu-Smadja Responsable du service photothèque du Mémorial de la Shoah",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-23T17:14:41.254Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-10-26T13:14:17.700Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-89f9e1ca-5775-46e7-93ea-12e6e34eeacc",
+      "title": "La rafle du billet vert - L'intégrale",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-lundi-28-septembre-2026-9811857",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/1c9224b7-dd93-4794-9338-5540e387ba81/26774-28.09.2026-ITEMA_24689583-2026F22805S0271-NET_MFI_70BC1B82-56AA-4DA4-BC41-267296D95689-27-062a618c48a99c6c747e9985d19c7101.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-26T13:04:40.000Z",
+      "durationLabel": "55 min",
+      "description": "Aujourd'hui dans Affaires Sensibles, la rafle du billet vert.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-26T13:14:17.700Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-9521c173-baec-45ed-9a18-3444bd776a32",
@@ -60,36 +90,6 @@
       "description": "Aujourd’hui dans Affaires Sensibles : L'escroc contre le monde ordinaire.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-23T17:14:41.254Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-a26111c5-fbf9-4dfb-89e7-1e5242696a4e",
-      "title": "L'invité : le sociologue Sébastien Tank-Storper",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/896ad658-b17a-4d29-b0b0-6323476ac89d/26774-24.09.2026-ITEMA_24684957-2026F22805S4267-NET_MFI_3FF2EB6B-5369-4A47-ACB1-63282ABEB43D-27-4c72ca4a26b8419f995610d83b5c17ec.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-22T13:41:00.000Z",
-      "durationLabel": "12 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Sébastien Tank-Storper Directeur de recherche au CNRS, membre du laboratoire CéSor, sociologue et anthropologue du relig…",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-22T17:16:48.306Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-19f008aa-a6e0-4c00-ab9a-abc3b8b813ab",
-      "title": "Buenos Aires, 1994, l’attentat contre l’Amia - Le récit",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/c1b40c76-7116-472d-9226-7dccabf7f03c/26774-24.09.2026-ITEMA_24684957-2026F22805S1267-NET_MFI_D54975D9-7E01-4521-96B4-14AAD59DC89E-27-eea8e5f41821da6ad664f199f2e24662.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-22T13:04:50.000Z",
-      "durationLabel": "36 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-22T17:16:48.306Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
