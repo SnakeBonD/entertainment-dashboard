@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-26T18:50:40.506Z",
+  "lastUpdated": "2026-10-27T18:13:22.368Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -109,6 +109,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-04T16:59:58.302Z"
+    },
+    {
+      "id": "arte-041743-001-A-2026-10-25",
+      "title": "Le comte de Monte-Cristo (1/2)",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/041743-001-A/le-comte-de-monte-cristo-1-2/",
+      "country": "FR",
+      "addedDate": "2026-10-25",
+      "availabilityStartDate": "2026-10-25T04:00:00Z",
+      "expiryDate": "2026-12-24T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-27T18:13:22.368Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "041743-001-A",
+      "description": "Jean Marais dans la première adaptation en couleur du célèbre roman d’Alexandre Dumas.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BDfgPCXyk7fh9sJ5EFsJrV/768x432?type=TEXT",
+      "durationLabel": "96 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-045550-000-A-2026-09-16",
@@ -272,7 +292,7 @@
       "addedDate": "2026-10-07",
       "availabilityStartDate": "2026-10-07T07:10:00Z",
       "expiryDate": "2027-04-06T22:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-20T05:12:51.869Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -280,7 +300,9 @@
       "description": "Partout dans le monde, des foules en colère affrontent des forces de l’ordre surarmées. Une enquête de Paul Moreira.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DHMzvZTGw8qJ5JwFPpTrnV/768x432?type=TEXT",
       "durationLabel": "56 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-27T18:13:22.368Z"
     },
     {
       "id": "arte-106236-035-A-2026-09-15",
@@ -563,6 +585,26 @@
       "selectionLabel": "Les vidéos les plus vues sur ARTE",
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-07T19:03:50.490Z"
+    },
+    {
+      "id": "arte-123416-000-A-2026-10-24",
+      "title": "Dracula : la véritable histoire",
+      "type": "documentary",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/123416-000-A/dracula-la-veritable-histoire/",
+      "country": "FR",
+      "addedDate": "2026-10-24",
+      "availabilityStartDate": "2026-10-24T03:00:00Z",
+      "expiryDate": "2027-01-29T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-27T18:13:22.368Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "123416-000-A",
+      "description": "Qui était l’homme qui a inspiré le vampire de Bram Stoker ? Voyage captivant sur les traces de Vlad Tepes (\"l’empaleur\").",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/SEc7uM4VUnvNyq6y2EY6ZY/768x432?type=TEXT",
+      "durationLabel": "90 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE"
     },
     {
       "id": "arte-124348-000-A-2026-09-23",
