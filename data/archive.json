@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-25T04:58:05.211Z",
+  "lastUpdated": "2026-10-27T22:26:14.426Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -669,6 +669,54 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-29T18:13:59.739Z",
       "archivedAt": "2026-10-25T04:58:05.211Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-039997-000-F-2026-09-27",
+      "title": "Le parrain, épilogue : la mort de Michael Corleone",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/039997-000-F/le-parrain-epilogue-la-mort-de-michael-corleone/",
+      "country": "FR",
+      "addedDate": "2026-09-27",
+      "availabilityStartDate": "2026-09-27T19:00:00Z",
+      "expiryDate": "2026-10-27T20:01:46Z",
+      "verified": false,
+      "verifiedAt": "2026-09-29T18:13:59.739Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "039997-000-F",
+      "description": "Le troisième opus, magistral, de la saga de Francis Ford Coppola. Avec Al Pacino, Diane Keaton et Andy Garcia.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/KhBTqdPDRqRm3RyjTQ7bP3/768x432?type=TEXT",
+      "durationLabel": "149 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-06T06:49:09.843Z",
+      "archivedAt": "2026-10-27T22:26:14.426Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-129825-000-A-2026-10-12",
+      "title": "Maigret voit rouge",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/129825-000-A/maigret-voit-rouge/",
+      "country": "FR",
+      "addedDate": "2026-10-12",
+      "availabilityStartDate": "2026-10-12T19:00:00Z",
+      "expiryDate": "2026-10-27T19:59:16Z",
+      "verified": false,
+      "verifiedAt": "2026-10-20T05:12:51.869Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "129825-000-A",
+      "description": "Jean Gabin, Françoise Fabian et une BO de Michel Legrand pour un \"Maigret\" où le commissaire se mesure à la pègre américaine.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/DPyNHvJXTeNqwKb6BrbMgG/768x432?type=TEXT",
+      "durationLabel": "84 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-21T17:36:58.537Z",
+      "archivedAt": "2026-10-27T22:26:14.426Z",
       "archiveReason": "expired"
     }
   ]
