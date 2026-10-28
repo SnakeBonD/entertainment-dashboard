@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-27T22:21:34.272Z",
+  "lastUpdated": "2026-10-28T13:07:24.108Z",
   "items": [
     {
       "id": "radio-france-bcd5ef40-30b0-41d6-b1a4-1099976d996c",
@@ -48,6 +48,36 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-c6eb69e6-f30d-4c57-ab81-1ae93a74ee60",
+      "title": "Le suicide collectif de la secte Etats-Unienne Heaven's Gate - Le récit",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/5b99d88e-e363-49cb-a59a-a4f9d9d4b64a/26774-30.09.2026-ITEMA_24692786-2026F22805S1273-NET_MFI_A31A1F40-BEF3-454C-BF67-B55B415F2055-27-d3e4c435c23ca1361375f43611dca175.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-28T13:04:50.000Z",
+      "durationLabel": "35 min",
+      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-28T13:07:24.108Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
+      "id": "radio-france-3a21a6e7-1280-4108-bfea-a3ffb3cb44d2",
+      "title": "Heaven’s Gate : suicide cosmique - L'intégrale",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-mercredi-30-septembre-2026-3644814",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/5dc6316b-91cb-49f4-b9d2-50a25ad21455/26774-30.09.2026-ITEMA_24692786-2026F22805S0273-NET_MFI_5066EEB7-E76E-4CB7-8273-B7D68866E191-27-9ceea9fb7bc4a316a15e7677128aec8e.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-28T13:04:40.000Z",
+      "durationLabel": "56 min",
+      "description": "Aujourd’hui dans Affaires Sensibles, Heaven’s Gate : suicide cosmique",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-28T13:07:24.108Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-a6effb93-fe76-4794-9a4e-5795a2c089b6",
       "title": "L'invité : le journaliste Adrien Durand",
       "podcastTitle": "Affaires sensibles",
@@ -58,36 +88,6 @@
       "publishedAt": "2026-10-27T13:41:00.000Z",
       "durationLabel": "11 min",
       "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Adrien Durand Journaliste",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-27T22:21:34.272Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-bf289ca7-d1dc-42b7-a2b0-dd18c0bef324",
-      "title": "L'histoire d'un roman sulfureux : American Psycho, de Bret Easton Ellis - le récit",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0f78d0e9-d82e-41a1-bd76-2f9224fd2d47/26774-29.09.2026-ITEMA_24691366-2026F22805S1272-NET_MFI_50E77B79-ED1F-45E4-BBA4-346EE35D3FDF-27-41117493a708c28b7a3513cac53a2020.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-27T13:04:50.000Z",
-      "durationLabel": "36 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-27T22:21:34.272Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-dab72656-cd1a-4f56-9589-1d56d5e2bfcc",
-      "title": "L’histoire d’un livre choc devenu culte : American psycho - l'Intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-mardi-29-septembre-2026-2769949",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0def3a9e-3839-4cda-aabc-e2841c58e7ec/26774-29.09.2026-ITEMA_24691366-2026F22805S0272-NET_MFI_C94FBA7F-6A8F-4614-917C-3B64467611F8-27-4ebd9e1e8de8e7607efede314aef4a2b.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-27T13:04:40.000Z",
-      "durationLabel": "55 min",
-      "description": "Aujourd'hui dans Affaires Sensibles, l’histoire d’un livre choc devenu culte : American psycho",
       "provider": "radio-france",
       "verifiedAt": "2026-10-27T22:21:34.272Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
