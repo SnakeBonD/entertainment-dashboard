@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-28T05:57:10.596Z",
+  "lastUpdated": "2026-10-28T13:15:48.991Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -965,14 +965,16 @@
       "addedDate": "2026-10-22",
       "promotionStartDate": "2026-10-22T15:00:00.000Z",
       "expiryDate": "2026-10-29T15:00:00.000Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-22T17:21:31.011Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
       "externalId": "6aab3ddef4f84fbc9dd81c60f9d8549c",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
       "imageUrl": "https://cdn1.epicgames.com/spt-assets/43d96f4437e34c87b7eff08831d1b1de/sker-ritual-1tuka.png",
-      "originalPrice": "22,39 €"
+      "originalPrice": "22,39 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-28T13:15:48.991Z"
     }
   ]
 }
