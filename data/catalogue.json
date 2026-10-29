@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-28T22:42:53.776Z",
+  "lastUpdated": "2026-10-29T22:52:15.478Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -937,41 +937,22 @@
       "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
-      "id": "epic-06190191cede42afb633fe89ef08c27e-2026-10-22",
-      "title": "Home - A Unique Horror Adventure",
+      "id": "epic-4e469c7d8bbf49bcabc2c07127d3d946-2026-10-29",
+      "title": "Sorry We're Closed",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/home-19212a",
+      "url": "https://store.epicgames.com/fr/p/sorry-were-closed-724c86",
       "country": "FR",
-      "addedDate": "2026-10-22",
-      "promotionStartDate": "2026-10-22T15:00:00.000Z",
-      "expiryDate": "2026-10-29T15:00:00.000Z",
+      "addedDate": "2026-10-29",
+      "promotionStartDate": "2026-10-29T15:00:00.000Z",
+      "expiryDate": "2026-11-05T16:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-10-22T17:21:31.011Z",
+      "verifiedAt": "2026-10-29T22:52:15.025Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "06190191cede42afb633fe89ef08c27e",
+      "externalId": "4e469c7d8bbf49bcabc2c07127d3d946",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/46fc0cdb9f164a848e916249a8f68fc7/home-1f6qi.png",
-      "originalPrice": "4,49 €"
-    },
-    {
-      "id": "epic-6aab3ddef4f84fbc9dd81c60f9d8549c-2026-10-22",
-      "title": "Sker Ritual",
-      "type": "game",
-      "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/sker-ritual-aac702",
-      "country": "FR",
-      "addedDate": "2026-10-22",
-      "promotionStartDate": "2026-10-22T15:00:00.000Z",
-      "expiryDate": "2026-10-29T15:00:00.000Z",
-      "verified": true,
-      "verifiedAt": "2026-10-28T22:42:53.776Z",
-      "sourceUrl": "https://store.epicgames.com/fr/free-games",
-      "provider": "epic-games-store",
-      "externalId": "6aab3ddef4f84fbc9dd81c60f9d8549c",
-      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/43d96f4437e34c87b7eff08831d1b1de/sker-ritual-14x61.jpg",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/9ab7eaaeb2f041969b350955b789f0f7/sorry-were-closed-1orqh.png",
       "originalPrice": "22,39 €"
     }
   ]

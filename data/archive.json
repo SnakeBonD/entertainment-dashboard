@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-28T05:57:10.596Z",
+  "lastUpdated": "2026-10-29T22:52:15.478Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -763,6 +763,52 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-02T18:00:16.168Z",
       "archivedAt": "2026-10-28T05:57:10.596Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-06190191cede42afb633fe89ef08c27e-2026-10-22",
+      "title": "Home - A Unique Horror Adventure",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/home-19212a",
+      "country": "FR",
+      "addedDate": "2026-10-22",
+      "promotionStartDate": "2026-10-22T15:00:00.000Z",
+      "expiryDate": "2026-10-29T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-10-22T17:21:31.011Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "06190191cede42afb633fe89ef08c27e",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/46fc0cdb9f164a848e916249a8f68fc7/home-1f6qi.png",
+      "originalPrice": "4,49 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-29T22:52:15.025Z",
+      "archivedAt": "2026-10-29T22:52:15.478Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-6aab3ddef4f84fbc9dd81c60f9d8549c-2026-10-22",
+      "title": "Sker Ritual",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/sker-ritual-aac702",
+      "country": "FR",
+      "addedDate": "2026-10-22",
+      "promotionStartDate": "2026-10-22T15:00:00.000Z",
+      "expiryDate": "2026-10-29T15:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-10-28T22:42:53.776Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "6aab3ddef4f84fbc9dd81c60f9d8549c",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/43d96f4437e34c87b7eff08831d1b1de/sker-ritual-14x61.jpg",
+      "originalPrice": "22,39 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-10-29T22:52:15.025Z",
+      "archivedAt": "2026-10-29T22:52:15.478Z",
       "archiveReason": "expired"
     }
   ]
