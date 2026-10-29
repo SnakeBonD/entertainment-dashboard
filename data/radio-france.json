@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-29T13:13:49.201Z",
+  "lastUpdated": "2026-10-29T22:49:23.420Z",
   "items": [
     {
       "id": "radio-france-773971d9-74b4-4e2f-8438-e560bf1b534f",
@@ -38,14 +38,29 @@
       "podcastTitle": "Les pieds sur terre",
       "station": "France Culture",
       "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/le-grand-bain-3502171",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/900ca4f8-ebdf-4eef-a56d-a82e74863aa9/27742-27.10.2026-ITEMA_24728172-2026C6612S0300-NET_MFC_03BFE14B-D3DE-4884-8A5F-509F520F0A21-25-5ba84013937ece5d9157d00f0c31c155.m4a",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/c78ef545-fb7f-41ec-b4e9-2218388c337a/10078-27.10.2026-ITEMA_24728159-2026C6612S0300-NET_MFC_03BFE14B-D3DE-4884-8A5F-509F520F0A21-25-5ba84013937ece5d9157d00f0c31c155.m4a",
       "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
       "publishedAt": "2026-10-27T12:30:00.000Z",
       "durationLabel": "29 min",
       "description": "Le 4 octobre 2026 à Douvres, Salima Bouyga Agha, 67 ans, plonge dans les eaux glaciales de la Manche avec son maillot de bain préféré et un simple bonnet. Elle nage alors pendant plus de 14 heures pour rejoindre les côtes françaises à Calais.",
       "provider": "radio-france",
-      "verifiedAt": "2026-10-28T22:40:20.355Z",
+      "verifiedAt": "2026-10-29T22:49:23.420Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
+    {
+      "id": "radio-france-4938cad2-8493-4d55-aef8-b8cde9746835",
+      "title": "L'invité : l'archéologue Gérard Coulon",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/0ee6912b-8063-43ab-b0b4-1972851ee670/26774-01.10.2026-ITEMA_24694261-2026F22805S4274-NET_MFI_69B51313-3655-4E20-A003-DCA9EE62D51E-27-b01e2eb43611d6a21e61eb9b781eb89c.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-29T13:41:00.000Z",
+      "durationLabel": "12 min",
+      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-29T22:49:23.420Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-d202ab09-9b32-4672-8e2a-ddc22b5c7bbb",
@@ -75,21 +90,6 @@
       "description": "Aujourd'hui dans Affaires Sensibles, Vrain-Lucas, le faussaire qui a berné le mathématicien",
       "provider": "radio-france",
       "verifiedAt": "2026-10-29T13:13:49.201Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-09c95ea0-e382-4995-82ee-a872f84b5f01",
-      "title": "L'invité : Quentin Bruet-Ferréol, écrivain, auteur de \"Dieu est un voleur qui marche dans la nuit\" (Bouquins, 2022)",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/09c788e8-448f-468f-9def-2a47b1e763dd/26774-30.09.2026-ITEMA_24692786-2026F22805S4273-NET_MFI_D7DD935A-C3F6-4F52-9B8A-1559AD5E8ABF-27-9378d50dd889e795c40398e75cc349c4.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-10-28T13:41:00.000Z",
-      "durationLabel": "15 min",
-      "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-28T22:40:20.355Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     }
   ]
