@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-29T22:52:15.478Z",
+  "lastUpdated": "2026-10-30T06:04:04.387Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -809,6 +809,30 @@
       "verificationNote": "not_in_current_feed",
       "lastCheckedAt": "2026-10-29T22:52:15.025Z",
       "archivedAt": "2026-10-29T22:52:15.478Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-087848-000-A-2026-09-28",
+      "title": "L'ordre des choses",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/087848-000-A/l-ordre-des-choses/",
+      "country": "FR",
+      "addedDate": "2026-09-28",
+      "availabilityStartDate": "2026-09-28T03:00:00Z",
+      "expiryDate": "2026-10-30T04:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-09-30T18:06:44.557Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "087848-000-A",
+      "description": "Quand une collectionneuse boulimique rencontre un adepte du minimalisme. Une tragi-comédie sur les peurs qui nous tétanisent.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/tkmZFN5xjmVmL2cyT97PTK/768x432?type=TEXT",
+      "durationLabel": "93 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-03T16:41:06.342Z",
+      "archivedAt": "2026-10-30T06:04:04.387Z",
       "archiveReason": "expired"
     }
   ]
