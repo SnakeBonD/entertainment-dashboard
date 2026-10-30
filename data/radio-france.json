@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-29T22:49:23.420Z",
+  "lastUpdated": "2026-10-30T13:06:03.500Z",
   "items": [
     {
       "id": "radio-france-773971d9-74b4-4e2f-8438-e560bf1b534f",
@@ -48,6 +48,21 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
+      "id": "radio-france-23763885-d7b1-4246-9e72-2c23e5babe9c",
+      "title": "Jimmy Savile l'ogre de la BBC",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/ce7823a3-72bb-43c0-a44a-4e05caf680bf/20904-18.06.2025-ITEMA_24171959-2025F22805S0169-NET_MFI_AC599555-B4B8-4C93-A85F-B5A64D6D81B6-27-c408582835c2a68981c13e91c40cf0fc.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-10-30T13:04:40.000Z",
+      "durationLabel": "48 min",
+      "description": "Aujourd’hui dans Affaires sensibles, retour sur l’un des scandales les plus retentissants de l’histoire britannique : l’affaire Jimmy Savile.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-10-30T13:06:03.500Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
+    },
+    {
       "id": "radio-france-4938cad2-8493-4d55-aef8-b8cde9746835",
       "title": "L'invité : l'archéologue Gérard Coulon",
       "podcastTitle": "Affaires sensibles",
@@ -73,21 +88,6 @@
       "publishedAt": "2026-10-29T13:04:50.000Z",
       "durationLabel": "35 min",
       "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin - invités : Gérard Coulon Archéologue, historien et écrivain. Conservateur en chef du patrimoine",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-29T13:13:49.201Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-05d2ab27-697f-4846-b414-851c4a65938b",
-      "title": "Les Faussaires 7/7 : Vrain-Lucas, le faussaire qui a berné le mathématicien - L'intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-jeudi-01-octobre-2026-1776746",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/a4c9d13e-a6ee-4f15-9142-39e13ba683e4/26774-01.10.2026-ITEMA_24694261-2026F22805S0274-NET_MFI_27BCD811-4DAD-4889-9F8F-1E08F94C8783-27-276b10cec8e2604409c2c7521953ee30.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/rf-cruiser-embed-production/2026/10/e0f9e0c9-a62e-4023-a8d8-cd72fae2e7ba/1400x1400_sc_sc_carre-les-faussaires.jpg",
-      "publishedAt": "2026-10-29T13:04:40.000Z",
-      "durationLabel": "54 min",
-      "description": "Aujourd'hui dans Affaires Sensibles, Vrain-Lucas, le faussaire qui a berné le mathématicien",
       "provider": "radio-france",
       "verifiedAt": "2026-10-29T13:13:49.201Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
