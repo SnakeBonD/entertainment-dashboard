@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-10-30T06:04:04.387Z",
+  "lastUpdated": "2026-11-01T06:28:08.664Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -833,6 +833,52 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-03T16:41:06.342Z",
       "archivedAt": "2026-10-30T06:04:04.387Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-025289-000-A-2026-10-25",
+      "title": "La maison du docteur Edwardes",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/025289-000-A/la-maison-du-docteur-edwardes/",
+      "country": "FR",
+      "addedDate": "2026-10-25",
+      "availabilityStartDate": "2026-10-25T04:00:00Z",
+      "expiryDate": "2026-11-01T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-10-26T18:50:40.506Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "025289-000-A",
+      "description": "Amour, chasse à l’homme et psychanalyse pour ce film d’Alfred Hitchcock avec Ingrid Bergman et Gregory Peck.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8XWiYL3qwoGdWUAsKLjgTK/768x432?type=TEXT",
+      "durationLabel": "107 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "archivedAt": "2026-11-01T06:28:08.664Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-113146-000-A-2026-10-01",
+      "title": "Les vieux espions à Cuba",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/113146-000-A/les-vieux-espions-a-cuba/",
+      "country": "FR",
+      "addedDate": "2026-10-01",
+      "availabilityStartDate": "2026-10-01T03:00:00Z",
+      "expiryDate": "2026-11-01T04:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-10-04T16:59:58.302Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "113146-000-A",
+      "description": "Quand de vieux espions de l’Allemagne de l’Est reprennent du service à Cuba. Une drolatique comédie d’espionnage.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/Nts9t8EBMunmGFJpGvAeEX/768x432?type=TEXT",
+      "durationLabel": "91 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-06T18:35:09.243Z",
+      "archivedAt": "2026-11-01T06:28:08.664Z",
       "archiveReason": "expired"
     }
   ]
