@@ -1,7 +1,37 @@
 {
   "version": 1,
-  "lastUpdated": "2026-10-31T05:53:28.092Z",
+  "lastUpdated": "2026-11-01T06:18:50.602Z",
   "items": [
+    {
+      "id": "radio-france-07f6dc83-cdb4-4c4e-800a-de4279e7187e",
+      "title": "[BEST OF 🔥] Aventures extrêmes (2018)",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/5fdbe1bf-31b0-4674-9ddc-3200649b5858/27742-25.04.2018-ITEMA_24733097-2018C6612E0080-NET_FC_A2C2B3DB-6E7C-4D36-AFF0-15FD099B339C-25-e57b2d37691cbfe106c48153748f073d.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-31T23:00:03.000Z",
+      "durationLabel": "29 min",
+      "description": "Deux histoires d'aventuriers, confrontés à l'hostilité de la nature la plus extrême.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-11-01T06:18:50.602Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
+    {
+      "id": "radio-france-e7e94243-f0f8-4391-816d-e7c7a33f57f5",
+      "title": "[BEST OF 🔥] Rescapées (2019)",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/8ede6ddb-80d4-4e56-b161-c348a72d9ff0/18722-07.02.2019-ITEMA_21975426-2.mp3",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-10-31T23:00:03.000Z",
+      "durationLabel": "28 min",
+      "description": "Gaëlle décide de gravir l'Aiguille verte en solitaire, une entreprise périlleuse. Dorine, passionnée d'aviation, monte à bord d'un petit avion de son aéro-club qui n'arrivera jamais à destination. Deux rescapées racontent leur très mauvaise aventure.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-11-01T06:18:50.602Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-711a5abc-0b8a-4bf1-aa58-107c92420845",
       "title": "[BEST OF 🔥] Le grand frisson (2016)",
@@ -15,36 +45,6 @@
       "description": "Une scène de terreur dans la vie d’Elise et dans celle de Malik : une telle peur qu’elle vient encore les hanter des années après. Une tentative d’assassinat et une attaque de rats. Deux récits, par Stéphanie Labadie.",
       "provider": "radio-france",
       "verifiedAt": "2026-10-31T05:53:28.092Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-8ab68b09-f59b-407c-bd02-8ceee5ea96e0",
-      "title": "[BEST OF 🔥] Le grand frisson en altitude (2016)",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/6af9f87c-9cf5-4074-bb1d-acbfd90add5c/27742-12.12.2016-ITEMA_24733095-2016C6612E0251-NET_FC_1F053B87-CFD9-4037-BDF0-87BE8C6127BB-25-05eefe9a8a4da190904cea5ee4976318.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-10-30T23:00:04.000Z",
-      "durationLabel": "31 min",
-      "description": "Deux récits de peurs, en montagne et dans les airs.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-31T05:53:28.092Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-e83ad164-a286-41fa-9e65-ff96b8ee42eb",
-      "title": "Frissons 6/7 : Six pieds sous terre",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/b5b9a817-2ec7-4d04-aa07-16567a7f6e27/10078-30.10.2026-ITEMA_24732460-2026C6612S0303-NET_MFC_43D2177B-B9A9-4F85-BAD3-8D118B937AF9-25-79ac665f13c2ae8bbef349ef3fd7636e.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production-eu3/2022/10/bff2140e-5ad9-4437-a5fe-92b6738ce093/1400x1400_sc_carre-frissons.jpg",
-      "publishedAt": "2026-10-30T12:30:00.000Z",
-      "durationLabel": "29 min",
-      "description": "À dix-neuf ans, Nicolas descend dans le gouffre des Vitarelles pour une expédition de spéléologie de trois jours. Il restera dix jours sous terre. Henri a travaillé vingt-trois ans dans la mine de Roche-la-Molière (Loire). Un jour, une explosion tue une équipe de collègues et d'…",
-      "provider": "radio-france",
-      "verifiedAt": "2026-10-30T22:26:55.025Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
