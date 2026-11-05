@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-04T06:43:53.346Z",
+  "lastUpdated": "2026-11-05T20:08:07.676Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -903,6 +903,29 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-10-20T05:12:51.869Z",
       "archivedAt": "2026-11-04T06:43:53.346Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-4e469c7d8bbf49bcabc2c07127d3d946-2026-10-29",
+      "title": "Sorry We're Closed",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/sorry-were-closed-724c86",
+      "country": "FR",
+      "addedDate": "2026-10-29",
+      "promotionStartDate": "2026-10-29T15:00:00.000Z",
+      "expiryDate": "2026-11-05T16:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-10-29T22:52:15.025Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "4e469c7d8bbf49bcabc2c07127d3d946",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/9ab7eaaeb2f041969b350955b789f0f7/sorry-were-closed-1orqh.png",
+      "originalPrice": "22,39 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-11-05T20:08:06.407Z",
+      "archivedAt": "2026-11-05T20:08:07.676Z",
       "archiveReason": "expired"
     }
   ]

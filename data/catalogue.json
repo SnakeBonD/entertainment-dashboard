@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-04T06:43:53.346Z",
+  "lastUpdated": "2026-11-05T20:08:07.676Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -851,23 +851,23 @@
       "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
-      "id": "epic-4e469c7d8bbf49bcabc2c07127d3d946-2026-10-29",
-      "title": "Sorry We're Closed",
+      "id": "epic-3be0a0d8479946d78f60d90c9442a0b4-2026-11-05",
+      "title": "Flotsam",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/sorry-were-closed-724c86",
+      "url": "https://store.epicgames.com/fr/p/flotsam-266287",
       "country": "FR",
-      "addedDate": "2026-10-29",
-      "promotionStartDate": "2026-10-29T15:00:00.000Z",
-      "expiryDate": "2026-11-05T16:00:00.000Z",
+      "addedDate": "2026-11-05",
+      "promotionStartDate": "2026-11-05T16:00:00.000Z",
+      "expiryDate": "2026-11-12T16:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-10-29T22:52:15.025Z",
+      "verifiedAt": "2026-11-05T20:08:06.407Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "4e469c7d8bbf49bcabc2c07127d3d946",
+      "externalId": "3be0a0d8479946d78f60d90c9442a0b4",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/9ab7eaaeb2f041969b350955b789f0f7/sorry-were-closed-1orqh.png",
-      "originalPrice": "22,39 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/5c36b876e80d4285b9993947efeeaf2b/flotsam-1yczl.jpg",
+      "originalPrice": "19,99 €"
     }
   ]
 }
