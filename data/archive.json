@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-05T20:08:07.676Z",
+  "lastUpdated": "2026-11-06T07:03:37.702Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -926,6 +926,30 @@
       "verificationNote": "not_in_current_feed",
       "lastCheckedAt": "2026-11-05T20:08:06.407Z",
       "archivedAt": "2026-11-05T20:08:07.676Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "arte-130524-000-A-2026-10-07",
+      "title": "Nebraska",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/130524-000-A/nebraska/",
+      "country": "FR",
+      "addedDate": "2026-10-07",
+      "availabilityStartDate": "2026-10-07T03:00:00Z",
+      "expiryDate": "2026-11-06T04:00:00Z",
+      "verified": false,
+      "verifiedAt": "2026-10-10T06:20:28.998Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "130524-000-A",
+      "description": "Par Alexander Payne et avec les excellents Bruce Dern et Will Forte, un road-movie d'une mélancolique drôlerie.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/gusfHb9jAuo6vDZxADnFQn/768x432?type=TEXT",
+      "durationLabel": "109 min",
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-10-20T05:12:51.869Z",
+      "archivedAt": "2026-11-06T07:03:37.702Z",
       "archiveReason": "expired"
     }
   ]
