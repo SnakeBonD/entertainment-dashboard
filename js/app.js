@@ -1351,7 +1351,10 @@
       document.querySelector(".today-program-heading").after(durationLabel);
     }
     const formatDuration = window.SnakeBonDTodayProgram.formatDuration;
-    durationLabel.textContent = duration.knownItems ? `${formatDuration(duration.minutes)} connues · ${formatDuration(duration.remainingMinutes)} restantes${duration.knownItems < duration.totalItems ? ` · ${duration.knownItems}/${duration.totalItems} choix renseignés` : ""}` : "Durée non renseignée";
+    const knownEndTime = window.SnakeBonDTodayProgram.knownEndTime(duration.remainingMinutes);
+    const partialCoverage = duration.knownItems < duration.totalItems;
+    const endTimeText = doneCount === items.length && items.length ? " · programme terminé" : duration.remainingMinutes > 0 ? ` · ${partialCoverage ? "fin connue au plus tôt" : "fin théorique"} vers ${knownEndTime}` : partialCoverage && items.length ? " · heure de fin inconnue" : "";
+    durationLabel.textContent = duration.knownItems ? `${formatDuration(duration.minutes)} connues · ${formatDuration(duration.remainingMinutes)} restantes${partialCoverage ? ` · ${duration.knownItems}/${duration.totalItems} choix renseignés` : ""}${endTimeText}` : items.length ? "Durée et heure de fin non renseignées" : "Durée non renseignée";
     document.getElementById("today-program-progress").value = doneCount;
     document.getElementById("today-program-clear").hidden = items.length === 0;
     const toggleAll = document.getElementById("today-program-toggle-all");

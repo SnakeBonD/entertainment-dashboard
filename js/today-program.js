@@ -108,12 +108,19 @@
   }
 
   function formatDuration(minutes) {
-    if (!Number.isInteger(minutes) || minutes <= 0) return null;
+    if (!Number.isInteger(minutes) || minutes < 0) return null;
     if (minutes < 60) return `${minutes} min`;
     const hours = Math.floor(minutes / 60);
     const remainder = minutes % 60;
     return `${hours} h${remainder ? ` ${remainder} min` : ""}`;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, formatDuration, knownDuration, move, read, remove, replace, setAllDone, toggleDone };
+  function knownEndTime(remainingMinutes, now = new Date()) {
+    const start = new Date(now);
+    if (!Number.isInteger(remainingMinutes) || remainingMinutes < 0 || Number.isNaN(start.getTime())) return null;
+    const end = new Date(start.getTime() + remainingMinutes * 60_000);
+    return `${String(end.getHours()).padStart(2, "0")}:${String(end.getMinutes()).padStart(2, "0")}`;
+  }
+
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, formatDuration, knownDuration, knownEndTime, move, read, remove, replace, setAllDone, toggleDone };
 })();
