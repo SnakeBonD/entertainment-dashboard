@@ -1374,6 +1374,28 @@
 
   function setupTodayFilters() {
     const clearProgram = document.getElementById("today-program-clear");
+    const composer = document.createElement("form");
+    composer.id = "today-program-composer";
+    composer.className = "today-program-composer";
+    const budgetLabel = document.createElement("label");
+    budgetLabel.htmlFor = "today-program-budget";
+    budgetLabel.textContent = "Temps disponible";
+    const budgetSelect = document.createElement("select");
+    budgetSelect.id = "today-program-budget";
+    budgetSelect.name = "budget";
+    budgetSelect.setAttribute("aria-describedby", "today-program-composer-help");
+    [[30,"30 min"],[60,"1 h"],[90,"1 h 30"],[120,"2 h"],[180,"3 h"],[240,"4 h"]].forEach(([value,label])=>{const option=document.createElement("option");option.value=String(value);option.textContent=label;option.selected=value===120;budgetSelect.append(option);});
+    const composeButton = document.createElement("button");
+    composeButton.id = "today-program-compose";
+    composeButton.className = "today-program-add";
+    composeButton.type = "submit";
+    composeButton.textContent = "Composer automatiquement";
+    const composerHelp = document.createElement("p");
+    composerHelp.id = "today-program-composer-help";
+    composerHelp.textContent = "Jusqu’à trois suggestions du filtre actif, sans dépasser ce temps et uniquement avec une durée officielle.";
+    budgetLabel.append(budgetSelect);
+    composer.append(budgetLabel,composeButton,composerHelp);
+    document.querySelector(".today-program-heading").after(composer);
     const toggleAllProgram = document.createElement("button");
     toggleAllProgram.id = "today-program-toggle-all";
     toggleAllProgram.className = "today-program-add";
@@ -1381,6 +1403,20 @@
     toggleAllProgram.hidden = true;
     toggleAllProgram.setAttribute("aria-pressed", "false");
     clearProgram.before(toggleAllProgram);
+    composer.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const allItems = window.SnakeBonDToday.build({ catalogue: state.catalogue, podcasts: state.radioFrance, isTracked: (id) => ["discover","progress"].includes(window.SnakeBonDWatchlist?.get(id)?.status), isFavorite: (platform) => window.SnakeBonDFavorites?.hasPlatform(platform) ?? false });
+      const visibleItems = window.SnakeBonDToday.visible(allItems, window.SnakeBonDToday.readDismissed()).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
+      const candidates = window.SnakeBonDToday.filter(visibleItems, state.todayFilter).map(todayProgramItem);
+      const budget = Number(budgetSelect.value);
+      const plan = window.SnakeBonDTodayProgram.compose(candidates, budget);
+      if (!plan.length) { showTodayMessage("Aucune suggestion avec une durée officielle ne tient dans ce budget."); return; }
+      const previousItems = window.SnakeBonDTodayProgram.read();
+      if (!window.SnakeBonDTodayProgram.replace(plan)) { showTodayMessage("Impossible de composer le programme local."); return; }
+      renderTodayProgram();
+      const minutes = window.SnakeBonDTodayProgram.knownDuration(plan).minutes;
+      offerTodayUndo(`Programme composé : ${plan.length} choix pour ${window.SnakeBonDTodayProgram.formatDuration(minutes)}.`, () => window.SnakeBonDTodayProgram.replace(previousItems));
+    });
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });
     clearProgram.addEventListener("click", () => updateTodayProgram("Programme du jour vidé.", () => window.SnakeBonDTodayProgram.clear()));

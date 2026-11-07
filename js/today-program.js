@@ -122,5 +122,39 @@
     return `${String(end.getHours()).padStart(2, "0")}:${String(end.getMinutes()).padStart(2, "0")}`;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, dayKey, formatDuration, knownDuration, knownEndTime, move, read, remove, replace, setAllDone, toggleDone };
+  function compose(items, budgetMinutes) {
+    if (!Array.isArray(items) || !Number.isInteger(budgetMinutes) || budgetMinutes <= 0) return [];
+    const seen = new Set();
+    const candidates = items.flatMap((item, index) => {
+      const safe = sanitizeItem(item);
+      if (!safe || seen.has(safe.id) || !safe.durationMinutes || safe.durationMinutes > budgetMinutes) return [];
+      seen.add(safe.id);
+      return [{ item: safe, index }];
+    });
+    let best = { items: [], indices: [], minutes: 0 };
+    const hasHigherPriority = (indices) => {
+      const length = Math.max(indices.length, best.indices.length);
+      for (let index = 0; index < length; index += 1) {
+        const next = indices[index] ?? Infinity;
+        const current = best.indices[index] ?? Infinity;
+        if (next !== current) return next < current;
+      }
+      return false;
+    };
+    const visit = (start, selected, indices, minutes) => {
+      if (selected.length && (minutes > best.minutes || (minutes === best.minutes && hasHigherPriority(indices)))) {
+        best = { items: [...selected], indices: [...indices], minutes };
+      }
+      if (selected.length === MAX_ITEMS) return;
+      for (let index = start; index < candidates.length; index += 1) {
+        const candidate = candidates[index];
+        const nextMinutes = minutes + candidate.item.durationMinutes;
+        if (nextMinutes <= budgetMinutes) visit(index + 1, [...selected, candidate.item], [...indices, candidate.index], nextMinutes);
+      }
+    };
+    visit(0, [], [], 0);
+    return best.items;
+  }
+
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, compose, dayKey, formatDuration, knownDuration, knownEndTime, move, read, remove, replace, setAllDone, toggleDone };
 })();

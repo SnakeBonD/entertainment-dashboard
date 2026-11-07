@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v3.9** affiche l’heure de fin théorique du Programme du jour à partir des durées officielles restantes, sans estimer les durées absentes et toujours localement :
+La version **v4.0** compose automatiquement jusqu’à trois choix selon le temps disponible, uniquement avec les durées officielles et toujours localement :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -35,6 +35,7 @@ La version **v3.9** affiche l’heure de fin théorique du Programme du jour à 
 - temps restant connu recalculé immédiatement lorsqu’un choix est terminé ou réactivé ;
 - durée officielle affichée sur chaque choix renseigné du programme, avec conservation d’un libellé sobre lorsque la durée manque ;
 - heure de fin théorique recalculée depuis l’heure locale et le temps restant, avec avertissement explicite lorsque certaines durées manquent ;
+- composition automatique depuis le filtre Aujourd’hui actif, en maximisant le temps utilisé sans dépasser le budget choisi et avec annulation immédiate ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -428,6 +429,7 @@ déploiement : la publication normale de `main` suffit.
 - **v3.7** — temps restant connu recalculé avec la progression.
 - **v3.8** — durée officielle visible sur chaque choix renseigné.
 - **v3.9** — heure de fin théorique calculée depuis les durées restantes officielles.
+- **v4.0** — composition locale du Programme du jour selon un budget temps et les priorités visibles.
 
 ## Sécurité et confidentialité
 
