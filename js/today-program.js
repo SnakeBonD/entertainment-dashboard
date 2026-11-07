@@ -122,8 +122,9 @@
     return `${String(end.getHours()).padStart(2, "0")}:${String(end.getMinutes()).padStart(2, "0")}`;
   }
 
-  function compose(items, budgetMinutes) {
+  function compose(items, budgetMinutes, previousIds = []) {
     if (!Array.isArray(items) || !Number.isInteger(budgetMinutes) || budgetMinutes <= 0) return [];
+    const excludedIds = Array.isArray(previousIds) ? previousIds.filter((id) => typeof id === "string") : [];
     const seen = new Set();
     const candidates = items.flatMap((item, index) => {
       const safe = sanitizeItem(item);
@@ -142,7 +143,8 @@
       return false;
     };
     const visit = (start, selected, indices, minutes) => {
-      if (selected.length && (minutes > best.minutes || (minutes === best.minutes && hasHigherPriority(indices)))) {
+      const repeatsPrevious = selected.length === excludedIds.length && selected.every((item) => excludedIds.includes(item.id));
+      if (selected.length && !repeatsPrevious && (minutes > best.minutes || (minutes === best.minutes && hasHigherPriority(indices)))) {
         best = { items: [...selected], indices: [...indices], minutes };
       }
       if (selected.length === MAX_ITEMS) return;

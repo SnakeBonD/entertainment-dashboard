@@ -1339,6 +1339,8 @@
 
   function renderTodayProgram() {
     const items = window.SnakeBonDTodayProgram.read();
+    const composeButton = document.getElementById("today-program-compose");
+    if (composeButton) composeButton.textContent = items.length ? "Composer un autre programme" : "Composer automatiquement";
     const list = document.getElementById("today-program-list");
     const doneCount = items.filter((item) => item.done).length;
     const duration = window.SnakeBonDTodayProgram.knownDuration(items);
@@ -1409,9 +1411,9 @@
       const visibleItems = window.SnakeBonDToday.visible(allItems, window.SnakeBonDToday.readDismissed()).filter((item) => window.SnakeBonDWatchlist?.get(item.id)?.status !== "hidden");
       const candidates = window.SnakeBonDToday.filter(visibleItems, state.todayFilter).map(todayProgramItem);
       const budget = Number(budgetSelect.value);
-      const plan = window.SnakeBonDTodayProgram.compose(candidates, budget);
-      if (!plan.length) { showTodayMessage("Aucune suggestion avec une durée officielle ne tient dans ce budget."); return; }
       const previousItems = window.SnakeBonDTodayProgram.read();
+      const plan = window.SnakeBonDTodayProgram.compose(candidates, budget, previousItems.map((item) => item.id));
+      if (!plan.length) { showTodayMessage(previousItems.length ? "Aucun autre programme avec une durée officielle ne tient dans ce budget." : "Aucune suggestion avec une durée officielle ne tient dans ce budget."); return; }
       if (!window.SnakeBonDTodayProgram.replace(plan)) { showTodayMessage("Impossible de composer le programme local."); return; }
       renderTodayProgram();
       const minutes = window.SnakeBonDTodayProgram.knownDuration(plan).minutes;
