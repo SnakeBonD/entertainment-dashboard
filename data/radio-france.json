@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-06T19:29:11.558Z",
+  "lastUpdated": "2026-11-07T06:08:40.307Z",
   "items": [
+    {
+      "id": "radio-france-0876b6b8-a375-4c0b-8e28-4920d7e4a5be",
+      "title": "[BEST OF 🔥] L'esprit de mai 1/2 : filles de Mai (2018)",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/ddd6ea37-6c84-41f6-a92b-13d05ab8a1ca/27742-26.04.2018-ITEMA_24742534-2018C6612E0081-NET_FC_AA820F3A-291F-4267-894B-468EDAA2F2B6-25-96236218472935a27d06b22d0257ba8d.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-11-06T23:00:03.000Z",
+      "durationLabel": "29 min",
+      "description": "Deux histoires de jeunes filles en fleur au printemps 68, ou comment une révolution est toujours aussi une révolution sexuelle.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-11-07T06:08:40.307Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-bdd69126-c7f6-421e-bf3f-ecba3b235af0",
       "title": "Street Medics",
@@ -30,21 +45,6 @@
       "description": "Au parc Jean Moulin, à Aubagne, Nico vit dans un camion aménagé et suit la politique de très loin. John, fonctionnaire, raconte ses attentes à l’approche des élections. Sur la place Jean Moulin, à Bouc-Bel-Air, Pascal, retraité, revient sur son parcours politique et son désarroi…",
       "provider": "radio-france",
       "verifiedAt": "2026-11-06T06:56:47.782Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
-    },
-    {
-      "id": "radio-france-ad9003cf-4c98-45e0-abdd-94a0c95aa67a",
-      "title": "Noble dating",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/noble-dating-8334415",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/c70c92a7-8fda-4be3-8b8a-ad46182963a2/27742-03.11.2026-ITEMA_24737268-2026C6612S0307-NET_MFC_F2780ECD-B355-4D71-A8DB-CA2C73EA902C-25-1c2d72e512ad2cc21aaa50d8b4eb0649.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-11-03T12:30:00.000Z",
-      "durationLabel": "29 min",
-      "description": "Jeanne et Armand ont fondé une application de rencontres réservée à la noblesse française, où l'on vérifie les profils par généalogie et où l'on peut afficher son blason. Explications et témoignages d’utilisateurs.",
-      "provider": "radio-france",
-      "verifiedAt": "2026-11-03T19:33:43.451Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
