@@ -1412,12 +1412,22 @@
       const candidates = window.SnakeBonDToday.filter(visibleItems, state.todayFilter).map(todayProgramItem);
       const budget = Number(budgetSelect.value);
       const previousItems = window.SnakeBonDTodayProgram.read();
-      const plan = window.SnakeBonDTodayProgram.compose(candidates, budget, previousItems.map((item) => item.id));
+      const composeContext = JSON.stringify({ filter: state.todayFilter, budget, candidates: candidates.map((item) => [item.id,item.durationMinutes]) });
+      const previousHistory = window.SnakeBonDTodayProgram.readComposeHistory(composeContext);
+      const currentIds = previousItems.map((item) => item.id);
+      let cycleRestarted = false;
+      let plan = window.SnakeBonDTodayProgram.compose(candidates, budget, [...previousHistory,currentIds]);
+      if (!plan.length && previousHistory.length) {
+        cycleRestarted = true;
+        plan = window.SnakeBonDTodayProgram.compose(candidates, budget, [currentIds]);
+      }
       if (!plan.length) { showTodayMessage(previousItems.length ? "Aucun autre programme avec une durée officielle ne tient dans ce budget." : "Aucune suggestion avec une durée officielle ne tient dans ce budget."); return; }
       if (!window.SnakeBonDTodayProgram.replace(plan)) { showTodayMessage("Impossible de composer le programme local."); return; }
+      const nextHistory = [...(cycleRestarted ? [] : previousHistory),plan.map((item) => item.id)];
+      if (!window.SnakeBonDTodayProgram.replaceComposeHistory(composeContext, nextHistory)) { window.SnakeBonDTodayProgram.replace(previousItems); showTodayMessage("Impossible de mémoriser le cycle de programmes localement."); return; }
       renderTodayProgram();
       const minutes = window.SnakeBonDTodayProgram.knownDuration(plan).minutes;
-      offerTodayUndo(`Programme composé : ${plan.length} choix pour ${window.SnakeBonDTodayProgram.formatDuration(minutes)}.`, () => window.SnakeBonDTodayProgram.replace(previousItems));
+      offerTodayUndo(`${cycleRestarted ? "Nouveau cycle · " : ""}Programme composé : ${plan.length} choix pour ${window.SnakeBonDTodayProgram.formatDuration(minutes)}.`, () => { window.SnakeBonDTodayProgram.replace(previousItems); window.SnakeBonDTodayProgram.replaceComposeHistory(composeContext, previousHistory); });
     });
     document.querySelectorAll(".today-filter").forEach((button) => button.addEventListener("click", () => { state.todayFilter = window.SnakeBonDToday.writeFilter(button.dataset.todayFilter); state.todayPickedId = null; renderToday(); }));
     document.getElementById("today-reset").addEventListener("click", () => { window.SnakeBonDToday.clearDismissed(); renderToday(); });

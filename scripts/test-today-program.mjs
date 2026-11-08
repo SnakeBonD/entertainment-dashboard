@@ -11,6 +11,7 @@ const now = new Date("2026-09-22T10:00:00Z");
 const item = (id, durationMinutes = null) => ({ id, title:`Choix ${id}`, meta:"Source officielle", url:`https://example.com/${id}`, group:"new", durationMinutes });
 
 assert.equal(program.MAX_ITEMS, 3);
+assert.equal(program.COMPOSER_STORAGE_KEY, "snakebond-today-program-composer-v1");
 assert.equal(program.formatDuration(155), "2 h 35 min");
 assert.equal(program.formatDuration(60), "1 h");
 assert.equal(program.formatDuration(30), "30 min");
@@ -26,6 +27,7 @@ const candidates = [item("first", 70), item("second", 50), item("third", 40), it
 assert.deepEqual(Array.from(program.compose(candidates, 120), (entry) => entry.id), ["first", "second"]);
 assert.deepEqual(Array.from(program.compose(candidates, 120, ["first", "second"]), (entry) => entry.id), ["second", "third", "fourth"]);
 assert.deepEqual(Array.from(program.compose(candidates, 120, ["second", "first"]), (entry) => entry.id), ["second", "third", "fourth"]);
+assert.deepEqual(Array.from(program.compose(candidates, 120, [["first", "second"],["second", "third", "fourth"]]), (entry) => entry.id), ["first", "third"]);
 assert.deepEqual(Array.from(program.compose([item("only", 60)], 60, ["only"])), []);
 assert.deepEqual(Array.from(program.compose(candidates, 120, "invalid"), (entry) => entry.id), ["first", "second"]);
 assert.deepEqual(Array.from(program.compose(candidates, 100), (entry) => entry.id), ["first", "fourth"]);
@@ -35,6 +37,13 @@ assert.deepEqual(Array.from(program.compose([item("duplicate", 40), item("duplic
 assert.deepEqual(Array.from(program.compose(candidates, 20)), []);
 assert.deepEqual(Array.from(program.compose(candidates, 0)), []);
 assert.deepEqual(Array.from(program.compose("invalid", 120)), []);
+const composeContext = "all|120|candidates";
+assert.deepEqual(Array.from(program.readComposeHistory(composeContext, storage, now)), []);
+assert.equal(program.replaceComposeHistory(composeContext, [["first","second"],["second","first"],["third"]], storage, now), true);
+assert.deepEqual(Array.from(program.readComposeHistory(composeContext, storage, now), (plan) => Array.from(plan)), [["first","second"],["third"]]);
+assert.deepEqual(Array.from(program.readComposeHistory("other", storage, now)), []);
+assert.deepEqual(Array.from(program.readComposeHistory(composeContext, storage, new Date("2026-09-23T10:00:00Z"))), []);
+assert.equal(program.replaceComposeHistory("", [], storage, now), false);
 assert.deepEqual(Array.from(program.read(storage, now)), []);
 assert.equal(program.add(item("a", 98), storage, now).status, "added");
 assert.equal(program.add(item("a"), storage, now).status, "duplicate");
@@ -85,4 +94,7 @@ assert(app.includes('composeButton.id = "today-program-compose"'));
 assert(app.includes("SnakeBonDTodayProgram.compose"));
 assert(app.includes('"Composer un autre programme"'));
 assert(app.includes("previousItems.map((item) => item.id)"));
-console.log("Programme du jour v4.1 validé : alternative sans répétition, budget, heure de fin et progression conformes.");
+assert(app.includes("readComposeHistory(composeContext)"));
+assert(app.includes("cycleRestarted"));
+assert(app.includes("replaceComposeHistory(composeContext, previousHistory)"));
+console.log("Programme du jour v4.2 validé : cycle local sans répétition, réinitialisation, annulation et budget conformes.");
