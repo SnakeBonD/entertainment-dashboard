@@ -2,6 +2,7 @@
   "use strict";
 
   const STORAGE_KEY = "snakebond-today-program-v1";
+  const COMPOSER_STORAGE_KEY = "snakebond-today-program-composer-v1";
   const MAX_ITEMS = 3;
   const dayKey = (value = new Date()) => {
     const date = new Date(value);
@@ -94,6 +95,41 @@
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
   }
 
+  const planIds = (items) => Array.isArray(items) ? [...new Set(items.map((item) => typeof item === "string" ? item : item?.id).filter((id) => typeof id === "string" && id))] : [];
+  const planSignature = (items) => planIds(items).sort().join("|");
+
+  function readComposeHistory(context, storage = window.localStorage, now = new Date()) {
+    if (typeof context !== "string" || !context) return [];
+    try {
+      const value = JSON.parse(storage.getItem(COMPOSER_STORAGE_KEY) || "null");
+      if (value?.date !== dayKey(now) || value?.context !== context || !Array.isArray(value?.plans)) return [];
+      const seen = new Set();
+      return value.plans.flatMap((plan) => {
+        const ids = planIds(plan);
+        const signature = planSignature(ids);
+        if (!ids.length || seen.has(signature)) return [];
+        seen.add(signature);
+        return [ids];
+      }).slice(-100);
+    } catch { return []; }
+  }
+
+  function replaceComposeHistory(context, plans, storage = window.localStorage, now = new Date()) {
+    if (typeof context !== "string" || !context || !Array.isArray(plans)) return false;
+    const seen = new Set();
+    const safePlans = plans.flatMap((plan) => {
+      const ids = planIds(plan);
+      const signature = planSignature(ids);
+      if (!ids.length || seen.has(signature)) return [];
+      seen.add(signature);
+      return [ids];
+    }).slice(-100);
+    try {
+      storage.setItem(COMPOSER_STORAGE_KEY, JSON.stringify({ date: dayKey(now), context, plans: safePlans }));
+      return true;
+    } catch { return false; }
+  }
+
   function knownDuration(items) {
     if (!Array.isArray(items)) return { minutes: 0, remainingMinutes: 0, knownItems: 0, totalItems: 0 };
     return items.reduce((total, item) => {
@@ -122,9 +158,10 @@
     return `${String(end.getHours()).padStart(2, "0")}:${String(end.getMinutes()).padStart(2, "0")}`;
   }
 
-  function compose(items, budgetMinutes, previousIds = []) {
+  function compose(items, budgetMinutes, excludedPlans = []) {
     if (!Array.isArray(items) || !Number.isInteger(budgetMinutes) || budgetMinutes <= 0) return [];
-    const excludedIds = Array.isArray(previousIds) ? previousIds.filter((id) => typeof id === "string") : [];
+    const exclusions = Array.isArray(excludedPlans) && excludedPlans.every((entry) => typeof entry === "string") ? [excludedPlans] : Array.isArray(excludedPlans) ? excludedPlans : [];
+    const excludedSignatures = new Set(exclusions.map(planSignature).filter(Boolean));
     const seen = new Set();
     const candidates = items.flatMap((item, index) => {
       const safe = sanitizeItem(item);
@@ -143,8 +180,8 @@
       return false;
     };
     const visit = (start, selected, indices, minutes) => {
-      const repeatsPrevious = selected.length === excludedIds.length && selected.every((item) => excludedIds.includes(item.id));
-      if (selected.length && !repeatsPrevious && (minutes > best.minutes || (minutes === best.minutes && hasHigherPriority(indices)))) {
+      const isExcluded = excludedSignatures.has(planSignature(selected));
+      if (selected.length && !isExcluded && (minutes > best.minutes || (minutes === best.minutes && hasHigherPriority(indices)))) {
         best = { items: [...selected], indices: [...indices], minutes };
       }
       if (selected.length === MAX_ITEMS) return;
@@ -158,5 +195,5 @@
     return best.items;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, MAX_ITEMS, add, clear, compose, dayKey, formatDuration, knownDuration, knownEndTime, move, read, remove, replace, setAllDone, toggleDone };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, MAX_ITEMS, add, clear, compose, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone };
 })();
