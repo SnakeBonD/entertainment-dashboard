@@ -1,7 +1,22 @@
 {
   "version": 1,
-  "lastUpdated": "2026-11-12T20:03:04.607Z",
+  "lastUpdated": "2026-11-13T19:49:44.119Z",
   "items": [
+    {
+      "id": "radio-france-e62cbab6-ba50-47a8-9698-0e4f74a37c22",
+      "title": "Le village fantôme de Courbefy",
+      "podcastTitle": "Les pieds sur terre",
+      "station": "France Culture",
+      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/ef442278-2855-48f3-9ab5-9e7bbcb2a46d/27742-13.11.2026-ITEMA_24751161-2026C6612S0317-NET_MFC_6F7649DC-38D7-48E6-99CA-30B851E76280-25-954b86a4431f42ff3d94fc5c1b9ac23a.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
+      "publishedAt": "2026-11-13T12:30:00.000Z",
+      "durationLabel": "29 min",
+      "description": "En 2012, un hameau déserté du Limousin était vendu pour 520 000 € à un mystérieux philanthrope coréen. Intrigué par la personnalité de ce mécène, un journaliste a mené l’enquête.",
+      "provider": "radio-france",
+      "verifiedAt": "2026-11-13T19:49:44.119Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+    },
     {
       "id": "radio-france-6ec2ff25-8339-4039-8ad4-ad2f26ff42bf",
       "title": "La joie des manifs",
@@ -33,19 +48,19 @@
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
     },
     {
-      "id": "radio-france-c0608499-f71d-463d-bc70-473f07185ed4",
-      "title": "Le ventre vide, le cœur gros et deux euros",
-      "podcastTitle": "Les pieds sur terre",
-      "station": "France Culture",
-      "url": "https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/14303c46-3c2f-486f-a063-fadf9719bff3/4fea3ed0-6b39-4cfe-99ba-96bf771fdca4/27742-10.11.2026-ITEMA_24746606-2026C6612S0314-NET_MFC_F2C9ABDB-579F-4089-9CC8-726CD07EB416-25-b90e6db5dd1b5196a1b664d456803a36.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2022/06/a7fc766f-3e49-45a0-a41f-5512d5c0f8c1/1400x1400_les-pieds-sur-terre.jpg",
-      "publishedAt": "2026-11-10T12:30:00.000Z",
-      "durationLabel": "30 min",
-      "description": "Quelque part en France, une mère et ses trois enfants, une puéricultrice et un professeur des écoles ont dû faire face au manque de nourriture et à la précarité extrême. Un jour, à la fin du mois ou à répétition, côtoyée, constatée ou subie, ils racontent la faim.",
+      "id": "radio-france-8f03250c-2aca-4981-acb9-4f7ace3c6e7a",
+      "title": "Le Corbusier, fasciste !",
+      "podcastTitle": "Affaires sensibles",
+      "station": "France Inter",
+      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles",
+      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/2036935c-a9d3-4c69-a99c-adde806702f9/20904-13.01.2025-ITEMA_23994082-2025F22805S0013-NET_MFI_6EBD9949-847D-498C-B4B0-DFC4884612E4-27-56217ee72fb0db0677d2c0a816ee4a03.m4a",
+      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
+      "publishedAt": "2026-11-13T13:04:40.000Z",
+      "durationLabel": "47 min",
+      "description": "Aujourd’hui dans Affaires sensibles « Le Corbusier, fasciste ! »",
       "provider": "radio-france",
-      "verifiedAt": "2026-11-10T19:49:18.846Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_14303c46-3c2f-486f-a063-fadf9719bff3.xml"
+      "verifiedAt": "2026-11-13T19:49:44.119Z",
+      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
     },
     {
       "id": "radio-france-3ce0d0b3-1a17-4bcd-ad70-a41fa55680d7",
@@ -73,21 +88,6 @@
       "publishedAt": "2026-11-12T13:04:50.000Z",
       "durationLabel": "37 min",
       "description": "équipe : Claire Teisseire, Rebecca Denantes, Franck Cognard, Valentine Chédebois, Stéphane Cosme, Hélène Bizieau, Frédéric Milano, François Audoin",
-      "provider": "radio-france",
-      "verifiedAt": "2026-11-12T20:03:04.607Z",
-      "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
-    },
-    {
-      "id": "radio-france-f26bc738-17fb-42fb-948b-62b831d3e6cd",
-      "title": "Février 1969, Fort Chabrol en Gironde - L'intégrale",
-      "podcastTitle": "Affaires sensibles",
-      "station": "France Inter",
-      "url": "https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles/affaires-sensibles-du-jeudi-15-octobre-2026-3168529",
-      "audioUrl": "https://proxycast.radiofrance.fr/0760f712-f39e-4aba-a3f2-891453f91f66/0b91efaf-26e6-11e4-907f-782bcb6744eb/4edcbfb3-ac33-423e-8717-d8fc1f9c6f0b/26774-15.10.2026-ITEMA_24712568-2026F22805S0288-NET_MFI_AE4971F5-A33C-4901-B86F-08A67F9DBE9D-27-05f811c610b3fe2f25ec21444b55b196.m4a",
-      "imageUrl": "https://www.radiofrance.fr/s3/cruiser-production/2023/04/7b50cf5f-f5bd-4dc4-8b1d-b08666768dcf/1400x1400_sc_affaires-sensibles.jpg",
-      "publishedAt": "2026-11-12T13:04:40.000Z",
-      "durationLabel": "54 min",
-      "description": "Aujourd’hui dans Affaires sensibles : février 1969, Fort Chabrol en Gironde.",
       "provider": "radio-france",
       "verifiedAt": "2026-11-12T20:03:04.607Z",
       "sourceUrl": "https://radiofrance-podcast.net/podcast09/podcast_0b91efaf-26e6-11e4-907f-782bcb6744eb.xml"
