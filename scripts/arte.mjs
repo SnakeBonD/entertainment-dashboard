@@ -2,7 +2,7 @@ const arteProvider = "arte";
 
 export const arteHomeEndpoint = "https://api.arte.tv/api/emac/v4/fr/web/pages/HOME";
 export const arteLandingPage = "https://www.arte.tv/fr/videos/plus-vues/";
-export const artePopularZoneCode = "plus_vues";
+export const artePopularZoneCodes = ["incontournables", "plus_vues"];
 export const arteApiOrigin = "https://api.arte.tv";
 
 function asTimestamp(value) {
@@ -46,10 +46,13 @@ function findZone(value, code) {
   return null;
 }
 
-export function findArteSelectionEndpoint(payload, code = artePopularZoneCode) {
-  const zone = findZone(payload, code);
+export function findArteSelectionEndpoint(payload, codes = artePopularZoneCodes) {
+  const acceptedCodes = Array.isArray(codes) ? codes : [codes];
+  const zone = acceptedCodes.map((code) => findZone(payload, code)).find(Boolean);
   if (!zone) {
-    throw new Error(`La sélection ARTE « ${code} » est absente de la page officielle.`);
+    throw new Error(
+      `La sélection ARTE « ${acceptedCodes.join(" » ou « ")} » est absente de la page officielle.`,
+    );
   }
 
   const endpointValue = zone.content.esiInclude ?? zone.content.pagination?.links?.first;
@@ -173,7 +176,7 @@ export function extractArteSelection(payload, now = new Date(), limit = 12) {
         description: normalizeText(item.teaserText || item.shortDescription, 280),
         imageUrl: imageUrl(item),
         durationLabel: normalizeText(item.durationLabel, 40) || null,
-        selectionLabel: "Les vidéos les plus vues sur ARTE",
+        selectionLabel: "Les programmes les plus vus sur ARTE",
       };
     });
 }

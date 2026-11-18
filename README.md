@@ -76,7 +76,7 @@ La version **v4.2** parcourt plusieurs programmes distincts avant de recommencer
 - actualisation toutes les six heures et au premier déploiement de la v0.5 ;
 - images officielles, prix habituel et lien direct vers chaque jeu offert ;
 - masquage de sécurité lorsqu’une offre disparaît du flux officiel avant sa date de fin ;
-- import automatique des programmes de la sélection officielle « Les vidéos les plus vues sur ARTE » ;
+- import automatique des programmes de la sélection officielle « Les programmes les plus vus sur ARTE » ;
 - conservation des films, séries et documentaires réellement lisibles en France avec leur date de fin ;
 - actualisation ARTE deux fois par jour, avec images, durées et liens officiels ;
 - exclusion des collections sans date, contenus futurs, indisponibles ou géobloqués en France ;
