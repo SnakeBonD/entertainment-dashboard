@@ -36,7 +36,7 @@ function item(overrides = {}) {
 const pagePayload = {
   value: {
     zones: [{
-      code: "plus_vues",
+      code: "incontournables",
       content: { esiInclude: "/api/emac/v4/fr/web/zones/test/content?page=1" },
     }],
   },
@@ -45,6 +45,20 @@ assert(
   findArteSelectionEndpoint(pagePayload)
     === "https://api.arte.tv/api/emac/v4/fr/web/zones/test/content?page=1&authorizedCountry=FR",
   "La sélection officielle ARTE n’a pas été trouvée",
+);
+
+const legacyPagePayload = {
+  value: {
+    zones: [{
+      code: "plus_vues",
+      content: { esiInclude: "/api/emac/v4/fr/web/zones/legacy/content?page=1" },
+    }],
+  },
+};
+assert(
+  findArteSelectionEndpoint(legacyPagePayload)
+    === "https://api.arte.tv/api/emac/v4/fr/web/zones/legacy/content?page=1&authorizedCountry=FR",
+  "L’ancien identifiant de la sélection ARTE doit rester compatible",
 );
 
 let unofficialEndpointRejected = false;
@@ -95,6 +109,10 @@ assert(selection[0].type === "movie", "Le type du programme ARTE est incorrect")
 assert(selection[0].sourceUrl === arteLandingPage, "La source officielle ARTE est absente");
 assert(selection[0].imageUrl.includes("768x432"), "L’image ARTE n’a pas été normalisée");
 assert(selection[0].durationLabel === "109 min", "La durée ARTE est absente");
+assert(
+  selection[0].selectionLabel === "Les programmes les plus vus sur ARTE",
+  "Le libellé de la sélection ARTE est obsolète",
+);
 
 const initialCatalogue = {
   version: 4,
