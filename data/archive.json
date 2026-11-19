@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-17T08:10:24.581Z",
+  "lastUpdated": "2026-11-19T20:49:45.381Z",
   "items": [
     {
       "id": "epic-b8cc76ce7d6645f0a282b843a072cc78-2026-09-03",
@@ -1115,6 +1115,29 @@
       "verificationNote": "not_in_current_selection",
       "lastCheckedAt": "2026-09-19T16:02:12.517Z",
       "archivedAt": "2026-11-17T08:10:24.581Z",
+      "archiveReason": "expired"
+    },
+    {
+      "id": "epic-9975548b6d404a94b8a9bdb34cad49e9-2026-11-12",
+      "title": "Knightica",
+      "type": "game",
+      "platform": "Epic Games Store",
+      "url": "https://store.epicgames.com/fr/p/knightica-3be45c",
+      "country": "FR",
+      "addedDate": "2026-11-12",
+      "promotionStartDate": "2026-11-12T16:00:00.000Z",
+      "expiryDate": "2026-11-19T16:00:00.000Z",
+      "verified": false,
+      "verifiedAt": "2026-11-12T20:09:54.064Z",
+      "sourceUrl": "https://store.epicgames.com/fr/free-games",
+      "provider": "epic-games-store",
+      "externalId": "9975548b6d404a94b8a9bdb34cad49e9",
+      "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/357100ca5613420e98208c5f14585e9d/knightica-1nuxm.png",
+      "originalPrice": "13,49 €",
+      "verificationNote": "not_in_current_feed",
+      "lastCheckedAt": "2026-11-19T20:49:44.388Z",
+      "archivedAt": "2026-11-19T20:49:45.381Z",
       "archiveReason": "expired"
     }
   ]
