@@ -47,6 +47,30 @@ assert(
   "La sélection officielle ARTE n’a pas été trouvée",
 );
 
+const duplicatedZonePayload = {
+  zones: [
+    {
+      code: "incontournables",
+      content: { data: [] },
+    },
+    {
+      code: "incontournables",
+      content: {
+        pagination: {
+          links: {
+            first: "http://api.arte.tv/api/emac/v4/fr/web/zones/current/content?page=1",
+          },
+        },
+      },
+    },
+  ],
+};
+assert(
+  findArteSelectionEndpoint(duplicatedZonePayload)
+    === "https://api.arte.tv/api/emac/v4/fr/web/zones/current/content?page=1&authorizedCountry=FR",
+  "La zone ARTE paginée ou sa normalisation HTTPS n’est pas prise en charge",
+);
+
 const legacyPagePayload = {
   value: {
     zones: [{
