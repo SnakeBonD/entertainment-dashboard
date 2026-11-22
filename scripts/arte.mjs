@@ -29,45 +29,47 @@ function officialUrl(value, hostname, pathPrefix) {
   }
 }
 
-function findZone(value, code) {
-  if (!value || typeof value !== "object") return null;
+function findZones(value, codes, matches = []) {
+  if (!value || typeof value !== "object") return matches;
   if (
-    value.code === code
+    codes.includes(value.code)
     && value.content
     && typeof value.content === "object"
   ) {
-    return value;
+    matches.push(value);
   }
 
   for (const child of Array.isArray(value) ? value : Object.values(value)) {
-    const match = findZone(child, code);
-    if (match) return match;
+    findZones(child, codes, matches);
   }
-  return null;
+  return matches;
 }
 
 export function findArteSelectionEndpoint(payload, codes = artePopularZoneCodes) {
   const acceptedCodes = Array.isArray(codes) ? codes : [codes];
-  const zone = acceptedCodes.map((code) => findZone(payload, code)).find(Boolean);
-  if (!zone) {
+  const zones = findZones(payload, acceptedCodes);
+  if (!zones.length) {
     throw new Error(
       `La sélection ARTE « ${acceptedCodes.join(" » ou « ")} » est absente de la page officielle.`,
     );
   }
 
-  const endpointValue = zone.content.esiInclude ?? zone.content.pagination?.links?.first;
+  const endpointValue = zones
+    .map((zone) => zone.content.esiInclude ?? zone.content.pagination?.links?.first)
+    .find((value) => typeof value === "string");
   if (typeof endpointValue !== "string") {
     throw new Error("La sélection ARTE ne fournit pas d’URL de contenu officielle.");
   }
 
   const endpoint = new URL(endpointValue, arteApiOrigin);
   if (
-    endpoint.protocol !== "https:"
+    !["http:", "https:"].includes(endpoint.protocol)
     || endpoint.hostname !== "api.arte.tv"
     || !endpoint.pathname.startsWith("/api/emac/v4/fr/web/zones/")
   ) {
     throw new Error("L’URL de la sélection ARTE n’est pas officielle.");
   }
+  endpoint.protocol = "https:";
   endpoint.searchParams.set("authorizedCountry", "FR");
   return endpoint.toString();
 }
