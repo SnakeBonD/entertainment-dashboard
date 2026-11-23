@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v4.4** mémorise et restaure sûrement le budget temps du Programme du jour, uniquement avec les durées officielles et toujours localement :
+La version **v4.5** conserve simultanément la progression de plusieurs cycles de programmes, uniquement avec les durées officielles et toujours localement :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -42,6 +42,8 @@ La version **v4.4** mémorise et restaure sûrement le budget temps du Programme
 - réinitialisation manuelle du cycle actif sans vider le programme affiché ;
 - budget temps conservé dans le navigateur et restauré au prochain lancement ;
 - validation du budget restauré avec repli sûr vers deux heures ;
+- progression quotidienne conservée séparément pour jusqu’à douze contextes de filtre, budget et candidats ;
+- migration transparente de l’historique local créé par les versions précédentes ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -441,6 +443,7 @@ déploiement : la publication normale de `main` suffit.
 - **v4.2** — cycle local de compositions distinctes avant réinitialisation automatique.
 - **v4.3** — progression visible du cycle actif et réinitialisation manuelle indépendante du programme.
 - **v4.4** — mémorisation locale et restauration sûre du budget temps du Programme du jour.
+- **v4.5** — conservation simultanée de plusieurs contextes de cycle et migration de l’historique local.
 
 ## Sécurité et confidentialité
 
