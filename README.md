@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v4.2** parcourt plusieurs programmes distincts avant de recommencer le cycle, uniquement avec les durées officielles et toujours localement :
+La version **v4.3** rend visible la progression du cycle de programmes et permet de le recommencer à la demande, uniquement avec les durées officielles et toujours localement :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -38,6 +38,8 @@ La version **v4.2** parcourt plusieurs programmes distincts avant de recommencer
 - composition automatique depuis le filtre Aujourd’hui actif, en maximisant le temps utilisé sans dépasser le budget choisi et avec annulation immédiate ;
 - composition alternative excluant exactement le programme affiché, tout en conservant le budget, le filtre actif et les priorités personnelles ;
 - historique local quotidien des compositions par filtre, budget et candidats, avec réinitialisation automatique après épuisement des alternatives ;
+- compteur des compositions parcourues et restantes pour le filtre et le budget actifs ;
+- réinitialisation manuelle du cycle actif sans vider le programme affiché ;
 - remise à zéro automatique des éléments masqués au changement de jour ;
 - contenus suivis et plateformes favorites placés en priorité ;
 - filtres par catégorie, accès, compte, publicité et langue ;
@@ -435,6 +437,7 @@ déploiement : la publication normale de `main` suffit.
 - **v4.0** — composition locale du Programme du jour selon un budget temps et les priorités visibles.
 - **v4.1** — proposition d’un autre programme pour le même budget, sans répétition immédiate.
 - **v4.2** — cycle local de compositions distinctes avant réinitialisation automatique.
+- **v4.3** — progression visible du cycle actif et réinitialisation manuelle indépendante du programme.
 
 ## Sécurité et confidentialité
 

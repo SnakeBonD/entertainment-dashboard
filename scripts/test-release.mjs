@@ -21,11 +21,11 @@ const robots = read("robots.txt");
 const sitemap = read("sitemap.xml");
 const deploy = read(".github/workflows/deploy.yml");
 
-assert(indexHtml.includes('aria-label="Version 4.2">v4.2'), "La version visible doit être v4.2");
-assert(indexHtml.includes("v4.2 · Cycle de programmes sans répétition"), "Le pied de page v4.2 est absent");
+assert(indexHtml.includes('aria-label="Version 4.3">v4.3'), "La version visible doit être v4.3");
+assert(indexHtml.includes("v4.3 · Progression du cycle de programmes"), "Le pied de page v4.3 est absent");
 assert(!indexHtml.includes("v0.8"), "Le HTML contient encore une version v0.8");
-assert(readme.includes("version **v4.2**"), "Le README ne présente pas la v4.2");
-assert(serviceWorker.includes('`${CACHE_PREFIX}v4.2.0`'), "Le cache applicatif n’est pas en v4.2.0");
+assert(readme.includes("version **v4.3**"), "Le README ne présente pas la v4.3");
+assert(serviceWorker.includes('`${CACHE_PREFIX}v4.3.0`'), "Le cache applicatif n’est pas en v4.3.0");
 
 [
   "application",
@@ -95,9 +95,9 @@ assert(deploy.includes("node scripts/test-release.mjs"), "Le test de version sta
 assert(deploy.includes("robots.txt sitemap.xml _site/"), "Les métadonnées publiques ne sont pas publiées");
 
 if (failures.length) {
-  console.error("Certification v4.2 échouée :");
+  console.error("Certification v4.3 échouée :");
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
-console.log(`Certification v4.2 réussie : ${ids.length} identifiants uniques, cycle local et fonctions historiques conformes.`);
+console.log(`Certification v4.3 réussie : ${ids.length} identifiants uniques, progression du cycle et fonctions historiques conformes.`);
