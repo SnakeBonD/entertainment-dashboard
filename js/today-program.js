@@ -3,6 +3,7 @@
 
   const STORAGE_KEY = "snakebond-today-program-v1";
   const COMPOSER_STORAGE_KEY = "snakebond-today-program-composer-v1";
+  const MAX_COMPOSE_HISTORY = 1000;
   const MAX_ITEMS = 3;
   const dayKey = (value = new Date()) => {
     const date = new Date(value);
@@ -110,7 +111,7 @@
         if (!ids.length || seen.has(signature)) return [];
         seen.add(signature);
         return [ids];
-      }).slice(-100);
+      }).slice(-MAX_COMPOSE_HISTORY);
     } catch { return []; }
   }
 
@@ -123,9 +124,18 @@
       if (!ids.length || seen.has(signature)) return [];
       seen.add(signature);
       return [ids];
-    }).slice(-100);
+    }).slice(-MAX_COMPOSE_HISTORY);
     try {
       storage.setItem(COMPOSER_STORAGE_KEY, JSON.stringify({ date: dayKey(now), context, plans: safePlans }));
+      return true;
+    } catch { return false; }
+  }
+
+  function clearComposeHistory(context, storage = window.localStorage, now = new Date()) {
+    if (typeof context !== "string" || !context) return false;
+    try {
+      const value = JSON.parse(storage.getItem(COMPOSER_STORAGE_KEY) || "null");
+      if (value?.date === dayKey(now) && value?.context === context) storage.removeItem(COMPOSER_STORAGE_KEY);
       return true;
     } catch { return false; }
   }
@@ -195,5 +205,27 @@
     return best.items;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, MAX_ITEMS, add, clear, compose, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone };
+  function countComposePlans(items, budgetMinutes) {
+    if (!Array.isArray(items) || !Number.isInteger(budgetMinutes) || budgetMinutes <= 0) return 0;
+    const seen = new Set();
+    const candidates = items.flatMap((item) => {
+      const safe = sanitizeItem(item);
+      if (!safe || seen.has(safe.id) || !safe.durationMinutes || safe.durationMinutes > budgetMinutes) return [];
+      seen.add(safe.id);
+      return [safe];
+    });
+    let count = 0;
+    const visit = (start, selectedCount, minutes) => {
+      for (let index = start; index < candidates.length; index += 1) {
+        const nextMinutes = minutes + candidates[index].durationMinutes;
+        if (nextMinutes > budgetMinutes) continue;
+        count += 1;
+        if (selectedCount + 1 < MAX_ITEMS) visit(index + 1, selectedCount + 1, nextMinutes);
+      }
+    };
+    visit(0, 0, 0);
+    return count;
+  }
+
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone };
 })();

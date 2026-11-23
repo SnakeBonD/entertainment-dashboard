@@ -882,6 +882,9 @@ p {
 .today-program-composer select { min-height:2.25rem; padding:.35rem 2rem .35rem .55rem; border:1px solid var(--line); border-radius:8px; background:var(--panel); color:var(--text); font:inherit; }
 .today-program-composer .today-program-add { min-height:2.25rem; }
 .today-program-composer p { grid-column:1 / -1; margin:0; color:var(--muted); font-size:.72rem; }
+.today-program-cycle { grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding-top:.55rem; border-top:1px solid var(--line); }
+.today-program-cycle p { margin:0; }
+.today-program-cycle button { flex:0 0 auto; }
 .today-program-duration { margin:.45rem 0 0; color:var(--muted); font-size:.78rem; text-align:right; }
 .today-program-progress { width:100%; height:.42rem; margin-top:.7rem; border:0; border-radius:999px; overflow:hidden; background:var(--line); }
 .today-program-progress::-webkit-progress-bar { background:var(--line); }
@@ -2442,6 +2445,7 @@ footer {
   .today-pick-result { grid-template-columns:1fr; }
   .today-program-composer { grid-template-columns:1fr; align-items:stretch; }
   .today-program-composer p { grid-column:1; }
+  .today-program-cycle { align-items:flex-start; flex-direction:column; }
   .today-program-item { grid-template-columns:auto minmax(0,1fr); }
   .today-program-item .today-program-complete,.today-program-item .today-program-order,.today-program-item .external-link,.today-program-item .today-dismiss { grid-column:2; justify-self:start; }
   .backup-panel {
