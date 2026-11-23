@@ -5,6 +5,7 @@
   const COMPOSER_STORAGE_KEY = "snakebond-today-program-composer-v1";
   const BUDGET_STORAGE_KEY = "snakebond-today-program-budget-v1";
   const MAX_COMPOSE_HISTORY = 1000;
+  const MAX_COMPOSE_CONTEXTS = 12;
   const MAX_ITEMS = 3;
   const DEFAULT_BUDGET = 120;
   const ALLOWED_BUDGETS = new Set([30, 60, 90, 120, 180, 240]);
@@ -115,34 +116,48 @@
   const planIds = (items) => Array.isArray(items) ? [...new Set(items.map((item) => typeof item === "string" ? item : item?.id).filter((id) => typeof id === "string" && id))] : [];
   const planSignature = (items) => planIds(items).sort().join("|");
 
-  function readComposeHistory(context, storage = window.localStorage, now = new Date()) {
-    if (typeof context !== "string" || !context) return [];
-    try {
-      const value = JSON.parse(storage.getItem(COMPOSER_STORAGE_KEY) || "null");
-      if (value?.date !== dayKey(now) || value?.context !== context || !Array.isArray(value?.plans)) return [];
-      const seen = new Set();
-      return value.plans.flatMap((plan) => {
-        const ids = planIds(plan);
-        const signature = planSignature(ids);
-        if (!ids.length || seen.has(signature)) return [];
-        seen.add(signature);
-        return [ids];
-      }).slice(-MAX_COMPOSE_HISTORY);
-    } catch { return []; }
-  }
-
-  function replaceComposeHistory(context, plans, storage = window.localStorage, now = new Date()) {
-    if (typeof context !== "string" || !context || !Array.isArray(plans)) return false;
+  function sanitizePlans(plans) {
+    if (!Array.isArray(plans)) return [];
     const seen = new Set();
-    const safePlans = plans.flatMap((plan) => {
+    return plans.flatMap((plan) => {
       const ids = planIds(plan);
       const signature = planSignature(ids);
       if (!ids.length || seen.has(signature)) return [];
       seen.add(signature);
       return [ids];
     }).slice(-MAX_COMPOSE_HISTORY);
+  }
+
+  function readComposeContexts(storage = window.localStorage, now = new Date()) {
+    const value = JSON.parse(storage.getItem(COMPOSER_STORAGE_KEY) || "null");
+    if (value?.date !== dayKey(now)) return {};
+    if (value?.contexts && typeof value.contexts === "object" && !Array.isArray(value.contexts)) {
+      return Object.fromEntries(Object.entries(value.contexts).flatMap(([context, plans]) => {
+        const safePlans = sanitizePlans(plans);
+        return typeof context === "string" && context && safePlans.length ? [[context, safePlans]] : [];
+      }).slice(-MAX_COMPOSE_CONTEXTS));
+    }
+    if (typeof value?.context === "string" && value.context && Array.isArray(value.plans)) {
+      const safePlans = sanitizePlans(value.plans);
+      return safePlans.length ? { [value.context]: safePlans } : {};
+    }
+    return {};
+  }
+
+  function readComposeHistory(context, storage = window.localStorage, now = new Date()) {
+    if (typeof context !== "string" || !context) return [];
+    try { return readComposeContexts(storage, now)[context] ?? []; } catch { return []; }
+  }
+
+  function replaceComposeHistory(context, plans, storage = window.localStorage, now = new Date()) {
+    if (typeof context !== "string" || !context || !Array.isArray(plans)) return false;
+    const safePlans = sanitizePlans(plans);
     try {
-      storage.setItem(COMPOSER_STORAGE_KEY, JSON.stringify({ date: dayKey(now), context, plans: safePlans }));
+      const previous = readComposeContexts(storage, now);
+      delete previous[context];
+      const contexts = Object.fromEntries([...Object.entries(previous), ...(safePlans.length ? [[context, safePlans]] : [])].slice(-MAX_COMPOSE_CONTEXTS));
+      if (Object.keys(contexts).length) storage.setItem(COMPOSER_STORAGE_KEY, JSON.stringify({ date: dayKey(now), contexts }));
+      else storage.removeItem(COMPOSER_STORAGE_KEY);
       return true;
     } catch { return false; }
   }
@@ -150,8 +165,10 @@
   function clearComposeHistory(context, storage = window.localStorage, now = new Date()) {
     if (typeof context !== "string" || !context) return false;
     try {
-      const value = JSON.parse(storage.getItem(COMPOSER_STORAGE_KEY) || "null");
-      if (value?.date === dayKey(now) && value?.context === context) storage.removeItem(COMPOSER_STORAGE_KEY);
+      const contexts = readComposeContexts(storage, now);
+      delete contexts[context];
+      if (Object.keys(contexts).length) storage.setItem(COMPOSER_STORAGE_KEY, JSON.stringify({ date: dayKey(now), contexts }));
+      else storage.removeItem(COMPOSER_STORAGE_KEY);
       return true;
     } catch { return false; }
   }
@@ -243,5 +260,5 @@
     return count;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, BUDGET_STORAGE_KEY, DEFAULT_BUDGET, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readBudget, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone, writeBudget };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, BUDGET_STORAGE_KEY, DEFAULT_BUDGET, MAX_COMPOSE_CONTEXTS, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readBudget, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone, writeBudget };
 })();
