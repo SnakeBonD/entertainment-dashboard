@@ -3,8 +3,11 @@
 
   const STORAGE_KEY = "snakebond-today-program-v1";
   const COMPOSER_STORAGE_KEY = "snakebond-today-program-composer-v1";
+  const BUDGET_STORAGE_KEY = "snakebond-today-program-budget-v1";
   const MAX_COMPOSE_HISTORY = 1000;
   const MAX_ITEMS = 3;
+  const DEFAULT_BUDGET = 120;
+  const ALLOWED_BUDGETS = new Set([30, 60, 90, 120, 180, 240]);
   const dayKey = (value = new Date()) => {
     const date = new Date(value);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
@@ -94,6 +97,19 @@
   }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
+  }
+
+  function readBudget(storage = window.localStorage) {
+    try {
+      const value = Number(storage.getItem(BUDGET_STORAGE_KEY));
+      return ALLOWED_BUDGETS.has(value) ? value : DEFAULT_BUDGET;
+    } catch { return DEFAULT_BUDGET; }
+  }
+
+  function writeBudget(value, storage = window.localStorage) {
+    const safeValue = ALLOWED_BUDGETS.has(Number(value)) ? Number(value) : DEFAULT_BUDGET;
+    try { storage.setItem(BUDGET_STORAGE_KEY, String(safeValue)); } catch { /* préférence non persistée */ }
+    return safeValue;
   }
 
   const planIds = (items) => Array.isArray(items) ? [...new Set(items.map((item) => typeof item === "string" ? item : item?.id).filter((id) => typeof id === "string" && id))] : [];
@@ -227,5 +243,5 @@
     return count;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, BUDGET_STORAGE_KEY, DEFAULT_BUDGET, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readBudget, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone, writeBudget };
 })();

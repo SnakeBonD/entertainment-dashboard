@@ -1412,7 +1412,8 @@
     budgetSelect.id = "today-program-budget";
     budgetSelect.name = "budget";
     budgetSelect.setAttribute("aria-describedby", "today-program-composer-help");
-    [[30,"30 min"],[60,"1 h"],[90,"1 h 30"],[120,"2 h"],[180,"3 h"],[240,"4 h"]].forEach(([value,label])=>{const option=document.createElement("option");option.value=String(value);option.textContent=label;option.selected=value===120;budgetSelect.append(option);});
+    const savedBudget = window.SnakeBonDTodayProgram.readBudget();
+    [[30,"30 min"],[60,"1 h"],[90,"1 h 30"],[120,"2 h"],[180,"3 h"],[240,"4 h"]].forEach(([value,label])=>{const option=document.createElement("option");option.value=String(value);option.textContent=label;option.selected=value===savedBudget;budgetSelect.append(option);});
     const composeButton = document.createElement("button");
     composeButton.id = "today-program-compose";
     composeButton.className = "today-program-add";
@@ -1465,7 +1466,10 @@
       const minutes = window.SnakeBonDTodayProgram.knownDuration(plan).minutes;
       offerTodayUndo(`${cycleRestarted ? "Nouveau cycle · " : ""}Programme composé : ${plan.length} choix pour ${window.SnakeBonDTodayProgram.formatDuration(minutes)}.`, () => { window.SnakeBonDTodayProgram.replace(previousItems); window.SnakeBonDTodayProgram.replaceComposeHistory(composeContext, previousHistory); });
     });
-    budgetSelect.addEventListener("change", renderTodayProgramCycle);
+    budgetSelect.addEventListener("change", () => {
+      budgetSelect.value = String(window.SnakeBonDTodayProgram.writeBudget(budgetSelect.value));
+      renderTodayProgramCycle();
+    });
     cycleReset.addEventListener("click", () => {
       const candidates = todayProgramCandidates();
       const budget = Number(budgetSelect.value);
