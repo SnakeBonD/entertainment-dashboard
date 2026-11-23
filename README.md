@@ -216,6 +216,7 @@ node scripts/test-calendar.mjs
 node scripts/test-chooser.mjs
 node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
+node scripts/test-link-status.mjs
 node scripts/test-radio-france.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs

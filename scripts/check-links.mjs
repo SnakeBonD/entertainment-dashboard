@@ -1,11 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { classifyLinkStatus } from "./link-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const platforms = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/platforms.json"), "utf8"));
 const reportPath = process.argv[2] ? path.resolve(process.argv[2]) : null;
-const protectedStatuses = new Set([401, 403, 429]);
 const entries = Object.entries(platforms).flatMap(([category, items]) =>
   items.map((platform) => ({ category, ...platform })),
 );
@@ -25,17 +25,17 @@ async function request(url, method) {
 async function check(entry) {
   try {
     let response = await request(entry.url, "HEAD");
-    if (!response.ok && !protectedStatuses.has(response.status)) {
+    const headState = classifyLinkStatus(response.status, response.ok);
+    if (headState === "failed" || headState === "temporary") {
       response = await request(entry.url, "GET");
     }
 
-    if (response.ok || (response.status >= 300 && response.status < 400)) {
-      return { ...entry, state: "ok", status: response.status, finalUrl: response.url };
-    }
-    if (protectedStatuses.has(response.status)) {
-      return { ...entry, state: "protected", status: response.status, finalUrl: response.url };
-    }
-    return { ...entry, state: "failed", status: response.status, finalUrl: response.url };
+    return {
+      ...entry,
+      state: classifyLinkStatus(response.status, response.ok),
+      status: response.status,
+      finalUrl: response.url,
+    };
   } catch (error) {
     return { ...entry, state: "failed", status: "—", error: error.message, finalUrl: entry.url };
   }
@@ -61,9 +61,10 @@ const results = await checkWithLimit(entries);
 const counts = {
   ok: results.filter((result) => result.state === "ok").length,
   protected: results.filter((result) => result.state === "protected").length,
+  temporary: results.filter((result) => result.state === "temporary").length,
   failed: results.filter((result) => result.state === "failed").length,
 };
-const icon = { ok: "✅", protected: "⚠️", failed: "❌" };
+const icon = { ok: "✅", protected: "⚠️", temporary: "🟠", failed: "❌" };
 const lines = [
   "# Contrôle des liens du catalogue",
   "",
@@ -71,6 +72,7 @@ const lines = [
   "",
   `- ${counts.ok} accessibles`,
   `- ${counts.protected} protégés contre les robots`,
+  `- ${counts.temporary} indisponibilité${counts.temporary > 1 ? "s" : ""} temporaire${counts.temporary > 1 ? "s" : ""}`,
   `- ${counts.failed} en échec`,
   "",
   "| État | Catégorie | Plateforme | HTTP | Destination |",
@@ -83,5 +85,9 @@ const lines = [
 const report = lines.join("\n");
 
 if (reportPath) fs.writeFileSync(reportPath, report, "utf8");
-console.log(`Liens contrôlés : ${counts.ok} accessibles, ${counts.protected} protégés, ${counts.failed} en échec.`);
+console.log(
+  `Liens contrôlés : ${counts.ok} accessibles, ${counts.protected} protégés, `
+  + `${counts.temporary} indisponibilité${counts.temporary > 1 ? "s" : ""} temporaire${counts.temporary > 1 ? "s" : ""}, `
+  + `${counts.failed} en échec.`,
+);
 if (counts.failed) process.exitCode = 1;
