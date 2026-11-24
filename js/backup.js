@@ -2,15 +2,42 @@
   "use strict";
 
   const schema = "snakebond-entertainment-backup";
-  const version = 1;
+  const version = 2;
+  const legacyVersions = new Set([1, version]);
   const maxFileSize = 1024 * 1024;
 
-  function build({ favorites, preferences, watchlist }, now = new Date()) {
+  function emptyTodayProgram() {
+    const program = globalThis.SnakeBonDTodayProgram;
+    return {
+      budget: Number.isInteger(program?.DEFAULT_BUDGET) ? program.DEFAULT_BUDGET : 120,
+      items: [],
+    };
+  }
+
+  function readTodayProgram() {
+    const program = globalThis.SnakeBonDTodayProgram;
+    if (!program) return emptyTodayProgram();
+    return {
+      budget: program.readBudget(),
+      items: program.read(),
+    };
+  }
+
+  function sanitizeTodayProgram(value) {
+    const program = globalThis.SnakeBonDTodayProgram;
+    if (!program) return emptyTodayProgram();
+    return {
+      budget: program.sanitizeBudget(value?.budget),
+      items: program.sanitizeItems(value?.items),
+    };
+  }
+
+  function build({ favorites, preferences, watchlist, todayProgram }, now = new Date()) {
     return {
       schema,
       version,
       exportedAt: now.toISOString(),
-      data: { favorites, preferences, watchlist },
+      data: { favorites, preferences, watchlist, todayProgram: sanitizeTodayProgram(todayProgram ?? readTodayProgram()) },
     };
   }
 
@@ -22,7 +49,7 @@
       throw new Error("Ce fichier ne contient pas un JSON valide.");
     }
 
-    if (value?.schema !== schema || value?.version !== version || !value.data) {
+    if (value?.schema !== schema || !legacyVersions.has(value?.version) || !value.data) {
       throw new Error("Ce fichier n’est pas une sauvegarde SnakeBonD compatible.");
     }
 
@@ -34,6 +61,7 @@
         favorites: globalThis.SnakeBonDFavorites.sanitize(value.data.favorites),
         preferences: globalThis.SnakeBonDPreferences.sanitize(value.data.preferences, allowedCategories),
         watchlist: globalThis.SnakeBonDWatchlist.sanitize(value.data.watchlist),
+        todayProgram: sanitizeTodayProgram(value.data.todayProgram),
       },
     };
   }
@@ -43,6 +71,8 @@
       favorites: snapshot.data.favorites.length,
       preferences: globalThis.SnakeBonDPreferences.count(snapshot.data.preferences),
       watchlist: Object.keys(snapshot.data.watchlist).length,
+      todayProgram: snapshot.data.todayProgram.items.length,
+      todayBudget: snapshot.data.todayProgram.budget,
     };
   }
 
@@ -51,6 +81,7 @@
       favorites: globalThis.SnakeBonDFavorites.entries(),
       preferences: globalThis.SnakeBonDPreferences.read(allowedCategories),
       watchlist: globalThis.SnakeBonDWatchlist.read(),
+      todayProgram: readTodayProgram(),
     };
 
     const completed = [];
@@ -60,11 +91,19 @@
       if (!globalThis.SnakeBonDPreferences.write(snapshot.data.preferences, allowedCategories)) throw new Error();
       completed.push("preferences");
       if (!globalThis.SnakeBonDWatchlist.replace(snapshot.data.watchlist)) throw new Error();
+      completed.push("watchlist");
+      const program = globalThis.SnakeBonDTodayProgram;
+      if (program && (!program.setBudget(snapshot.data.todayProgram.budget) || !program.replace(snapshot.data.todayProgram.items))) throw new Error();
       return true;
     } catch {
       if (completed.includes("favorites")) globalThis.SnakeBonDFavorites.replace(previous.favorites);
       if (completed.includes("preferences")) globalThis.SnakeBonDPreferences.write(previous.preferences, allowedCategories);
-      globalThis.SnakeBonDWatchlist.replace(previous.watchlist);
+      if (completed.includes("watchlist")) globalThis.SnakeBonDWatchlist.replace(previous.watchlist);
+      const program = globalThis.SnakeBonDTodayProgram;
+      if (program) {
+        program.setBudget(previous.todayProgram.budget);
+        program.replace(previous.todayProgram.items);
+      }
       return false;
     }
   }
@@ -113,7 +152,7 @@
       try {
         pending = parse(await file.text(), { allowedCategories });
         const counts = summarize(pending);
-        preview.textContent = `${counts.favorites} favori${counts.favorites > 1 ? "s" : ""}, ${counts.preferences} préférence${counts.preferences > 1 ? "s" : ""} et ${counts.watchlist} contenu${counts.watchlist > 1 ? "s" : ""} suivi${counts.watchlist > 1 ? "s" : ""} seront restaurés.`;
+        preview.textContent = `${counts.favorites} favori${counts.favorites > 1 ? "s" : ""}, ${counts.preferences} préférence${counts.preferences > 1 ? "s" : ""}, ${counts.watchlist} contenu${counts.watchlist > 1 ? "s" : ""} suivi${counts.watchlist > 1 ? "s" : ""} et ${counts.todayProgram} choix du programme (${counts.todayBudget} min) seront restaurés.`;
         dialog.showModal();
       } catch (error) {
         pending = null;

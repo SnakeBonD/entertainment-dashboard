@@ -13,6 +13,7 @@
     const date = new Date(value);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   };
+  const sanitizeBudget = (value) => ALLOWED_BUDGETS.has(Number(value)) ? Number(value) : DEFAULT_BUDGET;
   const sanitizeItem = (item) => {
     if (!item?.id || typeof item.title !== "string" || typeof item.url !== "string") return null;
     return {
@@ -25,17 +26,21 @@
       done: item.done === true,
     };
   };
+  const sanitizeItems = (items) => {
+    if (!Array.isArray(items)) return [];
+    const seen = new Set();
+    return items.flatMap((item) => {
+      const safe = sanitizeItem(item);
+      if (!safe || seen.has(safe.id)) return [];
+      seen.add(safe.id);
+      return [safe];
+    }).slice(0, MAX_ITEMS);
+  };
   function read(storage = window.localStorage, now = new Date()) {
     try {
       const value = JSON.parse(storage.getItem(STORAGE_KEY) || "null");
       if (value?.date !== dayKey(now) || !Array.isArray(value?.items)) return [];
-      const seen = new Set();
-      return value.items.flatMap((item) => {
-        const safe = sanitizeItem(item);
-        if (!safe || seen.has(safe.id)) return [];
-        seen.add(safe.id);
-        return [safe];
-      }).slice(0, MAX_ITEMS);
+      return sanitizeItems(value.items);
     } catch { return []; }
   }
   function write(items, storage = window.localStorage, now = new Date()) {
@@ -87,14 +92,7 @@
   }
   function replace(items, storage = window.localStorage, now = new Date()) {
     if (!Array.isArray(items)) return false;
-    const seen = new Set();
-    const safeItems = items.flatMap((item) => {
-      const safe = sanitizeItem(item);
-      if (!safe || seen.has(safe.id)) return [];
-      seen.add(safe.id);
-      return [safe];
-    }).slice(0, MAX_ITEMS);
-    return write(safeItems, storage, now);
+    return write(sanitizeItems(items), storage, now);
   }
   function clear(storage = window.localStorage) {
     try { storage.removeItem(STORAGE_KEY); return true; } catch { return false; }
@@ -102,15 +100,24 @@
 
   function readBudget(storage = window.localStorage) {
     try {
-      const value = Number(storage.getItem(BUDGET_STORAGE_KEY));
-      return ALLOWED_BUDGETS.has(value) ? value : DEFAULT_BUDGET;
+      return sanitizeBudget(storage.getItem(BUDGET_STORAGE_KEY));
     } catch { return DEFAULT_BUDGET; }
   }
 
   function writeBudget(value, storage = window.localStorage) {
-    const safeValue = ALLOWED_BUDGETS.has(Number(value)) ? Number(value) : DEFAULT_BUDGET;
-    try { storage.setItem(BUDGET_STORAGE_KEY, String(safeValue)); } catch { /* préférence non persistée */ }
+    const safeValue = sanitizeBudget(value);
+    setBudget(safeValue, storage);
     return safeValue;
+  }
+
+  function setBudget(value, storage = window.localStorage) {
+    const safeValue = sanitizeBudget(value);
+    try {
+      storage.setItem(BUDGET_STORAGE_KEY, String(safeValue));
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   const planIds = (items) => Array.isArray(items) ? [...new Set(items.map((item) => typeof item === "string" ? item : item?.id).filter((id) => typeof id === "string" && id))] : [];
@@ -260,5 +267,5 @@
     return count;
   }
 
-  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, BUDGET_STORAGE_KEY, DEFAULT_BUDGET, MAX_COMPOSE_CONTEXTS, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readBudget, readComposeHistory, remove, replace, replaceComposeHistory, setAllDone, toggleDone, writeBudget };
+  window.SnakeBonDTodayProgram = { STORAGE_KEY, COMPOSER_STORAGE_KEY, BUDGET_STORAGE_KEY, DEFAULT_BUDGET, MAX_COMPOSE_CONTEXTS, MAX_COMPOSE_HISTORY, MAX_ITEMS, add, clear, clearComposeHistory, compose, countComposePlans, dayKey, formatDuration, knownDuration, knownEndTime, move, read, readBudget, readComposeHistory, remove, replace, replaceComposeHistory, sanitizeBudget, sanitizeItems, setAllDone, setBudget, toggleDone, writeBudget };
 })();

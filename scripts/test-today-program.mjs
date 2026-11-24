@@ -131,4 +131,4 @@ assert(app.includes("countComposePlans(candidates, budget)"));
 assert(app.includes("clearComposeHistory(composeContext)"));
 assert(app.includes("SnakeBonDTodayProgram.readBudget()"));
 assert(app.includes("SnakeBonDTodayProgram.writeBudget(budgetSelect.value)"));
-console.log("Programme du jour v4.5 validé : cycles par contexte, budget mémorisé, réinitialisation et annulation conformes.");
+console.log("Programme du jour v4.6 validé : cycles par contexte, budget mémorisé, sauvegarde et annulation conformes.");
