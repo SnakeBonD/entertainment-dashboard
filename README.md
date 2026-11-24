@@ -6,7 +6,7 @@ Production : <https://entertainment.snakebond.net>
 
 ## État du projet
 
-La version **v4.5** conserve simultanément la progression de plusieurs cycles de programmes, uniquement avec les durées officielles et toujours localement :
+La version **v4.6** conserve simultanément la progression de plusieurs cycles de programmes et sauvegarde aussi le Programme du jour, uniquement avec les durées officielles et toujours localement :
 
 - interface sombre responsive ;
 - 40 plateformes officielles réparties en huit catégories ;
@@ -65,6 +65,7 @@ La version **v4.5** conserve simultanément la progression de plusieurs cycles d
 - classement sensible à la durée, aux dates de fin, aux favoris et à la liste personnelle ;
 - explication précise des critères retenus pour chaque suggestion ;
 - export des favoris, préférences et contenus suivis dans un fichier daté ;
+- export et import du budget et de la sélection courante du Programme du jour, avec migration des sauvegardes v1 ;
 - validation stricte du format et nettoyage des valeurs avant importation ;
 - aperçu du nombre d’éléments avant confirmation de la restauration ;
 - retour aux données précédentes si une écriture locale échoue ;
@@ -446,6 +447,7 @@ déploiement : la publication normale de `main` suffit.
 - **v4.3** — progression visible du cycle actif et réinitialisation manuelle indépendante du programme.
 - **v4.4** — mémorisation locale et restauration sûre du budget temps du Programme du jour.
 - **v4.5** — conservation simultanée de plusieurs contextes de cycle et migration de l’historique local.
+- **v4.6** — sauvegarde du budget et de la sélection courante du Programme du jour, avec compatibilité des sauvegardes antérieures.
 
 ## Sécurité et confidentialité
 
@@ -454,6 +456,7 @@ déploiement : la publication normale de `main` suffit.
 - Favoris stockés uniquement dans `localStorage`.
 - Préférences stockées uniquement dans `localStorage`, indépendamment des favoris.
 - Liste personnelle et date de dernière visite stockées uniquement dans `localStorage`.
+- Programme du jour, budget et sélection courante stockés uniquement dans `localStorage` et inclus dans les sauvegardes exportées.
 - Calcul des recommandations effectué dans le navigateur, avec raisons affichées.
 - Aucun contenu daté n’est affiché sans vérification et source officielle.
 - Une entrée expirée est conservée dans l’archive au lieu d’être supprimée.
