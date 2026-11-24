@@ -45,6 +45,30 @@ function findZones(value, codes, matches = []) {
   return matches;
 }
 
+function isZoneId(value) {
+  return typeof value === "string"
+    && /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(value);
+}
+
+function endpointCandidates(zone) {
+  const content = zone?.content && typeof zone.content === "object" ? zone.content : {};
+  const paginationLinks = content.pagination?.links && typeof content.pagination.links === "object"
+    ? content.pagination.links
+    : {};
+  const candidates = [
+    content.esiInclude,
+    paginationLinks.first,
+    paginationLinks.next,
+    paginationLinks.last,
+  ];
+  if (isZoneId(zone?.id)) {
+    candidates.push(
+      `${arteApiOrigin}/api/emac/v4/fr/web/zones/${zone.id}/content?authorizedCountry=FR&page=1`,
+    );
+  }
+  return candidates.filter((value) => typeof value === "string" && value.trim());
+}
+
 export function findArteSelectionEndpoint(payload, codes = artePopularZoneCodes) {
   const acceptedCodes = Array.isArray(codes) ? codes : [codes];
   const zones = findZones(payload, acceptedCodes);
@@ -54,9 +78,7 @@ export function findArteSelectionEndpoint(payload, codes = artePopularZoneCodes)
     );
   }
 
-  const endpointValue = zones
-    .map((zone) => zone.content.esiInclude ?? zone.content.pagination?.links?.first)
-    .find((value) => typeof value === "string");
+  const endpointValue = zones.flatMap(endpointCandidates).find((value) => typeof value === "string");
   if (typeof endpointValue !== "string") {
     throw new Error("La sélection ARTE ne fournit pas d’URL de contenu officielle.");
   }
