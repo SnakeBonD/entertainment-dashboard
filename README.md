@@ -306,7 +306,9 @@ gratuit n’est confirmé. Les entrées non Epic Games sont toujours préservée
 
 `scripts/fetch-arte.mjs` consulte la page d’accueil officielle de l’API ARTE en français, y repère
 la zone éditoriale « Les vidéos les plus vues », puis charge son contenu sans dépendre d’un
-identifiant de zone figé.
+identifiant de zone figé. Si une réponse HOME omet temporairement les liens de pagination, le
+script utilise uniquement l’identifiant UUID officiel de la zone pour reconstruire la pagination
+ARTE, avec le même contrôle strict du domaine et du chemin.
 
 Seuls les films, séries, émissions et documentaires dont la lecture est active et confirmée pour
 la France sont conservés. Chaque entrée contient la période exacte de disponibilité, le visuel,

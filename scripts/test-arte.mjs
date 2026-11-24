@@ -71,6 +71,19 @@ assert(
   "La zone ARTE paginée ou sa normalisation HTTPS n’est pas prise en charge",
 );
 
+const zoneIdFallbackPayload = {
+  zones: [{
+    id: "52bbf37b-b7e9-45ab-b2fb-317ae3fd5215",
+    code: "incontournables",
+    content: { data: [] },
+  }],
+};
+assert(
+  findArteSelectionEndpoint(zoneIdFallbackPayload)
+    === "https://api.arte.tv/api/emac/v4/fr/web/zones/52bbf37b-b7e9-45ab-b2fb-317ae3fd5215/content?authorizedCountry=FR&page=1",
+  "L’identifiant officiel de zone ARTE doit fournir un repli de pagination",
+);
+
 const legacyPagePayload = {
   value: {
     zones: [{
