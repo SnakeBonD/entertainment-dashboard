@@ -5,6 +5,10 @@ import { validateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const failures = [];
+const arteSelectionLabels = new Set([
+  "Les programmes les plus vus sur ARTE",
+  "Les vidéos les plus vues sur ARTE",
+]);
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -327,7 +331,7 @@ function validateContentItem(item, source, archived = false) {
       Date.parse(item.expiryDate) > Date.parse(item.availabilityStartDate),
       `${label} possède une période ARTE invalide`,
     );
-    assert(item.selectionLabel === "Les vidéos les plus vues sur ARTE", `${label} possède une sélection ARTE invalide`);
+    assert(arteSelectionLabels.has(item.selectionLabel), `${label} possède une sélection ARTE invalide`);
     try {
       const image = new URL(item.imageUrl);
       assert(image.hostname === "api-cdn.arte.tv", `${label} : image ARTE non officielle`);

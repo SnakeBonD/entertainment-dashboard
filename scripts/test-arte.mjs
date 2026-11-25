@@ -166,6 +166,17 @@ const stableSelection = extractArteSelection({ data: [item()] }, later);
 const stableSync = syncArteCatalogue(firstSync.catalogue, stableSelection, later);
 assert(stableSync.changed === false, "Une sélection ARTE identique ne doit pas réécrire le catalogue");
 
+const legacyCatalogue = {
+  ...firstSync.catalogue,
+  items: firstSync.catalogue.items.map((entry) => entry.provider === "arte"
+    ? { ...entry, selectionLabel: "Les vidéos les plus vues sur ARTE" }
+    : entry),
+};
+assert(
+  legacyCatalogue.items.find((entry) => entry.provider === "arte")?.selectionLabel === "Les vidéos les plus vues sur ARTE",
+  "Le libellé historique ARTE devrait rester reconnu par la validation",
+);
+
 const missingSync = syncArteCatalogue(firstSync.catalogue, [], later);
 const hidden = missingSync.catalogue.items.find((entry) => entry.id === selection[0].id);
 assert(hidden?.verified === false, "Un programme absent de la sélection doit être masqué");
