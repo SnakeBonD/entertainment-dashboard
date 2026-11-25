@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-19T20:49:45.381Z",
+  "lastUpdated": "2026-11-25T08:44:20.026Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -78,7 +78,7 @@
       "addedDate": "2026-10-25",
       "availabilityStartDate": "2026-10-25T04:00:00Z",
       "expiryDate": "2026-12-24T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-27T18:13:22.368Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -86,7 +86,9 @@
       "description": "Jean Marais dans la première adaptation en couleur du célèbre roman d’Alexandre Dumas.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/BDfgPCXyk7fh9sJ5EFsJrV/768x432?type=TEXT",
       "durationLabel": "96 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-25T08:44:20.026Z"
     },
     {
       "id": "arte-045550-000-A-2026-09-16",
@@ -243,6 +245,26 @@
       "lastCheckedAt": "2026-09-21T18:18:10.728Z"
     },
     {
+      "id": "arte-112512-000-A-2026-11-21",
+      "title": "Un amour impossible",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/112512-000-A/un-amour-impossible/",
+      "country": "FR",
+      "addedDate": "2026-11-21",
+      "availabilityStartDate": "2026-11-21T04:00:00Z",
+      "expiryDate": "2027-05-20T03:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-11-25T08:44:20.026Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "112512-000-A",
+      "description": "Une femme d’origine modeste (Virginie Efira) se bat pour qu'un homme issu de la bourgeoisie (Niels Schneider) reconnaisse leur fille.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/GL3THnX2Kao8mLywP4gDMM/768x432?type=TEXT",
+      "durationLabel": "127 min",
+      "selectionLabel": "Les programmes les plus vus sur ARTE"
+    },
+    {
       "id": "arte-116006-000-A-2026-09-05",
       "title": "Pompéi : la villa de Poppée et Néron",
       "type": "documentary",
@@ -384,7 +406,7 @@
       "addedDate": "2026-10-10",
       "availabilityStartDate": "2026-10-10T03:00:00Z",
       "expiryDate": "2026-12-17T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-20T05:12:51.869Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -392,7 +414,9 @@
       "description": "D’Istanbul jusqu’au Louvre, une exploration des mille ans d’histoire de l’Empire byzantin, de 330 à 1453.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/tWWvrYYctgBPfp4bT4PVrR/768x432?type=TEXT",
       "durationLabel": "90 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-25T08:44:20.026Z"
     },
     {
       "id": "arte-122704-001-A-2026-09-22",
@@ -448,7 +472,7 @@
       "addedDate": "2026-10-24",
       "availabilityStartDate": "2026-10-24T03:00:00Z",
       "expiryDate": "2027-01-29T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-27T18:13:22.368Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -456,7 +480,9 @@
       "description": "Qui était l’homme qui a inspiré le vampire de Bram Stoker ? Voyage captivant sur les traces de Vlad Tepes (\"l’empaleur\").",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/SEc7uM4VUnvNyq6y2EY6ZY/768x432?type=TEXT",
       "durationLabel": "90 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-25T08:44:20.026Z"
     },
     {
       "id": "arte-124348-000-A-2026-09-23",
@@ -534,7 +560,7 @@
       "addedDate": "2026-10-16",
       "availabilityStartDate": "2026-10-16T03:00:00Z",
       "expiryDate": "2027-01-21T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-10-21T17:36:58.537Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -542,7 +568,49 @@
       "description": "Un juge et un vieil homme s’affrontent autour de la mort d’un randonneur. Emmanuel Finkiel adapte Erri De Luca.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/qj9TeER7yqgVV2JTMMrPED/768x432?type=TEXT",
       "durationLabel": "100 min",
-      "selectionLabel": "Les vidéos les plus vues sur ARTE"
+      "selectionLabel": "Les vidéos les plus vues sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-25T08:44:20.026Z"
+    },
+    {
+      "id": "arte-127960-000-A-2026-11-23",
+      "title": "Flow",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/127960-000-A/flow/",
+      "country": "FR",
+      "addedDate": "2026-11-23",
+      "availabilityStartDate": "2026-11-23T04:00:00Z",
+      "expiryDate": "2027-01-28T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-11-25T08:44:20.026Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "127960-000-A",
+      "description": "Cinq animaux, une mission : survivre dans le nouveau monde à bord d'un voilier. Ces amis hors du commun n'y parviendront qu'en unissant leurs forces.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/PATc4Frvi6bFRRuzV8YKaR/768x432?type=TEXT",
+      "durationLabel": "82 min",
+      "selectionLabel": "Les programmes les plus vus sur ARTE"
+    },
+    {
+      "id": "arte-128668-000-A-2026-11-16",
+      "title": "Je suis toujours là",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/128668-000-A/je-suis-toujours-la/",
+      "country": "FR",
+      "addedDate": "2026-11-16",
+      "availabilityStartDate": "2026-11-16T04:00:00Z",
+      "expiryDate": "2026-12-23T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-11-25T08:44:20.026Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "128668-000-A",
+      "description": "Walter Salles retrace la disparition d'un ancien député brésilien durant la dictature à travers le combat de sa famille pour faire reconnaître son meurtre.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8f7f4UPtfnQp9NCShK6beZ/768x432?type=TEXT",
+      "durationLabel": "130 min",
+      "selectionLabel": "Les programmes les plus vus sur ARTE"
     },
     {
       "id": "arte-129337-000-A-2026-09-09",
