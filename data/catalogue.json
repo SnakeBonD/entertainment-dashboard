@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-26T21:44:51.273Z",
+  "lastUpdated": "2026-11-26T21:53:13.112Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -254,7 +254,7 @@
       "addedDate": "2026-11-21",
       "availabilityStartDate": "2026-11-21T04:00:00Z",
       "expiryDate": "2027-05-20T03:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-11-25T08:44:20.026Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -262,7 +262,9 @@
       "description": "Une femme d’origine modeste (Virginie Efira) se bat pour qu'un homme issu de la bourgeoisie (Niels Schneider) reconnaisse leur fille.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/GL3THnX2Kao8mLywP4gDMM/768x432?type=TEXT",
       "durationLabel": "127 min",
-      "selectionLabel": "Les programmes les plus vus sur ARTE"
+      "selectionLabel": "Les programmes les plus vus sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-26T21:53:13.112Z"
     },
     {
       "id": "arte-116006-000-A-2026-09-05",
