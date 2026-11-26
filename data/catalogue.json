@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-26T08:51:11.338Z",
+  "lastUpdated": "2026-11-26T21:44:51.273Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -789,23 +789,23 @@
       "lastCheckedAt": "2026-10-20T05:12:51.869Z"
     },
     {
-      "id": "epic-1f9a12b06b4f437790b6913ad136a08c-2026-11-19",
-      "title": "Mark of the Deep",
+      "id": "epic-f0a333114190492c84a9decd2bb43875-2026-11-26",
+      "title": "Bread and Fred",
       "type": "game",
       "platform": "Epic Games Store",
-      "url": "https://store.epicgames.com/fr/p/mark-of-the-deep-f7dc08",
+      "url": "https://store.epicgames.com/fr/p/bread-and-fred-1db362",
       "country": "FR",
-      "addedDate": "2026-11-19",
-      "promotionStartDate": "2026-11-19T16:00:00.000Z",
-      "expiryDate": "2026-11-26T16:00:00.000Z",
+      "addedDate": "2026-11-26",
+      "promotionStartDate": "2026-11-26T16:00:00.000Z",
+      "expiryDate": "2026-12-03T16:00:00.000Z",
       "verified": true,
-      "verifiedAt": "2026-11-19T20:49:44.388Z",
+      "verifiedAt": "2026-11-26T21:44:50.521Z",
       "sourceUrl": "https://store.epicgames.com/fr/free-games",
       "provider": "epic-games-store",
-      "externalId": "1f9a12b06b4f437790b6913ad136a08c",
+      "externalId": "f0a333114190492c84a9decd2bb43875",
       "description": "À récupérer gratuitement sur l’Epic Games Store avant la fin de l’offre.",
-      "imageUrl": "https://cdn1.epicgames.com/spt-assets/83a240506a884c10ad8fb99694e57a0d/mark-of-the-deep-w1ygr.png",
-      "originalPrice": "19,50 €"
+      "imageUrl": "https://cdn1.epicgames.com/spt-assets/545b4dd8bb364c12b719268198a93ef3/bread-and-fred-3jnwn.jpg",
+      "originalPrice": "13,49 €"
     }
   ]
 }
