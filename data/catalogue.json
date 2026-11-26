@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-25T08:44:20.026Z",
+  "lastUpdated": "2026-11-26T08:51:11.338Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -551,6 +551,26 @@
       "lastCheckedAt": "2026-10-10T17:27:15.657Z"
     },
     {
+      "id": "arte-126143-000-A-2026-11-18",
+      "title": "Le roman de Jim",
+      "type": "movie",
+      "platform": "ARTE",
+      "url": "https://www.arte.tv/fr/videos/126143-000-A/le-roman-de-jim/",
+      "country": "FR",
+      "addedDate": "2026-11-18",
+      "availabilityStartDate": "2026-11-18T04:00:00Z",
+      "expiryDate": "2026-12-25T04:00:00Z",
+      "verified": true,
+      "verifiedAt": "2026-11-26T08:51:11.338Z",
+      "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
+      "provider": "arte",
+      "externalId": "126143-000-A",
+      "description": "Avec Karim Leklou, un film des frères Larrieu sur l'adoption, entre amour fusionnel et séparation brutale.",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/4eo2yWqQuPWUtoBYo3adHP/768x432?type=TEXT",
+      "durationLabel": "98 min",
+      "selectionLabel": "Les programmes les plus vus sur ARTE"
+    },
+    {
       "id": "arte-126168-000-A-2026-10-16",
       "title": "Impossible",
       "type": "movie",
@@ -602,7 +622,7 @@
       "addedDate": "2026-11-16",
       "availabilityStartDate": "2026-11-16T04:00:00Z",
       "expiryDate": "2026-12-23T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-11-25T08:44:20.026Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -610,7 +630,9 @@
       "description": "Walter Salles retrace la disparition d'un ancien député brésilien durant la dictature à travers le combat de sa famille pour faire reconnaître son meurtre.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/8f7f4UPtfnQp9NCShK6beZ/768x432?type=TEXT",
       "durationLabel": "130 min",
-      "selectionLabel": "Les programmes les plus vus sur ARTE"
+      "selectionLabel": "Les programmes les plus vus sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-26T08:51:11.338Z"
     },
     {
       "id": "arte-129337-000-A-2026-09-09",
