@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-27T09:00:18.538Z",
+  "lastUpdated": "2026-11-27T21:36:20.603Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -607,12 +607,12 @@
       "availabilityStartDate": "2026-11-23T04:00:00Z",
       "expiryDate": "2027-01-28T04:00:00Z",
       "verified": true,
-      "verifiedAt": "2026-11-25T08:44:20.026Z",
+      "verifiedAt": "2026-11-27T21:36:20.603Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
       "externalId": "127960-000-A",
       "description": "Cinq animaux, une mission : survivre dans le nouveau monde à bord d'un voilier. Ces amis hors du commun n'y parviendront qu'en unissant leurs forces.",
-      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/PATc4Frvi6bFRRuzV8YKaR/768x432?type=TEXT",
+      "imageUrl": "https://api-cdn.arte.tv/img/v2/image/X8gyzpfsFWMzuZbWUGikfM/768x432?type=TEXT",
       "durationLabel": "82 min",
       "selectionLabel": "Les programmes les plus vus sur ARTE"
     },
