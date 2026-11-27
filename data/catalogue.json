@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "lastUpdated": "2026-11-26T21:53:13.112Z",
+  "lastUpdated": "2026-11-27T09:00:18.538Z",
   "items": [
     {
       "id": "arte-022305-000-A-2026-09-04",
@@ -562,7 +562,7 @@
       "addedDate": "2026-11-18",
       "availabilityStartDate": "2026-11-18T04:00:00Z",
       "expiryDate": "2026-12-25T04:00:00Z",
-      "verified": true,
+      "verified": false,
       "verifiedAt": "2026-11-26T08:51:11.338Z",
       "sourceUrl": "https://www.arte.tv/fr/videos/plus-vues/",
       "provider": "arte",
@@ -570,7 +570,9 @@
       "description": "Avec Karim Leklou, un film des frères Larrieu sur l'adoption, entre amour fusionnel et séparation brutale.",
       "imageUrl": "https://api-cdn.arte.tv/img/v2/image/4eo2yWqQuPWUtoBYo3adHP/768x432?type=TEXT",
       "durationLabel": "98 min",
-      "selectionLabel": "Les programmes les plus vus sur ARTE"
+      "selectionLabel": "Les programmes les plus vus sur ARTE",
+      "verificationNote": "not_in_current_selection",
+      "lastCheckedAt": "2026-11-27T09:00:18.538Z"
     },
     {
       "id": "arte-126168-000-A-2026-10-16",
