@@ -1552,9 +1552,12 @@
 
       const checked = document.createElement("strong");
       checked.textContent = source.relativeLabel;
+      const checkedAt = document.createElement("p");
+      checkedAt.className = "source-health-card-updated";
+      checkedAt.textContent = `Dernier contrôle : ${source.checkedAtLabel}`;
       const details = document.createElement("p");
       details.textContent = `${source.itemLabel} actuellement publiés · ${source.scheduleLabel.toLowerCase()}`;
-      card.append(heading, checked, details);
+      card.append(heading, checked, checkedAt, details);
       return card;
     });
 

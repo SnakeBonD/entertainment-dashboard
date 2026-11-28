@@ -722,6 +722,12 @@ p {
   font-size: 0.8rem;
 }
 
+.source-health-card-updated {
+  margin: 0.3rem 0 0;
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
 .source-state {
   display: inline-flex;
   min-height: 1.7rem;

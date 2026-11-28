@@ -72,5 +72,7 @@ assert.equal(summary.warning, 1);
 assert.equal(summary.unavailable, 1);
 assert.equal(summary.sources[0].statusLabel, "À jour");
 assert.equal(summary.sources[1].relativeLabel, "Contrôlé il y a 2 jours");
+assert.match(summary.sources[0].checkedAtLabel, /2026/);
+assert.equal(health.formatCheckedAt(null), "Date du dernier contrôle inconnue");
 
 console.log("Suivi des sources v1.3 validé : schéma, fraîcheur et états conformes.");
