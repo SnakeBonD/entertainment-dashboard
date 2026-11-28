@@ -68,6 +68,7 @@ jobs:
           node --check scripts/radio-france.mjs
           node --check scripts/fetch-radio-france.mjs
           node --check scripts/source-status.mjs
+          node --check scripts/link-check.mjs
 
       - name: Prepare publication directory
         run: |

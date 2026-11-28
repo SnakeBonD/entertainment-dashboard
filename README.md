@@ -163,6 +163,7 @@ entertainment-dashboard/
 │   └── schedule.json
 ├── scripts/
 │   ├── check-links.mjs
+│   ├── link-check.mjs
 │   ├── archive-expired.mjs
 │   ├── arte.mjs
 │   ├── epic-games.mjs
@@ -253,6 +254,7 @@ node --check scripts/fetch-arte.mjs
 node --check scripts/radio-france.mjs
 node --check scripts/fetch-radio-france.mjs
 node --check scripts/source-status.mjs
+node --check scripts/link-check.mjs
 node --check scripts/test-maintenance.mjs
 ```
 

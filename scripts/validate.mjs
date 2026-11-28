@@ -58,6 +58,7 @@ const requiredFiles = [
   "data/radio-france.json",
   "data/source-status.json",
   "scripts/archive-expired.mjs",
+  "scripts/link-check.mjs",
   "scripts/test-availability.mjs",
   "scripts/epic-games.mjs",
   "scripts/fetch-epic-games.mjs",
