@@ -92,6 +92,9 @@ La version **v4.6** conserve simultanément la progression de plusieurs cycles d
 - lecteur audio intégré, visuels, durées, dates de publication et liens vers Radio France ;
 - contrôle de l’identité des flux, des domaines audio et des images avant toute publication ;
 - actualisation des podcasts toutes les six heures sans inventer de date d’expiration ;
+- sélection automatique de douze programmes TV5MONDE+ issus du sitemap officiel français et de leurs métadonnées JSON-LD ;
+- contrôle du domaine, des visuels et des métadonnées structurées TV5MONDE+ avant publication ;
+- actualisation quotidienne de la sélection TV5MONDE+ sans inventer de date d’expiration ;
 - installation depuis les navigateurs compatibles et lancement dans une fenêtre autonome ;
 - interface, catalogue, favoris et préférences accessibles hors ligne après une première visite ;
 - stratégie réseau prioritaire pour récupérer les contenus automatisés les plus récents dès que la connexion revient ;
@@ -106,7 +109,7 @@ La version **v4.6** conserve simultanément la progression de plusieurs cycles d
 - résultats dynamiques annoncés entièrement par les lecteurs d’écran ;
 - recherches regroupées à la prochaine frame pour éviter les rendus intermédiaires inutiles ;
 - chargement différé des scripts, images distantes et lecteurs audio certifié automatiquement ;
-- espace « Application » enrichi avec l’état d’ARTE, Epic Games et Radio France ;
+- espace « Application » enrichi avec l’état d’ARTE, Epic Games, Radio France et TV5MONDE+ ;
 - dernier contrôle réussi, fréquence prévue et nombre d’éléments publiés affichés par source ;
 - signalement automatique lorsqu’une source dépasse son délai normal d’actualisation ;
 - conservation des derniers contenus validés lorsqu’un contrôle est en retard ;
@@ -188,6 +191,9 @@ entertainment-dashboard/
 │   ├── test-workflows.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
+│   ├── test-tv5monde.mjs
+│   ├── tv5monde.mjs
+│   ├── fetch-tv5monde.mjs
 │   ├── test-maintenance.mjs
 │   └── validate.mjs
 ├── .github/workflows/
@@ -196,6 +202,7 @@ entertainment-dashboard/
 │   ├── fetch-arte.yml
 │   ├── fetch-epic-games.yml
 │   ├── fetch-radio-france.yml
+│   ├── fetch-tv5monde.yml
 │   └── deploy.yml
 ├── .github/dependabot.yml
 ├── CNAME
@@ -228,6 +235,7 @@ node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-link-status.mjs
 node scripts/test-radio-france.mjs
+node scripts/test-tv5monde.mjs
 node scripts/test-maintenance.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs

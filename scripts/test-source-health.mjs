@@ -17,7 +17,7 @@ const updated = updateSourceStatus(
   8,
 );
 assert.equal(updated.sources.find((source) => source.provider === "arte").itemCount, 8);
-assert.equal(updated.sources.length, 3);
+assert.equal(updated.sources.length, 4);
 
 const statusFixture = {
   version: 1,
@@ -25,6 +25,7 @@ const statusFixture = {
     { provider: "arte", lastSuccessfulCheck: "2026-09-09T08:00:00.000Z", itemCount: 4 },
     { provider: "epic-games-store", lastSuccessfulCheck: "2026-09-09T08:00:00.000Z", itemCount: 1 },
     { provider: "radio-france", lastSuccessfulCheck: "2026-09-09T08:00:00.000Z", itemCount: 6 },
+    { provider: "tv5mondeplus", lastSuccessfulCheck: "2026-09-09T08:00:00.000Z", itemCount: 12 },
   ],
 };
 assert.equal(

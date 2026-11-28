@@ -17,6 +17,12 @@ export const sourceDefinitions = {
     warningAfterHours: 18,
     statusPublishIntervalHours: 12,
   },
+  tv5mondeplus: {
+    name: "TV5MONDE+",
+    scheduleLabel: "Toutes les 24 heures",
+    warningAfterHours: 30,
+    statusPublishIntervalHours: 24,
+  },
 };
 
 export function updateSourceStatus(document, provider, checkedAt, itemCount) {
@@ -28,7 +34,9 @@ export function updateSourceStatus(document, provider, checkedAt, itemCount) {
   const previous = Array.isArray(document?.sources) ? document.sources : [];
   const source = {
     provider,
-    ...definition,
+    name: definition.name,
+    scheduleLabel: definition.scheduleLabel,
+    warningAfterHours: definition.warningAfterHours,
     lastSuccessfulCheck: checkedAt,
     itemCount,
   };

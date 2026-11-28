@@ -24,6 +24,14 @@
       "warningAfterHours": 18,
       "lastSuccessfulCheck": "2026-11-27T21:25:38.683Z",
       "itemCount": 6
+    },
+    {
+      "provider": "tv5mondeplus",
+      "name": "TV5MONDE+",
+      "scheduleLabel": "Toutes les 24 heures",
+      "warningAfterHours": 30,
+      "lastSuccessfulCheck": "2026-11-28T00:32:39.000Z",
+      "itemCount": 12
     }
   ]
 }
