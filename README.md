@@ -345,8 +345,8 @@ n’est créée. Une sélection incomplète ou un flux invalide interrompt la t�
 
 `data/source-status.json` conserve, pour ARTE, Epic Games Store et Radio France, la date du dernier
 contrôle réussi, le nombre d’éléments confirmés, la fréquence prévue et le délai à partir duquel la
-source doit être surveillée. Le dashboard transforme ces données en trois états simples : **À jour**,
-**À surveiller** ou **En attente**.
+source doit être surveillée. Le dashboard affiche la date exacte du dernier contrôle et transforme ces
+données en trois états simples : **À jour**, **À surveiller** ou **En attente**.
 
 Chaque import réussi vérifie ce suivi même lorsque la sélection elle-même n’a pas changé. Pour éviter
 un commit et un déploiement à chaque contrôle identique, la date publiée est actualisée au maximum

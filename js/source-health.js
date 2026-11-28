@@ -21,6 +21,16 @@
     return `Contrôlé il y a ${days} jour${days > 1 ? "s" : ""}`;
   }
 
+  function formatCheckedAt(value) {
+    const timestamp = Date.parse(value);
+    if (!Number.isFinite(timestamp)) return "Date du dernier contrôle inconnue";
+    return new Intl.DateTimeFormat("fr-FR", {
+      dateStyle: "medium",
+      timeStyle: "short",
+      timeZone: "Europe/Paris",
+    }).format(new Date(timestamp));
+  }
+
   function evaluateSource(source, now = new Date()) {
     const hours = hoursSince(source?.lastSuccessfulCheck, now);
     const threshold = Number(source?.warningAfterHours);
@@ -35,6 +45,7 @@
       state,
       statusLabel: statusLabels[state],
       relativeLabel: formatRelativeHours(hours),
+      checkedAtLabel: formatCheckedAt(source?.lastSuccessfulCheck),
       itemLabel: `${source?.itemCount ?? 0} élément${source?.itemCount === 1 ? "" : "s"}`,
     };
   }
@@ -49,5 +60,5 @@
     };
   }
 
-  window.SnakeBonDSourceHealth = { evaluateSource, summarize };
+  window.SnakeBonDSourceHealth = { evaluateSource, formatCheckedAt, summarize };
 })();
