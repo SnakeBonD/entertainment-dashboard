@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { requestWithRetry } from "./link-check.mjs";
 import { classifyLinkStatus } from "./link-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -24,10 +25,15 @@ async function request(url, method) {
 
 async function check(entry) {
   try {
-    let response = await request(entry.url, "HEAD");
+    let response;
+    try {
+      response = await requestWithRetry(() => request(entry.url, "HEAD"));
+    } catch {
+      response = await requestWithRetry(() => request(entry.url, "GET"));
+    }
     const headState = classifyLinkStatus(response.status, response.ok);
     if (headState === "failed" || headState === "temporary") {
-      response = await request(entry.url, "GET");
+      response = await requestWithRetry(() => request(entry.url, "GET"));
     }
 
     return {
