@@ -24,9 +24,7 @@ jobs:
         run: node scripts/fetch-radio-france.mjs
 
       - name: Validate updated selection
-        run: |
-          node scripts/validate.mjs
-          node scripts/test-radio-france.mjs
+        run: node scripts/test-maintenance.mjs
 
       - name: Publish podcast update
         id: publish
