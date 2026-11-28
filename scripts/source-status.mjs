@@ -3,16 +3,19 @@ export const sourceDefinitions = {
     name: "ARTE",
     scheduleLabel: "Toutes les 12 heures",
     warningAfterHours: 30,
+    statusPublishIntervalHours: 24,
   },
   "epic-games-store": {
     name: "Epic Games Store",
     scheduleLabel: "Toutes les 6 heures",
     warningAfterHours: 18,
+    statusPublishIntervalHours: 12,
   },
   "radio-france": {
     name: "Radio France",
     scheduleLabel: "Toutes les 6 heures",
     warningAfterHours: 18,
+    statusPublishIntervalHours: 12,
   },
 };
 
@@ -33,6 +36,22 @@ export function updateSourceStatus(document, provider, checkedAt, itemCount) {
     .sort((a, b) => a.provider.localeCompare(b.provider));
 
   return { version: 1, sources };
+}
+
+export function shouldPersistSourceStatus(previousDocument, nextDocument, provider) {
+  const nextSource = nextDocument?.sources?.find((entry) => entry.provider === provider);
+  const previousSource = previousDocument?.sources?.find((entry) => entry.provider === provider);
+  if (!nextSource || !previousSource) return true;
+  if (nextSource.itemCount !== previousSource.itemCount) return true;
+
+  const previousTimestamp = Date.parse(previousSource.lastSuccessfulCheck);
+  const nextTimestamp = Date.parse(nextSource.lastSuccessfulCheck);
+  if (Number.isNaN(previousTimestamp) || Number.isNaN(nextTimestamp)) return true;
+
+  const intervalHours = sourceDefinitions[provider]?.statusPublishIntervalHours;
+  if (!Number.isFinite(intervalHours)) return true;
+
+  return nextTimestamp - previousTimestamp >= intervalHours * 3_600_000;
 }
 
 export function validateSourceStatus(document) {

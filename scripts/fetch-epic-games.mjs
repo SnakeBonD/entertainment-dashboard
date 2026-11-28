@@ -6,7 +6,7 @@ import {
   extractEpicGames,
   syncEpicCatalogue,
 } from "./epic-games.mjs";
-import { updateSourceStatus } from "./source-status.mjs";
+import { shouldPersistSourceStatus, updateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dryRun = process.argv.includes("--dry-run");
@@ -53,12 +53,15 @@ if (!epicGames.length) {
 
 const catalogue = readJson("data/catalogue.json");
 const result = syncEpicCatalogue(catalogue, epicGames, now);
+const previousSourceStatus = readJson("data/source-status.json");
 const sourceStatus = updateSourceStatus(
-  readJson("data/source-status.json"),
+  previousSourceStatus,
   "epic-games-store",
   now.toISOString(),
   result.activeCount,
 );
+const persistSourceStatus = result.changed
+  || shouldPersistSourceStatus(previousSourceStatus, sourceStatus, "epic-games-store");
 
 if (!dryRun) {
   if (result.changed) {
@@ -67,10 +70,12 @@ if (!dryRun) {
       `${JSON.stringify(result.catalogue, null, 2)}\n`,
     );
   }
-  fs.writeFileSync(
-    path.join(projectRoot, "data/source-status.json"),
-    `${JSON.stringify(sourceStatus, null, 2)}\n`,
-  );
+  if (persistSourceStatus) {
+    fs.writeFileSync(
+      path.join(projectRoot, "data/source-status.json"),
+      `${JSON.stringify(sourceStatus, null, 2)}\n`,
+    );
+  }
 }
 
 const mode = dryRun ? "Simulation" : result.changed ? "Catalogue mis à jour" : "Catalogue inchangé";
