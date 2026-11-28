@@ -68,6 +68,7 @@ const requiredFiles = [
   "scripts/radio-france.mjs",
   "scripts/fetch-radio-france.mjs",
   "scripts/test-radio-france.mjs",
+  "scripts/test-maintenance.mjs",
   "scripts/source-status.mjs",
   "scripts/test-source-health.mjs",
   "scripts/test-watchlist.mjs",

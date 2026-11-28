@@ -187,6 +187,7 @@ entertainment-dashboard/
 │   ├── test-workflows.mjs
 │   ├── test-release.mjs
 │   ├── test-radio-france.mjs
+│   ├── test-maintenance.mjs
 │   └── validate.mjs
 ├── .github/workflows/
 │   ├── archive-expired.yml
@@ -225,6 +226,7 @@ node scripts/test-epic-games.mjs
 node scripts/test-arte.mjs
 node scripts/test-link-status.mjs
 node scripts/test-radio-france.mjs
+node scripts/test-maintenance.mjs
 node scripts/test-pwa.mjs
 node scripts/test-quality.mjs
 node scripts/test-source-health.mjs
@@ -251,6 +253,7 @@ node --check scripts/fetch-arte.mjs
 node --check scripts/radio-france.mjs
 node --check scripts/fetch-radio-france.mjs
 node --check scripts/source-status.mjs
+node --check scripts/test-maintenance.mjs
 ```
 
 ## Données
