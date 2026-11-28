@@ -197,6 +197,7 @@ entertainment-dashboard/
 │   ├── fetch-epic-games.yml
 │   ├── fetch-radio-france.yml
 │   └── deploy.yml
+├── .github/dependabot.yml
 ├── CNAME
 ├── LICENSE
 └── README.md

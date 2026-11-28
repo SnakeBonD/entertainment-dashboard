@@ -34,4 +34,24 @@ assert(deploy.includes("push:\n    branches: [main]"), "Le déploiement automati
 assert(deploy.includes("pull_request:\n    branches: [main]"), "La validation des pull requests est absente");
 assert(deploy.includes("workflow_dispatch:"), "Le déploiement manuel de secours est absent");
 
+const checkLinks = read(".github/workflows/check-links.yml");
+const workflows = [
+  ["Archivage", read(".github/workflows/archive-expired.yml")],
+  ["Contrôle des liens", checkLinks],
+  ["Déploiement", deploy],
+  ["ARTE", read(".github/workflows/fetch-arte.yml")],
+  ["Epic Games", read(".github/workflows/fetch-epic-games.yml")],
+  ["Radio France", read(".github/workflows/fetch-radio-france.yml")],
+];
+for (const [name, workflow] of workflows) {
+  assert(!/uses:\s+actions\/[^@\s]+@v\d/.test(workflow), `${name} : une Action GitHub utilise encore un tag mutable`);
+  for (const match of workflow.matchAll(/uses:\s+actions\/[^@\s]+@([0-9a-f]+)/g)) {
+    assert.equal(match[1].length, 40, `${name} : une Action GitHub n’est pas épinglée sur un SHA complet`);
+  }
+}
+
+const dependabot = read(".github/dependabot.yml");
+assert(dependabot.includes("package-ecosystem: github-actions"), "Dependabot ne surveille pas les Actions GitHub");
+assert(dependabot.includes("interval: weekly"), "Dependabot ne vérifie pas les Actions GitHub chaque semaine");
+
 console.log("Workflows v1.8.1 validés : chaque publication de données déclenche exactement un déploiement Pages.");

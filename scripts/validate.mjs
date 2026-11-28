@@ -88,6 +88,7 @@ const requiredFiles = [
   ".github/workflows/fetch-arte.yml",
   ".github/workflows/fetch-radio-france.yml",
   ".github/workflows/deploy.yml",
+  ".github/dependabot.yml",
   "CNAME",
 ];
 
