@@ -342,9 +342,12 @@ contrôle réussi, le nombre d’éléments confirmés, la fréquence prévue et
 source doit être surveillée. Le dashboard transforme ces données en trois états simples : **À jour**,
 **À surveiller** ou **En attente**.
 
-Chaque import réussi actualise ce suivi même lorsque la sélection elle-même n’a pas changé. Si une
-source ne répond plus, aucun contenu validé n’est supprimé : la date du dernier succès vieillit et
-l’interface signale automatiquement le retard.
+Chaque import réussi vérifie ce suivi même lorsque la sélection elle-même n’a pas changé. Pour éviter
+un commit et un déploiement à chaque contrôle identique, la date publiée est actualisée au maximum
+une fois par jour pour ARTE et une fois toutes les douze heures pour Epic Games Store et Radio France ;
+un changement réel de contenu ou de compteur est publié immédiatement. Si une source ne répond plus,
+aucun contenu validé n’est supprimé : la date du dernier succès publié vieillit et l’interface signale
+automatiquement le retard.
 
 ## Application installable et mode hors ligne
 

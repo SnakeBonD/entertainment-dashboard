@@ -6,7 +6,7 @@ import {
   radioFranceFeeds,
   syncRadioFranceSelection,
 } from "./radio-france.mjs";
-import { updateSourceStatus } from "./source-status.mjs";
+import { shouldPersistSourceStatus, updateSourceStatus } from "./source-status.mjs";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dryRun = process.argv.includes("--dry-run");
@@ -60,12 +60,15 @@ if (episodes.length !== radioFranceFeeds.length * 3) {
 
 const selection = readJson("data/radio-france.json");
 const result = syncRadioFranceSelection(selection, episodes, now);
+const previousSourceStatus = readJson("data/source-status.json");
 const sourceStatus = updateSourceStatus(
-  readJson("data/source-status.json"),
+  previousSourceStatus,
   "radio-france",
   now.toISOString(),
   result.count,
 );
+const persistSourceStatus = result.changed
+  || shouldPersistSourceStatus(previousSourceStatus, sourceStatus, "radio-france");
 
 if (!dryRun) {
   if (result.changed) {
@@ -74,10 +77,12 @@ if (!dryRun) {
       `${JSON.stringify(result.selection, null, 2)}\n`,
     );
   }
-  fs.writeFileSync(
-    path.join(projectRoot, "data/source-status.json"),
-    `${JSON.stringify(sourceStatus, null, 2)}\n`,
-  );
+  if (persistSourceStatus) {
+    fs.writeFileSync(
+      path.join(projectRoot, "data/source-status.json"),
+      `${JSON.stringify(sourceStatus, null, 2)}\n`,
+    );
+  }
 }
 
 const mode = dryRun ? "Simulation" : result.changed ? "Sélection mise à jour" : "Sélection inchangée";
