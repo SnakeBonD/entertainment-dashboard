@@ -9,6 +9,7 @@ const arteSelectionLabels = new Set([
   "Les programmes les plus vus sur ARTE",
   "Les vidéos les plus vues sur ARTE",
 ]);
+const tv5MondeSelectionLabel = "Sélection officielle TV5MONDE+";
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -69,6 +70,9 @@ const requiredFiles = [
   "scripts/radio-france.mjs",
   "scripts/fetch-radio-france.mjs",
   "scripts/test-radio-france.mjs",
+  "scripts/tv5monde.mjs",
+  "scripts/fetch-tv5monde.mjs",
+  "scripts/test-tv5monde.mjs",
   "scripts/test-maintenance.mjs",
   "scripts/source-status.mjs",
   "scripts/test-source-health.mjs",
@@ -357,6 +361,35 @@ function validateContentItem(item, source, archived = false) {
     }
   }
 
+  if (item?.provider === "tv5mondeplus") {
+    assert(/^tv5mondeplus-[a-z0-9-]+$/.test(item.id), `${label} possède un identifiant TV5MONDE+ invalide`);
+    assert(["movie", "tv", "documentary"].includes(item.type), `${label} possède un type TV5MONDE+ invalide`);
+    assert(item.platform === "TV5MONDE+", `${label} possède une plateforme TV5MONDE+ invalide`);
+    assert(typeof item.externalId === "string" && item.externalId.length > 0, `${label} n’a pas d’identifiant source TV5MONDE+`);
+    assert(item.expiryDate === null, `${label} ne doit pas inventer une date de fin TV5MONDE+`);
+    assert(item.selectionLabel === tv5MondeSelectionLabel, `${label} possède une sélection TV5MONDE+ invalide`);
+    try {
+      const image = new URL(item.imageUrl);
+      assert(image.hostname === "assets.tv5mondeplus.com", `${label} : image TV5MONDE+ non officielle`);
+    } catch {
+      failures.push(`${label} : imageUrl TV5MONDE+ est invalide`);
+    }
+    try {
+      const product = new URL(item.url);
+      const officialSource = new URL(item.sourceUrl);
+      assert(product.hostname === "www.tv5mondeplus.com" && product.pathname.startsWith("/fr/"), `${label} : URL programme TV5MONDE+ non officielle`);
+      assert(officialSource.hostname === "www.tv5mondeplus.com" && officialSource.pathname === "/film-et-serie-sitemap.xml", `${label} : source TV5MONDE+ non officielle`);
+    } catch {
+      failures.push(`${label} : domaine TV5MONDE+ invalide`);
+    }
+    if (item.verified === false) {
+      assert(
+        item.verificationNote === "not_in_current_selection",
+        `${label} : un programme TV5MONDE+ masqué doit préciser sa raison`,
+      );
+    }
+  }
+
   if (archived) {
     assert(validDate(item?.archivedAt), `${label} possède une date d’archivage invalide`);
     assert(item?.archiveReason === "expired", `${label} possède une raison d’archivage invalide`);
@@ -395,10 +428,19 @@ assert(
   "Le workflow Radio France ne partage pas la file de maintenance",
 );
 
+const tv5MondeWorkflow = fs.readFileSync(
+  path.join(projectRoot, ".github/workflows/fetch-tv5monde.yml"),
+  "utf8",
+);
+assert(tv5MondeWorkflow.includes('cron: "13 4 * * *"'), "Le rythme de synchronisation TV5MONDE+ est absent");
+assert(tv5MondeWorkflow.includes("scripts/fetch-tv5monde.mjs"), "Le workflow TV5MONDE+ n’exécute pas l’import");
+assert(tv5MondeWorkflow.includes("group: catalogue-maintenance"), "Le workflow TV5MONDE+ ne partage pas la file de maintenance");
+
 [
   ["ARTE", arteWorkflow],
   ["Epic Games", epicWorkflow],
   ["Radio France", radioFranceWorkflow],
+  ["TV5MONDE+", tv5MondeWorkflow],
 ].forEach(([name, workflow]) => {
   assert(workflow.includes("data/source-status.json"), `Le workflow ${name} ne publie pas l’état de sa source`);
 });
@@ -412,6 +454,7 @@ const archiveWorkflow = fs.readFileSync(
   ["ARTE", arteWorkflow],
   ["Epic Games", epicWorkflow],
   ["Radio France", radioFranceWorkflow],
+  ["TV5MONDE+", tv5MondeWorkflow],
   ["Archivage", archiveWorkflow],
 ].forEach(([name, workflow]) => {
   assert(workflow.includes("id: publish"), `Le workflow ${name} ne signale pas ses changements`);

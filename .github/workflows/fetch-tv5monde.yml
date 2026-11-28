@@ -1,0 +1,52 @@
+name: Refresh TV5MONDE+ selection
+
+on:
+  schedule:
+    - cron: "13 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: catalogue-maintenance
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Fetch the official TV5MONDE+ selection for France
+        run: node scripts/fetch-tv5monde.mjs
+
+      - name: Archive expired entries
+        run: node scripts/archive-expired.mjs
+
+      - name: Validate updated catalogue
+        run: node scripts/test-maintenance.mjs
+
+      - name: Publish catalogue update
+        id: publish
+        run: |
+          if git diff --quiet -- data/catalogue.json data/archive.json data/source-status.json; then
+            echo "No TV5MONDE+ catalogue change."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/catalogue.json data/archive.json data/source-status.json
+          git commit -m "chore: refresh TV5MONDE+ selection"
+          git pull --rebase origin main
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy updated catalogue
+        if: steps.publish.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

@@ -9,6 +9,7 @@ const checks = [
   "scripts/test-epic-games.mjs",
   "scripts/test-arte.mjs",
   "scripts/test-radio-france.mjs",
+  "scripts/test-tv5monde.mjs",
 ];
 
 for (const check of checks) {

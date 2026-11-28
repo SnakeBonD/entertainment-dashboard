@@ -9,6 +9,7 @@ const sources = [
   ["ARTE", ".github/workflows/fetch-arte.yml", 'cron: "41 */12 * * *"'],
   ["Epic Games", ".github/workflows/fetch-epic-games.yml", 'cron: "23 */6 * * *"'],
   ["Radio France", ".github/workflows/fetch-radio-france.yml", 'cron: "17 */6 * * *"'],
+  ["TV5MONDE+", ".github/workflows/fetch-tv5monde.yml", 'cron: "13 4 * * *"'],
   ["Archivage", ".github/workflows/archive-expired.yml", 'cron: "40 5 * * *"'],
 ];
 
@@ -42,6 +43,7 @@ const workflows = [
   ["ARTE", read(".github/workflows/fetch-arte.yml")],
   ["Epic Games", read(".github/workflows/fetch-epic-games.yml")],
   ["Radio France", read(".github/workflows/fetch-radio-france.yml")],
+  ["TV5MONDE+", read(".github/workflows/fetch-tv5monde.yml")],
 ];
 for (const [name, workflow] of workflows) {
   assert(!/uses:\s+actions\/[^@\s]+@v\d/.test(workflow), `${name} : une Action GitHub utilise encore un tag mutable`);
